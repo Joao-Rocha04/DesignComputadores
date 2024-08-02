@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Aula-04_V_cpuRelogio</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <style>
+  /* fundo para o trecho de código */
+  div.sourceCode { overflow-x: auto; background-color: rgb(245,245,245);}  /*rgb(250,250,250)*/
+  body {font-family: "Lato", sans-serif;}
+  
+  /* Para dividir a pagina em duas colunas */
+   .column {
+    float: left;
+    width:49%;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Inicio do menu tipo acordeon */
+  .accordion{
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+    font-weight: bold;
+  }
+  .active, .accordion:hover {
+    background-color: #a4b8b6;
+  }
+  .panel {
+    /*Versao anterior do accordion usa  max-height: 0 para fazer a transition e nao aceita aninhamento de acordeon*/
+    padding: 0 10px;
+    background-color: #f9f9f9;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    margin-left: 0%;
+  }
+  .panel p {
+    margin-left: 1%;
+  }
+  /*Inicio do Acordeon Aninhado*/
+  button.accordionNested{
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  .activeNested, .accordionNested:hover {
+    background-color: #a4b8b6;
+  }
+  .panelNested {
+    /*Aceita aninhamento mas nao faz transition*/
+    padding: 0 10px;
+    background-color: #f9f9f9;
+    display: none;
+    overflow: hidden;
+    margin-left: 0%;
+  }
+  .panelNested p {
+    margin-left: 1%;
+  }
+  /*Inicio do Segundo Acordeon Aninhado*/
+  button.accordionNestedTwo{
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  .activeNestedTwo, .accordionNestedTwo:hover {
+    background-color: #a4b8b6;
+  }
+  .panelNestedTwo {
+    /*Aceita aninhamento mas nao faz transition*/
+    padding: 0 10px;
+    background-color: #f9f9f9;
+    display: none;
+    overflow: hidden;
+    margin-left: 0%;
+  }
+  .panelNestedTwo p {
+    margin-left: 1%;
+  }
+  /* Fim do menu tipo acordeon */
+  
+  .bloco .title {
+      display: block;
+  }
+  
+  /*Bloco de solucao de exercicio*/
+  .bloco .label,
+  .bloco .separator {
+      font-weight: bold;
+  }
+  
+  .bloco .separator {
+      margin-right: .6em;
+  /*    margin-left: .6em;  */
+  }
+  /* Solução */
+  div.solucao {
+    border-left: .3em solid #dd4444;   /*#dc3c01; */
+    margin-left: -.8em;
+    padding-left: .4em;
+    position: relative;
+    font-size: 90%;
+  }
+  
+  div.solucao .conteudo {
+    display: none;
+    padding-top: 1px;
+  }
+  
+  div.solucao button {
+    color: #0000AF;
+    background-color: white;
+    border-radius: 5px;
+  }
+  
+  div.solucao button.viewed {
+    color: #FF2020;
+    background-color: white;
+    border-radius: 5px;
+  }
+  
+  div.exemplo {
+    /*background-color: lightgray;*/
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  
+  div.exemplo .sourceCode  {
+    /*background-color: lightgray;*/
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+  
+  div.adicional {
+    margin-left: 1%;
+  }
+  /* Alinhamento dos títulos e parágrafos */
+  
+  body{margin-left: 5%; margin-right: 5%;
+           color: black; background-color: #f9f9f9;}
+  
+  hr{
+      margin-left: -4%;
+      background-color: rgb(0,150,150);  /*anterior:    240,240,240 */
+  }
+  h1{
+      margin-left: -4%;
+      /*background-color: rgb(210,210,220);*/
+  }
+  
+  h2{
+      margin-left: -4%;
+      /*background-color: rgb(220,220,230);*/
+  }
+  
+  h3{
+      margin-left: 0%;  /*-4%;*/
+      /*background-color: rgb(230,230,240);*/
+  }
+  
+  h4{
+      margin-left: 0%;  /*-4%;*/
+      /*background-color: rgb(240,240,250);*/
+  }
+  h5{
+      margin-left: 0%;  /*-4%;*/
+      /*background-color: rgb(245,245,250);*/
+  }
+  
+  /* Cores */
+  i{color: red}
+  em{color: green}
+  cite{color: brown}
+  /* blockquote > p { */
+  blockquote{color: red}
+  blockquote p {
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 2em;
+  }
+  
+  /* ---- Front Matter ----
+  Pandoc header DIV. Contains .title, .author and .date. Comes before div#TOC.
+  Only appears if one of those three are in the document.   */
+  
+  div#header, header
+      {
+      /* Put border on bottom. Separates it from TOC or body that comes after it. */
+      border-bottom: 1px solid #aaa;
+      margin-bottom: 0.5em;
+      }
+  
+  .title /* Pandoc title header (h1.title) */
+      {
+      text-align: center;
+      }
+  
+  .author, .date /* Pandoc author(s) and date headers (h2.author and h3.date) */
+      {
+      text-align: center;
+      }
+  
+  /* Pandoc table of contents DIV when using the --toc option.
+     NOTE: this doesn't support Pandoc's --id-prefix option for #TOC and #header.
+     Probably would need to use div[id$='TOC'] and div[id$='header'] as selectors.
+  */
+  
+  div#TOC, nav#TOC
+      {
+      /* Put border on bottom to separate it from body. */
+  /*    border-bottom: 1px solid #aaa;   */
+      margin-bottom: 0.5em;
+      }
+  
+  @media print
+      {
+      div#TOC, nav#TOC
+          {
+          /* Don't display TOC in print */
+          display: none;
+          }
+      }
+  /* ---- Images ---- */
+  img {
+      /* Let it be inline left/right where it wants to be, but verticality make
+         it in the middle to look nicer, but opinions differ, and if in a multi-line
+         paragraph, it might not be so great.
+         vertical-align: middle;
+      */
+      vertical-align: middle;
+      max-width: 600px;
+      height:auto;
+      }
+  div.figure /* Pandoc figure-style image */
+      {
+      /* Center the image and caption */
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      font-style: italic;
+      max-width: 600px;
+      height:auto;
+      }
+  p.caption /* Pandoc figure-style caption within div.figure */
+      {
+      /* Inherits div.figure props by default */
+      }
+  /* ---- Tables ---- */
+  table {
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 24px;
+      border-spacing: 0;
+      border-bottom: 2px solid black;
+      border-top: 2px solid black;
+  }
+  table th {
+      padding: 3px 10px;
+      background-color: white;
+      border-top: 1px;
+      border-left: 1px;
+      border-right: 1px;
+      border-bottom: 1px solid black;
+  }
+  table td {
+      padding: 3px 10px;
+      border-top: 1px;
+      border-left: 1px;
+      border-bottom: 1px;
+      border-right: 1px;
+  }
+  /* fundo para as linhas das tabelas */
+  tr.even{
+    background-color: rgb(230,230,240);
+  }
+  tr.odd{
+    background-color: rgb(250,250,250);
+  }
+  </style>
+  
+  
+  <script type="text/javascript">
+      function exibe(e)
+      {
+          var div = e.parentNode.firstElementChild;
+          var nome = e.parentNode.id;
+          var tipo=nome.substring(0, 3).toUpperCase()
+          switch (tipo) {
+            case "SOL":
+                nome = "Solução";
+                break;
+            case "COD":
+                nome = "Código";
+                break;
+            case "DIC":
+                nome = "Dica";
+                break;
+            case "DIA":
+                nome = "Diagrama";
+                break;
+            case "RES":
+                nome = "Resumo";
+                break;
+            case "CON":
+                nome = "Conteúdo";
+                break;
+            default:
+                nome = "";
+            }
+  
+          if (div.style.display == "" || div.style.display == "none") {
+              div.style.display = "block";
+              e.setAttribute("class", "viewed");
+              e.innerHTML = "Esconder ";
+          } else {
+              div.style.display = "none";
+              e.innerHTML = "Exibir "+nome;
+          }
+      }
+      function validaBinario(nome) {
+          var valor, tamanho, i;
+          document.getElementById(nome).style.color = "black";
+          valor = document.getElementById(nome).value;
+          tamanho=valor.length;
+          for (i=0;i<tamanho; i=i+1){
+              if ( valor[i] != 1 && valor[i] != 0 ){
+                  document.getElementById(nome).style.color = "red";
+              }
+          }
+      }
+  </script>
+</head>
+<body>
+<p><a name="inicio"></a></p>
+<h1 id="aula-4-projetando-o-relógio-processador">Aula 4: Projetando o Relógio (processador)</h1>
+<h2 id="objetivos">Objetivos</h2>
+<ol type="1">
+<li>Esboçar o projeto do fluxo de dados do processador para o relógio.</li>
+</ol>
+<h2 id="visão-geral">Visão Geral</h2>
+<p>Vimos que um processador executa as instruções através de cinco passos:</p>
+<ul>
+<li><p>Busca da instrução;</p></li>
+<li><p>Decodificação da instrução;</p></li>
+<li><p>Leitura dos operandos;</p></li>
+<li><p>Execução da operação;</p></li>
+<li><p>Escrita do resultado.</p></li>
+</ul>
+<figure>
+<img src="../imagensCircuitos/processador_DiagramaBloco-1.svg" alt="Etapas de Execução" style="width:40.0%" /><figcaption><strong>Etapas de Execução</strong></figcaption>
+</figure>
+<p><br></p>
+<h3 id="busca-da-instrução">Busca da Instrução</h3>
+<p>Esta etapa é a mesma para todas as instruções executadas.</p>
+<p>O processador deverá definir o endereço da instrução a ser lida da memória de instruções:</p>
+<ul>
+<li><p>Incrementando o contador de programa (PC) para a próxima posição da memória:</p>
+<ul>
+<li>Quando o programa está executando uma sequência de instruções.</li>
+</ul></li>
+<li><p>Alterando o conteúdo do contador de programa como consequência de uma instrução de desvio:</p>
+<ul>
+<li>Que foi executada no ciclo anterior.</li>
+</ul></li>
+</ul>
+<p>Atualizado o PC, ele será usado para endereçar a memória de instruções e o conteúdo dessa posição de memória deverá ser guardado para uso das próximas etapas.</p>
+<p>O resultado da análise do funcionamento dessa etapa permite concluir que:</p>
+<ol type="1">
+<li>Temos duas possibilidades para a atualização do contador de programa, ou seja, o comportamento é similar ao uso de um comando “IF” de uma linguagem de programação.</li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode asm"><code class="sourceCode fasm"><a class="sourceLine" id="cb1-1" title="1">    se  (desvio)</a>
+<a class="sourceLine" id="cb1-2" title="2"></a>
+<a class="sourceLine" id="cb1-3" title="3">        PC = Novo Valor do PC (calculado pela instrução anterior)</a>
+<a class="sourceLine" id="cb1-4" title="4"></a>
+<a class="sourceLine" id="cb1-5" title="5">    senão</a>
+<a class="sourceLine" id="cb1-6" title="6"></a>
+<a class="sourceLine" id="cb1-7" title="7">        PC = PC + Constante</a>
+<a class="sourceLine" id="cb1-8" title="8"></a>
+<a class="sourceLine" id="cb1-9" title="9">    fim se</a></code></pre></div>
+<ol start="2" type="1">
+<li><p>O conteúdo do PC deve endereçar a memória de instruções, que chamaremos de MEM.</p></li>
+<li><p>O conteúdo endereçado deve ser armazenado dentro do processador (normalmente em um registrador chamado registrador de instrução (RI)).</p></li>
+</ol>
+<div class="sourceCode" id="cb2"><pre class="sourceCode asm"><code class="sourceCode fasm"><a class="sourceLine" id="cb2-1" title="1">    RI = MEM[PC]</a></code></pre></div>
+<h3 id="implementação-do-circuito">Implementação do Circuito</h3>
+<p>Lembrando da divisão entre Unidade de Controle e Fluxo de Dados, notamos que o FD recebe sinais de controle provenientes da UC. Chamaremos cada sinal de ponto de controle.</p>
+<figure>
+<img src="../imagensCircuitos/unidadeControle-FluxoDados-pcfs-v2.svg" alt="Unidade de Controle e Fluxo de Dados" style="width:25.0%" /><figcaption><strong>Unidade de Controle e Fluxo de Dados</strong></figcaption>
+</figure>
+<p><br></p>
+<p>Pelas conclusões anteriores, teremos que usar os seguintes componentes:</p>
+<ul>
+<li><p>Um registrador para o PC;</p></li>
+<li><p>Um multiplexador para executar a seleção do valor para o PC:</p>
+<ul>
+<li><p>Um ponto de controle para fazer a seleção desse Mux;</p></li>
+<li><p>Duas entradas, uma proveniente do PC incrementado e a outra do cálculo do endereço de desvio.</p></li>
+</ul></li>
+<li><p>Um somador para obter o PC com o incremento para a próxima instrução;</p></li>
+<li><p>A memória de instruções.</p></li>
+</ul>
+<p><br></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">PC</th>
+<th style="text-align: center;">MUX</th>
+<th style="text-align: center;">SOMADOR</th>
+<th style="text-align: center;">ROM</th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><img src="imagensCircuitos/programCounter.svg" style="width:50.0%" /></td>
+<td style="text-align: center;"><img src="imagensCircuitos/Multiplexer_2-to-1.svg" style="width:50.0%" /></td>
+<td style="text-align: center;"><img src="imagensCircuitos/somandorConstante.svg" style="width:50.0%" /></td>
+<td style="text-align: center;"><img src="imagensCircuitos/memoriaROM(Instrucoes).svg" style="width:50.0%" /></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p><strong>Esboço da Etapa de Busca</strong></p>
+<p>Faça a conexão dos componentes para obter a etapa de busca da instrução.</p>
+<div id="sol-Exerc1" class="bloco solucao">
+<div class="conteudo">
+<p style="color:red">
+Solução:
+</p>
+<p><br></p>
+<figure>
+<img src="imagensCircuitos/etapaBuscaInstrucao.svg" alt="Etapa de Busca da Instrução" style="width:30.0%" /><figcaption><strong>Etapa de Busca da Instrução</strong></figcaption>
+</figure>
+</div>
+<button onclick="exibe(this)">
+Ver Solução
+</button>
+</div>
+<p><br></p>
+<hr />
+<h3 id="decodificação-da-instrução">Decodificação da Instrução</h3>
+<p>Como a etapa anterior, esta etapa tem o mesmo funcionamento independentemente da instrução sendo executada.</p>
+<p>Esta etapa é basicamente a interpretação dos campos da instrução.</p>
+<figure>
+<img src="imagensCircuitos/registradorInstrucao.svg" alt="Campos da Instrução" style="width:30.0%" /><figcaption><strong>Campos da Instrução</strong></figcaption>
+</figure>
+<p><br></p>
+<p>A instrução que está na saída da memória de instruções deverá “alimentar” o endereçamento e a unidade de controle:</p>
+<ul>
+<li><p>A UC recebe o campo de bits referentes ao <em>opcode</em> da instrução sendo executada:</p>
+<ul>
+<li><p>E ativa todos pontos de controle para que a instrução funcione;</p></li>
+<li><p>O que pode ser descrito como: UC ← RI[opcode].</p></li>
+</ul></li>
+<li><p>O endereçamento recebe o(s) campo(s) de bits referente aos endereços utilizados:</p>
+<ul>
+<li><p>Essa ligação depende da arquitetura escolhida, principalmente a quantidade de operandos (argumentos);</p></li>
+<li><p>Pode ser decrito como:</p>
+<ul>
+<li><p>BancoRegAdd ← RI[Reg X bits];</p></li>
+<li><p>MEMAddr ← RI[MemBits];</p></li>
+</ul></li>
+</ul></li>
+<li><p>Os dados referentes ao endereçamento executado devem alimentar a próxima etapa;</p>
+<ul>
+<li><p>Considerando que temos dois argumentos, um vindo de um registrador e o outro da memória, podemos decrever como:</p>
+<ul>
+<li><p>ARG_1 ← REG[RI[Reg X bits]];</p></li>
+<li><p>ARG_2 ← MEM[RI[MemBits]];</p></li>
+</ul></li>
+</ul></li>
+</ul>
+<p><br></p>
+<p>De acordo com a arquitetura escolhida, utilizaremos:</p>
+<ul>
+<li><p>Um registrador;</p></li>
+<li><p>Um banco de registradores;</p></li>
+<li><p>A memória RAM do sistema.</p></li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Registrador</th>
+<th style="text-align: center;">Banco de Registradores</th>
+<th style="text-align: center;">RAM</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><img src="imagensCircuitos/registradorGenerico_EnablePCFS.svg" style="width:60.0%" /></td>
+<td style="text-align: center;"><img src="imagensCircuitos/arquivoRegistradores-1.svg" style="width:80.0%" /></td>
+<td style="text-align: center;"><img src="imagensCircuitos/MemoriaRAM(dados).svg" style="width:40.0%" /></td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>Como estamos trabalhando com um processador que executa uma instrução por ciclo de <em>clock</em>, podemos omitir o registrador de instrução e considerar a sua função como sendo executada pela memória de instruções.</p>
+<p><br></p>
+<p>Faça o esboço do circuito para a arquitetura <em>registrador-memória</em> considerando as definições abaixo:</p>
+<ul>
+<li><p>Processador com 32 instruções, 8 registradores e endereçamento de 2048 posições de memória;</p></li>
+<li><p>Palavra de dados de 8 bits.</p></li>
+</ul>
+<p><br></p>
+<figure>
+<img src="imagensCircuitos/arquitetura_RegistradorMemoria.svg" alt="Arquitetura Registrador-Memória" style="width:20.0%" /><figcaption><strong>Arquitetura Registrador-Memória</strong></figcaption>
+</figure>
+<p><br></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">opcode</th>
+<th style="text-align: center;">Registrador</th>
+<th style="text-align: center;">Endereço</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">X bits</td>
+<td style="text-align: center;">Y bits</td>
+<td style="text-align: center;">Z bits</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">MSB (X+Y+Z-1)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">LSB (b0)</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<div id="sol-Exerc2" class="bloco solucao">
+<div class="conteudo">
+<p style="color:red">
+Solução:
+</p>
+<p><br></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">opcode</th>
+<th style="text-align: center;">Registrador</th>
+<th style="text-align: center;">Endereço</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">5 bits</td>
+<td style="text-align: center;">3 bits</td>
+<td style="text-align: center;">11 bits</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">MSB (b18)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">LSB (b0)</td>
+</tr>
+</tbody>
+</table>
+<p><br><br></p>
+<figure>
+<img src="imagensCircuitos/etapaDecodificaInstrucao-REG_MEM.svg" alt="Etapa de Decodificação da Instrução" style="width:40.0%" /><figcaption><strong>Etapa de Decodificação da Instrução</strong></figcaption>
+</figure>
+</div>
+<button onclick="exibe(this)">
+Ver Solução
+</button>
+</div>
+<p><br></p>
+<hr />
+<h3 id="execução-da-operação">Execução da Operação</h3>
+<p>Esta etapa depende da instrução sendo executada e da arquitetura escolhida.</p>
+<p>Faremos a implementação da instrução de soma com a arquitetura utilizada no exemplo anterior (<em>registrador-memória</em>).</p>
+<div id="sol-Exerc3" class="bloco solucao">
+<div class="conteudo">
+<p style="color:red">
+Solução:
+</p>
+<p><br></p>
+<p><img src="imagensCircuitos/etapaExecucaoInstrucao-REG_MEM.svg" style="width:30.0%" /></p>
+<p><br></p>
+</div>
+<button onclick="exibe(this)">
+Ver Solução
+</button>
+</div>
+<p><br></p>
+<hr />
+<h3 id="escrita-do-resultado">Escrita do Resultado</h3>
+<p>Esta etapa depende da instrução sendo executada.</p>
+<p>Como ela ficaria para o exemplo que estamos usando (<em>registrador-memória</em>)?</p>
+<hr />
+<h3 id="interligando-todos-módulos">Interligando todos Módulos</h3>
+<p>Agora que já possui todas as etapas, faça um esboço do circuito completo, interligando essas etapas e acertando possíveis incoerências.</p>
+<hr />
+<p><strong>Referências:</strong></p>
+<p><a href="./linksUteis.html">Página com links</a> de referências sobre VHDL, Quartus, etc …</p>
+<p><a name="fimDocumento"></a> <a href="#inicio">Ir para o início do documento</a>.</p>
+<hr />
+<p><br></p>
+<hr />
+<hr />
+<!-- FIM -->
+<!---
+######### (inicio dos links) ##########
+#######################################
+########### Links Internos ############
+--->
+</body>
+</html>

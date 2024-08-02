@@ -1,0 +1,1910 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <style>
+  /* fundo para o trecho de código */
+  div.sourceCode { overflow-x: auto; background-color: rgb(245,245,245);}  /*rgb(250,250,250)*/
+  body {font-family: "Lato", sans-serif;}
+  
+  /* Para dividir a pagina em duas colunas */
+   .column {
+    float: left;
+    width:49%;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Inicio do menu tipo acordeon */
+  .accordion{
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+    font-weight: bold;
+  }
+  .active, .accordion:hover {
+    background-color: #a4b8b6;
+  }
+  .panel {
+    /*Versao anterior do accordion usa  max-height: 0 para fazer a transition e nao aceita aninhamento de acordeon*/
+    padding: 0 10px;
+    background-color: #f9f9f9;
+    max-height: 0;
+     overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    margin-left: 0%;
+  }
+  .panel p {
+    margin-left: 1%;
+  }
+  /*Inicio do Acordeon Aninhado*/
+  button.accordionNested{
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  .activeNested, .accordionNested:hover {
+    background-color: #a4b8b6;
+  }
+  .panelNested {
+    /*Aceita aninhamento mas nao faz transition*/
+    padding: 0 10px;
+    background-color: #f9f9f9;
+    display: none;
+    overflow: hidden;
+    margin-left: 0%;
+  }
+  .panelNested p {
+    margin-left: 1%;
+  }
+  /* Fim do menu tipo acordeon */
+  
+  .bloco .title {
+      display: block;
+  }
+  
+  /*Bloco de solucao de exercicio*/
+  .bloco .label,
+  .bloco .separator {
+      font-weight: bold;
+  }
+  
+  .bloco .separator {
+      margin-right: .6em;
+  /*    margin-left: .6em;  */
+  }
+  /* Solução */
+  div.solucao {
+    border-left: .3em solid #dd4444;   /*#dc3c01; */
+    margin-left: -.8em;
+    padding-left: .4em;
+    position: relative;
+    font-size: 90%;
+  }
+  
+  div.solucao .conteudo {
+    display: none;
+    padding-top: 1px;
+  }
+  
+  div.solucao button {
+    color: #0000AF;
+    background-color: white;
+    border-radius: 5px;
+  }
+  
+  div.solucao button.viewed {
+    color: #FF2020;
+    background-color: white;
+    border-radius: 5px;
+  }
+  
+  div.exemplo {
+    /*background-color: lightgray;*/
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  
+  div.exemplo .sourceCode  {
+    /*background-color: lightgray;*/
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+  
+  div.adicional {
+    margin-left: 1%;
+  }
+  /* Alinhamento dos títulos e parágrafos */
+  
+  body{margin-left: 5%; margin-right: 5%;
+           color: black; background-color: #f9f9f9;}
+  
+  hr{
+      margin-left: -4%;
+      background-color: rgb(0,150,150);  /*anterior:    240,240,240 */
+  }
+  h1{
+      margin-left: -4%;
+      /*background-color: rgb(210,210,220);*/
+  }
+  
+  h2{
+      margin-left: -4%;
+      /*background-color: rgb(220,220,230);*/
+  }
+  
+  h3{
+      margin-left: 0%;  /*-4%;*/
+      /*background-color: rgb(230,230,240);*/
+  }
+  
+  h4{
+      margin-left: 0%;  /*-4%;*/
+      /*background-color: rgb(240,240,250);*/
+  }
+  h5{
+      margin-left: 0%;  /*-4%;*/
+      /*background-color: rgb(245,245,250);*/
+  }
+  
+  /* Cores */
+  i{color: red}
+  em{color: green}
+  cite{color: brown}
+  /* blockquote > p { */
+  blockquote{color: red}
+  blockquote p {
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 2em;
+  }
+  
+  /* ---- Front Matter ----
+  Pandoc header DIV. Contains .title, .author and .date. Comes before div#TOC.
+  Only appears if one of those three are in the document.   */
+  
+  div#header, header
+      {
+      /* Put border on bottom. Separates it from TOC or body that comes after it. */
+      border-bottom: 1px solid #aaa;
+      margin-bottom: 0.5em;
+      }
+  
+  .title /* Pandoc title header (h1.title) */
+      {
+      text-align: center;
+      }
+  
+  .author, .date /* Pandoc author(s) and date headers (h2.author and h3.date) */
+      {
+      text-align: center;
+      }
+  
+  /* Pandoc table of contents DIV when using the --toc option.
+     NOTE: this doesn't support Pandoc's --id-prefix option for #TOC and #header.
+     Probably would need to use div[id$='TOC'] and div[id$='header'] as selectors.
+  */
+  
+  div#TOC, nav#TOC
+      {
+      /* Put border on bottom to separate it from body. */
+  /*    border-bottom: 1px solid #aaa;   */
+      margin-bottom: 0.5em;
+      }
+  
+  @media print
+      {
+      div#TOC, nav#TOC
+          {
+          /* Don't display TOC in print */
+          display: none;
+          }
+      }
+  /* ---- Images ---- */
+  img {
+      /* Let it be inline left/right where it wants to be, but verticality make
+         it in the middle to look nicer, but opinions differ, and if in a multi-line
+         paragraph, it might not be so great.
+         vertical-align: middle;
+      */
+      vertical-align: middle;
+      max-width: 600px;
+      height:auto;
+      }
+  div.figure /* Pandoc figure-style image */
+      {
+      /* Center the image and caption */
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      font-style: italic;
+      max-width: 600px;
+      height:auto;
+      }
+  p.caption /* Pandoc figure-style caption within div.figure */
+      {
+      /* Inherits div.figure props by default */
+      }
+  /* ---- Tables ---- */
+  table {
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 24px;
+      border-spacing: 0;
+      border-bottom: 2px solid black;
+      border-top: 2px solid black;
+  }
+  table th {
+      padding: 3px 10px;
+      background-color: white;
+      border-top: 1px;
+      border-left: 1px;
+      border-right: 1px;
+      border-bottom: 1px solid black;
+  }
+  table td {
+      padding: 3px 10px;
+      border-top: 1px;
+      border-left: 1px;
+      border-bottom: 1px;
+      border-right: 1px;
+  }
+  /* fundo para as linhas das tabelas */
+  tr.even{
+    background-color: rgb(230,230,240);
+  }
+  tr.odd{
+    background-color: rgb(250,250,250);
+  }
+  </style>
+  <script type="text/javascript">
+      function exibe(e)
+      {
+          var div = e.parentNode.firstElementChild;
+          var nome = e.parentNode.id;
+          var tipo=nome.substring(0, 3).toUpperCase()
+          switch (tipo) {
+            case "SOL":
+                nome = "Solução";
+                break;
+            case "COD":
+                nome = "Código";
+                break;
+            case "DIC":
+                nome = "Dica";
+                break;
+            case "DIA":
+                nome = "Diagrama";
+                break;
+            case "RES":
+                nome = "Resumo";
+                break;
+            case "CON":
+                nome = "Conteúdo";
+                break;
+            default:
+                nome = "";
+            }
+  
+          if (div.style.display == "" || div.style.display == "none") {
+              div.style.display = "block";
+              e.setAttribute("class", "viewed");
+              e.innerHTML = "Esconder ";
+          } else {
+              div.style.display = "none";
+              e.innerHTML = "Exibir "+nome;
+          }
+      }
+      function validaBinario(nome) {
+          var valor, tamanho, i;
+          document.getElementById(nome).style.color = "black";
+          valor = document.getElementById(nome).value;
+          tamanho=valor.length;
+          for (i=0;i<tamanho; i=i+1){
+              if ( valor[i] != 1 && valor[i] != 0 ){
+                  document.getElementById(nome).style.color = "red";
+              }
+          }
+      }
+  </script>
+</head>
+<body>
+<p><a name="inicio"></a></p>
+<h1 id="aula-5-projetando-o-relógio-periféricos">Aula 5: Projetando o Relógio (periféricos)</h1>
+<h2 id="objetivos">Objetivos</h2>
+<ol style="list-style-type: decimal">
+<li>Esboçar o projeto do relógio.</li>
+</ol>
+<h4 id="dicas">Dicas</h4>
+<ul>
+<li><p>Pense qual resultado que deseja obter:</p>
+<ul>
+<li><p>Esboce no papel um diagrama representando esse objetivo;</p></li>
+<li><p>Ou uma tabela da verdade. Ou o que for mais adequado.</p></li>
+</ul></li>
+<li><p>Monte a estrutura básica do VHDL no seu arquivo de trabalho:</p>
+<ul>
+<li><p>Utilize um componente por arquivo;</p></li>
+<li><p>O nome do arquivo deve ser o nome da entidade desse componente;</p></li>
+<li><p>Assim é mais fácil de reutilizá-lo no futuro.</p></li>
+</ul></li>
+<li><p>Para alguns casos, o uso da configuração com <em>generics</em> permite:</p>
+<ul>
+<li><p>Criar componentes mais versáteis, com largura de entrada/saída parametrizáveis.</p></li>
+<li><p>Aumentando a possibilidade de reutilização desse código.</p></li>
+</ul></li>
+<li><p>Verifique se o esquema RTL é funcionalmente similar ao seu objetivo de implementação.</p></li>
+<li><p>Simule o funcionamento do seu circuito. Se houver uma tabela da verdade:</p>
+<ul>
+<li><p>Ela já indica os vetores de entrada e os resultados na saída.</p></li>
+<li><p>Caso não exista ou a quantidade de possibilidades é muito grande:</p>
+<ul>
+<li>Fique atento para os casos nos extremos da sua faixa de valores de entrada.</li>
+</ul></li>
+</ul></li>
+</ul>
+<hr />
+<h2 id="visão-geral">Visão Geral</h2>
+<p>O projeto do relógio deve funcionar na placa DE2-115, portanto, vamos iniciar verificando os recursos disponíveis.</p>
+<div class="figure">
+<img src="imagensComponentes/DE2_115_IO.png" alt="DE2-115" style="width:80.0%" />
+<p class="caption"><strong>DE2-115</strong></p>
+</div>
+<p><br></p>
+<p>Os periféricos do kit de desenvolvimento para FPGA, são conectados ao pinos do <em>chip</em> da FPGA de acordo com o projeto da placa.</p>
+<p>Para poder configurar essas conexões, existe um arquivo com a extensão <strong>&quot;qsf&quot;</strong>. Ele está no diretório do projeto e possui o mesmo nome do projeto.</p>
+<p>Para definir as conexões dos pinos, seus nomes dentro do projeto e suas características elétricas, temos os comandos:</p>
+<div class="sourceCode"><pre class="sourceCode asm"><code class="sourceCode fasm">  set_location_assignment PIN_G19 -to LEDR[<span class="dv">0</span>]</code></pre></div>
+<p>Além disso, é definido o padrão de tensão utilizado nas interfaces:</p>
+<div class="sourceCode"><pre class="sourceCode asm"><code class="sourceCode fasm">  set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to LEDR[<span class="dv">0</span>]</code></pre></div>
+<p>O limite de corrente:</p>
+<div class="sourceCode"><pre class="sourceCode asm"><code class="sourceCode fasm">  set_instance_assignment -name CURRENT_STRENGTH_NEW DEFAULT -to LEDR</code></pre></div>
+<p>O tempo de subida (<em>slew rate</em>):</p>
+<div class="sourceCode"><pre class="sourceCode asm"><code class="sourceCode fasm">  set_instance_assignment -name SLEW_RATE <span class="dv">2</span> -to LEDR</code></pre></div>
+<p>Abaixo, temos um exemplo do qsf para DE2-115.</p>
+<div id="cod-QSF" class="bloco solucao">
+<div class="conteudo">
+<p style="color:red">
+Código:
+</p>
+<p><br></p>
+<div class="sourceCode"><pre class="sourceCode asm"><code class="sourceCode fasm">
+#============================================================
+# Build by Altera University Program
+#============================================================
+set_global_assignment -name FAMILY <span class="st">&quot;Cyclone IV E&quot;</span>
+set_global_assignment -name DEVICE EP4CE115F29C7
+set_global_assignment -name USE_GENERATED_PHYSICAL_CONSTRAINTS OFF -section_id eda_blast_fpga
+set_global_assignment -name CYCLONEII_RESERVE_NCEO_AFTER_CONFIGURATION <span class="st">&quot;USE AS REGULAR IO&quot;</span>
+
+#============================================================
+# CLOCK
+#============================================================
+set_location_assignment PIN_Y2 -to CLOCK_<span class="dv">50</span>
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to CLOCK_<span class="dv">50</span>
+#set_location_assignment PIN_AG14 -to CLOCK2_<span class="dv">50</span>
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to CLOCK2_<span class="dv">50</span>
+#set_location_assignment PIN_AG15 -to CLOCK3_<span class="dv">50</span>
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to CLOCK3_<span class="dv">50</span>
+
+#============================================================
+# Sma
+#============================================================
+#set_location_assignment PIN_AH14 -to SMA_CLKIN
+#set_location_assignment PIN_AE23 -to SMA_CLKOUT
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to SMA_CLKIN
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to SMA_CLKOUT
+
+#============================================================
+# LED
+#============================================================
+set_location_assignment PIN_E21 -to LEDG[<span class="dv">0</span>]
+set_location_assignment PIN_E22 -to LEDG[<span class="dv">1</span>]
+set_location_assignment PIN_E25 -to LEDG[<span class="dv">2</span>]
+set_location_assignment PIN_E24 -to LEDG[<span class="dv">3</span>]
+set_location_assignment PIN_H21 -to LEDG[<span class="dv">4</span>]
+set_location_assignment PIN_G20 -to LEDG[<span class="dv">5</span>]
+set_location_assignment PIN_G22 -to LEDG[<span class="dv">6</span>]
+set_location_assignment PIN_G21 -to LEDG[<span class="dv">7</span>]
+set_location_assignment PIN_F17 -to LEDG[<span class="dv">8</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to LEDG[<span class="dv">0</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to LEDG[<span class="dv">1</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to LEDG[<span class="dv">2</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to LEDG[<span class="dv">3</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to LEDG[<span class="dv">4</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to LEDG[<span class="dv">5</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to LEDG[<span class="dv">6</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to LEDG[<span class="dv">7</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to LEDG[<span class="dv">8</span>]
+#
+set_instance_assignment -name SLEW_RATE <span class="dv">2</span> -to LEDG
+set_instance_assignment -name CURRENT_STRENGTH_NEW DEFAULT -to LEDG
+#
+set_location_assignment PIN_G19 -to LEDR[<span class="dv">0</span>]
+set_location_assignment PIN_E19 -to LEDR[<span class="dv">2</span>]
+set_location_assignment PIN_F19 -to LEDR[<span class="dv">1</span>]
+set_location_assignment PIN_F21 -to LEDR[<span class="dv">3</span>]
+set_location_assignment PIN_F18 -to LEDR[<span class="dv">4</span>]
+set_location_assignment PIN_E18 -to LEDR[<span class="dv">5</span>]
+set_location_assignment PIN_J19 -to LEDR[<span class="dv">6</span>]
+set_location_assignment PIN_H19 -to LEDR[<span class="dv">7</span>]
+set_location_assignment PIN_J17 -to LEDR[<span class="dv">8</span>]
+set_location_assignment PIN_G17 -to LEDR[<span class="dv">9</span>]
+set_location_assignment PIN_J15 -to LEDR[<span class="dv">10</span>]
+set_location_assignment PIN_H16 -to LEDR[<span class="dv">11</span>]
+set_location_assignment PIN_J16 -to LEDR[<span class="dv">12</span>]
+set_location_assignment PIN_H17 -to LEDR[<span class="dv">13</span>]
+set_location_assignment PIN_F15 -to LEDR[<span class="dv">14</span>]
+set_location_assignment PIN_G15 -to LEDR[<span class="dv">15</span>]
+set_location_assignment PIN_G16 -to LEDR[<span class="dv">16</span>]
+set_location_assignment PIN_H15 -to LEDR[<span class="dv">17</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to LEDR[<span class="dv">0</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to LEDR[<span class="dv">1</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to LEDR[<span class="dv">2</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to LEDR[<span class="dv">3</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to LEDR[<span class="dv">4</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to LEDR[<span class="dv">5</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to LEDR[<span class="dv">6</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to LEDR[<span class="dv">7</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to LEDR[<span class="dv">8</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to LEDR[<span class="dv">9</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to LEDR[<span class="dv">10</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to LEDR[<span class="dv">11</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to LEDR[<span class="dv">12</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to LEDR[<span class="dv">13</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to LEDR[<span class="dv">14</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to LEDR[<span class="dv">15</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to LEDR[<span class="dv">16</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to LEDR[<span class="dv">17</span>]
+#
+set_instance_assignment -name SLEW_RATE <span class="dv">2</span> -to LEDR
+set_instance_assignment -name CURRENT_STRENGTH_NEW DEFAULT -to LEDR
+
+#============================================================
+# KEY
+#============================================================
+set_location_assignment PIN_M23 -to KEY[<span class="dv">0</span>]
+set_location_assignment PIN_M21 -to KEY[<span class="dv">1</span>]
+set_location_assignment PIN_N21 -to KEY[<span class="dv">2</span>]
+set_location_assignment PIN_R24 -to KEY[<span class="dv">3</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to KEY[<span class="dv">0</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to KEY[<span class="dv">1</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to KEY[<span class="dv">2</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to KEY[<span class="dv">3</span>]
+
+#============================================================
+# SW
+#============================================================
+set_location_assignment PIN_AB28 -to SW[<span class="dv">0</span>]
+set_location_assignment PIN_AC28 -to SW[<span class="dv">1</span>]
+set_location_assignment PIN_AC27 -to SW[<span class="dv">2</span>]
+set_location_assignment PIN_AD27 -to SW[<span class="dv">3</span>]
+set_location_assignment PIN_AB27 -to SW[<span class="dv">4</span>]
+set_location_assignment PIN_AC26 -to SW[<span class="dv">5</span>]
+set_location_assignment PIN_AD26 -to SW[<span class="dv">6</span>]
+set_location_assignment PIN_AB26 -to SW[<span class="dv">7</span>]
+set_location_assignment PIN_AC25 -to SW[<span class="dv">8</span>]
+set_location_assignment PIN_AB25 -to SW[<span class="dv">9</span>]
+set_location_assignment PIN_AC24 -to SW[<span class="dv">10</span>]
+set_location_assignment PIN_AB24 -to SW[<span class="dv">11</span>]
+set_location_assignment PIN_AB23 -to SW[<span class="dv">12</span>]
+set_location_assignment PIN_AA24 -to SW[<span class="dv">13</span>]
+set_location_assignment PIN_AA23 -to SW[<span class="dv">14</span>]
+set_location_assignment PIN_AA22 -to SW[<span class="dv">15</span>]
+set_location_assignment PIN_Y24 -to SW[<span class="dv">16</span>]
+set_location_assignment PIN_Y23 -to SW[<span class="dv">17</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to SW[<span class="dv">0</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to SW[<span class="dv">1</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to SW[<span class="dv">2</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to SW[<span class="dv">3</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to SW[<span class="dv">4</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to SW[<span class="dv">5</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to SW[<span class="dv">6</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to SW[<span class="dv">7</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to SW[<span class="dv">8</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to SW[<span class="dv">9</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to SW[<span class="dv">10</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to SW[<span class="dv">11</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to SW[<span class="dv">12</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to SW[<span class="dv">13</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to SW[<span class="dv">14</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to SW[<span class="dv">15</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to SW[<span class="dv">16</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to SW[<span class="dv">17</span>]
+
+#============================================================
+# SEG7
+#============================================================
+set_location_assignment PIN_G18 -to HEX0[<span class="dv">0</span>]
+set_location_assignment PIN_F22 -to HEX0[<span class="dv">1</span>]
+set_location_assignment PIN_E17 -to HEX0[<span class="dv">2</span>]
+set_location_assignment PIN_L26 -to HEX0[<span class="dv">3</span>]
+set_location_assignment PIN_L25 -to HEX0[<span class="dv">4</span>]
+set_location_assignment PIN_J22 -to HEX0[<span class="dv">5</span>]
+set_location_assignment PIN_H22 -to HEX0[<span class="dv">6</span>]
+set_location_assignment PIN_M24 -to HEX1[<span class="dv">0</span>]
+set_location_assignment PIN_Y22 -to HEX1[<span class="dv">1</span>]
+set_location_assignment PIN_W21 -to HEX1[<span class="dv">2</span>]
+set_location_assignment PIN_W22 -to HEX1[<span class="dv">3</span>]
+set_location_assignment PIN_W25 -to HEX1[<span class="dv">4</span>]
+set_location_assignment PIN_U23 -to HEX1[<span class="dv">5</span>]
+set_location_assignment PIN_U24 -to HEX1[<span class="dv">6</span>]
+set_location_assignment PIN_AA25 -to HEX2[<span class="dv">0</span>]
+set_location_assignment PIN_AA26 -to HEX2[<span class="dv">1</span>]
+set_location_assignment PIN_Y25 -to HEX2[<span class="dv">2</span>]
+set_location_assignment PIN_W26 -to HEX2[<span class="dv">3</span>]
+set_location_assignment PIN_Y26 -to HEX2[<span class="dv">4</span>]
+set_location_assignment PIN_W27 -to HEX2[<span class="dv">5</span>]
+set_location_assignment PIN_W28 -to HEX2[<span class="dv">6</span>]
+set_location_assignment PIN_V21 -to HEX3[<span class="dv">0</span>]
+set_location_assignment PIN_U21 -to HEX3[<span class="dv">1</span>]
+set_location_assignment PIN_AB20 -to HEX3[<span class="dv">2</span>]
+set_location_assignment PIN_AA21 -to HEX3[<span class="dv">3</span>]
+set_location_assignment PIN_AD24 -to HEX3[<span class="dv">4</span>]
+set_location_assignment PIN_AF23 -to HEX3[<span class="dv">5</span>]
+set_location_assignment PIN_Y19 -to HEX3[<span class="dv">6</span>]
+set_location_assignment PIN_AB19 -to HEX4[<span class="dv">0</span>]
+set_location_assignment PIN_AA19 -to HEX4[<span class="dv">1</span>]
+set_location_assignment PIN_AG21 -to HEX4[<span class="dv">2</span>]
+set_location_assignment PIN_AH21 -to HEX4[<span class="dv">3</span>]
+set_location_assignment PIN_AE19 -to HEX4[<span class="dv">4</span>]
+set_location_assignment PIN_AF19 -to HEX4[<span class="dv">5</span>]
+set_location_assignment PIN_AE18 -to HEX4[<span class="dv">6</span>]
+set_location_assignment PIN_AD18 -to HEX5[<span class="dv">0</span>]
+set_location_assignment PIN_AC18 -to HEX5[<span class="dv">1</span>]
+set_location_assignment PIN_AB18 -to HEX5[<span class="dv">2</span>]
+set_location_assignment PIN_AH19 -to HEX5[<span class="dv">3</span>]
+set_location_assignment PIN_AG19 -to HEX5[<span class="dv">4</span>]
+set_location_assignment PIN_AF18 -to HEX5[<span class="dv">5</span>]
+set_location_assignment PIN_AH18 -to HEX5[<span class="dv">6</span>]
+set_location_assignment PIN_AA17 -to HEX6[<span class="dv">0</span>]
+set_location_assignment PIN_AB16 -to HEX6[<span class="dv">1</span>]
+set_location_assignment PIN_AA16 -to HEX6[<span class="dv">2</span>]
+set_location_assignment PIN_AB17 -to HEX6[<span class="dv">3</span>]
+set_location_assignment PIN_AB15 -to HEX6[<span class="dv">4</span>]
+set_location_assignment PIN_AA15 -to HEX6[<span class="dv">5</span>]
+set_location_assignment PIN_AC17 -to HEX6[<span class="dv">6</span>]
+set_location_assignment PIN_AD17 -to HEX7[<span class="dv">0</span>]
+set_location_assignment PIN_AE17 -to HEX7[<span class="dv">1</span>]
+set_location_assignment PIN_AG17 -to HEX7[<span class="dv">2</span>]
+set_location_assignment PIN_AH17 -to HEX7[<span class="dv">3</span>]
+set_location_assignment PIN_AF17 -to HEX7[<span class="dv">4</span>]
+set_location_assignment PIN_AG18 -to HEX7[<span class="dv">5</span>]
+set_location_assignment PIN_AA14 -to HEX7[<span class="dv">6</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to HEX0[<span class="dv">0</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to HEX0[<span class="dv">1</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to HEX0[<span class="dv">2</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to HEX0[<span class="dv">3</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to HEX0[<span class="dv">4</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to HEX0[<span class="dv">5</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to HEX0[<span class="dv">6</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to HEX1[<span class="dv">0</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to HEX1[<span class="dv">1</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to HEX1[<span class="dv">2</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to HEX1[<span class="dv">3</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to HEX1[<span class="dv">4</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to HEX1[<span class="dv">5</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to HEX1[<span class="dv">6</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to HEX2[<span class="dv">0</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to HEX2[<span class="dv">1</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to HEX2[<span class="dv">2</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to HEX2[<span class="dv">3</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to HEX2[<span class="dv">4</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to HEX2[<span class="dv">5</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to HEX2[<span class="dv">6</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to HEX3[<span class="dv">0</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to HEX3[<span class="dv">1</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to HEX3[<span class="dv">2</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to HEX3[<span class="dv">3</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to HEX3[<span class="dv">4</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to HEX3[<span class="dv">5</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to HEX3[<span class="dv">6</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to HEX4[<span class="dv">0</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to HEX4[<span class="dv">1</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to HEX4[<span class="dv">2</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to HEX4[<span class="dv">3</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to HEX4[<span class="dv">4</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to HEX4[<span class="dv">5</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to HEX4[<span class="dv">6</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to HEX5[<span class="dv">0</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to HEX5[<span class="dv">1</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to HEX5[<span class="dv">2</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to HEX5[<span class="dv">3</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to HEX5[<span class="dv">4</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to HEX5[<span class="dv">5</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to HEX5[<span class="dv">6</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to HEX6[<span class="dv">0</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to HEX6[<span class="dv">1</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to HEX6[<span class="dv">2</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to HEX6[<span class="dv">3</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to HEX6[<span class="dv">4</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to HEX6[<span class="dv">5</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to HEX6[<span class="dv">6</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to HEX7[<span class="dv">0</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to HEX7[<span class="dv">1</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to HEX7[<span class="dv">2</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to HEX7[<span class="dv">3</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to HEX7[<span class="dv">4</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to HEX7[<span class="dv">5</span>]
+set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to HEX7[<span class="dv">6</span>]
+
+set_instance_assignment -name SLEW_RATE <span class="dv">2</span> -to HEX0
+set_instance_assignment -name SLEW_RATE <span class="dv">2</span> -to HEX1
+set_instance_assignment -name SLEW_RATE <span class="dv">2</span> -to HEX2
+set_instance_assignment -name SLEW_RATE <span class="dv">2</span> -to HEX3
+set_instance_assignment -name SLEW_RATE <span class="dv">2</span> -to HEX4
+set_instance_assignment -name SLEW_RATE <span class="dv">2</span> -to HEX5
+set_instance_assignment -name SLEW_RATE <span class="dv">2</span> -to HEX6
+set_instance_assignment -name SLEW_RATE <span class="dv">2</span> -to HEX7
+
+
+set_instance_assignment -name CURRENT_STRENGTH_NEW DEFAULT -to HEX0
+set_instance_assignment -name CURRENT_STRENGTH_NEW DEFAULT -to HEX1
+set_instance_assignment -name CURRENT_STRENGTH_NEW DEFAULT -to HEX2
+set_instance_assignment -name CURRENT_STRENGTH_NEW DEFAULT -to HEX3
+set_instance_assignment -name CURRENT_STRENGTH_NEW DEFAULT -to HEX4
+set_instance_assignment -name CURRENT_STRENGTH_NEW DEFAULT -to HEX5
+set_instance_assignment -name CURRENT_STRENGTH_NEW DEFAULT -to HEX6
+set_instance_assignment -name CURRENT_STRENGTH_NEW DEFAULT -to HEX7
+
+#============================================================
+# LCD
+#============================================================
+#set_location_assignment PIN_L6 -to LCD_BLON
+#set_location_assignment PIN_M5 -to LCD_DATA[<span class="dv">7</span>]
+#set_location_assignment PIN_M3 -to LCD_DATA[<span class="dv">6</span>]
+#set_location_assignment PIN_K2 -to LCD_DATA[<span class="dv">5</span>]
+#set_location_assignment PIN_K1 -to LCD_DATA[<span class="dv">4</span>]
+#set_location_assignment PIN_K7 -to LCD_DATA[<span class="dv">3</span>]
+#set_location_assignment PIN_L2 -to LCD_DATA[<span class="dv">2</span>]
+#set_location_assignment PIN_L1 -to LCD_DATA[<span class="dv">1</span>]
+#set_location_assignment PIN_L3 -to LCD_DATA[<span class="dv">0</span>]
+#set_location_assignment PIN_L4 -to LCD_EN
+#set_location_assignment PIN_M1 -to LCD_RW
+#set_location_assignment PIN_M2 -to LCD_RS
+#set_location_assignment PIN_L5 -to LCD_ON
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to LCD_DATA[<span class="dv">0</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to LCD_DATA[<span class="dv">1</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to LCD_DATA[<span class="dv">2</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to LCD_DATA[<span class="dv">3</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to LCD_DATA[<span class="dv">4</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to LCD_DATA[<span class="dv">5</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to LCD_DATA[<span class="dv">6</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to LCD_DATA[<span class="dv">7</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to LCD_BLON
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to LCD_RW
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to LCD_EN
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to LCD_RS
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to LCD_ON
+
+#============================================================
+# RS232
+#============================================================
+#set_location_assignment PIN_G9 -to UART_TXD
+#set_location_assignment PIN_G12 -to UART_RXD
+#set_location_assignment PIN_G14 -to UART_CTS
+#set_location_assignment PIN_J13 -to UART_RTS
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to UART_TXD
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to UART_RXD
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to UART_CTS
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to UART_RTS
+
+#============================================================
+# PS2
+#============================================================
+#set_location_assignment PIN_G6 -to PS2_KBCLK
+#set_location_assignment PIN_H5 -to PS2_KBDAT
+#set_location_assignment PIN_G5 -to PS2_MSCLK
+#set_location_assignment PIN_F5 -to PS2_MSDAT
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to PS2_KBCLK
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to PS2_KBDAT
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to PS2_MSCLK
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to PS2_MSDAT
+
+#============================================================
+# SDCARD
+#============================================================
+#set_location_assignment PIN_AE14 -to SD_DAT[<span class="dv">0</span>]
+#set_location_assignment PIN_AF13 -to SD_DAT[<span class="dv">1</span>]
+#set_location_assignment PIN_AB14 -to SD_DAT[<span class="dv">2</span>]
+#set_location_assignment PIN_AC14 -to SD_DAT[<span class="dv">3</span>]
+#set_location_assignment PIN_AE13 -to SD_CLK
+#set_location_assignment PIN_AD14 -to SD_CMD
+#set_location_assignment PIN_AF14 -to SD_WP_N
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to SD_CMD
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to SD_CLK
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to SD_WP_N
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to SD_DAT[<span class="dv">0</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to SD_DAT[<span class="dv">1</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to SD_DAT[<span class="dv">2</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to SD_DAT[<span class="dv">3</span>]
+
+#============================================================
+# VGA
+#============================================================
+#set_location_assignment PIN_D12 -to VGA_B[<span class="dv">7</span>]
+#set_location_assignment PIN_D11 -to VGA_B[<span class="dv">6</span>]
+#set_location_assignment PIN_C12 -to VGA_B[<span class="dv">5</span>]
+#set_location_assignment PIN_A11 -to VGA_B[<span class="dv">4</span>]
+#set_location_assignment PIN_B11 -to VGA_B[<span class="dv">3</span>]
+#set_location_assignment PIN_C11 -to VGA_B[<span class="dv">2</span>]
+#set_location_assignment PIN_A10 -to VGA_B[<span class="dv">1</span>]
+#set_location_assignment PIN_B10 -to VGA_B[<span class="dv">0</span>]
+#set_location_assignment PIN_C9 -to VGA_G[<span class="dv">7</span>]
+#set_location_assignment PIN_F10 -to VGA_G[<span class="dv">6</span>]
+#set_location_assignment PIN_B8 -to VGA_G[<span class="dv">5</span>]
+#set_location_assignment PIN_C8 -to VGA_G[<span class="dv">4</span>]
+#set_location_assignment PIN_H12 -to VGA_G[<span class="dv">3</span>]
+#set_location_assignment PIN_F8 -to VGA_G[<span class="dv">2</span>]
+#set_location_assignment PIN_G11 -to VGA_G[<span class="dv">1</span>]
+#set_location_assignment PIN_G8 -to VGA_G[<span class="dv">0</span>]
+#set_location_assignment PIN_H10 -to VGA_R[<span class="dv">7</span>]
+#set_location_assignment PIN_H8 -to VGA_R[<span class="dv">6</span>]
+#set_location_assignment PIN_J12 -to VGA_R[<span class="dv">5</span>]
+#set_location_assignment PIN_G10 -to VGA_R[<span class="dv">4</span>]
+#set_location_assignment PIN_F12 -to VGA_R[<span class="dv">3</span>]
+#set_location_assignment PIN_D10 -to VGA_R[<span class="dv">2</span>]
+#set_location_assignment PIN_E11 -to VGA_R[<span class="dv">1</span>]
+#set_location_assignment PIN_E12 -to VGA_R[<span class="dv">0</span>]
+#set_location_assignment PIN_A12 -to VGA_CLK
+#set_location_assignment PIN_F11 -to VGA_BLANK_N
+#set_location_assignment PIN_C10 -to VGA_SYNC_N
+#set_location_assignment PIN_G13 -to VGA_HS
+#set_location_assignment PIN_C13 -to VGA_VS
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to VGA_HS
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to VGA_VS
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to VGA_SYNC_N
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to VGA_CLK
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to VGA_BLANK_N
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to VGA_R[<span class="dv">0</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to VGA_R[<span class="dv">1</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to VGA_R[<span class="dv">2</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to VGA_R[<span class="dv">3</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to VGA_R[<span class="dv">4</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to VGA_R[<span class="dv">5</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to VGA_R[<span class="dv">6</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to VGA_R[<span class="dv">7</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to VGA_G[<span class="dv">0</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to VGA_G[<span class="dv">1</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to VGA_G[<span class="dv">2</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to VGA_G[<span class="dv">3</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to VGA_G[<span class="dv">4</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to VGA_G[<span class="dv">5</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to VGA_G[<span class="dv">6</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to VGA_G[<span class="dv">7</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to VGA_B[<span class="dv">0</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to VGA_B[<span class="dv">1</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to VGA_B[<span class="dv">2</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to VGA_B[<span class="dv">3</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to VGA_B[<span class="dv">4</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to VGA_B[<span class="dv">5</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to VGA_B[<span class="dv">6</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to VGA_B[<span class="dv">7</span>]
+
+#============================================================
+# Audio
+#============================================================
+#set_location_assignment PIN_D1 -to AUD_DACDAT
+#set_location_assignment PIN_E3 -to AUD_DACLRCK
+#set_location_assignment PIN_D2 -to AUD_ADCDAT
+#set_location_assignment PIN_C2 -to AUD_ADCLRCK
+#set_location_assignment PIN_E1 -to AUD_XCK
+#set_location_assignment PIN_F2 -to AUD_BCLK
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to AUD_ADCLRCK
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to AUD_ADCDAT
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to AUD_DACLRCK
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to AUD_DACDAT
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to AUD_XCK
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to AUD_BCLK
+
+#============================================================
+# I2C for EEPROM
+#============================================================
+#set_location_assignment PIN_D14 -to EEP_I2C_SCLK
+#set_location_assignment PIN_E14 -to EEP_I2C_SDAT
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to EEP_I2C_SCLK
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to EEP_I2C_SDAT
+
+#============================================================
+# I2C for Audioand Tv-Decode <span class="dv">1</span> <span class="bu">and</span> <span class="dv">2</span>
+#============================================================
+#set_location_assignment PIN_B7 -to I2C_SCLK
+#set_location_assignment PIN_A8 -to I2C_SDAT
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to I2C_SCLK
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to I2C_SDAT
+
+#============================================================
+# Ethernet <span class="dv">0</span>
+#============================================================
+#set_location_assignment PIN_A17 -to ENET0_GTX_CLK
+#set_location_assignment PIN_A21 -to ENET0_INT_N
+#set_location_assignment PIN_C20 -to ENET0_MDC
+#set_location_assignment PIN_B21 -to ENET0_MDIO
+#set_location_assignment PIN_C19 -to ENET0_RESET_N
+#set_location_assignment PIN_A15 -to ENET0_RX_CLK
+#set_location_assignment PIN_E15 -to ENET0_RX_COL
+#set_location_assignment PIN_D15 -to ENET0_RX_CRS
+#set_location_assignment PIN_C16 -to ENET0_RX_DATA[<span class="dv">0</span>]
+#set_location_assignment PIN_D16 -to ENET0_RX_DATA[<span class="dv">1</span>]
+#set_location_assignment PIN_D17 -to ENET0_RX_DATA[<span class="dv">2</span>]
+#set_location_assignment PIN_C15 -to ENET0_RX_DATA[<span class="dv">3</span>]
+#set_location_assignment PIN_C17 -to ENET0_RX_DV
+#set_location_assignment PIN_D18 -to ENET0_RX_ER
+#set_location_assignment PIN_B17 -to ENET0_TX_CLK
+#set_location_assignment PIN_C18 -to ENET0_TX_DATA[<span class="dv">0</span>]
+#set_location_assignment PIN_D19 -to ENET0_TX_DATA[<span class="dv">1</span>]
+#set_location_assignment PIN_A19 -to ENET0_TX_DATA[<span class="dv">2</span>]
+#set_location_assignment PIN_B19 -to ENET0_TX_DATA[<span class="dv">3</span>]
+#set_location_assignment PIN_A18 -to ENET0_TX_EN
+#set_location_assignment PIN_B18 -to ENET0_TX_ER
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to ENET0_TX_DATA[<span class="dv">0</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to ENET0_RX_DATA[<span class="dv">0</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to ENET0_TX_DATA[<span class="dv">1</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to ENET0_RX_DATA[<span class="dv">1</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to ENET0_TX_DATA[<span class="dv">2</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to ENET0_RX_DATA[<span class="dv">2</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to ENET0_TX_DATA[<span class="dv">3</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to ENET0_RX_DATA[<span class="dv">3</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to ENET0_GTX_CLK
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to ENET0_TX_EN
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to ENET0_TX_ER
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to ENET0_INT_N
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to ENET0_RESET_N
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to ENET0_RX_DV
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to ENET0_RX_ER
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to ENET0_RX_CRS
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to ENET0_RX_COL
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to ENET0_RX_CLK
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to ENET0_TX_CLK
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to ENET0_MDC
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to ENET0_MDIO
+
+#============================================================
+# Ethernet <span class="dv">1</span>
+#============================================================
+#set_location_assignment PIN_C23 -to ENET1_GTX_CLK
+#set_location_assignment PIN_D24 -to ENET1_INT_N
+#set_location_assignment PIN_D23 -to ENET1_MDC
+#set_location_assignment PIN_D25 -to ENET1_MDIO
+#set_location_assignment PIN_D22 -to ENET1_RESET_N
+#set_location_assignment PIN_B15 -to ENET1_RX_CLK
+#set_location_assignment PIN_B22 -to ENET1_RX_COL
+#set_location_assignment PIN_D20 -to ENET1_RX_CRS
+#set_location_assignment PIN_B23 -to ENET1_RX_DATA[<span class="dv">0</span>]
+#set_location_assignment PIN_C21 -to ENET1_RX_DATA[<span class="dv">1</span>]
+#set_location_assignment PIN_A23 -to ENET1_RX_DATA[<span class="dv">2</span>]
+#set_location_assignment PIN_D21 -to ENET1_RX_DATA[<span class="dv">3</span>]
+#set_location_assignment PIN_A22 -to ENET1_RX_DV
+#set_location_assignment PIN_C24 -to ENET1_RX_ER
+#set_location_assignment PIN_C22 -to ENET1_TX_CLK
+#set_location_assignment PIN_C25 -to ENET1_TX_DATA[<span class="dv">0</span>]
+#set_location_assignment PIN_A26 -to ENET1_TX_DATA[<span class="dv">1</span>]
+#set_location_assignment PIN_B26 -to ENET1_TX_DATA[<span class="dv">2</span>]
+#set_location_assignment PIN_C26 -to ENET1_TX_DATA[<span class="dv">3</span>]
+#set_location_assignment PIN_B25 -to ENET1_TX_EN
+#set_location_assignment PIN_A25 -to ENET1_TX_ER
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to ENET1_TX_DATA[<span class="dv">0</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to ENET1_RX_DATA[<span class="dv">0</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to ENET1_TX_DATA[<span class="dv">1</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to ENET1_RX_DATA[<span class="dv">1</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to ENET1_TX_DATA[<span class="dv">2</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to ENET1_RX_DATA[<span class="dv">2</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to ENET1_TX_DATA[<span class="dv">3</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to ENET1_RX_DATA[<span class="dv">3</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to ENET1_GTX_CLK
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to ENET1_TX_EN
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to ENET1_TX_ER
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to ENET1_INT_N
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to ENET1_RESET_N
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to ENET1_RX_DV
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to ENET1_RX_ER
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to ENET1_RX_CRS
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to ENET1_RX_COL
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to ENET1_RX_CLK
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to ENET1_TX_CLK
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to ENET1_MDC
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to ENET1_MDIO
+
+#set_location_assignment PIN_C14 -to ENET0_LINK100
+#set_location_assignment PIN_D13 -to ENET1_LINK100
+#set_location_assignment PIN_A14 -to NETCLK_<span class="dv">25</span>
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to ENET0_LINK100
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to ENET1_LINK100
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to NETCLK_<span class="dv">25</span>
+
+
+#============================================================
+# TV Decoder
+#============================================================
+#set_location_assignment PIN_F7 -to TD_DATA[<span class="dv">7</span>]
+#set_location_assignment PIN_E7 -to TD_DATA[<span class="dv">6</span>]
+#set_location_assignment PIN_D6 -to TD_DATA[<span class="dv">5</span>]
+#set_location_assignment PIN_D7 -to TD_DATA[<span class="dv">4</span>]
+#set_location_assignment PIN_C7 -to TD_DATA[<span class="dv">3</span>]
+#set_location_assignment PIN_D8 -to TD_DATA[<span class="dv">2</span>]
+#set_location_assignment PIN_A7 -to TD_DATA[<span class="dv">1</span>]
+#set_location_assignment PIN_E8 -to TD_DATA[<span class="dv">0</span>]
+#set_location_assignment PIN_B14 -to TD_CLK27
+#set_location_assignment PIN_G7 -to TD_RESET_N
+#set_location_assignment PIN_E4 -to TD_VS
+#set_location_assignment PIN_E5 -to TD_HS
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to TD_HS
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to TD_VS
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to TD_CLK27
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to TD_RESET_N
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to TD_DATA[<span class="dv">0</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to TD_DATA[<span class="dv">1</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to TD_DATA[<span class="dv">2</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to TD_DATA[<span class="dv">3</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to TD_DATA[<span class="dv">4</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to TD_DATA[<span class="dv">5</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to TD_DATA[<span class="dv">6</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to TD_DATA[<span class="dv">7</span>]
+
+#============================================================
+# USB
+#============================================================
+#set_location_assignment PIN_D4 -to OTG_DACK_N[<span class="dv">1</span>]
+#set_location_assignment PIN_C4 -to OTG_DACK_N[<span class="dv">0</span>]
+#set_location_assignment PIN_A3 -to OTG_CS_N
+#set_location_assignment PIN_B3 -to OTG_OE_N
+#set_location_assignment PIN_B4 -to OTG_DREQ[<span class="dv">1</span>]
+#set_location_assignment PIN_J1 -to OTG_DREQ[<span class="dv">0</span>]
+#set_location_assignment PIN_A4 -to OTG_WE_N
+#set_location_assignment PIN_H7 -to OTG_ADDR[<span class="dv">0</span>]
+#set_location_assignment PIN_C3 -to OTG_ADDR[<span class="dv">1</span>]
+#set_location_assignment PIN_C6 -to OTG_FSPEED
+#set_location_assignment PIN_B6 -to OTG_LSPEED
+#set_location_assignment PIN_D5 -to OTG_INT[<span class="dv">1</span>]
+#set_location_assignment PIN_A6 -to OTG_INT[<span class="dv">0</span>]
+#set_location_assignment PIN_C5 -to OTG_RST_N
+#set_location_assignment PIN_J6 -to OTG_DATA[<span class="dv">0</span>]
+#set_location_assignment PIN_K4 -to OTG_DATA[<span class="dv">1</span>]
+#set_location_assignment PIN_J5 -to OTG_DATA[<span class="dv">2</span>]
+#set_location_assignment PIN_K3 -to OTG_DATA[<span class="dv">3</span>]
+#set_location_assignment PIN_J4 -to OTG_DATA[<span class="dv">4</span>]
+#set_location_assignment PIN_J3 -to OTG_DATA[<span class="dv">5</span>]
+#set_location_assignment PIN_J7 -to OTG_DATA[<span class="dv">6</span>]
+#set_location_assignment PIN_H6 -to OTG_DATA[<span class="dv">7</span>]
+#set_location_assignment PIN_H3 -to OTG_DATA[<span class="dv">8</span>]
+#set_location_assignment PIN_H4 -to OTG_DATA[<span class="dv">9</span>]
+#set_location_assignment PIN_G1 -to OTG_DATA[<span class="dv">10</span>]
+#set_location_assignment PIN_G2 -to OTG_DATA[<span class="dv">11</span>]
+#set_location_assignment PIN_G3 -to OTG_DATA[<span class="dv">12</span>]
+#set_location_assignment PIN_F1 -to OTG_DATA[<span class="dv">13</span>]
+#set_location_assignment PIN_F3 -to OTG_DATA[<span class="dv">14</span>]
+#set_location_assignment PIN_G4 -to OTG_DATA[<span class="dv">15</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to OTG_DATA[<span class="dv">0</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to OTG_DATA[<span class="dv">1</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to OTG_DATA[<span class="dv">2</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to OTG_DATA[<span class="dv">3</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to OTG_DATA[<span class="dv">4</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to OTG_DATA[<span class="dv">5</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to OTG_DATA[<span class="dv">6</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to OTG_DATA[<span class="dv">7</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to OTG_DATA[<span class="dv">8</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to OTG_DATA[<span class="dv">9</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to OTG_DATA[<span class="dv">10</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to OTG_DATA[<span class="dv">11</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to OTG_DATA[<span class="dv">12</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to OTG_DATA[<span class="dv">13</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to OTG_DATA[<span class="dv">14</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to OTG_DATA[<span class="dv">15</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to OTG_ADDR[<span class="dv">0</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to OTG_ADDR[<span class="dv">1</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to OTG_CS_N
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to OTG_WE_N
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to OTG_OE_N
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to OTG_INT[<span class="dv">0</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to OTG_INT[<span class="dv">1</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to OTG_RST_N
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to OTG_DREQ[<span class="dv">0</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to OTG_DREQ[<span class="dv">1</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to OTG_DACK_N[<span class="dv">0</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to OTG_DACK_N[<span class="dv">1</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to OTG_FSPEED
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to OTG_LSPEED
+
+#============================================================
+# IR Receiver
+#============================================================
+#set_location_assignment PIN_Y15 -to IRDA_RXD
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to IRDA_RXD
+
+#============================================================
+# SDRAM
+#============================================================
+#set_location_assignment PIN_AE5 -to DRAM_CLK
+#set_location_assignment PIN_U1 -to DRAM_DQ[<span class="dv">31</span>]
+#set_location_assignment PIN_U4 -to DRAM_DQ[<span class="dv">30</span>]
+#set_location_assignment PIN_T3 -to DRAM_DQ[<span class="dv">29</span>]
+#set_location_assignment PIN_R3 -to DRAM_DQ[<span class="dv">28</span>]
+#set_location_assignment PIN_R2 -to DRAM_DQ[<span class="dv">27</span>]
+#set_location_assignment PIN_R1 -to DRAM_DQ[<span class="dv">26</span>]
+#set_location_assignment PIN_R7 -to DRAM_DQ[<span class="dv">25</span>]
+#set_location_assignment PIN_U5 -to DRAM_DQ[<span class="dv">24</span>]
+#set_location_assignment PIN_M8 -to DRAM_DQ[<span class="dv">16</span>]
+#set_location_assignment PIN_L8 -to DRAM_DQ[<span class="dv">17</span>]
+#set_location_assignment PIN_P2 -to DRAM_DQ[<span class="dv">18</span>]
+#set_location_assignment PIN_N3 -to DRAM_DQ[<span class="dv">19</span>]
+#set_location_assignment PIN_N4 -to DRAM_DQ[<span class="dv">20</span>]
+#set_location_assignment PIN_M4 -to DRAM_DQ[<span class="dv">21</span>]
+#set_location_assignment PIN_M7 -to DRAM_DQ[<span class="dv">22</span>]
+#set_location_assignment PIN_L7 -to DRAM_DQ[<span class="dv">23</span>]
+#set_location_assignment PIN_Y3 -to DRAM_DQ[<span class="dv">8</span>]
+#set_location_assignment PIN_Y4 -to DRAM_DQ[<span class="dv">9</span>]
+#set_location_assignment PIN_AB1 -to DRAM_DQ[<span class="dv">10</span>]
+#set_location_assignment PIN_AA3 -to DRAM_DQ[<span class="dv">11</span>]
+#set_location_assignment PIN_AB2 -to DRAM_DQ[<span class="dv">12</span>]
+#set_location_assignment PIN_AC1 -to DRAM_DQ[<span class="dv">13</span>]
+#set_location_assignment PIN_AB3 -to DRAM_DQ[<span class="dv">14</span>]
+#set_location_assignment PIN_AC2 -to DRAM_DQ[<span class="dv">15</span>]
+#set_location_assignment PIN_W3 -to DRAM_DQ[<span class="dv">0</span>]
+#set_location_assignment PIN_W2 -to DRAM_DQ[<span class="dv">1</span>]
+#set_location_assignment PIN_V4 -to DRAM_DQ[<span class="dv">2</span>]
+#set_location_assignment PIN_W1 -to DRAM_DQ[<span class="dv">3</span>]
+#set_location_assignment PIN_V3 -to DRAM_DQ[<span class="dv">4</span>]
+#set_location_assignment PIN_V2 -to DRAM_DQ[<span class="dv">5</span>]
+#set_location_assignment PIN_V1 -to DRAM_DQ[<span class="dv">6</span>]
+#set_location_assignment PIN_U3 -to DRAM_DQ[<span class="dv">7</span>]
+#set_location_assignment PIN_W4 -to DRAM_DQM[<span class="dv">1</span>]
+#set_location_assignment PIN_K8 -to DRAM_DQM[<span class="dv">2</span>]
+#set_location_assignment PIN_U2 -to DRAM_DQM[<span class="dv">0</span>]
+#set_location_assignment PIN_N8 -to DRAM_DQM[<span class="dv">3</span>]
+#set_location_assignment PIN_U6 -to DRAM_RAS_N
+#set_location_assignment PIN_V7 -to DRAM_CAS_N
+#set_location_assignment PIN_AA6 -to DRAM_CKE
+#set_location_assignment PIN_V6 -to DRAM_WE_N
+#set_location_assignment PIN_T4 -to DRAM_CS_N
+#set_location_assignment PIN_U7 -to DRAM_BA[<span class="dv">0</span>]
+#set_location_assignment PIN_R4 -to DRAM_BA[<span class="dv">1</span>]
+#set_location_assignment PIN_Y7 -to DRAM_ADDR[<span class="dv">12</span>]
+#set_location_assignment PIN_AA5 -to DRAM_ADDR[<span class="dv">11</span>]
+#set_location_assignment PIN_R5 -to DRAM_ADDR[<span class="dv">10</span>]
+#set_location_assignment PIN_Y6 -to DRAM_ADDR[<span class="dv">9</span>]
+#set_location_assignment PIN_Y5 -to DRAM_ADDR[<span class="dv">8</span>]
+#set_location_assignment PIN_AA7 -to DRAM_ADDR[<span class="dv">7</span>]
+#set_location_assignment PIN_W7 -to DRAM_ADDR[<span class="dv">6</span>]
+#set_location_assignment PIN_W8 -to DRAM_ADDR[<span class="dv">5</span>]
+#set_location_assignment PIN_V5 -to DRAM_ADDR[<span class="dv">4</span>]
+#set_location_assignment PIN_R6 -to DRAM_ADDR[<span class="dv">0</span>]
+#set_location_assignment PIN_V8 -to DRAM_ADDR[<span class="dv">1</span>]
+#set_location_assignment PIN_U8 -to DRAM_ADDR[<span class="dv">2</span>]
+#set_location_assignment PIN_P1 -to DRAM_ADDR[<span class="dv">3</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_BA[<span class="dv">0</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_BA[<span class="dv">1</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_DQM[<span class="dv">0</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_DQM[<span class="dv">1</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_DQM[<span class="dv">2</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_DQM[<span class="dv">3</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_RAS_N
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_CAS_N
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_CKE
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_CLK
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_WE_N
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_CS_N
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_DQ[<span class="dv">0</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_DQ[<span class="dv">1</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_DQ[<span class="dv">2</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_DQ[<span class="dv">3</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_DQ[<span class="dv">4</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_DQ[<span class="dv">5</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_DQ[<span class="dv">6</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_DQ[<span class="dv">7</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_DQ[<span class="dv">8</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_DQ[<span class="dv">9</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_DQ[<span class="dv">10</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_DQ[<span class="dv">11</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_DQ[<span class="dv">12</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_DQ[<span class="dv">13</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_DQ[<span class="dv">14</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_DQ[<span class="dv">15</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_DQ[<span class="dv">16</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_DQ[<span class="dv">17</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_DQ[<span class="dv">18</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_DQ[<span class="dv">19</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_DQ[<span class="dv">20</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_DQ[<span class="dv">21</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_DQ[<span class="dv">22</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_DQ[<span class="dv">23</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_DQ[<span class="dv">24</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_DQ[<span class="dv">25</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_DQ[<span class="dv">26</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_DQ[<span class="dv">27</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_DQ[<span class="dv">28</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_DQ[<span class="dv">29</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_DQ[<span class="dv">30</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_DQ[<span class="dv">31</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_ADDR[<span class="dv">0</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_ADDR[<span class="dv">1</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_ADDR[<span class="dv">2</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_ADDR[<span class="dv">3</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_ADDR[<span class="dv">4</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_ADDR[<span class="dv">5</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_ADDR[<span class="dv">6</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_ADDR[<span class="dv">7</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_ADDR[<span class="dv">8</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_ADDR[<span class="dv">9</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_ADDR[<span class="dv">10</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_ADDR[<span class="dv">11</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to DRAM_ADDR[<span class="dv">12</span>]
+
+#============================================================
+# SRAM
+#============================================================
+#set_location_assignment PIN_AG3 -to SRAM_DQ[<span class="dv">15</span>]
+#set_location_assignment PIN_AF3 -to SRAM_DQ[<span class="dv">14</span>]
+#set_location_assignment PIN_AE4 -to SRAM_DQ[<span class="dv">13</span>]
+#set_location_assignment PIN_AE3 -to SRAM_DQ[<span class="dv">12</span>]
+#set_location_assignment PIN_AE1 -to SRAM_DQ[<span class="dv">11</span>]
+#set_location_assignment PIN_AE2 -to SRAM_DQ[<span class="dv">10</span>]
+#set_location_assignment PIN_AD2 -to SRAM_DQ[<span class="dv">9</span>]
+#set_location_assignment PIN_AD1 -to SRAM_DQ[<span class="dv">8</span>]
+#set_location_assignment PIN_AF7 -to SRAM_DQ[<span class="dv">7</span>]
+#set_location_assignment PIN_AH6 -to SRAM_DQ[<span class="dv">6</span>]
+#set_location_assignment PIN_AG6 -to SRAM_DQ[<span class="dv">5</span>]
+#set_location_assignment PIN_AF6 -to SRAM_DQ[<span class="dv">4</span>]
+#set_location_assignment PIN_AH4 -to SRAM_DQ[<span class="dv">3</span>]
+#set_location_assignment PIN_AG4 -to SRAM_DQ[<span class="dv">2</span>]
+#set_location_assignment PIN_AF4 -to SRAM_DQ[<span class="dv">1</span>]
+#set_location_assignment PIN_AH3 -to SRAM_DQ[<span class="dv">0</span>]
+#set_location_assignment PIN_AC4 -to SRAM_UB_N
+#set_location_assignment PIN_AD4 -to SRAM_LB_N
+#set_location_assignment PIN_AF8 -to SRAM_CE_N
+#set_location_assignment PIN_AD5 -to SRAM_OE_N
+#set_location_assignment PIN_AE8 -to SRAM_WE_N
+#set_location_assignment PIN_AE6 -to SRAM_ADDR[<span class="dv">5</span>]
+#set_location_assignment PIN_AB5 -to SRAM_ADDR[<span class="dv">6</span>]
+#set_location_assignment PIN_AC5 -to SRAM_ADDR[<span class="dv">7</span>]
+#set_location_assignment PIN_AF5 -to SRAM_ADDR[<span class="dv">8</span>]
+#set_location_assignment PIN_T7 -to SRAM_ADDR[<span class="dv">9</span>]
+#set_location_assignment PIN_AF2 -to SRAM_ADDR[<span class="dv">10</span>]
+#set_location_assignment PIN_AD3 -to SRAM_ADDR[<span class="dv">11</span>]
+#set_location_assignment PIN_AB4 -to SRAM_ADDR[<span class="dv">12</span>]
+#set_location_assignment PIN_AC3 -to SRAM_ADDR[<span class="dv">13</span>]
+#set_location_assignment PIN_AA4 -to SRAM_ADDR[<span class="dv">14</span>]
+#set_location_assignment PIN_AB7 -to SRAM_ADDR[<span class="dv">0</span>]
+#set_location_assignment PIN_AD7 -to SRAM_ADDR[<span class="dv">1</span>]
+#set_location_assignment PIN_AE7 -to SRAM_ADDR[<span class="dv">2</span>]
+#set_location_assignment PIN_AC7 -to SRAM_ADDR[<span class="dv">3</span>]
+#set_location_assignment PIN_AB6 -to SRAM_ADDR[<span class="dv">4</span>]
+#set_location_assignment PIN_T8 -to SRAM_ADDR[<span class="dv">19</span>]
+#set_location_assignment PIN_AB8 -to SRAM_ADDR[<span class="dv">18</span>]
+#set_location_assignment PIN_AB9 -to SRAM_ADDR[<span class="dv">17</span>]
+#set_location_assignment PIN_AC11 -to SRAM_ADDR[<span class="dv">16</span>]
+#set_location_assignment PIN_AB11 -to SRAM_ADDR[<span class="dv">15</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to SRAM_ADDR[<span class="dv">0</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to SRAM_ADDR[<span class="dv">1</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to SRAM_ADDR[<span class="dv">2</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to SRAM_ADDR[<span class="dv">3</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to SRAM_ADDR[<span class="dv">4</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to SRAM_ADDR[<span class="dv">5</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to SRAM_ADDR[<span class="dv">6</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to SRAM_ADDR[<span class="dv">7</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to SRAM_ADDR[<span class="dv">8</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to SRAM_ADDR[<span class="dv">9</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to SRAM_ADDR[<span class="dv">10</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to SRAM_ADDR[<span class="dv">11</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to SRAM_ADDR[<span class="dv">12</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to SRAM_ADDR[<span class="dv">13</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to SRAM_ADDR[<span class="dv">14</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to SRAM_ADDR[<span class="dv">15</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to SRAM_ADDR[<span class="dv">16</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to SRAM_ADDR[<span class="dv">17</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to SRAM_ADDR[<span class="dv">18</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to SRAM_ADDR[<span class="dv">19</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to SRAM_DQ[<span class="dv">0</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to SRAM_DQ[<span class="dv">1</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to SRAM_DQ[<span class="dv">2</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to SRAM_DQ[<span class="dv">3</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to SRAM_DQ[<span class="dv">4</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to SRAM_DQ[<span class="dv">5</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to SRAM_DQ[<span class="dv">6</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to SRAM_DQ[<span class="dv">7</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to SRAM_DQ[<span class="dv">8</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to SRAM_DQ[<span class="dv">9</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to SRAM_DQ[<span class="dv">10</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to SRAM_DQ[<span class="dv">11</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to SRAM_DQ[<span class="dv">12</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to SRAM_DQ[<span class="dv">13</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to SRAM_DQ[<span class="dv">14</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to SRAM_DQ[<span class="dv">15</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to SRAM_UB_N
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to SRAM_LB_N
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to SRAM_CE_N
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to SRAM_OE_N
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to SRAM_WE_N
+
+#============================================================
+# Flash
+#============================================================
+#set_location_assignment PIN_AF12 -to FL_DQ[<span class="dv">7</span>]
+#set_location_assignment PIN_AH11 -to FL_DQ[<span class="dv">6</span>]
+#set_location_assignment PIN_AG11 -to FL_DQ[<span class="dv">5</span>]
+#set_location_assignment PIN_AF11 -to FL_DQ[<span class="dv">4</span>]
+#set_location_assignment PIN_AH10 -to FL_DQ[<span class="dv">3</span>]
+#set_location_assignment PIN_AG10 -to FL_DQ[<span class="dv">2</span>]
+#set_location_assignment PIN_AF10 -to FL_DQ[<span class="dv">1</span>]
+#set_location_assignment PIN_AH8 -to FL_DQ[<span class="dv">0</span>]
+#set_location_assignment PIN_AG12 -to FL_ADDR[<span class="dv">0</span>]
+#set_location_assignment PIN_AD11 -to FL_ADDR[<span class="dv">22</span>]
+#set_location_assignment PIN_AD10 -to FL_ADDR[<span class="dv">21</span>]
+#set_location_assignment PIN_AE10 -to FL_ADDR[<span class="dv">20</span>]
+#set_location_assignment PIN_AD12 -to FL_ADDR[<span class="dv">19</span>]
+#set_location_assignment PIN_AC12 -to FL_ADDR[<span class="dv">18</span>]
+#set_location_assignment PIN_AH12 -to FL_ADDR[<span class="dv">17</span>]
+#set_location_assignment PIN_AA8 -to FL_ADDR[<span class="dv">16</span>]
+#set_location_assignment PIN_Y10 -to FL_ADDR[<span class="dv">15</span>]
+#set_location_assignment PIN_AC8 -to FL_ADDR[<span class="dv">14</span>]
+#set_location_assignment PIN_AD8 -to FL_ADDR[<span class="dv">13</span>]
+#set_location_assignment PIN_AA10 -to FL_ADDR[<span class="dv">12</span>]
+#set_location_assignment PIN_AF9 -to FL_ADDR[<span class="dv">11</span>]
+#set_location_assignment PIN_AE9 -to FL_ADDR[<span class="dv">10</span>]
+#set_location_assignment PIN_AB10 -to FL_ADDR[<span class="dv">9</span>]
+#set_location_assignment PIN_AB12 -to FL_ADDR[<span class="dv">8</span>]
+#set_location_assignment PIN_AB13 -to FL_ADDR[<span class="dv">7</span>]
+#set_location_assignment PIN_AA12 -to FL_ADDR[<span class="dv">6</span>]
+#set_location_assignment PIN_AA13 -to FL_ADDR[<span class="dv">5</span>]
+#set_location_assignment PIN_Y12 -to FL_ADDR[<span class="dv">4</span>]
+#set_location_assignment PIN_Y14 -to FL_ADDR[<span class="dv">3</span>]
+#set_location_assignment PIN_Y13 -to FL_ADDR[<span class="dv">2</span>]
+#set_location_assignment PIN_AH7 -to FL_ADDR[<span class="dv">1</span>]
+#set_location_assignment PIN_AG7 -to FL_CE_N
+#set_location_assignment PIN_AG8 -to FL_OE_N
+#set_location_assignment PIN_AC10 -to FL_WE_N
+#set_location_assignment PIN_AE11 -to FL_RESET_N
+#set_location_assignment PIN_AE12 -to FL_WP_N
+#set_location_assignment PIN_Y1 -to FL_RY
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to FL_ADDR[<span class="dv">0</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to FL_ADDR[<span class="dv">1</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to FL_ADDR[<span class="dv">2</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to FL_ADDR[<span class="dv">3</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to FL_ADDR[<span class="dv">4</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to FL_ADDR[<span class="dv">5</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to FL_ADDR[<span class="dv">6</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to FL_ADDR[<span class="dv">7</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to FL_ADDR[<span class="dv">8</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to FL_ADDR[<span class="dv">9</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to FL_ADDR[<span class="dv">10</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to FL_ADDR[<span class="dv">11</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to FL_ADDR[<span class="dv">12</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to FL_ADDR[<span class="dv">13</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to FL_ADDR[<span class="dv">14</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to FL_ADDR[<span class="dv">15</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to FL_ADDR[<span class="dv">16</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to FL_ADDR[<span class="dv">17</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to FL_ADDR[<span class="dv">18</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to FL_ADDR[<span class="dv">19</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to FL_ADDR[<span class="dv">20</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to FL_ADDR[<span class="dv">21</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to FL_ADDR[<span class="dv">22</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to FL_DQ[<span class="dv">0</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to FL_DQ[<span class="dv">1</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to FL_DQ[<span class="dv">2</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to FL_DQ[<span class="dv">3</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to FL_DQ[<span class="dv">4</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to FL_DQ[<span class="dv">5</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to FL_DQ[<span class="dv">6</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to FL_DQ[<span class="dv">7</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to FL_CE_N
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to FL_OE_N
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to FL_RESET_N
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to FL_RY
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to FL_WE_N
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to FL_WP_N
+
+#============================================================
+# GPIO, GPIO connect to GPIO Default
+#============================================================
+#set_location_assignment PIN_AB22 -to GPIO[<span class="dv">0</span>]
+#set_location_assignment PIN_AC15 -to GPIO[<span class="dv">1</span>]
+#set_location_assignment PIN_AB21 -to GPIO[<span class="dv">2</span>]
+#set_location_assignment PIN_Y17 -to GPIO[<span class="dv">3</span>]
+#set_location_assignment PIN_AC21 -to GPIO[<span class="dv">4</span>]
+#set_location_assignment PIN_Y16 -to GPIO[<span class="dv">5</span>]
+#set_location_assignment PIN_AD21 -to GPIO[<span class="dv">6</span>]
+#set_location_assignment PIN_AE16 -to GPIO[<span class="dv">7</span>]
+#set_location_assignment PIN_AD15 -to GPIO[<span class="dv">8</span>]
+#set_location_assignment PIN_AE15 -to GPIO[<span class="dv">9</span>]
+#set_location_assignment PIN_AC19 -to GPIO[<span class="dv">10</span>]
+#set_location_assignment PIN_AF16 -to GPIO[<span class="dv">11</span>]
+#set_location_assignment PIN_AD19 -to GPIO[<span class="dv">12</span>]
+#set_location_assignment PIN_AF15 -to GPIO[<span class="dv">13</span>]
+#set_location_assignment PIN_AF24 -to GPIO[<span class="dv">14</span>]
+#set_location_assignment PIN_AE21 -to GPIO[<span class="dv">15</span>]
+#set_location_assignment PIN_AF25 -to GPIO[<span class="dv">16</span>]
+#set_location_assignment PIN_AC22 -to GPIO[<span class="dv">17</span>]
+#set_location_assignment PIN_AE22 -to GPIO[<span class="dv">18</span>]
+#set_location_assignment PIN_AF21 -to GPIO[<span class="dv">19</span>]
+#set_location_assignment PIN_AF22 -to GPIO[<span class="dv">20</span>]
+#set_location_assignment PIN_AD22 -to GPIO[<span class="dv">21</span>]
+#set_location_assignment PIN_AG25 -to GPIO[<span class="dv">22</span>]
+#set_location_assignment PIN_AD25 -to GPIO[<span class="dv">23</span>]
+#set_location_assignment PIN_AH25 -to GPIO[<span class="dv">24</span>]
+#set_location_assignment PIN_AE25 -to GPIO[<span class="dv">25</span>]
+#set_location_assignment PIN_AG22 -to GPIO[<span class="dv">26</span>]
+#set_location_assignment PIN_AE24 -to GPIO[<span class="dv">27</span>]
+#set_location_assignment PIN_AH22 -to GPIO[<span class="dv">28</span>]
+#set_location_assignment PIN_AF26 -to GPIO[<span class="dv">29</span>]
+#set_location_assignment PIN_AE20 -to GPIO[<span class="dv">30</span>]
+#set_location_assignment PIN_AG23 -to GPIO[<span class="dv">31</span>]
+#set_location_assignment PIN_AF20 -to GPIO[<span class="dv">32</span>]
+#set_location_assignment PIN_AH26 -to GPIO[<span class="dv">33</span>]
+#set_location_assignment PIN_AH23 -to GPIO[<span class="dv">34</span>]
+#set_location_assignment PIN_AG26 -to GPIO[<span class="dv">35</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to GPIO[<span class="dv">0</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to GPIO[<span class="dv">1</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to GPIO[<span class="dv">2</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to GPIO[<span class="dv">3</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to GPIO[<span class="dv">4</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to GPIO[<span class="dv">5</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to GPIO[<span class="dv">6</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to GPIO[<span class="dv">7</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to GPIO[<span class="dv">8</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to GPIO[<span class="dv">9</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to GPIO[<span class="dv">10</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to GPIO[<span class="dv">11</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to GPIO[<span class="dv">12</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to GPIO[<span class="dv">13</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to GPIO[<span class="dv">14</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to GPIO[<span class="dv">15</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to GPIO[<span class="dv">16</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to GPIO[<span class="dv">17</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to GPIO[<span class="dv">18</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to GPIO[<span class="dv">19</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to GPIO[<span class="dv">20</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to GPIO[<span class="dv">21</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to GPIO[<span class="dv">22</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to GPIO[<span class="dv">23</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to GPIO[<span class="dv">24</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to GPIO[<span class="dv">25</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to GPIO[<span class="dv">26</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to GPIO[<span class="dv">27</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to GPIO[<span class="dv">28</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to GPIO[<span class="dv">29</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to GPIO[<span class="dv">30</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to GPIO[<span class="dv">31</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to GPIO[<span class="dv">32</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to GPIO[<span class="dv">33</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to GPIO[<span class="dv">34</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to GPIO[<span class="dv">35</span>]
+
+#============================================================
+# HSMC, HSMC connect to HSMC Default
+#============================================================
+#set_location_assignment PIN_J27 -to HSMC_CLKIN_P1
+#set_location_assignment PIN_J28 -to HSMC_CLKIN_N1
+#set_location_assignment PIN_Y27 -to HSMC_CLKIN_P2
+#set_location_assignment PIN_Y28 -to HSMC_CLKIN_N2
+#set_location_assignment PIN_D27 -to HSMC_TX_D_P[<span class="dv">0</span>]
+#set_location_assignment PIN_D28 -to HSMC_TX_D_N[<span class="dv">0</span>]
+#set_location_assignment PIN_F24 -to HSMC_RX_D_P[<span class="dv">0</span>]
+#set_location_assignment PIN_F25 -to HSMC_RX_D_N[<span class="dv">0</span>]
+#set_location_assignment PIN_E27 -to HSMC_TX_D_P[<span class="dv">1</span>]
+#set_location_assignment PIN_C27 -to HSMC_RX_D_N[<span class="dv">1</span>]
+#set_location_assignment PIN_E28 -to HSMC_TX_D_N[<span class="dv">1</span>]
+#set_location_assignment PIN_D26 -to HSMC_RX_D_P[<span class="dv">1</span>]
+#set_location_assignment PIN_F27 -to HSMC_TX_D_P[<span class="dv">2</span>]
+#set_location_assignment PIN_F28 -to HSMC_TX_D_N[<span class="dv">2</span>]
+#set_location_assignment PIN_F26 -to HSMC_RX_D_P[<span class="dv">2</span>]
+#set_location_assignment PIN_E26 -to HSMC_RX_D_N[<span class="dv">2</span>]
+#set_location_assignment PIN_G27 -to HSMC_TX_D_P[<span class="dv">3</span>]
+#set_location_assignment PIN_G28 -to HSMC_TX_D_N[<span class="dv">3</span>]
+#set_location_assignment PIN_G25 -to HSMC_RX_D_P[<span class="dv">3</span>]
+#set_location_assignment PIN_G26 -to HSMC_RX_D_N[<span class="dv">3</span>]
+#set_location_assignment PIN_K27 -to HSMC_TX_D_P[<span class="dv">4</span>]
+#set_location_assignment PIN_K28 -to HSMC_TX_D_N[<span class="dv">4</span>]
+#set_location_assignment PIN_H25 -to HSMC_RX_D_P[<span class="dv">4</span>]
+#set_location_assignment PIN_H26 -to HSMC_RX_D_N[<span class="dv">4</span>]
+#set_location_assignment PIN_M27 -to HSMC_TX_D_P[<span class="dv">5</span>]
+#set_location_assignment PIN_M28 -to HSMC_TX_D_N[<span class="dv">5</span>]
+#set_location_assignment PIN_K25 -to HSMC_RX_D_P[<span class="dv">5</span>]
+#set_location_assignment PIN_K26 -to HSMC_RX_D_N[<span class="dv">5</span>]
+#set_location_assignment PIN_K21 -to HSMC_TX_D_P[<span class="dv">6</span>]
+#set_location_assignment PIN_K22 -to HSMC_TX_D_N[<span class="dv">6</span>]
+#set_location_assignment PIN_L23 -to HSMC_RX_D_P[<span class="dv">6</span>]
+#set_location_assignment PIN_L24 -to HSMC_RX_D_N[<span class="dv">6</span>]
+#set_location_assignment PIN_H23 -to HSMC_TX_D_P[<span class="dv">7</span>]
+#set_location_assignment PIN_H24 -to HSMC_TX_D_N[<span class="dv">7</span>]
+#set_location_assignment PIN_M25 -to HSMC_RX_D_P[<span class="dv">7</span>]
+#set_location_assignment PIN_M26 -to HSMC_RX_D_N[<span class="dv">7</span>]
+#set_location_assignment PIN_J23 -to HSMC_TX_D_P[<span class="dv">8</span>]
+#set_location_assignment PIN_J24 -to HSMC_TX_D_N[<span class="dv">8</span>]
+#set_location_assignment PIN_R25 -to HSMC_RX_D_P[<span class="dv">8</span>]
+#set_location_assignment PIN_R26 -to HSMC_RX_D_N[<span class="dv">8</span>]
+#set_location_assignment PIN_P27 -to HSMC_TX_D_P[<span class="dv">9</span>]
+#set_location_assignment PIN_P28 -to HSMC_TX_D_N[<span class="dv">9</span>]
+#set_location_assignment PIN_T25 -to HSMC_RX_D_P[<span class="dv">9</span>]
+#set_location_assignment PIN_T26 -to HSMC_RX_D_N[<span class="dv">9</span>]
+#set_location_assignment PIN_J25 -to HSMC_TX_D_P[<span class="dv">10</span>]
+#set_location_assignment PIN_J26 -to HSMC_TX_D_N[<span class="dv">10</span>]
+#set_location_assignment PIN_U25 -to HSMC_RX_D_P[<span class="dv">10</span>]
+#set_location_assignment PIN_U26 -to HSMC_RX_D_N[<span class="dv">10</span>]
+#set_location_assignment PIN_L27 -to HSMC_TX_D_P[<span class="dv">11</span>]
+#set_location_assignment PIN_L28 -to HSMC_TX_D_N[<span class="dv">11</span>]
+#set_location_assignment PIN_L21 -to HSMC_RX_D_P[<span class="dv">11</span>]
+#set_location_assignment PIN_L22 -to HSMC_RX_D_N[<span class="dv">11</span>]
+#set_location_assignment PIN_V25 -to HSMC_TX_D_P[<span class="dv">12</span>]
+#set_location_assignment PIN_V26 -to HSMC_TX_D_N[<span class="dv">12</span>]
+#set_location_assignment PIN_N25 -to HSMC_RX_D_P[<span class="dv">12</span>]
+#set_location_assignment PIN_N26 -to HSMC_RX_D_N[<span class="dv">12</span>]
+#set_location_assignment PIN_R27 -to HSMC_TX_D_P[<span class="dv">13</span>]
+#set_location_assignment PIN_R28 -to HSMC_TX_D_N[<span class="dv">13</span>]
+#set_location_assignment PIN_P25 -to HSMC_RX_D_P[<span class="dv">13</span>]
+#set_location_assignment PIN_P26 -to HSMC_RX_D_N[<span class="dv">13</span>]
+#set_location_assignment PIN_U27 -to HSMC_TX_D_P[<span class="dv">14</span>]
+#set_location_assignment PIN_U28 -to HSMC_TX_D_N[<span class="dv">14</span>]
+#set_location_assignment PIN_P21 -to HSMC_RX_D_P[<span class="dv">14</span>]
+#set_location_assignment PIN_R21 -to HSMC_RX_D_N[<span class="dv">14</span>]
+#set_location_assignment PIN_V27 -to HSMC_TX_D_P[<span class="dv">15</span>]
+#set_location_assignment PIN_V28 -to HSMC_TX_D_N[<span class="dv">15</span>]
+#set_location_assignment PIN_R22 -to HSMC_RX_D_P[<span class="dv">15</span>]
+#set_location_assignment PIN_R23 -to HSMC_RX_D_N[<span class="dv">15</span>]
+#set_location_assignment PIN_U22 -to HSMC_TX_D_P[<span class="dv">16</span>]
+#set_location_assignment PIN_V22 -to HSMC_TX_D_N[<span class="dv">16</span>]
+#set_location_assignment PIN_T21 -to HSMC_RX_D_P[<span class="dv">16</span>]
+#set_location_assignment PIN_T22 -to HSMC_RX_D_N[<span class="dv">16</span>]
+#set_location_assignment PIN_V23 -to HSMC_CLKOUT_P2
+#set_location_assignment PIN_V24 -to HSMC_CLKOUT_N2
+#set_location_assignment PIN_G23 -to HSMC_CLKOUT_P1
+#set_location_assignment PIN_G24 -to HSMC_CLKOUT_N1
+#set_location_assignment PIN_AD28 -to HSMC_CLKOUT0
+#set_location_assignment PIN_AE26 -to HSMC_D[<span class="dv">0</span>]
+#set_location_assignment PIN_AE28 -to HSMC_D[<span class="dv">1</span>]
+#set_location_assignment PIN_AE27 -to HSMC_D[<span class="dv">2</span>]
+#set_location_assignment PIN_AF27 -to HSMC_D[<span class="dv">3</span>]
+#set_location_assignment PIN_AH15 -to HSMC_CLKIN0
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_CLKIN_P1
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_CLKIN_N1
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_CLKIN_P2
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_CLKIN_N2
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_TX_D_P[<span class="dv">0</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_TX_D_P[<span class="dv">1</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_TX_D_P[<span class="dv">2</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_TX_D_P[<span class="dv">3</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_TX_D_P[<span class="dv">4</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_TX_D_P[<span class="dv">5</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_TX_D_P[<span class="dv">6</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_TX_D_P[<span class="dv">7</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_TX_D_P[<span class="dv">8</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_TX_D_P[<span class="dv">9</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_TX_D_P[<span class="dv">10</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_TX_D_P[<span class="dv">11</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_TX_D_P[<span class="dv">12</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_TX_D_P[<span class="dv">13</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_TX_D_P[<span class="dv">14</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_TX_D_P[<span class="dv">15</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_TX_D_P[<span class="dv">16</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_TX_D_N[<span class="dv">0</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_TX_D_N[<span class="dv">1</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_TX_D_N[<span class="dv">2</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_TX_D_N[<span class="dv">3</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_TX_D_N[<span class="dv">4</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_TX_D_N[<span class="dv">5</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_TX_D_N[<span class="dv">6</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_TX_D_N[<span class="dv">7</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_TX_D_N[<span class="dv">8</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_TX_D_N[<span class="dv">9</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_TX_D_N[<span class="dv">10</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_TX_D_N[<span class="dv">11</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_TX_D_N[<span class="dv">12</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_TX_D_N[<span class="dv">13</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_TX_D_N[<span class="dv">14</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_TX_D_N[<span class="dv">15</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_TX_D_N[<span class="dv">16</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_RX_D_P[<span class="dv">0</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_RX_D_P[<span class="dv">1</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_RX_D_P[<span class="dv">2</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_RX_D_P[<span class="dv">3</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_RX_D_P[<span class="dv">4</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_RX_D_P[<span class="dv">5</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_RX_D_P[<span class="dv">6</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_RX_D_P[<span class="dv">7</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_RX_D_P[<span class="dv">8</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_RX_D_P[<span class="dv">9</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_RX_D_P[<span class="dv">10</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_RX_D_P[<span class="dv">11</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_RX_D_P[<span class="dv">12</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_RX_D_P[<span class="dv">13</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_RX_D_P[<span class="dv">14</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_RX_D_P[<span class="dv">15</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_RX_D_P[<span class="dv">16</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_RX_D_N[<span class="dv">0</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_RX_D_N[<span class="dv">1</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_RX_D_N[<span class="dv">2</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_RX_D_N[<span class="dv">3</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_RX_D_N[<span class="dv">4</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_RX_D_N[<span class="dv">5</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_RX_D_N[<span class="dv">6</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_RX_D_N[<span class="dv">7</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_RX_D_N[<span class="dv">8</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_RX_D_N[<span class="dv">9</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_RX_D_N[<span class="dv">10</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_RX_D_N[<span class="dv">11</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_RX_D_N[<span class="dv">12</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_RX_D_N[<span class="dv">13</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_RX_D_N[<span class="dv">14</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_RX_D_N[<span class="dv">15</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_RX_D_N[<span class="dv">16</span>]
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_CLKOUT_P1
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_CLKOUT_N1
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_CLKOUT_P2
+#set_instance_assignment -name IO_STANDARD LVDS -to HSMC_CLKOUT_N2
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to HSMC_CLKOUT0
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to HSMC_D[<span class="dv">0</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to HSMC_D[<span class="dv">1</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to HSMC_D[<span class="dv">2</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;2.5 V&quot;</span> -to HSMC_D[<span class="dv">3</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.0-V LVTTL&quot;</span> -to HSMC_CLKIN0
+
+#============================================================
+# HSMC, HSMC connect to HSMC Default
+#============================================================
+
+#set_location_assignment PIN_J10 -to EXT_IO[<span class="dv">0</span>]
+#set_location_assignment PIN_J14 -to EXT_IO[<span class="dv">1</span>]
+#set_location_assignment PIN_H13 -to EXT_IO[<span class="dv">2</span>]
+#set_location_assignment PIN_H14 -to EXT_IO[<span class="dv">3</span>]
+#set_location_assignment PIN_F14 -to EXT_IO[<span class="dv">4</span>]
+#set_location_assignment PIN_E10 -to EXT_IO[<span class="dv">5</span>]
+#set_location_assignment PIN_D9 -to EXT_IO[<span class="dv">6</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to EXT_IO[<span class="dv">0</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to EXT_IO[<span class="dv">1</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to EXT_IO[<span class="dv">2</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to EXT_IO[<span class="dv">3</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to EXT_IO[<span class="dv">4</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to EXT_IO[<span class="dv">5</span>]
+#set_instance_assignment -name IO_STANDARD <span class="st">&quot;3.3-V LVTTL&quot;</span> -to EXT_IO[<span class="dv">6</span>]
+
+#============================================================
+# <span class="pp">End</span> of pin assignments by Altera University Program
+#============================================================
+
+
+#set_instance_assignment -name FAST_INPUT_REGISTER ON -to *
+#set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to *
+#set_instance_assignment -name TSU_REQUIREMENT <span class="st">&quot;10 ns&quot;</span> -<span class="bu">from</span> * -to *
+
+set_instance_assignment -name IO_MAXIMUM_TOGGLE_RATE <span class="st">&quot;0 MHz&quot;</span> -to HEX0
+set_instance_assignment -name IO_MAXIMUM_TOGGLE_RATE <span class="st">&quot;0 MHz&quot;</span> -to HEX1
+set_instance_assignment -name IO_MAXIMUM_TOGGLE_RATE <span class="st">&quot;0 MHz&quot;</span> -to HEX2
+set_instance_assignment -name IO_MAXIMUM_TOGGLE_RATE <span class="st">&quot;0 MHz&quot;</span> -to HEX3
+set_instance_assignment -name IO_MAXIMUM_TOGGLE_RATE <span class="st">&quot;0 MHz&quot;</span> -to HEX4
+set_instance_assignment -name IO_MAXIMUM_TOGGLE_RATE <span class="st">&quot;0 MHz&quot;</span> -to HEX5
+set_instance_assignment -name IO_MAXIMUM_TOGGLE_RATE <span class="st">&quot;0 MHz&quot;</span> -to HEX6
+set_instance_assignment -name IO_MAXIMUM_TOGGLE_RATE <span class="st">&quot;0 MHz&quot;</span> -to HEX7
+
+set_instance_assignment -name IO_MAXIMUM_TOGGLE_RATE <span class="st">&quot;0 MHz&quot;</span> -to KEY
+set_instance_assignment -name IO_MAXIMUM_TOGGLE_RATE <span class="st">&quot;0 MHz&quot;</span> -to SW</code></pre></div>
+<p><br></p>
+</div>
+<button onclick="exibe(this)">
+Ver Código
+</button>
+</div>
+<p><br></p>
+<hr />
+<p><br></p>
+<h3 id="display-de-7-segmentos">Display de 7 Segmentos</h3>
+<font style="color:red; font-size:40px;">Colocar os diagramas, de cada periférico, junto com as descrições abaixo. Cada item terá o VHDL e o diagrama</font>
+</p>
+<p>Temos oito displays de sete segmentos, HEX0 a HEX7, portanto precisaremos de decodificador de binário para sete segmentos.</p>
+<p>Um exemplo funcional para esse decodificador está mostrado a seguir.</p>
+<p>Além disso, os nomes dos pinos devem constar no arquivo <em>&lt;projeto&gt;.qsf</em>.</p>
+<div id="cod-A1" class="bloco solucao">
+<div class="conteudo">
+<p style="color:red">
+Código:
+</p>
+<p>Será necessário adicionar um registrador à entrada deste circuito.</p>
+<p>Esse registrador deverá ser endereçado de acordo com o seu projeto.</p>
+<p>Definição dos displays na entidade Top_level:</p>
+<div class="sourceCode"><pre class="sourceCode vhdl"><code class="sourceCode vhdl">
+<span class="kw">entity</span> <span class="kw">exemplo</span> <span class="kw">is</span>
+  <span class="kw">port</span> (
+    HEX0<span class="ot">,</span> HEX1<span class="ot">,</span> HEX2<span class="ot">,</span> HEX3<span class="ot">,</span> HEX4<span class="ot">,</span> HEX5<span class="ot">,</span> HEX6<span class="ot">,</span> HEX7 <span class="ot">:</span> <span class="kw">OUT</span> <span class="dt">STD_LOGIC_VECTOR</span>(<span class="dv">6</span> <span class="ot">downto</span> <span class="dv">0</span>)
+  );
+<span class="er">end entity;</span></code></pre></div>
+<p>Arquivo com o circuito do decodificador:</p>
+<div class="sourceCode"><pre class="sourceCode vhdl"><code class="sourceCode vhdl">
+<span class="kw">library</span> IEEE;
+<span class="kw">use</span> ieee<span class="ot">.</span>std_logic_1164<span class="ot">.</span>all;
+
+<span class="kw">entity</span> <span class="kw">conversorHex7Seg</span> <span class="kw">is</span>
+    <span class="kw">port</span>
+    (
+        <span class="co">-- Input ports</span>
+        dadoHex <span class="ot">:</span> <span class="kw">in</span>  <span class="dt">std_logic_vector</span>(<span class="dv">3</span> <span class="ot">downto</span> <span class="dv">0</span>);
+        apaga   <span class="ot">:</span> <span class="kw">in</span>  <span class="dt">std_logic</span> <span class="ot">:=</span> <span class="bn">&#39;0&#39;</span>;
+        negativo <span class="ot">:</span> <span class="kw">in</span>  <span class="dt">std_logic</span> <span class="ot">:=</span> <span class="bn">&#39;0&#39;</span>;
+        overFlow <span class="ot">:</span> <span class="kw">in</span>  <span class="dt">std_logic</span> <span class="ot">:=</span> <span class="bn">&#39;0&#39;</span>;
+        <span class="co">-- Output ports</span>
+        saida7seg <span class="ot">:</span> <span class="kw">out</span> <span class="dt">std_logic_vector</span>(<span class="dv">6</span> <span class="ot">downto</span> <span class="dv">0</span>)  <span class="co">-- := (others =&gt; &#39;1&#39;)</span>
+    );
+<span class="er">end entity;</span>
+
+<span class="kw">architecture</span> <span class="kw">comportamento</span> <span class="kw">of</span> <span class="kw">conversorHex7Seg</span> <span class="kw">is</span>
+   <span class="co">--</span>
+   <span class="co">--       0</span>
+   <span class="co">--      ---</span>
+   <span class="co">--     |   |</span>
+   <span class="co">--    5|   |1</span>
+   <span class="co">--     | 6 |</span>
+   <span class="co">--      ---</span>
+   <span class="co">--     |   |</span>
+   <span class="co">--    4|   |2</span>
+   <span class="co">--     |   |</span>
+   <span class="co">--      ---</span>
+   <span class="co">--       3</span>
+   <span class="co">--</span>
+
+  <span class="ot">signal</span> rascSaida7seg<span class="ot">:</span> <span class="dt">std_logic_vector</span>(<span class="dv">6</span> <span class="ot">downto</span> <span class="dv">0</span>);
+
+<span class="kw">begin</span>
+    rascSaida7seg <span class="ot">&lt;=</span>    <span class="st">&quot;1000000&quot;</span> <span class="kw">when</span> dadoHex<span class="ot">=</span><span class="st">&quot;0000&quot;</span> else <span class="co">---0</span>
+                            <span class="st">&quot;1111001&quot;</span> <span class="kw">when</span> dadoHex<span class="ot">=</span><span class="st">&quot;0001&quot;</span> else <span class="co">---1</span>
+                            <span class="st">&quot;0100100&quot;</span> <span class="kw">when</span> dadoHex<span class="ot">=</span><span class="st">&quot;0010&quot;</span> else <span class="co">---2</span>
+                            <span class="st">&quot;0110000&quot;</span> <span class="kw">when</span> dadoHex<span class="ot">=</span><span class="st">&quot;0011&quot;</span> else <span class="co">---3</span>
+                            <span class="st">&quot;0011001&quot;</span> <span class="kw">when</span> dadoHex<span class="ot">=</span><span class="st">&quot;0100&quot;</span> else <span class="co">---4</span>
+                            <span class="st">&quot;0010010&quot;</span> <span class="kw">when</span> dadoHex<span class="ot">=</span><span class="st">&quot;0101&quot;</span> else <span class="co">---5</span>
+                            <span class="st">&quot;0000010&quot;</span> <span class="kw">when</span> dadoHex<span class="ot">=</span><span class="st">&quot;0110&quot;</span> else <span class="co">---6</span>
+                            <span class="st">&quot;1111000&quot;</span> <span class="kw">when</span> dadoHex<span class="ot">=</span><span class="st">&quot;0111&quot;</span> else <span class="co">---7</span>
+                            <span class="st">&quot;0000000&quot;</span> <span class="kw">when</span> dadoHex<span class="ot">=</span><span class="st">&quot;1000&quot;</span> else <span class="co">---8</span>
+                            <span class="st">&quot;0010000&quot;</span> <span class="kw">when</span> dadoHex<span class="ot">=</span><span class="st">&quot;1001&quot;</span> else <span class="co">---9</span>
+                            <span class="st">&quot;0001000&quot;</span> <span class="kw">when</span> dadoHex<span class="ot">=</span><span class="st">&quot;1010&quot;</span> else <span class="co">---A</span>
+                            <span class="st">&quot;0000011&quot;</span> <span class="kw">when</span> dadoHex<span class="ot">=</span><span class="st">&quot;1011&quot;</span> else <span class="co">---B</span>
+                            <span class="st">&quot;1000110&quot;</span> <span class="kw">when</span> dadoHex<span class="ot">=</span><span class="st">&quot;1100&quot;</span> else <span class="co">---C</span>
+                            <span class="st">&quot;0100001&quot;</span> <span class="kw">when</span> dadoHex<span class="ot">=</span><span class="st">&quot;1101&quot;</span> else <span class="co">---D</span>
+                            <span class="st">&quot;0000110&quot;</span> <span class="kw">when</span> dadoHex<span class="ot">=</span><span class="st">&quot;1110&quot;</span> else <span class="co">---E</span>
+                            <span class="st">&quot;0001110&quot;</span> <span class="kw">when</span> dadoHex<span class="ot">=</span><span class="st">&quot;1111&quot;</span> else <span class="co">---F</span>
+                            <span class="st">&quot;1111111&quot;</span>; <span class="co">-- Apaga todos segmentos.</span>
+
+    saida7seg <span class="ot">&lt;=</span>     <span class="st">&quot;1100010&quot;</span> <span class="kw">when</span> (overFlow<span class="ot">=</span><span class="bn">&#39;1&#39;</span>) else
+                            <span class="st">&quot;1111111&quot;</span> <span class="kw">when</span> (apaga<span class="ot">=</span><span class="bn">&#39;1&#39;</span> <span class="kw">and</span> negativo<span class="ot">=</span><span class="bn">&#39;0&#39;</span>) else
+                            <span class="st">&quot;0111111&quot;</span> <span class="kw">when</span> (apaga<span class="ot">=</span><span class="bn">&#39;0&#39;</span> <span class="kw">and</span> negativo<span class="ot">=</span><span class="bn">&#39;1&#39;</span>) else
+                            rascSaida7seg;
+<span class="er">end architecture;</span></code></pre></div>
+<p>Exemplo de uso:</p>
+<div class="sourceCode"><pre class="sourceCode vhdl"><code class="sourceCode vhdl">
+  <span class="co">-- Indica o estado atual da maquina de estado, em decimal:</span>
+  display7 <span class="ot">:</span> <span class="kw">entity</span> <span class="kw">work</span><span class="ot">.</span>conversorHex7seg
+    <span class="kw">Port</span> <span class="kw">map</span> (saida7seg <span class="ot">=&gt;</span> HEX7<span class="ot">,</span> dadoHex <span class="ot">=&gt;</span> auxPasso<span class="ot">,</span> apaga <span class="ot">=&gt;</span> <span class="bn">&#39;0&#39;</span><span class="ot">,</span> overFlow <span class="ot">=&gt;</span> <span class="bn">&#39;0&#39;</span><span class="ot">,</span> negativo <span class="ot">=&gt;</span> <span class="bn">&#39;0&#39;</span>);</code></pre></div>
+<p><br></p>
+</div>
+<button onclick="exibe(this)">
+Ver Código
+</button>
+</div>
+<p><br></p>
+<h3 id="chaves-e-botões">Chaves e Botões</h3>
+<p>Temos 18 chaves (HH) e quatro botões de contato momentâneo.</p>
+<p>A sua utilização, basicamente, consiste em declarar a sua conexão na entidade <strong>top_level</strong> e fazer o endereçamento.</p>
+<div id="cod-Chaves" class="bloco solucao">
+<div class="conteudo">
+<p style="color:red">
+Código:
+</p>
+<div class="sourceCode"><pre class="sourceCode vhdl"><code class="sourceCode vhdl">
+<span class="kw">entity</span> <span class="kw">exemplo</span> <span class="kw">is</span>
+  <span class="kw">port</span> (
+    <span class="co">-- Entradas (placa)</span>
+    KEY<span class="ot">:</span> <span class="kw">in</span> <span class="dt">STD_LOGIC_VECTOR</span>(<span class="dv">3</span> <span class="ot">DOWNTO</span> <span class="dv">0</span>);
+    SW<span class="ot">:</span> <span class="kw">in</span> <span class="dt">STD_LOGIC_VECTOR</span>(<span class="dv">17</span> <span class="ot">DOWNTO</span> <span class="dv">0</span>)
+  );
+<span class="er">end entity;</span></code></pre></div>
+<p>Exemplo de uso:</p>
+<div class="sourceCode"><pre class="sourceCode vhdl"><code class="sourceCode vhdl">
+  <span class="co">-- conexoes da placa:</span>
+  <span class="co">-- Os 8 primeiros LEDS VERMELHOS indicam o valor definido nas chaves.</span>
+  LEDR(7 downto 0) <span class="ot">&lt;=</span> SW(7 downto 0);</code></pre></div>
+</div>
+<button onclick="exibe(this)">
+Ver Código
+</button>
+</div>
+<p><br></p>
+<h3 id="leds">LEDs</h3>
+<p>Temos 18 LEDs vermelhos (LEDR) e oito verdes (LEDG).</p>
+<p>A sua utilização, basicamente, consiste em declarar a sua conexão na entidade <strong>top_level</strong> e fazer o endereçamento.</p>
+<div id="cod-LEDs" class="bloco solucao">
+<div class="conteudo">
+<p style="color:red">
+Código:
+</p>
+<p>Definição no <em>top_level</em>:</p>
+<div class="sourceCode"><pre class="sourceCode vhdl"><code class="sourceCode vhdl">
+<span class="kw">entity</span> <span class="kw">exemplo</span> <span class="kw">is</span>
+  <span class="kw">port</span> (
+    <span class="co">-- Saidas (placa)</span>
+    LEDR  <span class="ot">:</span> <span class="kw">out</span> <span class="dt">STD_LOGIC_VECTOR</span>(<span class="dv">17</span> <span class="ot">DOWNTO</span> <span class="dv">0</span>) <span class="ot">:=</span> (<span class="ot">others</span> <span class="ot">=&gt;</span> <span class="bn">&#39;0&#39;</span>);
+    LEDG  <span class="ot">:</span> <span class="kw">out</span> <span class="dt">STD_LOGIC_VECTOR</span>(<span class="dv">8</span> <span class="ot">DOWNTO</span> <span class="dv">0</span>) <span class="ot">:=</span> (<span class="ot">others</span> <span class="ot">=&gt;</span> <span class="bn">&#39;0&#39;</span>)
+  );
+<span class="er">end entity;</span></code></pre></div>
+<p>Exemplo de uso:</p>
+<div class="sourceCode"><pre class="sourceCode vhdl"><code class="sourceCode vhdl">
+  <span class="co">-- conexoes da placa:</span>
+  <span class="co">-- Os 8 primeiros LEDS VERMELHOS indicam o valor definido nas chaves.</span>
+  LEDR(7 downto 0) <span class="ot">&lt;=</span> SW(7 downto 0);</code></pre></div>
+<p><br></p>
+</div>
+<button onclick="exibe(this)">
+Ver Código
+</button>
+</div>
+<p><br></p>
+<hr />
+<h3 id="processador">Processador</h3>
+<p>Para iniciar o projeto, vamos utilizar um processador com 8 bits (para dados e endereços).</p>
+<div id="diagrama-Processador" class="bloco solucao">
+<div class="conteudo">
+<p style="color:red">
+Diagrama:
+</p>
+<div class="figure">
+<img src="./imagensCircuitos/CPU_DIP_28_pinos.svg" width="200" />
+
+</div>
+</div>
+<button onclick="exibe(this)">
+Ver Diagrama
+</button>
+</div>
+<p><br></p>
+<h3 id="diagrama-de-blocos">Diagrama de Blocos</h3>
+<p>Precisamos interligar os componentes, vistos até agora, para formar a estrutura do relógio.</p>
+<h4 id="display-de-7-segmentos-1">Display de 7 Segmentos</h4>
+<p>Faça o rascunho para a utilização de um único display de sete segmentos, considerando:</p>
+<ul>
+<li><p>O display e seus sinais;</p></li>
+<li><p>O decodificador de endereços e seus sinais;</p></li>
+<li><p>O registrador e seus sinais;</p></li>
+<li><p>A interligação desses componentes para formar um módulo.</p></li>
+</ul>
+<div id="diagrama-7Seg" class="bloco solucao">
+<div class="conteudo">
+<p style="color:red">
+Diagrama:
+</p>
+<div class="figure">
+<img src="imagensComponentes/decoder7Seg.svg" alt="Decoder Binário para Sete Segmentos" width="600" />
+<p class="caption"><strong>Decoder Binário para Sete Segmentos</strong></p>
+</div>
+</div>
+<button onclick="exibe(this)">
+Ver Diagrama
+</button>
+</div>
+<p><br></p>
+<h4 id="chaves-e-botões-1">Chaves e Botões</h4>
+<p>Chaves e botões se comportam de maneira similar e seu circuito é o mesmo para os dois casos.</p>
+<div id="diagrama-Chaves" class="bloco solucao">
+<div class="conteudo">
+<p style="color:red">
+Diagrama:
+</p>
+<div class="figure">
+<img src="imagensComponentes/chavesBotoes.svg" alt="Circuito de Entrada para Chaves" width="600" />
+<p class="caption"><strong>Circuito de Entrada para Chaves</strong></p>
+</div>
+</div>
+<button onclick="exibe(this)">
+Ver Diagrama
+</button>
+</div>
+<p><br></p>
+<h4 id="leds-1">LEDs</h4>
+<p>O circuito para os LEDs é muito parecido com o utilizado para os displays de sete segmentos.</p>
+<div id="diagrama-Leds" class="bloco solucao">
+<div class="conteudo">
+<p style="color:red">
+Diagrama:
+</p>
+<div class="figure">
+<img src="imagensComponentes/LEDs.svg" alt="Circuito de Saída para LEDs" width="600" />
+<p class="caption"><strong>Circuito de Saída para LEDs</strong></p>
+</div>
+</div>
+<button onclick="exibe(this)">
+Ver Diagrama
+</button>
+</div>
+<p><br></p>
+<h4 id="base-de-tempo">Base de Tempo</h4>
+<p>Precisaremos de uma base de tempo de um segundo.</p>
+<div id="diagrama-BaseTempoo" class="bloco solucao">
+<div class="conteudo">
+<p style="color:red">
+Diagrama:
+</p>
+<div class="figure">
+<img src="imagensVHDL/clockDomainSynchronizedPCFS.svg" alt="Base de Tempo" width="600" />
+<p class="caption"><strong>Base de Tempo</strong></p>
+</div>
+</div>
+<button onclick="exibe(this)">
+Ver Diagrama
+</button>
+</div>
+<p><br></p>
+<hr />
+<h3 id="interligando-todos-módulos">Interligando todos Módulos</h3>
+<p>Faça um esboço do circuito para o relógio, interligando o que já temos e não se esqueça das memórias (RAM e ROM).</p>
+<hr />
+<p><strong>Referências:</strong></p>
+<p><a href="./linksUteis.html">Página com links</a> de referências sobre VHDL, Quartus, etc ...</p>
+<p><a name="fimDocumento"></a> <a href="#inicio">Ir para o início do documento</a>.</p>
+<hr />
+<p><br></p>
+<hr />
+<hr />
+<!-- FIM -->
+<!---
+######### (inicio dos links) ##########
+#######################################
+########### Links Internos ############
+--->
+</body>
+</html>

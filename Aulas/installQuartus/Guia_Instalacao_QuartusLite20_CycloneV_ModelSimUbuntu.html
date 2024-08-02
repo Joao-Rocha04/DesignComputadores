@@ -1,0 +1,468 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <style>
+  /* fundo para o trecho de código */
+  div.sourceCode { overflow-x: auto; background-color: rgb(245,245,245);}  /*rgb(250,250,250)*/
+  body {font-family: "Lato", sans-serif;}
+  
+  /* Para dividir a pagina em duas colunas */
+   .column {
+    float: left;
+    width:49%;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Inicio do menu tipo acordeon */
+  .accordion{
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+    font-weight: bold;
+  }
+  .active, .accordion:hover {
+    background-color: #a4b8b6;
+  }
+  .panel {
+    /*Versao anterior do accordion usa  max-height: 0 para fazer a transition e nao aceita aninhamento de acordeon*/
+    padding: 0 10px;
+    background-color: #f9f9f9;
+    max-height: 0;
+     overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    margin-left: 0%;
+  }
+  .panel p {
+    margin-left: 1%;
+  }
+  /*Inicio do Acordeon Aninhado*/
+  button.accordionNested{
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  .activeNested, .accordionNested:hover {
+    background-color: #a4b8b6;
+  }
+  .panelNested {
+    /*Aceita aninhamento mas nao faz transition*/
+    padding: 0 10px;
+    background-color: #f9f9f9;
+    display: none;
+    overflow: hidden;
+    margin-left: 0%;
+  }
+  .panelNested p {
+    margin-left: 1%;
+  }
+  /* Fim do menu tipo acordeon */
+  
+  .bloco .title {
+      display: block;
+  }
+  
+  /*Bloco de solucao de exercicio*/
+  .bloco .label,
+  .bloco .separator {
+      font-weight: bold;
+  }
+  
+  .bloco .separator {
+      margin-right: .6em;
+  /*    margin-left: .6em;  */
+  }
+  /* Solução */
+  div.solucao {
+    border-left: .3em solid #dd4444;   /*#dc3c01; */
+    margin-left: -.8em;
+    padding-left: .4em;
+    position: relative;
+    font-size: 90%;
+  }
+  
+  div.solucao .conteudo {
+    display: none;
+    padding-top: 1px;
+  }
+  
+  div.solucao button {
+    color: #0000AF;
+    background-color: white;
+    border-radius: 5px;
+  }
+  
+  div.solucao button.viewed {
+    color: #FF2020;
+    background-color: white;
+    border-radius: 5px;
+  }
+  
+  div.exemplo {
+    /*background-color: lightgray;*/
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  
+  div.exemplo .sourceCode  {
+    /*background-color: lightgray;*/
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+  
+  div.adicional {
+    margin-left: 1%;
+  }
+  /* Alinhamento dos títulos e parágrafos */
+  
+  body{margin-left: 5%; margin-right: 5%;
+           color: black; background-color: #f9f9f9;}
+  
+  hr{
+      margin-left: -4%;
+      background-color: rgb(0,150,150);  /*anterior:    240,240,240 */
+  }
+  h1{
+      margin-left: -4%;
+      /*background-color: rgb(210,210,220);*/
+  }
+  
+  h2{
+      margin-left: -4%;
+      /*background-color: rgb(220,220,230);*/
+  }
+  
+  h3{
+      margin-left: 0%;  /*-4%;*/
+      /*background-color: rgb(230,230,240);*/
+  }
+  
+  h4{
+      margin-left: 0%;  /*-4%;*/
+      /*background-color: rgb(240,240,250);*/
+  }
+  h5{
+      margin-left: 0%;  /*-4%;*/
+      /*background-color: rgb(245,245,250);*/
+  }
+  
+  /* Cores */
+  i{color: red}
+  em{color: green}
+  cite{color: brown}
+  /* blockquote > p { */
+  blockquote{color: red}
+  blockquote p {
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 2em;
+  }
+  
+  /* ---- Front Matter ----
+  Pandoc header DIV. Contains .title, .author and .date. Comes before div#TOC.
+  Only appears if one of those three are in the document.   */
+  
+  div#header, header
+      {
+      /* Put border on bottom. Separates it from TOC or body that comes after it. */
+      border-bottom: 1px solid #aaa;
+      margin-bottom: 0.5em;
+      }
+  
+  .title /* Pandoc title header (h1.title) */
+      {
+      text-align: center;
+      }
+  
+  .author, .date /* Pandoc author(s) and date headers (h2.author and h3.date) */
+      {
+      text-align: center;
+      }
+  
+  /* Pandoc table of contents DIV when using the --toc option.
+     NOTE: this doesn't support Pandoc's --id-prefix option for #TOC and #header.
+     Probably would need to use div[id$='TOC'] and div[id$='header'] as selectors.
+  */
+  
+  div#TOC, nav#TOC
+      {
+      /* Put border on bottom to separate it from body. */
+  /*    border-bottom: 1px solid #aaa;   */
+      margin-bottom: 0.5em;
+      }
+  
+  @media print
+      {
+      div#TOC, nav#TOC
+          {
+          /* Don't display TOC in print */
+          display: none;
+          }
+      }
+  /* ---- Images ---- */
+  img {
+      /* Let it be inline left/right where it wants to be, but verticality make
+         it in the middle to look nicer, but opinions differ, and if in a multi-line
+         paragraph, it might not be so great.
+         vertical-align: middle;
+      */
+      vertical-align: middle;
+      max-width: 600px;
+      height:auto;
+      }
+  div.figure /* Pandoc figure-style image */
+      {
+      /* Center the image and caption */
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      font-style: italic;
+      max-width: 600px;
+      height:auto;
+      }
+  p.caption /* Pandoc figure-style caption within div.figure */
+      {
+      /* Inherits div.figure props by default */
+      }
+  /* ---- Tables ---- */
+  table {
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 24px;
+      border-spacing: 0;
+      border-bottom: 2px solid black;
+      border-top: 2px solid black;
+  }
+  table th {
+      padding: 3px 10px;
+      background-color: white;
+      border-top: 1px;
+      border-left: 1px;
+      border-right: 1px;
+      border-bottom: 1px solid black;
+  }
+  table td {
+      padding: 3px 10px;
+      border-top: 1px;
+      border-left: 1px;
+      border-bottom: 1px;
+      border-right: 1px;
+  }
+  /* fundo para as linhas das tabelas */
+  tr.even{
+    background-color: rgb(230,230,240);
+  }
+  tr.odd{
+    background-color: rgb(250,250,250);
+  }
+  </style>
+  <script type="text/javascript">
+      function exibe(e)
+      {
+          var div = e.parentNode.firstElementChild;
+          var nome = e.parentNode.id;
+          var tipo=nome.substring(0, 3).toUpperCase()
+          switch (tipo) {
+            case "SOL":
+                nome = "Solução";
+                break;
+            case "COD":
+                nome = "Código";
+                break;
+            case "DIC":
+                nome = "Dica";
+                break;
+            case "DIA":
+                nome = "Diagrama";
+                break;
+            case "RES":
+                nome = "Resumo";
+                break;
+            case "CON":
+                nome = "Conteúdo";
+                break;
+            default:
+                nome = "";
+            }
+  
+          if (div.style.display == "" || div.style.display == "none") {
+              div.style.display = "block";
+              e.setAttribute("class", "viewed");
+              e.innerHTML = "Esconder ";
+          } else {
+              div.style.display = "none";
+              e.innerHTML = "Exibir "+nome;
+          }
+      }
+      function validaBinario(nome) {
+          var valor, tamanho, i;
+          document.getElementById(nome).style.color = "black";
+          valor = document.getElementById(nome).value;
+          tamanho=valor.length;
+          for (i=0;i<tamanho; i=i+1){
+              if ( valor[i] != 1 && valor[i] != 0 ){
+                  document.getElementById(nome).style.color = "red";
+              }
+          }
+      }
+  </script>
+</head>
+<body>
+<h1 id="ubuntu-20.04.1-lts-focal-fossa">Ubuntu 20.04.1 LTS (Focal Fossa)</h1>
+<p><font style="color:red">Por: Marco Antonio Soares de Mello Alves (Laboratório de Arquitetura de Computadores)</font></p>
+<p><font style="color:red">Dúvidas:</font></p>
+<blockquote>
+<p><strong>Email: marcoasma@insper.edu.br</strong></p>
+</blockquote>
+<blockquote>
+<p><strong>Teams: marco.alves@al.insper.edu.br</strong></p>
+</blockquote>
+<h1 id="quartus-prime-e-modelsim">Quartus Prime e ModelSim</h1>
+<p>Execute no terminal os comandos a seguir, o Quartus necessita de dependências da arquitetura i384.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">sudo</span> dpkg --add-architecture i386
+$ <span class="fu">sudo</span> apt-get update
+$ <span class="fu">sudo</span> apt-get install gcc make libxft2:i386 libxext6:i386 \
+  libncurses5:i386 libstdc++6:i386 libpng-dev \
+  libpng16-16:i386 libpng16-16 python-gobject libnotify-bin</code></pre></div>
+<h3 id="libpng12"><a href="http://www.bitsnbites.eu/installing-intelaltera-quartus-in-ubuntu-17-10/">Libpng12</a></h3>
+<blockquote>
+<p>The simplest way is to build and install libpng12 from source (requires build-essential). Install build-essential (to get gcc etc): sudo apt install build-essential <a href="https://sourceforge.net/projects/libpng/files/libpng12/1.2.59/libpng-1.2.59.tar.xz/download">Download the source code from sourceforge</a> (select a suitable version and tar archive). Unpack the tar archive to /tmp Build and install:</p>
+</blockquote>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="bu">cd</span> <span class="va">$HOME</span>/Downloads/libpng-1.2.59
+$ <span class="ex">./configure</span> --prefix=/usr/local
+$ <span class="fu">make</span>
+$ <span class="fu">sudo</span> make install
+$ <span class="fu">sudo</span> ldconfig</code></pre></div>
+<h2 id="instalando">Instalando</h2>
+<p>Faça o download dos arquivos a seguir (salve na mesma todos os arquivos):</p>
+<ul>
+<li><p>Quartus Lite 20.01 : http://download.altera.com/akdlm/software/acdsinst/20.1std/711/ib_installers/QuartusLiteSetup-20.1.0.711-linux.run</p></li>
+<li><p>ModelSim : http://download.altera.com/akdlm/software/acdsinst/20.1std/711/ib_installers/ModelSimSetup-20.1.0.711-linux.run</p></li>
+<li><p>Cyclone V (Chip usado no curso) : http://download.altera.com/akdlm/software/acdsinst/20.1std/711/ib_installers/cyclonev-20.1.0.711.qdz</p></li>
+</ul>
+<p>Abra o terminal na pasta que os arquivos foram salvos e execute os dois comandos a seguir:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">chmod</span> +x QuartusLiteSetup-20.1.0.771-linux.run
+$ <span class="ex">./QuartusLiteSetup-20.1.0.771-linux.run</span></code></pre></div>
+<blockquote>
+<p>Grave o caminho na qual o <strong>Quartus</strong> foi instalado, ele será utilizado na próxima etapa.</p>
+</blockquote>
+<blockquote>
+<p>Se o Quartus falhar na instalação, mova o modelsim dessa pasta e instale novamente. Depois será necessário instalar o modelsim a parte.</p>
+</blockquote>
+<h2 id="modelsim">Modelsim</h2>
+<ol style="list-style-type: decimal">
+<li>Editar vco</li>
+</ol>
+<p>Vamos editar o arquivo <code>vco</code> que está na pasta do modelsim (exe: <code>$HOME/intelFPGA_lite/20.1/modelsim_ase/vco</code>):</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">sudo</span> sed -i <span class="st">&#39;209 a\        4.[0-9]*)             vco=&quot;linux&quot; ;;&#39;</span> <span class="va">$HOME</span>/intelFPGA_lite/20.1/modelsim_ase/vco</code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li>Libfreetype 6.10.1 (versão 2.6)</li>
+</ol>
+<p>Será necessário carregarmos uma versão anterior dessa lib. Seguir os passos <a href="https://gist.github.com/PrieureDeSion/e2c0945cc78006b00d4206846bdb7657#stage-2">nesse roteiro</a> ou fazer o download de uma versão <a href="https://github.com/Insper/Z01-tools/raw/master/Extra/Libfreetype-6.10.1-lib32.tar.gz">pré compilada por mim</a></p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="bu">cd</span> ~/Downloads
+$ <span class="fu">wget</span> https://github.com/Insper/Z01-tools/raw/master/Extra/Libfreetype-6.10.1-lib32.tar.gz
+$ <span class="fu">mkdir</span> <span class="va">$HOME</span>/intelFPGA_lite/20.1/modelsim_ase/lib32
+$ <span class="fu">tar</span> zxf Libfreetype-6.10.1-lib32.tar.gz -C <span class="va">$HOME</span>/intelFPGA_lite/20.1/modelsim_ase/lib32</code></pre></div>
+<p>Adicione ao final do <code>bashrc</code> a seguinte linha:</p>
+<div class="sourceCode"><pre class="sourceCode diff"><code class="sourceCode diff">export LD_LIBRARY_PATH=$HOME/intelFPGA_lite/20.1/modelsim_ase/lib32</code></pre></div>
+<h2 id="configurando-o-usb-blaster">Configurando o USB Blaster</h2>
+<h4 id="libudev1i386"><a href="https://forums.intel.com/s/question/0D50P00003yySE5SAM/newbie-usb-blaster-on-ubuntu-linux-xenial-1604-wont-probe-chain?language=en_US">libudev1:i386</a></h4>
+<p>Para o gravador Jtag blaster funcionar no Ubuntu 18 LTS</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">sudo</span> apt-get install libudev1:i386
+$ <span class="fu">sudo</span> ln -sf /lib/x86_64-linux-gnu/libudev.so.1 /lib/x86_64-linux-gnu/libudev.so.0</code></pre></div>
+<p>Execute o comando a seguir para criar o arquivo de regra:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">sudo</span> gedit /etc/udev/rules.d/51-altera-usb-blaster.rules</code></pre></div>
+<p>Adicione as seguintes linhas a esse arquivo criado e salve:</p>
+<div class="sourceCode"><pre class="sourceCode diff"><code class="sourceCode diff">SUBSYSTEM==&quot;usb&quot;, ATTR{idVendor}==&quot;09fb&quot;, ATTR{idProduct}==&quot;6001&quot;, MODE=&quot;0666&quot;
+SUBSYSTEM==&quot;usb&quot;, ATTR{idVendor}==&quot;09fb&quot;, ATTR{idProduct}==&quot;6002&quot;, MODE=&quot;0666&quot;
+SUBSYSTEM==&quot;usb&quot;, ATTR{idVendor}==&quot;09fb&quot;, ATTR{idProduct}==&quot;6003&quot;, MODE=&quot;0666&quot;
+SUBSYSTEM==&quot;usb&quot;, ATTR{idVendor}==&quot;09fb&quot;, ATTR{idProduct}==&quot;6010&quot;, MODE=&quot;0666&quot;
+SUBSYSTEM==&quot;usb&quot;, ATTR{idVendor}==&quot;09fb&quot;, ATTR{idProduct}==&quot;6810&quot;, MODE=&quot;0666&quot;</code></pre></div>
+<p>Recarrege o as permissões via o comando a seguir:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">sudo</span> service udev restart</code></pre></div>
+<h2 id="configurando-variáveis-de-ambiente">Configurando variáveis de ambiente</h2>
+<p>Adicione ao final do <code>bashrc</code> as seguintes linhas:</p>
+<div class="sourceCode"><pre class="sourceCode diff"><code class="sourceCode diff">export ALTERAPATH=$HOME/intelFPGA_lite/20.1
+export PATH=$PATH:${ALTERAPATH}/quartus/bin
+export PATH=$PATH:${ALTERAPATH}/modelsim_ase/linuxaloem/
+export PATH=$PATH:${ALTERAPATH}/modelsim_ase/lib32
+export VUNIT_MODELSIM_PATH=${ALTERAPATH}/modelsim_ase/linuxaloem/
+export VUNIT_SIMULATOR=modelsim
+export QSYS_ROOTDIR=&quot;$ALTERAPATH/quartus/sopc_builder/bin&quot;
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${ALTERAPATH}/modelsim_ase/lib32</code></pre></div>
+<p>Se você alterou o caminho de instalação na etapa do <code>Quartus</code>, deve modificar a primeira linha inserindo o caminho da instalação.</p>
+<h1 id="validando">Validando</h1>
+<blockquote>
+<p>Reinicie o computador (ou máquina virtual) para concluir a instalação</p>
+</blockquote>
+<ol style="list-style-type: decimal">
+<li><strong>Quartus:</strong> Escreva <code>quartus</code> no terminal, o mesmo deve abrir a janela do Quartus</li>
+<li><strong>Programador:</strong> Com a FPGA plugada no pc, digite <code>jtagconfig</code> ele deve aparecer o device.</li>
+<li><strong>Modelsim:</strong> Escreva <code>vsim</code> no terminal, o mesmo deve abrir a janela do ModeolSim</li>
+</ol>
+</body>
+</html>

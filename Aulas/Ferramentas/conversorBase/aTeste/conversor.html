@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Conversor Bin, Hex, Dec, etc...</title>
+  <style>
+    body{padding: 50px; margin: 0}
+    #lblResult{padding: 20px;}
+  </style>
+</head>
+<body>
+<script src="./jquery.min.js"></script>   <!--  -->
+<input id="txtNumber" type="text" placeholder="Number" />
+<input id="txtFromBase" type="text" placeholder="From Base" />
+<input id="txtToBase" type="text" placeholder="To Base" />
+<input id="btnConvert" type="button" value="Convert" />
+<br/>
+<br />
+<br />
+
+<span id="lblResult"></span>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<p>Hint: <br/>
+Try 110, 2, 10 and it will return 6; (110)<sub>2</sub> = 6<br/>
+or 2d, 16, 10 => 45 meaning: (2d)<sub>16</sub> = 45<br />
+or 45, 10, 16 => 2d meaning: 45 = (2d)<sub>16</sub><br />
+or 2d, 2, 16 => 2d meaning: (101101)<sub>2</sub> = (2d)<sub>16</sub><br />
+</p>
+
+
+<script type="text/javascript">
+    function changeBase(number, fromBase, toBase) {
+        if (fromBase == 10)
+            return (parseInt(number)).toString(toBase)
+        else if (toBase == 10)
+            return parseInt(number, fromBase);
+        else{
+            var numberInDecimal = parseInt(number, fromBase);
+            return (parseInt(numberInDecimal)).toString(toBase);
+        }
+    }
+    $("#btnConvert").click(function(){
+      var number = $("#txtNumber").val(),
+      fromBase = $("#txtFromBase").val(),
+      toBase = $("#txtToBase").val();
+      $("#lblResult").text(changeBase(number, fromBase, toBase));
+    });
+</script>
+</body>
+</html>
+

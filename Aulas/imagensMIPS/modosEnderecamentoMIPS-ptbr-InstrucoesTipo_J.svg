@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="393.95584"
+   height="206.44122"
+   version="1.1"
+   id="svg232"
+   sodipodi:docname="modosEnderecamentoMIPS-ptbr-InstrucoesTipo_J.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <metadata
+     id="metadata236">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1061"
+     id="namedview234"
+     showgrid="false"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:zoom="2.776961"
+     inkscape:cx="196.97792"
+     inkscape:cy="124.86308"
+     inkscape:window-x="1920"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg232"
+     fit-margin-left="10"
+     fit-margin-bottom="10"
+     fit-margin-top="10"
+     fit-margin-right="10" />
+  <defs
+     id="defs38">
+    <clipPath
+       id="j">
+      <path
+         d="m 310.141,798.18 h 2809.74 V 4165.84 H 310.141 Z"
+         id="path29"
+         inkscape:connector-curvature="0" />
+    </clipPath>
+    <clipPath
+       id="l">
+      <path
+         d="m 310.141,798.18 h 2809.74 V 4165.84 H 310.141 Z"
+         id="path35"
+         inkscape:connector-curvature="0" />
+    </clipPath>
+  </defs>
+  <g
+     clip-path="url(#j)"
+     transform="matrix(0.13333,0,0,-0.13333,-32.01775,259.57763)"
+     id="g192">
+    <path
+       d="M 3117.38,800.68 H 1981.25 v 409.87 h 1136.13 z"
+       id="path190"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:7.5001875;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none" />
+  </g>
+  <path
+     d="m 232.14925,135.76563 h 151.484 v -20.538 h -151.484 z"
+     id="path194"
+     inkscape:connector-curvature="0"
+     style="fill:#b2e6fa" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+     inkscape:connector-curvature="0"
+     id="path196"
+     d="M 383.62253,135.76873 H 232.14231 V 115.23191 H 383.62253 Z M 35.793621,74.959579 H 10.657183 v 20.648817 h 25.136438 z m 126.343779,0 H 35.793621 V 95.608396 H 162.1374 Z" />
+  <path
+     d="m 48.74725,95.946625 v 9.797005 h 129.047 v 4.946"
+     id="path208"
+     inkscape:connector-curvature="0"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+  <path
+     d="m 178.47825,112.26563 c 0.333,-1.103 0.64,-1.819 0.996,-2.704 h -3.364 c 0.15,0.316 0.661,1.601 0.993,2.704 0.358,1.178 0.602,2.249 0.688,2.942 0.087,-0.693 0.33,-1.764 0.687,-2.942"
+     id="path210"
+     inkscape:connector-curvature="0"
+     style="fill:#000000;fill-opacity:1;stroke:none" />
+  <g
+     clip-path="url(#l)"
+     transform="matrix(0.13333,0,0,-0.13333,-32.01775,259.57763)"
+     id="g214">
+    <path
+       d="M 1453.76,928.34 H 317.641 V 1083.2 H 1453.76 Z m 194.83,77.44 c 0,-42.538 -33.58,-77.01 -75,-77.01 -41.42,0 -75,34.472 -75,77.01 0,42.52 33.58,76.99 75,76.99 41.42,0 75,-34.47 75,-76.99 z M 885.602,928.34 v -75.18 h 687.988 v 41.719"
+       id="path212"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:7.5001874;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+  </g>
+  <path
+     d="m 177.11325,138.68663 c -0.334,1.101 -0.64,1.817 -0.995,2.7 h 3.363 c -0.152,-0.315 -0.663,-1.599 -0.996,-2.7 -0.356,-1.18 -0.6,-2.25 -0.687,-2.945 -0.087,0.696 -0.33,1.765 -0.685,2.945"
+     id="path216"
+     inkscape:connector-curvature="0"
+     style="fill:#000000;fill-opacity:1;stroke:none" />
+  <text
+     font-size="8"
+     font-weight="400"
+     style="font-weight:400;font-size:10.66664028px;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:1.33333004"
+     id="text220"
+     x="78.666252"
+     y="128.57863">
+    <tspan
+       x="78.666252 85.780899"
+       y="128.57863"
+       style="-inkscape-font-specification:Arial;stroke-width:1.33333004"
+       id="tspan218">PC</tspan>
+  </text>
+  <path
+     d="m 187.79425,125.47563 h 39.837"
+     id="path222"
+     inkscape:connector-curvature="0"
+     style="fill:none;stroke:#231f20;stroke-width:0.667" />
+  <path
+     d="m 229.20425,124.79063 c -1.102,-0.333 -1.82,-0.637 -2.7,-0.995 v 3.366 c 0.313,-0.153 1.598,-0.663 2.7,-0.996 1.18,-0.356 2.25,-0.602 2.945,-0.687 -0.695,-0.087 -1.766,-0.33 -2.944,-0.688"
+     id="path224"
+     inkscape:connector-curvature="0"
+     style="fill:#231f20" />
+  <path
+     d="m 177.79425,123.81963 v -1.98 m 0,6.98 v -1.98"
+     id="path230"
+     inkscape:connector-curvature="0"
+     style="fill:none;stroke:#000000;stroke-width:1.97899997;stroke-opacity:1" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.66666698px;line-height:100%;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="307.60226"
+     y="128.6964"
+     id="text5109-2-0"><tspan
+       sodipodi:role="line"
+       id="tspan5107-2-2"
+       x="307.60226"
+       y="128.6964">Word</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.66666698px;line-height:100%;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="308.86301"
+     y="90.814934"
+     id="text5155"><tspan
+       sodipodi:role="line"
+       id="tspan5153"
+       x="308.86301"
+       y="90.814934">Memória de Instruções</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.66666698px;line-height:100%;font-family:Arial;-inkscape-font-specification:Arial;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="17.985466"
+     y="88.86647"
+     id="text5165"><tspan
+       sodipodi:role="line"
+       id="tspan5163"
+       x="17.985466"
+       y="88.86647">op      Endereço = Imediato</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.66666698px;line-height:100%;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="95.964622"
+     y="67.333824"
+     id="text5083-1-5-7-1"><tspan
+       sodipodi:role="line"
+       id="tspan5081-7-1-4-7"
+       x="97.443787"
+       y="67.333824">5. Endereçamento Pseudodireto </tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:15px;line-height:0%;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:0.93999999;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.25px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="331.48328"
+     y="47.119328"
+     id="text4894"><tspan
+       sodipodi:role="line"
+       id="tspan4304"
+       x="332.34998"
+       y="47.119328"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.25px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:center;text-anchor:middle;stroke-width:1.25px">COD 4Ed, Copyright © 2009 </tspan><tspan
+       sodipodi:role="line"
+       x="331.48328"
+       y="54.931828"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.25px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:center;text-anchor:middle;stroke-width:1.25px"
+       id="tspan4308">Elsevier, Inc. All rights reserved.</tspan><tspan
+       sodipodi:role="line"
+       id="tspan4306"
+       x="331.48328"
+       y="62.644398"
+       style="font-size:6.25px;line-height:1.25;stroke-width:1.25px"> </tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.66666698px;line-height:100%;font-family:Arial;-inkscape-font-specification:Arial;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="44.432358"
+     y="19.544271"
+     id="text5083-1-9"><tspan
+       sodipodi:role="line"
+       id="tspan5081-7-4"
+       x="44.432358"
+       y="19.544271"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.33333302px;font-family:Arial;-inkscape-font-specification:'Arial Bold'">Endereçamento Usado nas Instruções do Tipo J</tspan></text>
+  <text
+     id="text4780"
+     y="161.33382"
+     x="19.63389"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.66666698px;line-height:100%;font-family:Arial;-inkscape-font-specification:Arial;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     xml:space="preserve"><tspan
+       y="161.33382"
+       x="19.63389"
+       sodipodi:role="line"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8px;font-family:Arial;-inkscape-font-specification:'Arial Bold'"
+       id="tspan4782">PC=JumpAddr </tspan><tspan
+       y="172.73582"
+       x="19.63389"
+       sodipodi:role="line"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8px;font-family:Arial;-inkscape-font-specification:'Arial Bold'"
+       id="tspan4786" /><tspan
+       y="183.4025"
+       x="19.63389"
+       sodipodi:role="line"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8px;font-family:Arial;-inkscape-font-specification:'Arial Bold'"
+       id="tspan4788">JumpAddr = PC+4[31:28] # endereço # 2’b0 }</tspan><tspan
+       y="194.8045"
+       x="19.63389"
+       sodipodi:role="line"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8px;font-family:Arial;-inkscape-font-specification:'Arial Bold'"
+       id="tspan4790"># = Concatenação</tspan></text>
+</svg>

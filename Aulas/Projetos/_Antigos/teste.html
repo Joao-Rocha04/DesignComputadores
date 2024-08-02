@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Design de Computadores</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style>
+  /* fundo para o trecho de código */
+  div.sourceCode { overflow-x: auto; background-color: rgb(245,245,245);}  /*rgb(250,250,250)*/
+  body {font-family: "Lato", sans-serif;}
+  
+  /* Para dividir a pagina em duas colunas */
+   .column {
+    float: left;
+    width:49%;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Inicio do menu tipo acordeon */
+  .accordion{
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+    font-weight: bold;
+  }
+  .active, .accordion:hover {
+    background-color: #a4b8b6;
+  }
+  .panel {
+    /*Versao anterior do accordion usa  max-height: 0 para fazer a transition e nao aceita aninhamento de acordeon*/
+    padding: 0 10px;
+    background-color: #f9f9f9;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    margin-left: 0%;
+  }
+  .panel p {
+    margin-left: 1%;
+  }
+  /*Inicio do Acordeon Aninhado*/
+  button.accordionNested{
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  .activeNested, .accordionNested:hover {
+    background-color: #a4b8b6;
+  }
+  .panelNested {
+    /*Aceita aninhamento mas nao faz transition*/
+    padding: 0 10px;
+    background-color: #f9f9f9;
+    display: none;
+    overflow: hidden;
+    margin-left: 0%;
+  }
+  .panelNested p {
+    margin-left: 1%;
+  }
+  /*Inicio do Segundo Acordeon Aninhado*/
+  button.accordionNestedTwo{
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  .activeNestedTwo, .accordionNestedTwo:hover {
+    background-color: #a4b8b6;
+  }
+  .panelNestedTwo {
+    /*Aceita aninhamento mas nao faz transition*/
+    padding: 0 10px;
+    background-color: #f9f9f9;
+    display: none;
+    overflow: hidden;
+    margin-left: 0%;
+  }
+  .panelNestedTwo p {
+    margin-left: 1%;
+  }
+  /* Fim do menu tipo acordeon */
+  
+  .bloco .title {
+      display: block;
+  }
+  
+  /*Bloco de solucao de exercicio*/
+  .bloco .label,
+  .bloco .separator {
+      font-weight: bold;
+  }
+  
+  .bloco .separator {
+      margin-right: .6em;
+  /*    margin-left: .6em;  */
+  }
+  /* Solução */
+  div.solucao {
+    border-left: .3em solid #dd4444;   /*#dc3c01; */
+    margin-left: -.8em;
+    padding-left: .4em;
+    position: relative;
+    font-size: 90%;
+  }
+  
+  div.solucao .conteudo {
+    display: none;
+    padding-top: 1px;
+  }
+  
+  div.solucao button {
+    color: #0000AF;
+    background-color: white;
+    border-radius: 5px;
+  }
+  
+  div.solucao button.viewed {
+    color: #FF2020;
+    background-color: white;
+    border-radius: 5px;
+  }
+  
+  div.exemplo {
+    /*background-color: lightgray;*/
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  
+  div.exemplo .sourceCode  {
+    /*background-color: lightgray;*/
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+  
+  div.adicional {
+    margin-left: 1%;
+  }
+  /* Alinhamento dos títulos e parágrafos */
+  
+  body{margin-left: 5%; margin-right: 5%;
+           color: black; background-color: #f9f9f9;}
+  
+  hr{
+      margin-left: -4%;
+      background-color: rgb(0,150,150);  /*anterior:    240,240,240 */
+  }
+  h1{
+      margin-left: -4%;
+      /*background-color: rgb(210,210,220);*/
+  }
+  
+  h2{
+      margin-left: -4%;
+      /*background-color: rgb(220,220,230);*/
+  }
+  
+  h3{
+      margin-left: 0%;  /*-4%;*/
+      /*background-color: rgb(230,230,240);*/
+  }
+  
+  h4{
+      margin-left: 0%;  /*-4%;*/
+      /*background-color: rgb(240,240,250);*/
+  }
+  h5{
+      margin-left: 0%;  /*-4%;*/
+      /*background-color: rgb(245,245,250);*/
+  }
+  
+  /* Cores */
+  i{color: red}
+  em{color: green}
+  cite{color: brown}
+  /* blockquote > p { */
+  blockquote{color: red}
+  blockquote p {
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 2em;
+  }
+  
+  /* ---- Front Matter ----
+  Pandoc header DIV. Contains .title, .author and .date. Comes before div#TOC.
+  Only appears if one of those three are in the document.   */
+  
+  div#header, header
+      {
+      /* Put border on bottom. Separates it from TOC or body that comes after it. */
+      border-bottom: 1px solid #aaa;
+      margin-bottom: 0.5em;
+      }
+  
+  .title /* Pandoc title header (h1.title) */
+      {
+      text-align: center;
+      }
+  
+  .author, .date /* Pandoc author(s) and date headers (h2.author and h3.date) */
+      {
+      text-align: center;
+      }
+  
+  /* Pandoc table of contents DIV when using the --toc option.
+     NOTE: this doesn't support Pandoc's --id-prefix option for #TOC and #header.
+     Probably would need to use div[id$='TOC'] and div[id$='header'] as selectors.
+  */
+  
+  div#TOC, nav#TOC
+      {
+      /* Put border on bottom to separate it from body. */
+  /*    border-bottom: 1px solid #aaa;   */
+      margin-bottom: 0.5em;
+      }
+  
+  @media print
+      {
+      div#TOC, nav#TOC
+          {
+          /* Don't display TOC in print */
+          display: none;
+          }
+      }
+  /* ---- Images ---- */
+  img {
+      /* Let it be inline left/right where it wants to be, but verticality make
+         it in the middle to look nicer, but opinions differ, and if in a multi-line
+         paragraph, it might not be so great.
+         vertical-align: middle;
+      */
+      vertical-align: middle;
+      max-width: 600px;
+      height:auto;
+      }
+  div.figure /* Pandoc figure-style image */
+      {
+      /* Center the image and caption */
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      font-style: italic;
+      max-width: 600px;
+      height:auto;
+      }
+  p.caption /* Pandoc figure-style caption within div.figure */
+      {
+      /* Inherits div.figure props by default */
+      }
+  /* ---- Tables ---- */
+  table {
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 24px;
+      border-spacing: 0;
+      border-bottom: 2px solid black;
+      border-top: 2px solid black;
+  }
+  table th {
+      padding: 3px 10px;
+      background-color: white;
+      border-top: 1px;
+      border-left: 1px;
+      border-right: 1px;
+      border-bottom: 1px solid black;
+  }
+  table td {
+      padding: 3px 10px;
+      border-top: 1px;
+      border-left: 1px;
+      border-bottom: 1px;
+      border-right: 1px;
+  }
+  /* fundo para as linhas das tabelas */
+  tr.even{
+    background-color: rgb(230,230,240);
+  }
+  tr.odd{
+    background-color: rgb(250,250,250);
+  }
+  </style>
+  
+  
+  <script type="text/javascript">
+      function exibe(e)
+      {
+          var div = e.parentNode.firstElementChild;
+          var nome = e.parentNode.id;
+          var tipo=nome.substring(0, 3).toUpperCase()
+          switch (tipo) {
+            case "SOL":
+                nome = "Solução";
+                break;
+            case "COD":
+                nome = "Código";
+                break;
+            case "DIC":
+                nome = "Dica";
+                break;
+            case "DIA":
+                nome = "Diagrama";
+                break;
+            case "RES":
+                nome = "Resumo";
+                break;
+            case "CON":
+                nome = "Conteúdo";
+                break;
+            default:
+                nome = "";
+            }
+  
+          if (div.style.display == "" || div.style.display == "none") {
+              div.style.display = "block";
+              e.setAttribute("class", "viewed");
+              e.innerHTML = "Esconder ";
+          } else {
+              div.style.display = "none";
+              e.innerHTML = "Exibir "+nome;
+          }
+      }
+      function validaBinario(nome) {
+          var valor, tamanho, i;
+          document.getElementById(nome).style.color = "black";
+          valor = document.getElementById(nome).value;
+          tamanho=valor.length;
+          for (i=0;i<tamanho; i=i+1){
+              if ( valor[i] != 1 && valor[i] != 0 ){
+                  document.getElementById(nome).style.color = "red";
+              }
+          }
+      }
+  </script>
+</head>
+<body>
+<table>
+<colgroup>
+<col style="width: 7%" />
+<col style="width: 34%" />
+<col style="width: 39%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">PC</th>
+<th style="text-align: left;">Instrução</th>
+<th style="text-align: left;">Comentário</th>
+<th style="text-align: left;"></th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">00</td>
+<td style="text-align: left;">sw $t1 8($zero)</td>
+<td style="text-align: left;">(m(8) := 0x0000000A) ULA (lixo) = 0xX</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">04</td>
+<td style="text-align: left;">lw $t0 8($zero)</td>
+<td style="text-align: left;">($t0 := 0x0000000A)</td>
+<td style="text-align: left;">ULA (lixo) = 0xX</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">08</td>
+<td style="text-align: left;">sub $t0 $t1 $t2</td>
+<td style="text-align: left;">($t0 := 0xFFFFFFFF)</td>
+<td style="text-align: left;">ULA (sw) = 0x8</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0C</td>
+<td style="text-align: left;">and $t0 $t1 $t2</td>
+<td style="text-align: left;">($t0 := 0x0000000A)</td>
+<td style="text-align: left;">ULA (lw) = 0x8</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">10</td>
+<td style="text-align: left;">or $t0 $t1 $t2</td>
+<td style="text-align: left;">($t0 := 0x0000000B)</td>
+<td style="text-align: left;">ULA (sub) = 0xFFFFFFFF</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">14</td>
+<td style="text-align: left;">lui $x $t0 0xFFFF</td>
+<td style="text-align: left;">($t0 := 0xFFFF0000)</td>
+<td style="text-align: left;">ULA (and) = 0x0A</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">18</td>
+<td style="text-align: left;">addi $t0 $t1 0x000A</td>
+<td style="text-align: left;">($t0 := 0x00000014)</td>
+<td style="text-align: left;">ULA (or) = 0x0B</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1C</td>
+<td style="text-align: left;">andi $t0 $t0 0x0013</td>
+<td style="text-align: left;">HAZARD ($t0 := 0x00000002) (leu t0=A do pc=3) ULA (lui) = 0xFFFF0000 ou 0xXXXXXXXX</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">20</td>
+<td style="text-align: left;">ori $t0 $t4 0x0007</td>
+<td style="text-align: left;">($t0 := 0x0000000F)</td>
+<td style="text-align: left;">ULA (addi) = 0x014 (resultado do addi)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">24</td>
+<td style="text-align: left;">slti $t0 $t1 0xFFFF</td>
+<td style="text-align: left;">($t0 := 0x00000000)</td>
+<td style="text-align: left;">ULA (andi) = 0x02 (resultado do andi, deveria ser 14 and 13 = 0x10)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">28</td>
+<td style="text-align: left;">slt $t0 $t1 $t2</td>
+<td style="text-align: left;">($t0 := 0x00000001) ULA (ori) = 0x0F (ori 0x0d 0x07) <font style="color:red">PAREI AQUI</font></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2C</td>
+<td style="text-align: left;">add $t0 $t0 $t2</td>
+<td style="text-align: left;">HAZARD ($t0 := 0x0000000D) (B + 2 leu t0 = 2 pc=7) ULA (slti) = 0x00</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">30</td>
+<td style="text-align: left;">beq $t0 $t3 0xFFFE</td>
+<td style="text-align: left;">HAZARD (pc := #13, nao fez beq) ULA (slt) = 0x01</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">34</td>
+<td style="text-align: left;">j 0x000010</td>
+<td style="text-align: left;">(pc := #16 = addr 0x40) ULA (add) = 0x0D</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">38</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">ULA (beq) = 0x03 (t0 (ori) = 0x0F t3 = 0x0C)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">3C</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">40</td>
+<td style="text-align: left;">sw $t1 8($zero)</td>
+<td style="text-align: left;">(m(8) := 0x0000000A)</td>
+<td style="text-align: left;">ULA (j) = 0x00</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">44</td>
+<td style="text-align: left;">lw $t0 8($zero)</td>
+<td style="text-align: left;">($t0 := 0x0000000A)</td>
+<td style="text-align: left;">ULA (nop) = 0x00</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">48</td>
+<td style="text-align: left;">sub $t0 $t1 $t2</td>
+<td style="text-align: left;">($t0 := 0xFFFFFFFF)</td>
+<td style="text-align: left;">ULA (sw) = 0x08</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4C</td>
+<td style="text-align: left;">and $t0 $t1 $t2</td>
+<td style="text-align: left;">($t0 := 0x0000000A)</td>
+<td style="text-align: left;">ULA (lw) = 0x08</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">50</td>
+<td style="text-align: left;">or $t0 $t1 $t2</td>
+<td style="text-align: left;">($t0 := 0x0000000B)</td>
+<td style="text-align: left;">ULA (sub) = 0xFFFFFFFF</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">54</td>
+<td style="text-align: left;">lui $x $t0 0xFFFF</td>
+<td style="text-align: left;">($t0 := 0xFFFF0000)</td>
+<td style="text-align: left;">ULA (and) = 0x0A</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">58</td>
+<td style="text-align: left;">addi $t0 $t1 0x000A</td>
+<td style="text-align: left;">($t0 := 0x00000014)</td>
+<td style="text-align: left;">ULA (or) = 0x0B</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">5C</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">ULA (lui) = 0xFFFF0000</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">60</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">ULA (addi) = 0x14</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">64</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">ULA (nop) = 0x00</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">68</td>
+<td style="text-align: left;">andi $t0 $t0 0x0013</td>
+<td style="text-align: left;">($t0 := 0x00000010)</td>
+<td style="text-align: left;">ULA (nop) = 0x00</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6C</td>
+<td style="text-align: left;">ori $t0 $t4 0x0007</td>
+<td style="text-align: left;">($t0 := 0x0000000F)</td>
+<td style="text-align: left;">ULA (nop) = 0x00</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">70</td>
+<td style="text-align: left;">slti $t0 $t1 0xFFFF</td>
+<td style="text-align: left;">($t0 := 0x00000000)</td>
+<td style="text-align: left;">ULA (andi) = 0x10</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">74</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">ULA (ori) = 0x0F</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">78</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">ULA (slti) = 0x00</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">7C</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">ULA (nop) = 0x00</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">80</td>
+<td style="text-align: left;">add $t0 $t0 $t2</td>
+<td style="text-align: left;">($t0 := 0x0000000B)</td>
+<td style="text-align: left;">ULA (nop) = 0x00</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">–segunda execução: ($t0 := 0x00000016)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">84</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">ULA (nop) = 0x00</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">88</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">ULA (add) = 0x0B</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">8C</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">ULA (nop) = 0x00</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">90</td>
+<td style="text-align: left;">bne $t0 $t5 0xFFFB</td>
+<td style="text-align: left;">(pc := #32)</td>
+<td style="text-align: left;">ULA (nop) = 0x00</td>
+<td style="text-align: left;">PC = 32 (t0=0xB t5=0x16)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">–segunda execução: (pc := #37)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">94</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">ULA (nop) = 0x00</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">98</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">ULA (bne) = 0xFFFFFFF5</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">9C</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">ULA (nop) = 0x00 parou aqui.</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">A0</td>
+<td style="text-align: left;">slt $t0 $t1 $t2</td>
+<td style="text-align: left;">($t0 := 0x00000001)</td>
+<td style="text-align: left;">ULA (nop) = 0x00 t1 = 0xB t2 = 0x0B</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">A4</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">ULA (nop) = 0x00</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">A8</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">ULA (slt) = 0x01</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">AC</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">ULA (nop) = 0x00</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B0</td>
+<td style="text-align: left;">add $t0 $t0 $t2</td>
+<td style="text-align: left;">($t0 := 0x0000000C)</td>
+<td style="text-align: left;">ULA (nop) = 0x00</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">–segunda execução:</td>
+<td style="text-align: left;">($t0 := 0x00000017)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B4</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">ULA (nop) = 0x00</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B8</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">ULA (add) = 0x0C t0 = 0x01 t2 = 0x0B =&gt; t0 =0xC</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">BC</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">ULA (nop) = 0x00</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">C0</td>
+<td style="text-align: left;">beq $t0 $t3 0xFFFB</td>
+<td style="text-align: left;">(pc := #44)</td>
+<td style="text-align: left;">ULA (nop) = 0x00</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">–segunda execução: (pc := #49)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">C4</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">ULA (nop) = 0x00</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">C8</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">ULA (beq) = 0x00</td>
+<td style="text-align: left;">PC = 44</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: left;">execução PC 44:</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B0</td>
+<td style="text-align: left;">add $t0 $t0 $t2</td>
+<td style="text-align: left;">($t0 := 0x00000017)</td>
+<td style="text-align: left;">ULA (nop) = 0x00 –segunda execução:</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B4</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">ULA (nop) = 0x00</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B8</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">ULA (add) = 0x0C t0 = 0x0C t2 = 0x0B =&gt; t0 =0x17</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">BC</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">ULA (nop) = 0x00</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">C0</td>
+<td style="text-align: left;">beq $t0 $t3 0xFFFB (pc := #44)</td>
+<td style="text-align: left;">ULA (nop) = 0x00</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">C4</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">ULA (nop) = 0x00</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">C8</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">ULA (beq) = 0x00 t0=0x17 t3=0xB –segunda execução: (pc := #51)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">CC</td>
+<td style="text-align: left;">jal 0x00003A</td>
+<td style="text-align: left;">(pc := #58)</td>
+<td style="text-align: left;">ULA (nop) = 0x00</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">D0</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">ULA (nop) = 0x00 Muda o PC para 58</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">D4</td>
+<td style="text-align: left;">j 0x000000</td>
+<td style="text-align: left;">(pc := #0) ULA () = 0x</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">D8</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">ULA () = 0x</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">DC</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">ULA () = 0x</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">E0</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">ULA () = 0x</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">E4</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">ULA () = 0x</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">E8</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">ULA () = 0x00</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">EC</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">ULA () = 0x</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">F0</td>
+<td style="text-align: left;">jr $ra</td>
+<td style="text-align: left;">(pc := #53)</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

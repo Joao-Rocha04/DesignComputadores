@@ -1,0 +1,1145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <style>
+  /* fundo para o trecho de código */
+  div.sourceCode { overflow-x: auto; background-color: rgb(245,245,245);}  /*rgb(250,250,250)*/
+  body {font-family: "Lato", sans-serif;}
+  
+  /* Para dividir a pagina em duas colunas */
+   .column {
+    float: left;
+    width:49%;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Inicio do menu tipo acordeon */
+  .accordion{
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+    font-weight: bold;
+  }
+  .active, .accordion:hover {
+    background-color: #a4b8b6;
+  }
+  .panel {
+    /*Versao anterior do accordion usa  max-height: 0 para fazer a transition e nao aceita aninhamento de acordeon*/
+    padding: 0 10px;
+    background-color: #f9f9f9;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    margin-left: 0%;
+  }
+  .panel p {
+    margin-left: 1%;
+  }
+  /*Inicio do Acordeon Aninhado*/
+  button.accordionNested{
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  .activeNested, .accordionNested:hover {
+    background-color: #a4b8b6;
+  }
+  .panelNested {
+    /*Aceita aninhamento mas nao faz transition*/
+    padding: 0 10px;
+    background-color: #f9f9f9;
+    display: none;
+    overflow: hidden;
+    margin-left: 0%;
+  }
+  .panelNested p {
+    margin-left: 1%;
+  }
+  /*Inicio do Segundo Acordeon Aninhado*/
+  button.accordionNestedTwo{
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  .activeNestedTwo, .accordionNestedTwo:hover {
+    background-color: #a4b8b6;
+  }
+  .panelNestedTwo {
+    /*Aceita aninhamento mas nao faz transition*/
+    padding: 0 10px;
+    background-color: #f9f9f9;
+    display: none;
+    overflow: hidden;
+    margin-left: 0%;
+  }
+  .panelNestedTwo p {
+    margin-left: 1%;
+  }
+  /* Fim do menu tipo acordeon */
+  
+  .bloco .title {
+      display: block;
+  }
+  
+  /*Bloco de solucao de exercicio*/
+  .bloco .label,
+  .bloco .separator {
+      font-weight: bold;
+  }
+  
+  .bloco .separator {
+      margin-right: .6em;
+  /*    margin-left: .6em;  */
+  }
+  /* Solução */
+  div.solucao {
+    border-left: .3em solid #dd4444;   /*#dc3c01; */
+    margin-left: -.8em;
+    padding-left: .4em;
+    position: relative;
+    font-size: 90%;
+  }
+  
+  div.solucao .conteudo {
+    display: none;
+    padding-top: 1px;
+  }
+  
+  div.solucao button {
+    color: #0000AF;
+    background-color: white;
+    border-radius: 5px;
+  }
+  
+  div.solucao button.viewed {
+    color: #FF2020;
+    background-color: white;
+    border-radius: 5px;
+  }
+  
+  div.exemplo {
+    /*background-color: lightgray;*/
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  
+  div.exemplo .sourceCode  {
+    /*background-color: lightgray;*/
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+  
+  div.adicional {
+    margin-left: 1%;
+  }
+  /* Alinhamento dos títulos e parágrafos */
+  
+  body{margin-left: 5%; margin-right: 5%;
+           color: black; background-color: #f9f9f9;}
+  
+  hr{
+      margin-left: -4%;
+      background-color: rgb(0,150,150);  /*anterior:    240,240,240 */
+  }
+  h1{
+      margin-left: -4%;
+      /*background-color: rgb(210,210,220);*/
+  }
+  
+  h2{
+      margin-left: -4%;
+      /*background-color: rgb(220,220,230);*/
+  }
+  
+  h3{
+      margin-left: 0%;  /*-4%;*/
+      /*background-color: rgb(230,230,240);*/
+  }
+  
+  h4{
+      margin-left: 0%;  /*-4%;*/
+      /*background-color: rgb(240,240,250);*/
+  }
+  h5{
+      margin-left: 0%;  /*-4%;*/
+      /*background-color: rgb(245,245,250);*/
+  }
+  
+  /* Cores */
+  i{color: red}
+  em{color: green}
+  cite{color: brown}
+  /* blockquote > p { */
+  blockquote{color: red}
+  blockquote p {
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 2em;
+  }
+  
+  /* ---- Front Matter ----
+  Pandoc header DIV. Contains .title, .author and .date. Comes before div#TOC.
+  Only appears if one of those three are in the document.   */
+  
+  div#header, header
+      {
+      /* Put border on bottom. Separates it from TOC or body that comes after it. */
+      border-bottom: 1px solid #aaa;
+      margin-bottom: 0.5em;
+      }
+  
+  .title /* Pandoc title header (h1.title) */
+      {
+      text-align: center;
+      }
+  
+  .author, .date /* Pandoc author(s) and date headers (h2.author and h3.date) */
+      {
+      text-align: center;
+      }
+  
+  /* Pandoc table of contents DIV when using the --toc option.
+     NOTE: this doesn't support Pandoc's --id-prefix option for #TOC and #header.
+     Probably would need to use div[id$='TOC'] and div[id$='header'] as selectors.
+  */
+  
+  div#TOC, nav#TOC
+      {
+      /* Put border on bottom to separate it from body. */
+  /*    border-bottom: 1px solid #aaa;   */
+      margin-bottom: 0.5em;
+      }
+  
+  @media print
+      {
+      div#TOC, nav#TOC
+          {
+          /* Don't display TOC in print */
+          display: none;
+          }
+      }
+  /* ---- Images ---- */
+  img {
+      /* Let it be inline left/right where it wants to be, but verticality make
+         it in the middle to look nicer, but opinions differ, and if in a multi-line
+         paragraph, it might not be so great.
+         vertical-align: middle;
+      */
+      vertical-align: middle;
+      max-width: 600px;
+      height:auto;
+      }
+  div.figure /* Pandoc figure-style image */
+      {
+      /* Center the image and caption */
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      font-style: italic;
+      max-width: 600px;
+      height:auto;
+      }
+  p.caption /* Pandoc figure-style caption within div.figure */
+      {
+      /* Inherits div.figure props by default */
+      }
+  /* ---- Tables ---- */
+  table {
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 24px;
+      border-spacing: 0;
+      border-bottom: 2px solid black;
+      border-top: 2px solid black;
+  }
+  table th {
+      padding: 3px 10px;
+      background-color: white;
+      border-top: 1px;
+      border-left: 1px;
+      border-right: 1px;
+      border-bottom: 1px solid black;
+  }
+  table td {
+      padding: 3px 10px;
+      border-top: 1px;
+      border-left: 1px;
+      border-bottom: 1px;
+      border-right: 1px;
+  }
+  /* fundo para as linhas das tabelas */
+  tr.even{
+    background-color: rgb(230,230,240);
+  }
+  tr.odd{
+    background-color: rgb(250,250,250);
+  }
+  </style>
+  
+  
+  <script type="text/javascript">
+      function exibe(e)
+      {
+          var div = e.parentNode.firstElementChild;
+          var nome = e.parentNode.id;
+          var tipo=nome.substring(0, 3).toUpperCase()
+          switch (tipo) {
+            case "SOL":
+                nome = "Solução";
+                break;
+            case "COD":
+                nome = "Código";
+                break;
+            case "DIC":
+                nome = "Dica";
+                break;
+            case "DIA":
+                nome = "Diagrama";
+                break;
+            case "RES":
+                nome = "Resumo";
+                break;
+            case "CON":
+                nome = "Conteúdo";
+                break;
+            default:
+                nome = "";
+            }
+  
+          if (div.style.display == "" || div.style.display == "none") {
+              div.style.display = "block";
+              e.setAttribute("class", "viewed");
+              e.innerHTML = "Esconder ";
+          } else {
+              div.style.display = "none";
+              e.innerHTML = "Exibir "+nome;
+          }
+      }
+      function validaBinario(nome) {
+          var valor, tamanho, i;
+          document.getElementById(nome).style.color = "black";
+          valor = document.getElementById(nome).value;
+          tamanho=valor.length;
+          for (i=0;i<tamanho; i=i+1){
+              if ( valor[i] != 1 && valor[i] != 0 ){
+                  document.getElementById(nome).style.color = "red";
+              }
+          }
+      }
+  </script>
+</head>
+<body>
+<p><a name="inicio"></a></p>
+<h1 id="lista-de-exercícios-sobre-mips-de-ciclo-único-single-cycle">Lista de Exercícios sobre MIPS de Ciclo Único (Single Cycle)</h1>
+<button class="accordion">
+Exercício 1: Nova Instrução (addi)
+</button>
+<div class="panel">
+<p><strong>Ex 7.34 DDCA 2 Ed</strong></p>
+<p>Explique como alterar o fluxo de dados do MIPS, para adicionar a instrução <em>addi</em>.</p>
+<div class="figure">
+<img src="./imagens/fDCompleto-1ciclo-Final-PtosControle.svg" alt="Fluxo de Dados MIPS" style="width:800px;max-width:100%;" />
+<p class="caption"><strong>Fluxo de Dados MIPS</strong></p>
+</div>
+</div>
+</div>
+<!--- class_panel --->
+<button class="accordion">
+Solução
+</button>
+<div class="panel">
+<p>Para o <em>addi</em>, não é necessário mudar o fluxo de dados. Porém, é necessário alterar a unidade de controle.</p>
+<p>A palavra de ativação dessa instrução está na tabela abaixo.</p>
+<div class="figure">
+<img src="./imagens/Solucao_ADDI.jpg" alt="Pontos de Controle para o ADDI" style="width:800px;max-width:100%;" />
+<p class="caption"><strong>Pontos de Controle para o ADDI</strong></p>
+</div>
+<blockquote>
+<p><strong>Mux1: mux([PC+4, BEQ]/J); Mux2: mux(Rt/Rd); Mux3: mux(Rt/imediato); Mux4: mux(ULA/mem).</strong></p>
+</blockquote>
+</div>
+</div>
+<!--- class_panel --->
+<hr />
+<button class="accordion">
+Exercício 2: Nova Instrução (lui)
+</button>
+<div class="panel">
+<p>Explique como alterar o fluxo de dados do MIPS, para adicionar a instrução <em>lui</em>.</p>
+<div class="figure">
+<img src="./imagens/fDCompleto-1ciclo-Final-PtosControle.svg" alt="Fluxo de Dados MIPS" style="width:800px;max-width:100%;" />
+<p class="caption"><strong>Fluxo de Dados MIPS</strong></p>
+</div>
+</div>
+</div>
+<!--- class_panel --->
+<button class="accordion">
+Solução
+</button>
+<div class="panel">
+<p>O fluxo de dados deve ser alterado como mostrado abaixo.</p>
+<div class="figure">
+<img src="./imagens/fDCompleto-1ciclo-Final+LUI.svg" alt="Fluxo de Dados MIPS com LUI" style="width:800px;max-width:100%;" />
+<p class="caption"><strong>Fluxo de Dados MIPS com LUI</strong></p>
+</div>
+<p>O módulo que estende zeros para o LUI deve funcionar da seguinte forma:</p>
+<div class="figure">
+<img src="./imagens/Estende_Sinal_LUI.svg" style="width:300px;max-width:100%;" />
+
+</div>
+<p>Os pontos de controle devem ser como mostrado na tabela abaixo.</p>
+<table>
+<caption><strong>Pontos de Controle para a Instrução LUI</strong></caption>
+<thead>
+<tr class="header">
+<th align="left">Ponto de Controle</th>
+<th align="center"></th>
+<th align="center">Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">mux([PC+4,BEQ]/Jump)</td>
+<td align="center"></td>
+<td align="center">0</td>
+</tr>
+<tr class="even">
+<td align="left">mux(Rt/Rd)</td>
+<td align="center"></td>
+<td align="center">0</td>
+</tr>
+<tr class="odd">
+<td align="left">HabEscritaReg</td>
+<td align="center"></td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="left">mux(Rt/Imediato)</td>
+<td align="center"></td>
+<td align="center">X</td>
+</tr>
+<tr class="odd">
+<td align="left">ULAOp1</td>
+<td align="center"></td>
+<td align="center">X</td>
+</tr>
+<tr class="even">
+<td align="left">ULAOp0</td>
+<td align="center"></td>
+<td align="center">X</td>
+</tr>
+<tr class="odd">
+<td align="left">mux(ULA/mem) bit 1</td>
+<td align="center"></td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="left">mux(ULA/mem) bit 0</td>
+<td align="center"></td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="left">BEQ</td>
+<td align="center"></td>
+<td align="center">0</td>
+</tr>
+<tr class="even">
+<td align="left">HabLeituraMEM</td>
+<td align="center"></td>
+<td align="center">0</td>
+</tr>
+<tr class="odd">
+<td align="left">HabEscritaMEM</td>
+<td align="center"></td>
+<td align="center">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!--- class_panel --->
+<hr />
+<button class="accordion">
+Exercício 4: Nova Instrução (jr)
+</button>
+<div class="panel">
+<p>A instrução <em>JR</em> (jump register) tem o funcionamento mostrado abaixo.</p>
+<p style="text-align: center;">
+<strong>PC=R[rs]</strong>
+</p>
+<p>O seu formato segue a tabela mostrada abaixo, onde <strong>RRRRR</strong> é o endereço do registrador que contém o endereço para o jump.</p>
+<table>
+<caption><strong>Formato da Instrução JR</strong></caption>
+<thead>
+<tr class="header">
+<th align="center">opCode</th>
+<th align="center">rs</th>
+<th align="center">rt</th>
+<th align="center">rd</th>
+<th align="center">shamt</th>
+<th align="center">funct</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">000000</td>
+<td align="center">RRRRR</td>
+<td align="center">00000</td>
+<td align="center">00000</td>
+<td align="center">00000</td>
+<td align="center">001000</td>
+</tr>
+</tbody>
+</table>
+<p>Qual seria o esboço do circuito para atender somente a essa instrução?</p>
+</div>
+<!--- class_panel --->
+<button class="accordion">
+Solução
+</button>
+<div class="panel">
+<p>O esboço a seguir é capaz de executar a instrução JR.</p>
+<div class="figure">
+<img src="./imagens/fluxoDadosInstrucaoJR.svg" alt="Detalhe da Implementação da Instrução JR" style="width:800px;max-width:100%;" />
+<p class="caption"><strong>Detalhe da Implementação da Instrução JR</strong></p>
+</div>
+<p>Como o <em>jr</em> é uma instrução do tipo R, devemos alterar a unidade de controle para que essa instrução não ative o <em>habEscritaReg</em>.</p>
+<p>Para a execução do <em>jr</em>, é necessário que ocorra a leitura do banco de registradores, portanto, a execução do <em>jr</em> deve acontecer na etapa ID.</p>
+</div>
+<!--- class_panel --->
+<hr />
+<button class="accordion">
+Exercício 5: Nova Instrução (jal)
+</button>
+<div class="panel">
+<p>O funcionamento da instrução JAL (<em>jump and link</em>) está definido abaixo:</p>
+<p style="text-align: center;">
+jal : R[31]=PC+4; PC=JumpAddr;
+</p>
+<table>
+<caption><strong>Formato da Instrução JAL</strong></caption>
+<thead>
+<tr class="header">
+<th align="center">opCode</th>
+<th align="center"></th>
+<th align="center">endereço</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">6 bits</td>
+<td align="center"></td>
+<td align="center">26 bits</td>
+</tr>
+</tbody>
+</table>
+<p>Consulte o Green Card para mais detalhes e sobre a definição de <em>JumpAddr</em>.</p>
+<p>O fluxo abaixo é capaz de executar a instrução JAL?</p>
+<p>Caso sim, qual a palavra de controle para essa instrução?</p>
+<div class="figure">
+<img src="./imagens/fDCompleto-1ciclo-Final+JAL-Prova-B.svg" alt="Fluxo de Dados MIPS" style="width:800px;max-width:100%;" />
+<p class="caption"><strong>Fluxo de Dados MIPS</strong></p>
+</div>
+</div>
+<!--- class_panel --->
+<button class="accordion">
+Solução
+</button>
+<div class="panel">
+<p>Sim, o fluxo de dados é capaz de executar a instrução JAL.</p>
+<table>
+<caption><strong>Execução de JAL</strong></caption>
+<thead>
+<tr class="header">
+<th align="left">Ponto de Controle</th>
+<th align="center"></th>
+<th align="center">Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">mux([PC+4,BEQ]/Jump)</td>
+<td align="center"></td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="left">mux(Rt/Rd) bit 1</td>
+<td align="center"></td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="left">mux(Rt/Rd) bit 0</td>
+<td align="center"></td>
+<td align="center">0</td>
+</tr>
+<tr class="even">
+<td align="left">HabEscritaReg</td>
+<td align="center"></td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="left">mux(Rt/Imediato)</td>
+<td align="center"></td>
+<td align="center">X</td>
+</tr>
+<tr class="even">
+<td align="left">ULAOp1</td>
+<td align="center"></td>
+<td align="center">X</td>
+</tr>
+<tr class="odd">
+<td align="left">ULAOp0</td>
+<td align="center"></td>
+<td align="center">X</td>
+</tr>
+<tr class="even">
+<td align="left">mux(ULA/mem) bit 1</td>
+<td align="center"></td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="left">mux(ULA/mem) bit 0</td>
+<td align="center"></td>
+<td align="center">0</td>
+</tr>
+<tr class="even">
+<td align="left">BEQ</td>
+<td align="center"></td>
+<td align="center">0</td>
+</tr>
+<tr class="odd">
+<td align="left">HabLeituraMEM</td>
+<td align="center"></td>
+<td align="center">0</td>
+</tr>
+<tr class="even">
+<td align="left">HabEscritaMEM</td>
+<td align="center"></td>
+<td align="center">0</td>
+</tr>
+</tbody>
+</table>
+<div class="figure">
+<img src="./imagens/fDCompleto-1ciclo-Final+JAL-Prova-B-singleCyclesolucao.png" alt="Funcionamento da Instrução JAL" style="width:800px;max-width:100%;" />
+<p class="caption"><strong>Funcionamento da Instrução JAL</strong></p>
+</div>
+<p>Como o <em>JAL</em> é uma instrução do tipo <em>J</em>, deverá ser executada na etapa ID.</p>
+</div>
+<!--- class_panel --->
+<hr />
+<button class="accordion">
+Exercício 6: Nova Instrução (ori)
+</button>
+<div class="panel">
+<p>O funcionamento da instrução ORI (<em>or with imediate value</em>) está definido abaixo:</p>
+<p style="text-align: center;">
+ori : R[rt] = R[rs] | ZeroExtImm;
+</p>
+<blockquote>
+<p><strong>Onde: ZeroExtImm = { 16{1b’0}, immediate }</strong></p>
+</blockquote>
+<p>O fluxo abaixo é capaz de executar a instrução ORI?</p>
+<p>Caso sim, qual a palavra de controle para essa instrução?</p>
+<div class="figure">
+<img src="./imagens/fDCompleto-1ciclo-Final+ORI.svg" alt="Fluxo de Dados MIPS" style="width:800px;max-width:100%;" />
+<p class="caption"><strong>Fluxo de Dados MIPS</strong></p>
+</div>
+</div>
+<!--- class_panel --->
+<button class="accordion">
+Solução
+</button>
+<div class="panel">
+<p>Sim, o fluxo de dados é capaz de executar a instrução ORI.</p>
+<table>
+<caption><strong>Execução de ORI</strong></caption>
+<thead>
+<tr class="header">
+<th align="left">Ponto de Controle</th>
+<th align="center"></th>
+<th align="center">Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">mux([PC+4,BEQ]/Jump)</td>
+<td align="center"></td>
+<td align="center">0</td>
+</tr>
+<tr class="even">
+<td align="left">mux(Rt/Rd)</td>
+<td align="center"></td>
+<td align="center">0</td>
+</tr>
+<tr class="odd">
+<td align="left">ORI</td>
+<td align="center"></td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="left">HabEscritaReg</td>
+<td align="center"></td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="left">mux(Rt/Imediato)</td>
+<td align="center"></td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="left">Tipo R</td>
+<td align="center"></td>
+<td align="center">0</td>
+</tr>
+<tr class="odd">
+<td align="left">mux(ULA/mem)</td>
+<td align="center"></td>
+<td align="center">0</td>
+</tr>
+<tr class="even">
+<td align="left">BEQ</td>
+<td align="center"></td>
+<td align="center">0</td>
+</tr>
+<tr class="odd">
+<td align="left">HabLeituraMEM</td>
+<td align="center"></td>
+<td align="center">0</td>
+</tr>
+<tr class="even">
+<td align="left">HabEscritaMEM</td>
+<td align="center"></td>
+<td align="center">0</td>
+</tr>
+</tbody>
+</table>
+<p>O módulo Estende Sinal deve ser alterado da seguinte forma:</p>
+<div class="figure">
+<img src="./imagens/Estende_Sinal_ORI.svg" alt="Estende Sinal com ORI" style="width:300px;max-width:100%;" />
+<p class="caption"><strong>Estende Sinal com ORI</strong></p>
+</div>
+<p>Deve ser usado o esquema de unidade de controle com três decodificadores, como mostrado abaixo.</p>
+<div class="figure">
+<img src="./imagens/decodificacao2unidadesIdeiaPCFS.svg" alt="Unidade de Controle da ULA" style="width:800px;max-width:100%;" />
+<p class="caption"><strong>Unidade de Controle da ULA</strong></p>
+</div>
+<p>Para o tratamento do ORI, o decodificador de opCode para ULActrl deve conter a seguinte decodificação:</p>
+<table>
+<caption><strong>Decodificação do opCode do ORI</strong></caption>
+<thead>
+<tr class="header">
+<th align="center">opCode</th>
+<th align="center"></th>
+<th align="center">ULActrl</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">001101</td>
+<td align="center"></td>
+<td align="center">001</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--- class_panel --->
+<hr />
+<button class="accordion">
+Exercício 7: Nova Instrução (beqm)
+</button>
+<div class="panel">
+<p><strong>COD 4Ed Ex. 4.15</strong></p>
+<p>A instrução beqm faz um desvio condicional:</p>
+<ul>
+<li><p>Para o endereço de memória contido no registrador Rd;</p></li>
+<li><p>Se o conteúdo da posição de memória definida pela indexação feita através:</p>
+<ul>
+<li>Do conteúdo do registrador definido por Rs, somado com um valor de deslocamento implícito na instrução;</li>
+</ul></li>
+<li><p>For igual ao conteúdo de Rt.</p></li>
+</ul>
+<table>
+<caption><strong>Instrução BEQM</strong></caption>
+<tbody>
+<tr class="odd">
+<td align="center">beqm Rd, Rt, Offset(Rs)</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">If ( Rt == Mem[Offset + Rs] ) then PC = Rd</td>
+</tr>
+</tbody>
+</table>
+<p>Seria possível executar essa instrução, no MIPS DLX, sem alteração de hardware?</p>
+<p>Caso sim, justifique!</p>
+<p>Caso não, seria possível emular com as instruções existentes?</p>
+</div>
+<!--- class_panel --->
+<button class="accordion">
+Solução
+</button>
+<div class="panel">
+<p>Apesar dessa instrução ser similar ao lw (até o fim do estágio MEM), ela precisa que existam algumas alterações:</p>
+<ul>
+<li><p>Um novo estágio para fazer a comparação com o valor de Rt;</p></li>
+<li><p>Mais uma entrada no MUX do PC, para poder receber o valor de Rd;</p></li>
+<li><p>A seleção desse MUX deve considerar o resultado da comparação;</p></li>
+<li><p>Como essa instrução faz a leitura de 3 registradores, precisaremos de mais uma porta de saída no banco de registradores.</p></li>
+</ul>
+<p>Uma solução seria utilizar o código abaixo para emular essa instrução no MIPS estudado.</p>
+<div class="sourceCode"><pre class="sourceCode asm"><code class="sourceCode fasm">lw Rtmp, Offset(Rs)
+bne Rtmp, <span class="dt">Rt</span>, Saida
+JR <span class="dt">Rd</span>
+<span class="fu">Saida:</span></code></pre></div>
+</div>
+<!--- class_panel --->
+<hr />
+<button class="accordion">
+Exercício 8: ULA para a Instrução BLEZ
+</button>
+<div class="panel">
+<p>A instrução BLEZ (<em>branch if less than or equal to zero</em>) está definida abaixo:</p>
+<p style="text-align: center;">
+blez : PC += ([rs]≤0) ? 4+distância : 4);
+</p>
+<p style="text-align:center;">
+<font style="color:red;">(a distância é calculada da mesma forma que no BEQ)</font>
+</p>
+<p>Formato da instrução:</p>
+<table>
+<caption><strong>Formato da Instrução BLEZ</strong></caption>
+<thead>
+<tr class="header">
+<th align="center">opCode</th>
+<th align="center">rs</th>
+<th align="center">rt = 00000</th>
+<th align="center">desvio</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">6 bits</td>
+<td align="center">5 bits</td>
+<td align="center">5 bits</td>
+<td align="center">16 bits</td>
+</tr>
+</tbody>
+</table>
+<p>Considerando a ULA abaixo:</p>
+<div class="figure">
+<img src="./imagens/ULA_BLEZ-32bits.svg" alt="ULA com BLEZ" style="width:600px;max-width:100%;" />
+<p class="caption"><strong>ULA com BLEZ</strong></p>
+</div>
+<p>Pergunta-se:</p>
+<p>Ela seria capaz de executar essa instrução?</p>
+<p>Caso sim, qual deve ser o estado de cada ponto de controle para a execução?</p>
+</div>
+<!--- class_panel --->
+<button class="accordion">
+Solução
+</button>
+<div class="panel">
+<p>Sim, ela é capaz de executar.</p>
+<table>
+<caption><strong>Pontos de Controle</strong></caption>
+<thead>
+<tr class="header">
+<th align="center">Inverte_A</th>
+<th align="center">Inverte_B</th>
+<th align="center">C_in</th>
+<th align="center">Seleção</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">0</td>
+<td align="center">X (0 ou 1)</td>
+<td align="center">Mesmo valor de B</td>
+<td align="center">10</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--- class_panel --->
+<hr />
+<button class="accordion">
+Exercício 9: Defeito de Fabricação
+</button>
+<div class="panel">
+<p>O fluxo de dados, abaixo, implementa as 9 funções básicas:</p>
+<ul>
+<li>ADD, SUB, AND, OR, SLT, LW, SW, BEQ e J.</li>
+</ul>
+<div class="figure">
+<img src="./imagens/fDCompleto-1ciclo-Final-PtosControle.svg" alt="Fluxo de Dados MIPS" style="width:800px;max-width:100%;" />
+<p class="caption"><strong>Fluxo de Dados MIPS</strong></p>
+</div>
+<p>Suponha que ele possui um defeito de fabricação e algum ponto de controle está sempre em 0.</p>
+<p>Quais instruções serão afetadas quando o ponto de controle for “habEscritaReg”?</p>
+<p>Quais instruções serão afetadas quando o ponto de controle for “habEscritaMEM”?</p>
+</div>
+<!--- class_panel --->
+<button class="accordion">
+Solução
+</button>
+<div class="panel">
+<p>HabEscritaReg afetará as instruções:</p>
+<ul>
+<li>ADD, SUB, OR, AND, SLT e LW.</li>
+</ul>
+<p>HabEscritaMEM afetará a instrução:</p>
+<ul>
+<li>SW.</li>
+</ul>
+</div>
+<!--- class_panel --->
+<hr />
+<button class="accordion">
+Exercício 10: Erro de Projeto
+</button>
+<div class="panel">
+<p>Por um erro do seu parceiro de grupo, o MIPS monociclo, abaixo, teve a porta AND trocada por uma porta XOR.</p>
+<p>O que esse erro alterará na execução das instruções:</p>
+<p><strong>a)</strong> BEQ?</p>
+<p><strong>b)</strong> BNE?</p>
+<div class="figure">
+<img src="./imagens/fDCompleto-1ciclo-Final+BNE_Prova-C.svg" alt="Fluxo de Dados MIPS" style="width:800px;max-width:100%;" />
+<p class="caption"><strong>Fluxo de Dados MIPS</strong></p>
+</div>
+</div>
+<!--- class_panel --->
+<button class="accordion">
+Solução
+</button>
+<div class="panel">
+<p><strong>a)</strong> Como A xor B = 1 quando A ≠ B: necessitamos que as duas entradas dessa porta sejam diferentes.</p>
+<p>Na instrução BEQ, o ponto de controle BEQ será 1 e BNE será 0 (escolhendo a entrada Z do mux Z/NotZ).</p>
+<p>Nesse caso, como uma das entradas da porta XOR tem o valor 1 (vindo da saída da porta OR entre BEQ/BNE), para que a seleção do mux após o XOR seja a correta (valor 1):</p>
+<ul>
+<li>O valor da saída Z da ULA deverá ser 0, indicando que os registradores possuem valores diferentes.</li>
+</ul>
+<p>Conclusão: a instrução BEQ irá desviar quando não deveria.</p>
+<p><strong>b)</strong> Como A xor B = 1 quando A ≠ B: necessitamos que as duas entradas dessa porta sejam diferentes.</p>
+<p>Na instrução BNE, o ponto de controle BNE será 1 e BEQ será 0 (escolhendo a entrada NotZ do mux Z/NotZ);</p>
+<p>Nesse caso, como uma das entradas da porta XOR tem o valor 1 (vindo da saída da porta OR entre BEQ/BNE), para que a seleção do mux após o XOR seja a correta (valor 1):</p>
+<ul>
+<li>O valor da saída Z da ULA deverá ser 1, consequentemente NotZ = 0, indicando que os registradores possuem valores iguais.</li>
+</ul>
+<p>Conclusão: a instrução BNE irá desviar quando não deveria.</p>
+</div>
+<!--- class_panel --->
+<hr />
+<button class="accordion">
+Exercício 11: Instrução ADDM
+</button>
+<div class="panel">
+<p><strong>Ex. 4.15 - COD 4Ed</strong></p>
+<p>A instrução addm faz a soma:</p>
+<ul>
+<li><p>Do conteúdo do registrador definido por Rt;</p></li>
+<li><p>Com o conteúdo da posição de memória definida pela indexação feita através:</p>
+<ul>
+<li>Do conteúdo do registrador definido por Rs, somado com um valor de deslocamento implícito na instrução;</li>
+</ul></li>
+<li><p>E armazena no registrador definido pelo valor Rd.</p></li>
+</ul>
+<table>
+<caption><strong>Instrução ADDM</strong></caption>
+<tbody>
+<tr class="odd">
+<td align="center">addm Rd, Rt, Deslocamento (Rs)</td>
+<td align="center"></td>
+<td align="center">→</td>
+<td align="center"></td>
+<td align="center">Rd = Rt + Mem[Deslocamento + Rs]</td>
+</tr>
+</tbody>
+</table>
+<p>Seria possível executar essa instrução, no MIPS DLX, sem alteração de hardware?</p>
+<p>Caso sim, justifique!</p>
+<p>Caso não, seria possível emular com as instruções existentes?</p>
+<div class="figure">
+<img src="./imagens/fDCompleto-1ciclo-Final-PtosControle.svg" alt="Fluxo de Dados MIPS" style="width:800px;max-width:100%;" />
+<p class="caption"><strong>Fluxo de Dados MIPS</strong></p>
+</div>
+</div>
+<!--- class_panel --->
+<button class="accordion">
+Solução
+</button>
+<div class="panel">
+<p>Não é possível executar addm sem fazer alterações no processador.</p>
+<p>Para emular essa instrução, podemos usar o código abaixo:</p>
+<div class="sourceCode"><pre class="sourceCode asm"><code class="sourceCode fasm">lw rX, deslocamento(rs)
+<span class="bu">add</span> <span class="dt">rd</span>, <span class="dt">rt</span>, rX</code></pre></div>
+</div>
+<!--- class_panel --->
+<hr />
+<button class="accordion">
+Exercício 12: Instrução LWI
+</button>
+<div class="panel">
+<p>A instrução LWI (load word indexed) funciona da seguinte forma:</p>
+<table>
+<caption><strong>Funcionamento de LWI</strong></caption>
+<tbody>
+<tr class="odd">
+<td align="left">lwi Rd, Rt(Rs)</td>
+</tr>
+<tr class="even">
+<td align="left">Reg[Rd] = Mem[Reg[Rt]+Reg[Rs]]</td>
+</tr>
+</tbody>
+</table>
+<p>Considerando o fluxo de dados e unidade de controle, que implementa as 9 instruções estudadas, mostrado abaixo, escolha a alternativa correta.</p>
+<div class="figure">
+<img src="./imagens/fDCompleto-1ciclo-Final-PtosControle.svg" alt="Fluxo de Dados MIPS" style="width:800px;max-width:100%;" />
+<p class="caption"><strong>Fluxo de Dados MIPS</strong></p>
+</div>
+<p>Opções:</p>
+<p>A: Esse fluxo de dados é capaz de executar essa instrução. Será necessário alterar a unidade de controle.</p>
+<p>B: Esse fluxo de dados é capaz de executar essa instrução sem qualquer alteração na unidade de controle.</p>
+<p>C: Para executar essa instrução é necessário modificar o fluxo de dados e a unidade de controle.</p>
+<p>D: Para executar essa instrução é necessário modificar somente o fluxo de dados.</p>
+</div>
+<!--- class_panel --->
+<button class="accordion">
+Solução
+</button>
+<div class="panel">
+<p>Esse fluxo de dados é capaz de executar essa instrução.</p>
+<p>Porém, será necessário alterar a unidade de controle.</p>
+</div>
+<!--- class_panel --->
+<hr />
+<button class="accordion">
+Exercício 13: Grupo A e B <font style="color:red">Vazio</font>
+</button>
+<div class="panel">
+
+</div>
+<!--- class_panel --->
+<button class="accordion">
+Solução
+</button>
+<div class="panel">
+<div class="figure">
+<img src="./imagens/fDCompleto-1ciclo-Final_Grupo_A_B.svg" alt="Fluxo de Dados MIPS" style="width:800px;max-width:100%;" />
+<p class="caption"><strong>Fluxo de Dados MIPS</strong></p>
+</div>
+</div>
+<!--- class_panel --->
+<hr />
+<h2 id="ferramenta-auxiliar-conversor-binário-para-decimal-com-ou-sem-sinal">Ferramenta Auxiliar: Conversor Binário para Decimal (com ou sem sinal)</h2>
+<div style="width:600px;margin:10px auto;font-family:Courier New,Courier,monospace;">
+<form>
+<div style="width:50%;float:left;display:inline-block;">
+<label for="entrada">Valor em Binário:</label>
+<textarea id="entrada" cols="32" rows="1" title="Valor em binário a ser convertido" onkeyup="validaBinario(id)" style="resize:none;">
+</textarea>
+</div>
+<div style="width:50%;float:left;display:inline-block;">
+<label for="saida">Resultado da Conversão:</label>
+<textarea id="saida" cols="32" rows="1" title="Valor convertido" style="resize:none;">
+</textarea>
+</div>
+<input type="button" value="Converter" onclick="converteBinario(entrada);"/>    <input type="checkbox" id="tiposigned" style="vertical-align:middle;">Binário com Sinal</input>
+</form>
+</div>
+<script type="text/javascript">
+function converteBinario(nome) {
+tipo = document.getElementById("tiposigned").checked;
+binStr = nome.value;
+if (binStr === "") {
+document.getElementById("saida").value = "Faltou o valor de entrada.";
+}else{
+if (tipo){
+document.getElementById("saida").value = converteSignedDecimal(binStr);
+}else{
+document.getElementById("saida").value = converteUnsignedDecimal(binStr);
+}
+}
+}
+</script>
+<p><br></p>
+<hr />
+<p><br></p>
+<hr />
+<hr />
+<script type="text/javascript" src="../js/acordeon.js"></script>
+<script src="../js/binario.js"></script>
+<!-- FIM -->
+</body>
+</html>

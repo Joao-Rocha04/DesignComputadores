@@ -1,0 +1,3028 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Projetos_2023s2</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <style>
+  /* fundo para o trecho de código */
+  div.sourceCode { overflow-x: auto; background-color: rgb(245,245,245);}  /*rgb(250,250,250)*/
+  body {font-family: "Lato", sans-serif;}
+  
+  /* Para dividir a pagina em duas colunas */
+   .column {
+    float: left;
+    width:49%;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Inicio do menu tipo acordeon */
+  .accordion{
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+    font-weight: bold;
+  }
+  .active, .accordion:hover {
+    background-color: #a4b8b6;
+  }
+  .panel {
+    /*Versao anterior do accordion usa  max-height: 0 para fazer a transition e nao aceita aninhamento de acordeon*/
+    padding: 0 10px;
+    background-color: #f9f9f9;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    margin-left: 0%;
+  }
+  .panel p {
+    margin-left: 1%;
+  }
+  /*Inicio do Acordeon Aninhado*/
+  button.accordionNested{
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  .activeNested, .accordionNested:hover {
+    background-color: #a4b8b6;
+  }
+  .panelNested {
+    /*Aceita aninhamento mas nao faz transition*/
+    padding: 0 10px;
+    background-color: #f9f9f9;
+    display: none;
+    overflow: hidden;
+    margin-left: 0%;
+  }
+  .panelNested p {
+    margin-left: 1%;
+  }
+  /*Inicio do Segundo Acordeon Aninhado*/
+  button.accordionNestedTwo{
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  .activeNestedTwo, .accordionNestedTwo:hover {
+    background-color: #a4b8b6;
+  }
+  .panelNestedTwo {
+    /*Aceita aninhamento mas nao faz transition*/
+    padding: 0 10px;
+    background-color: #f9f9f9;
+    display: none;
+    overflow: hidden;
+    margin-left: 0%;
+  }
+  .panelNestedTwo p {
+    margin-left: 1%;
+  }
+  /* Fim do menu tipo acordeon */
+  
+  .bloco .title {
+      display: block;
+  }
+  
+  /*Bloco de solucao de exercicio*/
+  .bloco .label,
+  .bloco .separator {
+      font-weight: bold;
+  }
+  
+  .bloco .separator {
+      margin-right: .6em;
+  /*    margin-left: .6em;  */
+  }
+  
+  /* Quiz Participacao */
+  div.quiz {
+    padding: 1rem;
+    width: 600px;
+    box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11),
+      0 5px 15px 0 rgba(0,0,0,0.08);
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    border-left: 0 solid #00ff99;
+    font-weight:bold;
+    color:#bf360c;
+  }
+  
+  /* Solução */
+  div.solucao {
+    border-left: .3em solid #dd4444;   /*#dc3c01; */
+    margin-left: -.8em;
+    padding-left: .4em;
+    position: relative;
+    font-size: 90%;
+  }
+  
+  div.solucao .conteudo {
+    display: none;
+    padding-top: 1px;
+  }
+  
+  div.solucao button {
+    color: #0000AF;
+    background-color: white;
+    border-radius: 5px;
+  }
+  
+  div.solucao button.viewed {
+    color: #FF2020;
+    background-color: white;
+    border-radius: 5px;
+  }
+  
+  div.exemplo {
+    /*background-color: lightgray;*/
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  
+  div.exemplo .sourceCode  {
+    /*background-color: lightgray;*/
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+  
+  div.adicional {
+    margin-left: 1%;
+  }
+  /* Alinhamento dos títulos e parágrafos */
+  
+  body{margin-left: 5%; margin-right: 5%;
+           color: black; background-color: #f9f9f9;}
+  
+  hr{
+      margin-left: -4%;
+      background-color: rgb(0,150,150);  /*anterior:    240,240,240 */
+  }
+  h1{
+      margin-left: -4%;
+      /*background-color: rgb(210,210,220);*/
+  }
+  
+  h2{
+      margin-left: -4%;
+      /*background-color: rgb(220,220,230);*/
+  }
+  
+  h3{
+      margin-left: 0%;  /*-4%;*/
+      /*background-color: rgb(230,230,240);*/
+  }
+  
+  h4{
+      margin-left: 0%;  /*-4%;*/
+      /*background-color: rgb(240,240,250);*/
+  }
+  h5{
+      margin-left: 0%;  /*-4%;*/
+      /*background-color: rgb(245,245,250);*/
+  }
+  
+  /* Cores */
+  i{color: red}
+  em{color: green}
+  cite{color: brown}
+  /* blockquote > p { */
+  blockquote{color: red}
+  blockquote p {
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 2em;
+  }
+  
+  /* ---- Front Matter ----
+  Pandoc header DIV. Contains .title, .author and .date. Comes before div#TOC.
+  Only appears if one of those three are in the document.   */
+  
+  div#header, header
+      {
+      /* Put border on bottom. Separates it from TOC or body that comes after it. */
+      border-bottom: 1px solid #aaa;
+      margin-bottom: 0.5em;
+      }
+  
+  .title /* Pandoc title header (h1.title) */
+      {
+      text-align: center;
+      }
+  
+  .author, .date /* Pandoc author(s) and date headers (h2.author and h3.date) */
+      {
+      text-align: center;
+      }
+  
+  /* Pandoc table of contents DIV when using the --toc option.
+     NOTE: this doesn't support Pandoc's --id-prefix option for #TOC and #header.
+     Probably would need to use div[id$='TOC'] and div[id$='header'] as selectors.
+  */
+  
+  div#TOC, nav#TOC
+      {
+      /* Put border on bottom to separate it from body. */
+  /*    border-bottom: 1px solid #aaa;   */
+      margin-bottom: 0.5em;
+      }
+  
+  @media print
+      {
+      div#TOC, nav#TOC
+          {
+          /* Don't display TOC in print */
+          display: none;
+          }
+      }
+  /* ---- Images ---- */
+  img {
+      /* Let it be inline left/right where it wants to be, but verticality make
+         it in the middle to look nicer, but opinions differ, and if in a multi-line
+         paragraph, it might not be so great.
+         vertical-align: middle;
+      */
+      vertical-align: middle;
+      max-width: 600px;
+      height:auto;
+      }
+  div.figure /* Pandoc figure-style image */
+      {
+      /* Center the image and caption */
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      font-style: italic;
+      max-width: 600px;
+      height:auto;
+      }
+  p.caption /* Pandoc figure-style caption within div.figure */
+      {
+      /* Inherits div.figure props by default */
+      }
+  /* ---- Tables ---- */
+  table {
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 24px;
+      border-spacing: 0;
+      border-bottom: 2px solid black;
+      border-top: 2px solid black;
+  }
+  table th {
+      padding: 3px 10px;
+      background-color: white;
+      border-top: 1px;
+      border-left: 1px;
+      border-right: 1px;
+      border-bottom: 1px solid black;
+  }
+  table td {
+      padding: 3px 10px;
+      border-top: 1px;
+      border-left: 1px;
+      border-bottom: 1px;
+      border-right: 1px;
+  }
+  /* fundo para as linhas das tabelas */
+  tr.even{
+    background-color: rgb(230,230,240);
+  }
+  tr.odd{
+    background-color: rgb(250,250,250);
+  }
+  </style>
+  
+  
+  <script type="text/javascript">
+      function exibe(e)
+      {
+          var div = e.parentNode.firstElementChild;
+          var nome = e.parentNode.id;
+          var tipo=nome.substring(0, 3).toUpperCase()
+          switch (tipo) {
+            case "SOL":
+                nome = "Solução";
+                break;
+            case "COD":
+                nome = "Código";
+                break;
+            case "DIC":
+                nome = "Dica";
+                break;
+            case "DIA":
+                nome = "Diagrama";
+                break;
+            case "RES":
+                nome = "Resumo";
+                break;
+            case "CON":
+                nome = "Conteúdo";
+                break;
+            default:
+                nome = "";
+            }
+  
+          if (div.style.display == "" || div.style.display == "none") {
+              div.style.display = "block";
+              e.setAttribute("class", "viewed");
+              e.innerHTML = "Esconder ";
+          } else {
+              div.style.display = "none";
+              e.innerHTML = "Exibir "+nome;
+          }
+      }
+      function validaBinario(nome) {
+          var valor, tamanho, i;
+          document.getElementById(nome).style.color = "black";
+          valor = document.getElementById(nome).value;
+          tamanho=valor.length;
+          for (i=0;i<tamanho; i=i+1){
+              if ( valor[i] != 1 && valor[i] != 0 ){
+                  document.getElementById(nome).style.color = "red";
+              }
+          }
+      }
+  </script>
+</head>
+<body>
+<p><br></p>
+<h1 id="projeto-1-relógio-utilizando-um-processador-personalizado">Projeto 1: Relógio Utilizando um Processador Personalizado</h1>
+<button class="accordionNested">
+Descrição
+</button>
+<div class="panelNested">
+<p>O objetivo do projeto é a implementação de um processador, que será utilizado em um relógio com as seguintes características (<strong>projeto mínimo</strong>):</p>
+<ul>
+<li><p>Indica horas, minutos e segundos;</p>
+<ul>
+<li>O horário deverá ser mostrado através do display de sete segmentos.</li>
+</ul></li>
+<li><p>Possui algum sistema para acertar o horário exibido;</p></li>
+<li><p>Possui seleção da base de tempo:</p>
+<ul>
+<li><p>Para mostrar a passagem das 24 horas em tempo reduzido:</p>
+<ul>
+<li>Utilizado para verificar se o projeto funciona corretamente.</li>
+</ul></li>
+</ul></li>
+<li><p>O teste final (avaliação) do projeto será feito na placa FPGA.</p></li>
+</ul>
+<h3 id="execução">Execução</h3>
+<p>Em grupo com no máximo <strong>dois</strong> alunos.</p>
+<button class="accordion">
+Características do Processador
+</button>
+<div class="panel">
+<p>Características principais do projeto mínimo:</p>
+<ul>
+<li><p>Arquitetura Harvard;</p></li>
+<li><p>Trabalha com dados de 8 bits.</p></li>
+<li><p>Deve estar contido em um componente que possui uma interface externa com:</p>
+<ul>
+<li><p>Barramento de dados: 8 bits;</p></li>
+<li><p>Barramento da memória de instruções: limitado a 16 bits (para acomodar o imediato);</p></li>
+<li><p>Barramento de endereços: 16 bits (no máximo);</p></li>
+<li><p>Barramento de controle: somente os sinais mais comuns (por exemplo, o R/~W);</p></li>
+</ul></li>
+<li><p>Topologia permitida: <strong>Registrador-Memória</strong>.</p></li>
+<li><p>Obrigatório o uso de sub-rotinas:</p>
+<ul>
+<li>A não utilização descontará meio conceito (um sinal).</li>
+</ul></li>
+</ul>
+<blockquote>
+<p><strong>Toda a decodificação de endereços deve ser feita fora do processador.</strong></p>
+</blockquote>
+<h3 id="dicas">Dicas</h3>
+<p>Dê preferência aos componentes que:</p>
+<ul>
+<li><p>Já foram utilizados anteriormente;</p></li>
+<li><p>Estão presentes na página de modelos;</p></li>
+<li><p>São dos <em>templates</em> do Quartus.</p></li>
+</ul>
+<p><strong><font style="color:red;">Importante:<br> Não utilize as bibliotecas da Synopsys.<br> Veja na página interna, sobre VHDL, a especificação dessas bibliotecas. </font></strong></p>
+</div>
+<!--- class_panel --->
+<button class="accordion">
+Opcionais para o Relógio
+</button>
+<div class="panel">
+<p>Adicionam meio conceito (ou o sinal de “+”) ao limite da nota do projeto (limitado a: A+):</p>
+<ul>
+<li><p>Novas instruções, desde que sejam úteis. Por exemplo:</p>
+<ul>
+<li><p>Instrução <em>AND</em>, para mascarar bits;</p></li>
+<li><p>Instrução <em>CLT</em>, compara se menor que;</p></li>
+<li><p>Instrução <em>JLT</em>, desvia se menor que;</p></li>
+<li><p>Instrução <em>ADDI</em>, soma do acumulador com imediato;</p></li>
+<li><p>Instrução <em>SUBI</em>, subtração de imediato do acumulador;</p></li>
+<li><p>Instrução <em>LDADDR</em>, carrega endereço de memória para acesso posterior (acesso de memória indexado);</p></li>
+<li><p>Instrução <em>STAIND</em>, armazena acumulador em endereço de memória obtido anteriormente (acesso de memória indexado);</p></li>
+<li><p>Instrução <em>LDAIND</em>, carrega acumulador com conteúdo de endereço de memória obtido anteriormente (acesso de memória indexado);</p></li>
+<li><p>Outras instruções, consultar o professor.</p></li>
+</ul></li>
+</ul>
+<blockquote>
+<p><strong>Se a nova instrução já foi implementada no contador, ela não será considerada como nova no relógio.</strong></p>
+</blockquote>
+<ul>
+<li><p>Ajuste de horário que não seja através de aumento da frequência da base de tempo:</p>
+<ul>
+<li><p>Pode usar a entrada das chaves para definir um horário específico (horas e minutos):</p>
+<ul>
+<li>Deve verificar consistência do valor de entrada.</li>
+</ul></li>
+<li><p>Pode usar os botões para chamar rotinas de incremento das horas e minutos separadamente;</p></li>
+<li><p>A aceleração da base de tempo fica restrita para a verificação rápida da passagem das 24 horas.</p></li>
+</ul></li>
+<li><p>Montador (assembler) para o processador criado:</p>
+<ul>
+<li><p>Deve ser em Python;</p></li>
+<li><p>Deve ter sido usado para gerar o código que está sendo executado no relógio;</p></li>
+<li><p>Caso já tenha sido feito para o contador, só será aceito se houver mudança de arquitetura e novas instruções.</p></li>
+</ul></li>
+<li><p>Indicação do horário selecionável, com base em 12 horas (AM/PM) ou 24 horas;</p></li>
+<li><p>Sistema de despertador;</p></li>
+<li><p>Temporizador com contagem regressiva.</p></li>
+</ul>
+<p>Adicionam um conceito (sobe uma letra) ao limite da nota do projeto (limitado a: A+):</p>
+<ul>
+<li><p>Chamada de sub-rotina aninhada (até 8 chamadas);</p></li>
+<li><p>Pilha controlada por hardware (instruções <em>push</em> e <em>pop</em> no processador):</p>
+<ul>
+<li>Pode ter a posição fixa na memória (não precisa iniciar o ponteiro da pilha).</li>
+</ul></li>
+<li><p>Interrupção por hardware (uma única interrupção).</p></li>
+</ul>
+<blockquote>
+<p><strong>Caso tenha ideia para algum opcional, confira antes se ele adiciona valor ao projeto.</strong></p>
+</blockquote>
+</div>
+<!--- class_panel --->
+<button class="accordion">
+Entrega Intermediária (Contador)
+</button>
+<div class="panel">
+<p>A entrega intermediária consiste no projeto de um contador realizado durante o estudo guiado das aulas seis, sete, oito, nove e dez. Ela será feita na semana do dia <strong>xx/xx/2023</strong>. Não haverá entrega com atraso.</p>
+<p>A entrega é constituída pelo aquivo do projeto em VHDL e um único arquivo, do tipo PDF, com o relatório do projeto realizado. Para facilitar o entendimento, todos os diagramas devem conter uma breve explicação do seu conteúdo.</p>
+<p>Esse relatório deve conter, no mínimo, os tópicos abaixo e as justificativas que levaram a cada decisão do projeto.</p>
+<ul>
+<li><p>Arquitetura do processador (acumulador ou registrador memória);</p></li>
+<li><p>Total de instruções e sua sintaxe (o nome de cada instrução com o tipo de argumento que ela utiliza);</p></li>
+<li><p>Formato das instruções (distribuição dos campos na palavra de instrução);</p></li>
+<li><p>Fluxo de dados para o processador, com uma explicação resumida do seu funcionamento;</p></li>
+<li><p>Listagem dos pontos de controle e sua utilização;</p></li>
+<li><p>Rascunho do diagrama de conexão do processador com os periféricos;</p></li>
+<li><p>Rascunho do mapa de memória.</p></li>
+<li><p>Fonte do programa em assembly.</p></li>
+</ul>
+<p>Caso tenha utilizado alguma informação ou esquema de terceiros, faça a devida atribuição.</p>
+<p>As justificativas podem conter informações sobre a dificuldade de realização de cada item.</p>
+<h3 id="opções-para-a-arquitetura">Opções para a Arquitetura</h3>
+<p>Existem três opções de arquitetura para entrega desse projeto:</p>
+<ol type="1">
+<li><p>Projeto básico, com processador na arquitetura <em>Acumulador</em> (igual ao do estudo dirigido), nota base: C;</p></li>
+<li><p>Projeto com o processador utilizando a mesma arquitetura que será utilizada no relógio: <em>Registrador-Memória</em>. Nota base: B.</p></li>
+</ol>
+<h4 id="opcionais">Opcionais</h4>
+<p>Que valem um conceito (uma letra):</p>
+<ul>
+<li>O limite de contagem.</li>
+</ul>
+<p>Que valem meio conceito (o sinal de +):</p>
+<ul>
+<li><p>A contagem regressiva.</p></li>
+<li><p>O montador assembly.</p></li>
+<li><p>Cada instrução extra.</p></li>
+</ul>
+<blockquote>
+<p><strong>As instruções implementadas no contador não serão consideradas como novas no relógio.</strong></p>
+</blockquote>
+<blockquote>
+<p><strong>Caso tenha ideia para algum opcional, confira antes se ele adiciona valor ao projeto.</strong></p>
+</blockquote>
+<h3 id="rubrica">Rubrica</h3>
+<table>
+<caption><strong>Rubricas para a Entrega Intermediária do Projeto 1</strong></caption>
+<colgroup>
+<col style="width: 6%" />
+<col style="width: 50%" />
+<col style="width: 43%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Nota</th>
+<th style="text-align: left;">Critério</th>
+<th style="text-align: left;">Documentação</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">A+</td>
+<td style="text-align: left;">Entregou a opção 1 ou 2 do projeto, com uma quantidade de itens opcionais, funcionando adequadamente, porém com pequenos erros (o critério é estabelecido pelo professor), que totalizem essa nota ou valor maior.</td>
+<td style="text-align: left;">Código bem comentado. Relatório com descrição do projeto e instruções de uso.</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">A</td>
+<td style="text-align: left;">Entregou a opção 2 do projeto, com uma quantidade de itens opcionais, funcionando adequadamente, porém com pequenos erros (o critério é estabelecido pelo professor), que totalizem essa nota ou valor maior.</td>
+<td style="text-align: left;">Código bem comentado. Relatório com descrição do projeto e instruções de uso.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">A</td>
+<td style="text-align: left;">Entregou a opção 1 do projeto, com uma quantidade de itens opcionais, funcionando sem erros, que totalizem essa nota ou valor maior.</td>
+<td style="text-align: left;">Código bem comentado. Relatório com descrição do projeto e instruções de uso.</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B</td>
+<td style="text-align: left;">Entregou a opção 2 do projeto, funcionando adequadamente, porém com pequenos erros (o critério é estabelecido pelo professor).</td>
+<td style="text-align: left;">Código bem comentado. Relatório com descrição do projeto e instruções de uso.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B</td>
+<td style="text-align: left;">Entregou a opção 1 do projeto, com opcionais suficientes, funcionando sem erros (o critério é estabelecido pelo professor).</td>
+<td style="text-align: left;">Código bem comentado. Relatório com descrição do projeto e instruções de uso.</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">C</td>
+<td style="text-align: left;">Entregou o projeto básico (opção 1) funcionando com pequenos erros (o critério é estabelecido pelo professor).</td>
+<td style="text-align: left;">Código comentado e um simples relatório.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">D</td>
+<td style="text-align: left;">Entregou o projeto (qualquer opção) funcionando mas com erros graves.</td>
+<td style="text-align: left;">N.A.</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">I</td>
+<td style="text-align: left;">Entregou o projeto (qualquer opção) não funcionando. Entregou o projeto incompleto ou não entregou o projeto.</td>
+<td style="text-align: left;">N.A.</td>
+</tr>
+</tbody>
+</table>
+<p>
+<font style="color:red;font-weight:bold;">O teste final (avaliação) do projeto será feito na placa FPGA.</font>
+</p>
+</div>
+<!--- class_panel --->
+<button class="accordion">
+Entrega Final
+</button>
+<div class="panel">
+<p>A entrega final será no dia <strong>xx/xx/22</strong> e a apresentação do projeto será entre os dias <strong>xx/xx e xx/xx/22</strong>.<!-- **semana seguinte da Avaliação Intermediária** (dias ?? e ??/10/2023) --> A entrega com atraso, será na semana seguinte, com desconto de um conceito, ou seja, uma letra. Após essa data, o projeto será considerado como não entregue.</p>
+<p>A avaliação do projeto final será feita através dos seguintes itens:</p>
+<ul>
+<li><p>Apresentação do projeto, no kit de desenvolvimento:</p>
+<ul>
+<li><p><strong>Com arguição indiviual dos componentes do grupo para verificar o conhecimento e a participação na execução do projeto.</strong></p>
+<ul>
+<li>O resultado da arguição pode gerar notas diferentes para os participantes do grupo.</li>
+</ul></li>
+</ul></li>
+<li><p>Entrega de um resumo explicativo do funcionamento do circuito, contendo:</p>
+<ul>
+<li><p>Diagrama de blocos do projeto;</p></li>
+<li><p>Com comentários (opcional) sobre os problemas encontrados.</p></li>
+</ul></li>
+<li><p>Entrega do projeto do Quartus, com:</p>
+<ul>
+<li>Código VHDL, <strong>devidamente documentado</strong> e com o nome dos participantes.</li>
+</ul></li>
+</ul>
+</div>
+<!--- class_panel --->
+<button class="accordion">
+Rubrica
+</button>
+<div class="panel">
+<p><br></p>
+<table>
+<caption><strong>Rubricas para o Projeto 1</strong></caption>
+<colgroup>
+<col style="width: 5%" />
+<col style="width: 46%" />
+<col style="width: 40%" />
+<col style="width: 7%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Nota</th>
+<th style="text-align: left;">Critério</th>
+<th style="text-align: left;">Documentação</th>
+<th style="text-align: center;">Montador</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">A+</td>
+<td style="text-align: left;">Entregou o projeto básico com uma quantidade de itens opcionais, funcionando adequadamente, que totalizem essa nota ou valor maior. Funciona sem erros.</td>
+<td style="text-align: left;">Código bem comentado. Manual com descrição do projeto e instruções de uso.</td>
+<td style="text-align: center;">Obrigatório</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B+</td>
+<td style="text-align: left;">Entregou o projeto básico com uma quantidade de itens opcionais, funcionando adequadamente, que totalizem essa nota. Funciona com pequenos erros (o critério é estabelecido pelo professor).</td>
+<td style="text-align: left;">Código bem comentado. Manual com descrição do projeto e instruções de uso.</td>
+<td style="text-align: center;">Opcional</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">C</td>
+<td style="text-align: left;">Entregou o projeto básico. Funciona com pequenos erros (o critério é estabelecido pelo professor).</td>
+<td style="text-align: left;">Código comentado e um simples manual de instruções de uso.</td>
+<td style="text-align: center;">Opcional</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">D</td>
+<td style="text-align: left;">Entregou o projeto básico funcionando mas com erros graves.</td>
+<td style="text-align: left;">N.A.</td>
+<td style="text-align: center;">N.A.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">I</td>
+<td style="text-align: left;">Entregou o projeto não funcionando. Entregou o projeto incompleto ou não entregou o projeto.</td>
+<td style="text-align: left;">N.A.</td>
+<td style="text-align: center;">N.A.</td>
+</tr>
+</tbody>
+</table>
+<p>
+<font style="color:red;font-weight:bold;">O teste final (avaliação) do projeto será feito na placa FPGA.</font>
+</p>
+<blockquote>
+<p><strong>O critério, sobre o que é um erro grave ou pequeno, é estabelecido pelo professor.</strong></p>
+</blockquote>
+</div>
+<!--- class_panel --->
+<button class="accordion">
+Leituras
+</button>
+<div class="panel">
+<p>Livro texto (Organização e Projeto de Computadores: A Interface Hardware/Software):</p>
+<ul>
+<li><p>Capítulo 4, item 3 (construindo um fluxo de dados);</p></li>
+<li><p><a href="../livro/Apendice_D-UnidadeControle.pdf">Apêndice D</a> completo. Trata de máquinas de estados, microprogramação e unidade de controle.</p></li>
+<li><p>Sobre multiplicação e divisão por hardware, veja os <a href="../livro/Organizacao_e_Projeto_de_Computadores-P-H-4Ed-2014-Multiplicacao_e_Divisao.pdf">tópicos 3.3 e 3.4 do livro texto</a>.</p></li>
+</ul>
+<p>Caso queira ler mais, veja o livro do Stallings (Arquitetura e Organização de Computadores):</p>
+<ul>
+<li>Capítulos 14 e 15.</li>
+</ul>
+</div>
+<!--- class_panel --->
+</div>
+<!--- class_panelNested --->
+<hr />
+<p><br></p>
+<h1 id="projeto-2-processador-compatível-com-mips-dlx">Projeto 2: Processador compatível com MIPS DLX</h1>
+<button class="accordionNested">
+Descrição
+</button>
+<div class="panelNested">
+<p>Este projeto será a implementação de um processador RISC de 32 bits, compatível com o MIPS DLX.</p>
+<p>Teremos duas organizações para o processador: <em>ciclo-único</em> e <em>pipeline</em>. Além disso, também teremos dois grupos de instruções, definidos em <em>Opções de Grupos de Instruções</em> (abaixo).</p>
+<p>A combinação entre as opções de organização e grupos de instruções definirá a nota máxima que poderá ser obtida no projeto.</p>
+<h3 id="execução-1">Execução</h3>
+<p>Em grupo com no máximo <strong>dois</strong> alunos.</p>
+<button class="accordion">
+Opções de Grupos de Instruções
+</button>
+<div class="panel">
+<h3 id="grupo-a">Grupo A</h3>
+<p>Quanto aos dois grupos de instruções, o <strong>subgrupo “A”</strong> é formado pelas instruções abaixo:</p>
+<ul>
+<li><p>As instruções de referência à memória:</p>
+<ul>
+<li><p>Carrega palavra (<em>load word: lw</em>);</p></li>
+<li><p>Armazena palavra (<em>store word: sw</em>).</p></li>
+</ul></li>
+<li><p>As instruções lógico-aritméticas:</p>
+<ul>
+<li><p>Soma (<em>add</em>);</p></li>
+<li><p>Subtração (<em>sub</em>);</p></li>
+<li><p>E lógico (<em>AND</em>);</p></li>
+<li><p>OU lógico (<em>OR</em>);</p></li>
+<li><p>Comparação menor que (<em>set if less than: slt</em>).</p></li>
+</ul></li>
+<li><p>As instruções de desvio:</p>
+<ul>
+<li><p>Desvio se igual (<em>branch equal: beq</em>);</p></li>
+<li><p>Salto incondicional (<em>jump: j</em>).</p></li>
+</ul></li>
+</ul>
+<h3 id="grupo-b">Grupo B</h3>
+<p>O <strong>subgrupo “B”</strong> possui as instruções do subgrupo “A” e adiciona as listadas abaixo:</p>
+<ul>
+<li><p>A instrução de carga:</p>
+<ul>
+<li>Carrega imediato para 16 bits MSB (<em>load upper immediate: lui</em>).</li>
+</ul></li>
+<li><p>As instruções lógico-aritméticas:</p>
+<ul>
+<li><p>Soma com imediato (<em>addi</em>);</p></li>
+<li><p>E lógico com imediato (<em>ANDI</em>);</p></li>
+<li><p>OU lógico com imediato (<em>ORI</em>);</p></li>
+<li><p>Comparação menor que imediato (<em>set if less than: slti</em>).</p></li>
+</ul></li>
+<li><p>As instruções de desvio:</p>
+<ul>
+<li><p>Desvio se não igual (<em>branch not equal: bne</em>);</p></li>
+<li><p>Salto e conecta (<em>jump and link: jal</em>);</p></li>
+<li><p>Salto por registrador (<em>jump register: jr</em>).</p></li>
+</ul></li>
+</ul>
+<p>Tal qual a implementação do livro texto, não trabalharemos com nenhuma das instruções de ponto flutuante. Também não implementaremos todas as instruções que trabalham com inteiros, por exemplo: deslocamento, multiplicação e divisão.</p>
+<p>As instruções restantes, para completar o conjunto todo do MIPS DLX, poderão ser implementadas com as mesmas técnicas usadas para implementar estes subconjuntos.</p>
+</div>
+<!--- class_panel --->
+<button class="accordion">
+Entrega Intermediária
+</button>
+<div class="panel">
+<p>Será a organização <em>ciclo único</em> e o <em>grupo de instruções A</em>.</p>
+<table>
+<caption><strong>Rubricas para o Projeto 2 - Entrega Intermediária</strong></caption>
+<colgroup>
+<col style="width: 6%" />
+<col style="width: 50%" />
+<col style="width: 43%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Nota</th>
+<th style="text-align: left;">Critério</th>
+<th style="text-align: left;">Documentação</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">A+</td>
+<td style="text-align: left;">Entregou o projeto, com todas instruções do grupo A, funcionando sem erros, com a instrução NOR.</td>
+<td style="text-align: left;">Código bem comentado e instruções de uso (quando necessário).</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">A</td>
+<td style="text-align: left;">Entregou o projeto, com todas instruções do grupo A, funcionando sem erros.</td>
+<td style="text-align: left;">Código bem comentado e instruções de uso (quando necessário).</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B</td>
+<td style="text-align: left;">Entregou o projeto, com todas instruções do grupo A funcionando. Porém, com pequenos erros (o critério é estabelecido pelo professor) em no máximo duas instruções.</td>
+<td style="text-align: left;">Código bem comentado e instruções de uso (quando necessário).</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">C</td>
+<td style="text-align: left;">Entregou o projeto faltando uma instrução (do grupo A) ou com todas instruções, porém com pequenos erros (o critério é estabelecido pelo professor) em três ou mais instruções.</td>
+<td style="text-align: left;">Código comentado e instruções de uso (quando necessário).</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">D</td>
+<td style="text-align: left;">Entregou o projeto funcionando com erros graves. Entregou o projeto funcionando com uma ou duas instruções faltando.</td>
+<td style="text-align: left;">N.A.</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">I</td>
+<td style="text-align: left;">Entregou o projeto não funcionando. Entregou o projeto incompleto (mais de duas instruções faltando) ou não entregou o projeto.</td>
+<td style="text-align: left;">N.A.</td>
+</tr>
+</tbody>
+</table>
+<p>
+<font style="color:red;font-weight:bold;">O teste final (avaliação) do projeto será feito na placa FPGA.</font>
+</p>
+<blockquote>
+<p><strong>O critério, sobre o que é um erro grave ou pequeno, é estabelecido pelo professor.</strong></p>
+</blockquote>
+<h3 id="data">Data</h3>
+<!--  A ser definida. -->
+<p><font style="color:red">A ser definida.</font></p>
+</div>
+<!--- class_panel --->
+<button class="accordion">
+Entrega Final
+</button>
+<div class="panel">
+<h3 id="combinações-entre-organização-e-grupos-de-instruções">Combinações entre Organização e Grupos de Instruções</h3>
+<p>O projeto deverá implementar as seguintes funcionalidades:</p>
+<ul>
+<li><p>MIPS <em>single cycle</em> :</p>
+<ul>
+<li><p>Executando as instruções dos subconjuntos A e B;</p></li>
+<li><p>Nota máxima: limitada ao C+.</p></li>
+</ul></li>
+<li><p>MIPS <em>single cycle</em> :</p>
+<ul>
+<li><p>Executando as instruções dos subconjuntos A e B;</p></li>
+<li><p>Com instruções extras, existentes no Greencard e aprovadas pelo professor, valendo um sinal por instrução nova. Exemplos aceitos:</p>
+<ul>
+<li><em>Shift Left Logical</em>, <em>Shift Right Logical</em>, <em>Load Byte Unsigned</em>, <em>Store Byte</em>, <em>NOR</em>, <em>Set Less Than Immediate Unsigned</em>.</li>
+</ul></li>
+<li><p>A rotina de teste para as novas instruções deverá ser feita pelo grupo e será executada após o teste padrão utilizando os <em>Programas de Teste para o MIPS DLX</em>;</p></li>
+<li><p>Nota máxima: limitada ao A.</p></li>
+</ul></li>
+<li><p>MIPS com <em>pipeline</em>:</p>
+<ul>
+<li><p>Executando todas instruções do subconjunto A;</p></li>
+<li><p>Nota máxima: limitada ao B.</p></li>
+<li><p>Caso sejam adicionadas as instruções abaixo, o limite da nota será B+.</p>
+<ul>
+<li><p>Salto e conecta (<em>jump and link: jal</em>);</p></li>
+<li><p>Salto por registrador (<em>jump register: jr</em>).</p></li>
+</ul></li>
+</ul></li>
+<li><p>MIPS com <em>pipeline</em>:</p>
+<ul>
+<li><p>Executando as instruções dos subconjuntos A e B;</p></li>
+<li><p>Nota máxima: sem limite (A+).</p></li>
+</ul></li>
+</ul>
+<table>
+<caption><strong>Rubricas para o Projeto 2 - Entrega Final</strong></caption>
+<colgroup>
+<col style="width: 6%" />
+<col style="width: 50%" />
+<col style="width: 43%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Nota</th>
+<th style="text-align: left;">Critério</th>
+<th style="text-align: left;">Documentação</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">A+</td>
+<td style="text-align: left;">Entregou o projeto, na organização <em>pipeline</em>, com todas instruções (grupos A e B), com os circuitos de <em>forwarding</em> e <em>stall</em>, funcionando com pequenos erros.</td>
+<td style="text-align: left;">Código bem comentado e instruções de uso (quando necessário: utilização das chaves e botões).</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">A+</td>
+<td style="text-align: left;">Entregou o projeto, na organização <em>pipeline</em>, com todas instruções (grupos A e B) funcionando sem erros.</td>
+<td style="text-align: left;">Código bem comentado e instruções de uso (quando necessário: utilização das chaves e botões).</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">A</td>
+<td style="text-align: left;">Entregou o projeto, na organização <em>pipeline</em>, com todas instruções (grupos A e B). Porém, com pequenos erros* em no <strong>máximo duas instruções</strong>.</td>
+<td style="text-align: left;">Código bem comentado e instruções de uso (quando necessário: utilização das chaves e botões).</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">A</td>
+<td style="text-align: left;">Entregou o projeto, na organização <em>ciclo único</em>, com todas instruções (grupos A e B) funcionando sem erros. Acrescentou instruções extras, funcionando sem erros, para obter esta nota ou nota maior.</td>
+<td style="text-align: left;">Código bem comentado e instruções de uso (quando necessário: utilização das chaves e botões).</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B+</td>
+<td style="text-align: left;">Entregou o projeto, na organização <em>pipeline</em>, com as instruções do grupo A, funcionando sem erros.</td>
+<td style="text-align: left;">Código bem comentado e instruções de uso (quando necessário: utilização das chaves e botões).</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B+</td>
+<td style="text-align: left;">Entregou o projeto, na organização <em>ciclo único</em>, com todas instruções (grupos A e B) funcionando sem erros. Acrescentou instruções extras, funcionando sem erros, para obter esta nota.</td>
+<td style="text-align: left;">Código bem comentado e instruções de uso (quando necessário: utilização das chaves e botões).</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">B</td>
+<td style="text-align: left;">Entregou o projeto, na organização <em>pipeline</em>, com todas instruções do grupo A. Porém, com pequenos erros* em no <strong>máximo uma instrução</strong>.</td>
+<td style="text-align: left;">Código bem comentado e instruções de uso (quando necessário: utilização das chaves e botões).</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B</td>
+<td style="text-align: left;">Entregou o projeto, na organização <em>ciclo único</em>, com todas instruções (grupos A e B) funcionando sem erros. Acrescentou instruções extras, funcionando sem erros, para obter esta nota.</td>
+<td style="text-align: left;">Código bem comentado e instruções de uso (quando necessário: utilização das chaves e botões).</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">C+</td>
+<td style="text-align: left;">Entregou o projeto, na organização <em>ciclo único</em>, com todas instruções dos grupos A e B. Porém, com pequenos erros* em no <strong>máximo uma instrução</strong>.</td>
+<td style="text-align: left;">Código comentado e instruções de uso (quando necessário: utilização das chaves e botões).</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">C</td>
+<td style="text-align: left;">Entregou o projeto, na organização <em>ciclo único</em>, com todas instruções do grupo A e B. Porém, com pequenos erros* em no <strong>máximo duas instruções</strong>.</td>
+<td style="text-align: left;">Código comentado e instruções de uso (quando necessário: utilização das chaves e botões).</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">D</td>
+<td style="text-align: left;">Entregou o projeto, qualquer organização, conjunto A e B, funcionando com erros graves. Entregou o projeto funcionando com uma ou duas instruções faltando (ou não funcionando).</td>
+<td style="text-align: left;">N.A.</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">I</td>
+<td style="text-align: left;">Entregou o projeto não funcionando. Entregou o projeto incompleto (mais de duas instruções faltando, ou não funcionando) ou não entregou o projeto.</td>
+<td style="text-align: left;">N.A.</td>
+</tr>
+</tbody>
+</table>
+<p>
+<font style="color:red;font-weight:bold;">O teste final (avaliação) do projeto será feito na placa FPGA.</font>
+</p>
+<blockquote>
+<p><strong>*O critério, sobre o que é um erro grave ou pequeno, é estabelecido pelo professor.</strong></p>
+</blockquote>
+<!--
+> __\*\*Caso seja requisitado, será fornecido um projeto base, testado, faltando a implementação dos registradores do _pipeline_ e a UC. Assim, o trabalho dos grupos será menor, podendo ser realizado dentro do prazo de entrega.__
+-->
+<h3 id="data-1">Data</h3>
+<!-- A data de entrega, conforme o plano de aula, será: -->
+<p>A data de entrega será:</p>
+<ul>
+<li><p>Dentro do prazo e com limite de nota definido nas opções de projeto: <strong>na semana da AS</strong>.</p></li>
+<li><p><strong>Não haverá entrega em atraso.</strong></p></li>
+</ul>
+<p>
+<font style="color:red;font-size:16px;font-weight:bold;">Será feito o agendamento da apresentação dos grupos, devendo ser apresentados, no mínimo, 6 grupos por dia.</font>
+</p>
+<!---
+-   Com atraso. O limite de nota é rebaixado em uma letra (em relação às opções de projeto): 22/11/2018.
+--->
+<h3 id="avaliação">Avaliação</h3>
+<p>A avaliação do projeto segue o descrito no plano de aula. Ela será feita através dos seguintes itens:</p>
+<ul>
+<li><p>Apresentação do projeto, no kit de desenvolvimento:</p>
+<ul>
+<li><p><strong>Com arguição indiviual dos componentes do grupo para verificar o conhecimento e a participação na execução do projeto.</strong></p>
+<ul>
+<li>O resultado da arguição pode gerar notas diferentes para os participantes do grupo.</li>
+</ul></li>
+</ul></li>
+</ul>
+<!---
+-   Entrega de um resumo explicativo do funcionamento do circuito, contendo:
+
+    -   Diagrama de blocos do projeto;
+
+    -   Diagrama de estados (se for o caso);
+
+    -   Com comentários (opcional) sobre os problemas encontrados.
+--->
+<ul>
+<li><p>Entrega do projeto do Quartus, com:</p>
+<ul>
+<li><p>Código VHDL, devidamente documentado e com o nome dos participantes;</p></li>
+<li><p>Arquivo com conteúdo da microprogramação (se for o caso).</p></li>
+<li><p>Manual de uso.</p></li>
+</ul></li>
+</ul>
+</div>
+<!--- class_panel --->
+<button class="accordion">
+Leituras
+</button>
+<div class="panel">
+<p>Ler os itens abaixo, do livro texto (Organização e Projeto de Computadores: A Interface Hardware/Software):</p>
+<ul>
+<li><p>Capítulo 4, item 4.1 até 4.9;</p></li>
+<li><p><a href="../livro/Apendice_C-ProjetoLogico.pdf">Apêndice C</a> do livro texto;</p></li>
+<li><p><a href="../livro/Apendice_D-UnidadeControle.pdf">Apêndice D</a> do livro texto;</p></li>
+<li><p><a href="https://en.wikipedia.org/wiki/MIPS_architecture">Arquitetura do MIPS na wikipedia (nosso interesse: MIPS I).</a> {}</p></li>
+<li><p><a href="https://en.wikipedia.org/wiki/DLX">A página do DLX na wikipedia.</a></p></li>
+<li><p>Um resumo de <a href="https://booksite.elsevier.com/9780124077263/downloads/COD_5e_Greencard.pdf">referência sobre o MIPS</a> (todas instruções e outros detalhes - download gratuito no site da editora).</p></li>
+<li><p>Resumo (interno) da [arquitetura do MIPS][ArquiteturaDLX]</p></li>
+</ul>
+</div>
+<!--- class_panel --->
+</div>
+<!--- class_panelNested --->
+<button class="accordionNested">
+Programas de Teste para o MIPS DLX
+</button>
+<div class="panelNested">
+
+<p>A seguir estão os arquivos, do tipo <em>.mif</em>, com os programas de teste.</p>
+<button class="accordion">
+Ciclo Único e Subconjunto A
+</button>
+<div class="panel">
+<p>Inicialização do Banco de Registradores em VHDL:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode asm"><code class="sourceCode fasm"><a class="sourceLine" id="cb1-1" title="1">function initMemory</a>
+<a class="sourceLine" id="cb1-2" title="2">        return memoria_t is variable tmp : memoria_t := (others =&gt; (others =&gt; <span class="st">&#39;0&#39;</span>))<span class="co">;</span></a>
+<a class="sourceLine" id="cb1-3" title="3">  begin</a>
+<a class="sourceLine" id="cb1-4" title="4">        -- Inicializa os endereços:</a>
+<a class="sourceLine" id="cb1-5" title="5">        tmp(<span class="dv">8</span>)  := 32x<span class="st">&quot;00&quot;</span><span class="co">;  -- $t0 = 0x00</span></a>
+<a class="sourceLine" id="cb1-6" title="6">        tmp(<span class="dv">9</span>)  := 32x<span class="st">&quot;0A&quot;</span><span class="co">;  -- $t1 = 0x0A</span></a>
+<a class="sourceLine" id="cb1-7" title="7">        tmp(<span class="dv">10</span>) := 32x<span class="st">&quot;0B&quot;</span><span class="co">;  -- $t2 = 0x0B</span></a>
+<a class="sourceLine" id="cb1-8" title="8">        tmp(<span class="dv">11</span>) := 32x<span class="st">&quot;0C&quot;</span><span class="co">;  -- $t3 = 0x0C</span></a>
+<a class="sourceLine" id="cb1-9" title="9">        tmp(<span class="dv">12</span>) := 32x<span class="st">&quot;0D&quot;</span><span class="co">;  -- $t4 = 0x0D</span></a>
+<a class="sourceLine" id="cb1-10" title="10">        tmp(<span class="dv">13</span>) := 32x<span class="st">&quot;16&quot;</span><span class="co">;  -- $t5 = 0x16</span></a>
+<a class="sourceLine" id="cb1-11" title="11">        return tmp<span class="co">;</span></a>
+<a class="sourceLine" id="cb1-12" title="12">    <span class="pp">end</span> initMemory<span class="co">;</span></a></code></pre></div>
+<p><br></p>
+<p>Conteúdo do <em>.mif</em> da ROM:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode asm"><code class="sourceCode fasm"><a class="sourceLine" id="cb2-1" title="1"></a>
+<a class="sourceLine" id="cb2-2" title="2">-- Copyright (C) <span class="dv">2017</span>  Intel Corporation. All rights reserved.</a>
+<a class="sourceLine" id="cb2-3" title="3">-- Your use of Intel Corporation<span class="st">&#39;s design tools, logic functions</span></a>
+<a class="sourceLine" id="cb2-4" title="4">-- <span class="bu">and</span> other software <span class="bu">and</span> tools, <span class="bu">and</span> its AMPP partner logic</a>
+<a class="sourceLine" id="cb2-5" title="5">-- functions, <span class="bu">and</span> any output files <span class="bu">from</span> any of the foregoing</a>
+<a class="sourceLine" id="cb2-6" title="6">-- (including device programming <span class="bu">or</span> simulation files), <span class="bu">and</span> any</a>
+<a class="sourceLine" id="cb2-7" title="7">-- associated documentation <span class="bu">or</span> information are expressly subject</a>
+<a class="sourceLine" id="cb2-8" title="8">-- to the terms <span class="bu">and</span> conditions of the Intel Program License</a>
+<a class="sourceLine" id="cb2-9" title="9">-- Subscription Agreement, the Intel Quartus Prime License Agreement,</a>
+<a class="sourceLine" id="cb2-10" title="10">-- the Intel FPGA IP License Agreement, <span class="bu">or</span> other applicable license</a>
+<a class="sourceLine" id="cb2-11" title="11">-- agreement, including, without limitation, that your use is for</a>
+<a class="sourceLine" id="cb2-12" title="12">-- the sole purpose of programming logic devices manufactured by</a>
+<a class="sourceLine" id="cb2-13" title="13">-- Intel <span class="bu">and</span> sold by Intel <span class="bu">or</span> its authorized distributors.  Please</a>
+<a class="sourceLine" id="cb2-14" title="14">-- refer to the applicable agreement for further details.</a>
+<a class="sourceLine" id="cb2-15" title="15"></a>
+<a class="sourceLine" id="cb2-16" title="16">WIDTH=<span class="dv">32</span><span class="co">;</span></a>
+<a class="sourceLine" id="cb2-17" title="17">DEPTH=<span class="dv">64</span><span class="co">;</span></a>
+<a class="sourceLine" id="cb2-18" title="18">ADDRESS_RADIX=<span class="bu">DEC</span><span class="co">;</span></a>
+<a class="sourceLine" id="cb2-19" title="19">DATA_RADIX=HEX<span class="co">;</span></a>
+<a class="sourceLine" id="cb2-20" title="20"></a>
+<a class="sourceLine" id="cb2-21" title="21">CONTENT BEGIN</a>
+<a class="sourceLine" id="cb2-22" title="22">      -- Valores iniciais no banco de registradores:</a>
+<a class="sourceLine" id="cb2-23" title="23">      -- <span class="dv">$</span>t0   (#<span class="dv">8</span>) :=<span class="bn"> 0x00</span></a>
+<a class="sourceLine" id="cb2-24" title="24">      -- <span class="dv">$</span>t1   (#<span class="dv">9</span>) :=<span class="bn"> 0x0A</span></a>
+<a class="sourceLine" id="cb2-25" title="25">      -- <span class="dv">$</span>t2  (#<span class="dv">10</span>) :=<span class="bn"> 0x0B</span></a>
+<a class="sourceLine" id="cb2-26" title="26">      -- <span class="dv">$</span>t3  (#<span class="dv">11</span>) :=<span class="bn"> 0x0C</span></a>
+<a class="sourceLine" id="cb2-27" title="27">      -- <span class="dv">$</span>t4  (#<span class="dv">12</span>) :=<span class="bn"> 0x0D</span></a>
+<a class="sourceLine" id="cb2-28" title="28">      -- <span class="dv">$</span>t5  (#<span class="dv">13</span>) :=<span class="bn"> 0x16</span></a>
+<a class="sourceLine" id="cb2-29" title="29"></a>
+<a class="sourceLine" id="cb2-30" title="30">    <span class="dv">0</span>    :   AC090008<span class="co">; --sw $t1 8($zero)     (m(8) := 0x0000000A)</span></a>
+<a class="sourceLine" id="cb2-31" title="31">    <span class="dv">1</span>    :   8C080008<span class="co">; --lw $t0 8($zero)     ($t0  := 0x0000000A)</span></a>
+<a class="sourceLine" id="cb2-32" title="32">    <span class="dv">2</span>    :   012A4022<span class="co">; --sub $t0 $t1 $t2     ($t0  := 0xFFFFFFFF)</span></a>
+<a class="sourceLine" id="cb2-33" title="33">    <span class="dv">3</span>    :   012A4024<span class="co">; --and $t0 $t1 $t2     ($t0  := 0x0000000A)</span></a>
+<a class="sourceLine" id="cb2-34" title="34">    <span class="dv">4</span>    :   012A4025<span class="co">; --or $t0 $t1 $t2      ($t0  := 0x0000000B)</span></a>
+<a class="sourceLine" id="cb2-35" title="35">    <span class="dv">5</span>    :   012A402A<span class="co">; --slt $t0 $t1 $t2     ($t0  := 0x00000001)</span></a>
+<a class="sourceLine" id="cb2-36" title="36">    <span class="dv">6</span>    :   010A4020<span class="co">; --add $t0 $t0 $t2     ($t0  := 0x0000000C)</span></a>
+<a class="sourceLine" id="cb2-37" title="37">                       --segunda execução:   (<span class="dv">$</span>t0 := <span class="bn">0x00000017</span>)</a>
+<a class="sourceLine" id="cb2-38" title="38">    <span class="dv">7</span>    :   110BFFFE<span class="co">; --beq $t0 $t3 0xFFFE  (pc := #6)</span></a>
+<a class="sourceLine" id="cb2-39" title="39">                       --segunda execução:   (pc := #<span class="dv">8</span>)</a>
+<a class="sourceLine" id="cb2-40" title="40">    <span class="dv">8</span>    :   <span class="dv">08000000</span><span class="co">; --j 0x000000          (pc := #0)</span></a>
+<a class="sourceLine" id="cb2-41" title="41">   [<span class="dv">9</span>..<span class="dv">63</span>]  : <span class="dv">00000000</span><span class="co">;</span></a>
+<a class="sourceLine" id="cb2-42" title="42"><span class="pp">END</span><span class="co">;</span></a></code></pre></div>
+<p><br></p>
+<p>Sequência da execução do programa:</p>
+<table>
+<caption><strong>Resultados da Execução: Ciclo Único e Conjunto A</strong></caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;">PC Dec</th>
+<th style="text-align: center;">PC Hex</th>
+<th style="text-align: center;"></th>
+<th style="text-align: left;">Saída ULA</th>
+<th style="text-align: left;">Instrução</th>
+<th style="text-align: left;">Comentário</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">00</td>
+<td style="text-align: center;">0x00</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0x08</td>
+<td style="text-align: left;">sw $t1 8($zero)</td>
+<td style="text-align: left;">M(8) := 0x0000000A</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">04</td>
+<td style="text-align: center;">0x04</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0x08</td>
+<td style="text-align: left;">lw $t0 8($zero)</td>
+<td style="text-align: left;">$t0 := 0x0000000A</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">08</td>
+<td style="text-align: center;">0x08</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0xFFFFFFFF</td>
+<td style="text-align: left;">sub $t0 $t1 $t2</td>
+<td style="text-align: left;">$t0 := 0xFFFFFFFF</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">0x0C</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0x000000A</td>
+<td style="text-align: left;">and $t0 $t1 $t2</td>
+<td style="text-align: left;">$t0 := 0x0000000A</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0x10</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0x000000B</td>
+<td style="text-align: left;">or $t0 $t1 $t2</td>
+<td style="text-align: left;">$t0 := 0x0000000B</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">0x14</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0x0000001</td>
+<td style="text-align: left;">slt $t0 $t1 $t2</td>
+<td style="text-align: left;">$t0 := 0x00000001</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">24</td>
+<td style="text-align: center;">0x18</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0x000000C</td>
+<td style="text-align: left;">add $t0 $t0 $t2</td>
+<td style="text-align: left;">$t0 := 0x0000000C</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">28</td>
+<td style="text-align: center;">0x1C</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0x0000000</td>
+<td style="text-align: left;">beq $t0 $t3 0xFFFE</td>
+<td style="text-align: left;">pc := 0x18</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">24</td>
+<td style="text-align: center;">0x18</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0x0000017</td>
+<td style="text-align: left;">add $t0 $t0 $t2</td>
+<td style="text-align: left;">$t0 := 0x00000017</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">28</td>
+<td style="text-align: center;">0x1C</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0x000000B</td>
+<td style="text-align: left;">beq $t0 $t3 0xFFFE</td>
+<td style="text-align: left;">pc := 0x20</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">32</td>
+<td style="text-align: center;">0x20</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;">j 0x000000</td>
+<td style="text-align: left;">Volta ao Início</td>
+</tr>
+</tbody>
+</table>
+<p>Para monitorar o PC e a saída da ULA, utilizaremos um MUX que alimenta os seis displays de sete segmentos existentes na placa, como mostrado abaixo.</p>
+<figure>
+<img src="../imagensMIPS/fluxoDadosCompleto-1ciclo-Final-Display.svg" alt="Circuito Utilizado para a Verificação do Funcionamento" style="width:800px;max-width:100%;" /><figcaption><strong>Circuito Utilizado para a Verificação do Funcionamento</strong></figcaption>
+</figure>
+<p><br></p>
+</div>
+<!--- class_panel --->
+<button class="accordion">
+Ciclo Único, Subconjunto A, LUI e ORI
+</button>
+<div class="panel">
+<p>
+<font style="color:red;font-weight:bold;">Não é necessário inicializar o Banco de Registradores. Isso será feito através do LUI e ORI.</font>
+</p>
+<p>Conteúdo do <em>.mif</em> da ROM:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode asm"><code class="sourceCode fasm"><a class="sourceLine" id="cb3-1" title="1"></a>
+<a class="sourceLine" id="cb3-2" title="2">-- Copyright (C) <span class="dv">2017</span>  Intel Corporation. All rights reserved.</a>
+<a class="sourceLine" id="cb3-3" title="3">-- Your use of Intel Corporation<span class="st">&#39;s design tools, logic functions</span></a>
+<a class="sourceLine" id="cb3-4" title="4">-- <span class="bu">and</span> other software <span class="bu">and</span> tools, <span class="bu">and</span> its AMPP partner logic</a>
+<a class="sourceLine" id="cb3-5" title="5">-- functions, <span class="bu">and</span> any output files <span class="bu">from</span> any of the foregoing</a>
+<a class="sourceLine" id="cb3-6" title="6">-- (including device programming <span class="bu">or</span> simulation files), <span class="bu">and</span> any</a>
+<a class="sourceLine" id="cb3-7" title="7">-- associated documentation <span class="bu">or</span> information are expressly subject</a>
+<a class="sourceLine" id="cb3-8" title="8">-- to the terms <span class="bu">and</span> conditions of the Intel Program License</a>
+<a class="sourceLine" id="cb3-9" title="9">-- Subscription Agreement, the Intel Quartus Prime License Agreement,</a>
+<a class="sourceLine" id="cb3-10" title="10">-- the Intel FPGA IP License Agreement, <span class="bu">or</span> other applicable license</a>
+<a class="sourceLine" id="cb3-11" title="11">-- agreement, including, without limitation, that your use is for</a>
+<a class="sourceLine" id="cb3-12" title="12">-- the sole purpose of programming logic devices manufactured by</a>
+<a class="sourceLine" id="cb3-13" title="13">-- Intel <span class="bu">and</span> sold by Intel <span class="bu">or</span> its authorized distributors.  Please</a>
+<a class="sourceLine" id="cb3-14" title="14">-- refer to the applicable agreement for further details.</a>
+<a class="sourceLine" id="cb3-15" title="15"></a>
+<a class="sourceLine" id="cb3-16" title="16">WIDTH=<span class="dv">32</span><span class="co">;</span></a>
+<a class="sourceLine" id="cb3-17" title="17">DEPTH=<span class="dv">64</span><span class="co">;</span></a>
+<a class="sourceLine" id="cb3-18" title="18">ADDRESS_RADIX=<span class="bu">DEC</span><span class="co">;</span></a>
+<a class="sourceLine" id="cb3-19" title="19">DATA_RADIX=HEX<span class="co">;</span></a>
+<a class="sourceLine" id="cb3-20" title="20"></a>
+<a class="sourceLine" id="cb3-21" title="21">CONTENT BEGIN</a>
+<a class="sourceLine" id="cb3-22" title="22">    -- Inicialização do Banco de Registradores:</a>
+<a class="sourceLine" id="cb3-23" title="23">    <span class="dv">0</span>   :   <span class="dv">00004020</span><span class="co">; --add $t0, $0, $0;    ($t0  := 0x00000000)</span></a>
+<a class="sourceLine" id="cb3-24" title="24">    <span class="dv">1</span>   :   3C090000<span class="co">; --lui $t1, 0x0000;</span></a>
+<a class="sourceLine" id="cb3-25" title="25">    <span class="dv">2</span>   :   3529000A<span class="co">; --ori $t1, $t1, 0x0A;   ($t1  := 0x0000000A)</span></a>
+<a class="sourceLine" id="cb3-26" title="26">    <span class="dv">3</span>   :   3C0A0000<span class="co">; --lui $t2, 0x0000;</span></a>
+<a class="sourceLine" id="cb3-27" title="27">    <span class="dv">4</span>   :   354A000B<span class="co">; --ori $t2, $t2, 0x0B;   ($t2  := 0x0000000B)</span></a>
+<a class="sourceLine" id="cb3-28" title="28">    <span class="dv">5</span>   :   3C0B0000<span class="co">; --lui $t3, 0x0000;</span></a>
+<a class="sourceLine" id="cb3-29" title="29">    <span class="dv">6</span>   :   356B000C<span class="co">; --ori $t3, $t3, 0x0C;   ($t3  := 0x0000000C)</span></a>
+<a class="sourceLine" id="cb3-30" title="30">    <span class="dv">7</span>   :   3C0C0000<span class="co">; --lui $t4, 0x0000;</span></a>
+<a class="sourceLine" id="cb3-31" title="31">    <span class="dv">8</span>   :   358C000D<span class="co">; --ori $t4, $t4, 0x0D;   ($t4  := 0x0000000D)</span></a>
+<a class="sourceLine" id="cb3-32" title="32">    <span class="dv">9</span>   :   3C0D0000<span class="co">; --lui $t5, 0x0000;</span></a>
+<a class="sourceLine" id="cb3-33" title="33">    <span class="dv">10</span>  :   35AD8016<span class="co">; --ori $t5, $t5, 0x8016;   ($t5  := 0x00008016)</span></a>
+<a class="sourceLine" id="cb3-34" title="34"></a>
+<a class="sourceLine" id="cb3-35" title="35">    -- Ponteiro para o segmento de dados na RAM:</a>
+<a class="sourceLine" id="cb3-36" title="36">    <span class="dv">11</span>   :   3C0F0000<span class="co">; --lui $t7, 0x0000;</span></a>
+<a class="sourceLine" id="cb3-37" title="37">    <span class="dv">12</span>   :   35EF0000<span class="co">; --ori $t7, $t7, 0x0000;   ($t7  := 0x00000000)</span></a>
+<a class="sourceLine" id="cb3-38" title="38"></a>
+<a class="sourceLine" id="cb3-39" title="39">    -- O restante é igual ao teste do subconjunto A:</a>
+<a class="sourceLine" id="cb3-40" title="40">    <span class="dv">13</span>    :   AC090008<span class="co">; --sw $t1 8($t7)     (m(8) := 0x0000000A)</span></a>
+<a class="sourceLine" id="cb3-41" title="41">    <span class="dv">14</span>    :   8C080008<span class="co">; --lw $t0 8($t7)     ($t0  := 0x0000000A)</span></a>
+<a class="sourceLine" id="cb3-42" title="42">    <span class="dv">15</span>    :   012A4022<span class="co">; --sub $t0 $t1 $t2     ($t0  := 0xFFFFFFFF)</span></a>
+<a class="sourceLine" id="cb3-43" title="43">    <span class="dv">16</span>    :   012A4024<span class="co">; --and $t0 $t1 $t2     ($t0  := 0x0000000A)</span></a>
+<a class="sourceLine" id="cb3-44" title="44">    <span class="dv">17</span>    :   012A4025<span class="co">; --or $t0 $t1 $t2      ($t0  := 0x0000000B)</span></a>
+<a class="sourceLine" id="cb3-45" title="45">    <span class="dv">18</span>    :   012A402A<span class="co">; --slt $t0 $t1 $t2     ($t0  := 0x00000001)</span></a>
+<a class="sourceLine" id="cb3-46" title="46">    <span class="dv">19</span>    :   010A4020<span class="co">; --add $t0 $t0 $t2     ($t0  := 0x0000000C)</span></a>
+<a class="sourceLine" id="cb3-47" title="47">                       --segunda execução:   (<span class="dv">$</span>t0 := <span class="bn">0x00000017</span>)</a>
+<a class="sourceLine" id="cb3-48" title="48">    <span class="dv">20</span>    :   110BFFFE<span class="co">; --beq $t0 $t3 0xFFFE  (pc := #19)</span></a>
+<a class="sourceLine" id="cb3-49" title="49">                       --segunda execução:   (pc := #<span class="dv">21</span>)</a>
+<a class="sourceLine" id="cb3-50" title="50">    <span class="dv">21</span>    :   <span class="dv">08000000</span><span class="co">; --j 0x000000          (pc := #0)</span></a>
+<a class="sourceLine" id="cb3-51" title="51">    [<span class="dv">22</span>..<span class="dv">63</span>]  : <span class="dv">00000000</span><span class="co">;</span></a>
+<a class="sourceLine" id="cb3-52" title="52"><span class="pp">END</span><span class="co">;</span></a></code></pre></div>
+<p><br></p>
+<p>Sequência da execução do programa:</p>
+<table>
+<caption><strong>Resultados da Execução: Ciclo Único, Conjunto A, LUI e ORI</strong></caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;">PC Dec</th>
+<th style="text-align: center;">PC Hex</th>
+<th style="text-align: center;"></th>
+<th style="text-align: left;">Saída ULA</th>
+<th style="text-align: left;">Instrução</th>
+<th style="text-align: left;">Comentário</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">00</td>
+<td style="text-align: center;">0x00</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0x00000000</td>
+<td style="text-align: left;">add $t0 $0 $0</td>
+<td style="text-align: left;">$t0 := 0x00000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">04</td>
+<td style="text-align: center;">0x04</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;">lui $t1 0x0000</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">08</td>
+<td style="text-align: center;">0x08</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0x0000000A</td>
+<td style="text-align: left;">ori $t1 $t1 0x0A</td>
+<td style="text-align: left;">$t1 := 0x0000000A</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">0x0C</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;">lui $t2 0x0000</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0x10</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0x0000000B</td>
+<td style="text-align: left;">ori $t2 $t2 0x0B</td>
+<td style="text-align: left;">$t2 := 0x0000000B</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">0x14</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;">lui $t3 0x0000</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">24</td>
+<td style="text-align: center;">0x18</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0x0000000C</td>
+<td style="text-align: left;">ori $t3 $t3 0x0C</td>
+<td style="text-align: left;">$t3 := 0x0000000C</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">28</td>
+<td style="text-align: center;">0x1C</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;">lui $t4 0x0000</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">32</td>
+<td style="text-align: center;">0x20</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0x0000000D</td>
+<td style="text-align: left;">ori $t4 $t4 0x0D</td>
+<td style="text-align: left;">$t4 := 0x0000000D</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">36</td>
+<td style="text-align: center;">0x24</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;">lui $t5 0x0000</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">40</td>
+<td style="text-align: center;">0x28</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0x00008016</td>
+<td style="text-align: left;">ori $t5 $t5 0x8016</td>
+<td style="text-align: left;">$t5 := 0x00008016</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">44</td>
+<td style="text-align: center;">0x2C</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;">lui $t7 0x0000</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">48</td>
+<td style="text-align: center;">0x30</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0x00000000</td>
+<td style="text-align: left;">ori $t7 $t7 0x0000</td>
+<td style="text-align: left;">$t7 := 0x00000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">52</td>
+<td style="text-align: center;">0x34</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0x00000008</td>
+<td style="text-align: left;">sw $t1 8($t7)</td>
+<td style="text-align: left;">M(8) := 0x0000000A</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">56</td>
+<td style="text-align: center;">0x38</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0x00000008</td>
+<td style="text-align: left;">lw $t0 8($t7)</td>
+<td style="text-align: left;">$t0 := 0x0000000A</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">60</td>
+<td style="text-align: center;">0x3C</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0xFFFFFFFF</td>
+<td style="text-align: left;">sub $t0 $t1 $t2</td>
+<td style="text-align: left;">$t0 := 0xFFFFFFFF</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">64</td>
+<td style="text-align: center;">0x40</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0x0000000A</td>
+<td style="text-align: left;">and $t0 $t1 $t2</td>
+<td style="text-align: left;">$t0 := 0x0000000A</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">68</td>
+<td style="text-align: center;">0x44</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0x0000000B</td>
+<td style="text-align: left;">or $t0 $t1 $t2</td>
+<td style="text-align: left;">$t0 := 0x0000000B</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">72</td>
+<td style="text-align: center;">0x48</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0x00000001</td>
+<td style="text-align: left;">slt $t0 $t1 $t2</td>
+<td style="text-align: left;">$t0 := 0x00000001</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">76</td>
+<td style="text-align: center;">0x4C</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0x0000000C</td>
+<td style="text-align: left;">add $t0 $t0 $t2</td>
+<td style="text-align: left;">$t0 := 0x0000000C</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">80</td>
+<td style="text-align: center;">0x50</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0x00000000</td>
+<td style="text-align: left;">beq $t0 $t3 0xFFFE</td>
+<td style="text-align: left;">pc := 0x4C</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">76</td>
+<td style="text-align: center;">0x4C</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0x00000017</td>
+<td style="text-align: left;">add $t0 $t0 $t2</td>
+<td style="text-align: left;">$t0 := 0x00000017</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">80</td>
+<td style="text-align: center;">0x50</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0x0000000B</td>
+<td style="text-align: left;">beq $t0 $t3 0xFFFE</td>
+<td style="text-align: left;">pc := 0x54</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">84</td>
+<td style="text-align: center;">0x54</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;">j 0x00000000</td>
+<td style="text-align: left;">Volta ao Início</td>
+</tr>
+</tbody>
+</table>
+<p>Para monitorar o PC e a saída da ULA, utilizaremos um MUX que alimenta os seis displays de sete segmentos existentes na placa, como mostrado abaixo.</p>
+<figure>
+<img src="../imagensMIPS/fluxoDadosCompleto-1ciclo-Final-Display.svg" alt="Circuito Utilizado para a Verificação do Funcionamento" style="width:800px;max-width:100%;" /><figcaption><strong>Circuito Utilizado para a Verificação do Funcionamento</strong></figcaption>
+</figure>
+</div>
+<!--- class_panel --->
+<button class="accordion">
+Ciclo Único e Subconjuntos A e B
+</button>
+<div class="panel">
+<p><strong>Teste de todas instruções:</strong></p>
+<p>Conteúdo do <em>.mif</em> da ROM:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode asm"><code class="sourceCode fasm"><a class="sourceLine" id="cb4-1" title="1"></a>
+<a class="sourceLine" id="cb4-2" title="2">-- Copyright (C) <span class="dv">2017</span>  Intel Corporation. All rights reserved.</a>
+<a class="sourceLine" id="cb4-3" title="3">-- Your use of Intel Corporation<span class="st">&#39;s design tools, logic functions</span></a>
+<a class="sourceLine" id="cb4-4" title="4">-- <span class="bu">and</span> other software <span class="bu">and</span> tools, <span class="bu">and</span> its AMPP partner logic</a>
+<a class="sourceLine" id="cb4-5" title="5">-- functions, <span class="bu">and</span> any output files <span class="bu">from</span> any of the foregoing</a>
+<a class="sourceLine" id="cb4-6" title="6">-- (including device programming <span class="bu">or</span> simulation files), <span class="bu">and</span> any</a>
+<a class="sourceLine" id="cb4-7" title="7">-- associated documentation <span class="bu">or</span> information are expressly subject</a>
+<a class="sourceLine" id="cb4-8" title="8">-- to the terms <span class="bu">and</span> conditions of the Intel Program License</a>
+<a class="sourceLine" id="cb4-9" title="9">-- Subscription Agreement, the Intel Quartus Prime License Agreement,</a>
+<a class="sourceLine" id="cb4-10" title="10">-- the Intel FPGA IP License Agreement, <span class="bu">or</span> other applicable license</a>
+<a class="sourceLine" id="cb4-11" title="11">-- agreement, including, without limitation, that your use is for</a>
+<a class="sourceLine" id="cb4-12" title="12">-- the sole purpose of programming logic devices manufactured by</a>
+<a class="sourceLine" id="cb4-13" title="13">-- Intel <span class="bu">and</span> sold by Intel <span class="bu">or</span> its authorized distributors.  Please</a>
+<a class="sourceLine" id="cb4-14" title="14">-- refer to the applicable agreement for further details.</a>
+<a class="sourceLine" id="cb4-15" title="15"></a>
+<a class="sourceLine" id="cb4-16" title="16">WIDTH=<span class="dv">32</span><span class="co">;</span></a>
+<a class="sourceLine" id="cb4-17" title="17">DEPTH=<span class="dv">64</span><span class="co">;</span></a>
+<a class="sourceLine" id="cb4-18" title="18">ADDRESS_RADIX=<span class="bu">DEC</span><span class="co">;</span></a>
+<a class="sourceLine" id="cb4-19" title="19">DATA_RADIX=HEX<span class="co">;</span></a>
+<a class="sourceLine" id="cb4-20" title="20"></a>
+<a class="sourceLine" id="cb4-21" title="21">CONTENT BEGIN</a>
+<a class="sourceLine" id="cb4-22" title="22">      -- Valores iniciais no banco de registradores:</a>
+<a class="sourceLine" id="cb4-23" title="23">      -- <span class="dv">$</span>t0   (#<span class="dv">8</span>) :=<span class="bn"> 0x00</span></a>
+<a class="sourceLine" id="cb4-24" title="24">      -- <span class="dv">$</span>t1   (#<span class="dv">9</span>) :=<span class="bn"> 0x0A</span></a>
+<a class="sourceLine" id="cb4-25" title="25">      -- <span class="dv">$</span>t2  (#<span class="dv">10</span>) :=<span class="bn"> 0x0B</span></a>
+<a class="sourceLine" id="cb4-26" title="26">      -- <span class="dv">$</span>t3  (#<span class="dv">11</span>) :=<span class="bn"> 0x0C</span></a>
+<a class="sourceLine" id="cb4-27" title="27">      -- <span class="dv">$</span>t4  (#<span class="dv">12</span>) :=<span class="bn"> 0x0D</span></a>
+<a class="sourceLine" id="cb4-28" title="28">      -- <span class="dv">$</span>t5  (#<span class="dv">13</span>) :=<span class="bn"> 0x16</span></a>
+<a class="sourceLine" id="cb4-29" title="29"></a>
+<a class="sourceLine" id="cb4-30" title="30">    <span class="dv">0</span>    :   AC090008<span class="co">; --sw $t1 8($zero)     (m(8) := 0x0000000A)</span></a>
+<a class="sourceLine" id="cb4-31" title="31">    <span class="dv">1</span>    :   8C080008<span class="co">; --lw $t0 8($zero)     ($t0 := 0x0000000A)</span></a>
+<a class="sourceLine" id="cb4-32" title="32">    <span class="dv">2</span>    :   012A4022<span class="co">; --sub $t0 $t1 $t2     ($t0 := 0xFFFFFFFF)</span></a>
+<a class="sourceLine" id="cb4-33" title="33">    <span class="dv">3</span>    :   012A4024<span class="co">; --and $t0 $t1 $t2     ($t0 := 0x0000000A)</span></a>
+<a class="sourceLine" id="cb4-34" title="34">    <span class="dv">4</span>    :   012A4025<span class="co">; --or $t0 $t1 $t2      ($t0 := 0x0000000B)</span></a>
+<a class="sourceLine" id="cb4-35" title="35">    <span class="dv">5</span>    :   3C08FFFF<span class="co">; --lui $t0 0xFFFF      ($t0 := 0xFFFF0000)</span></a>
+<a class="sourceLine" id="cb4-36" title="36">    <span class="dv">6</span>    :   2128000A<span class="co">; --addi $t0 $t1 0x000A ($t0 := 0x00000014)</span></a>
+<a class="sourceLine" id="cb4-37" title="37">    <span class="dv">7</span>    :   <span class="dv">31080013</span><span class="co">; --andi $t0 $t0 0x0013 ($t0 := 0x00000010)</span></a>
+<a class="sourceLine" id="cb4-38" title="38">    <span class="dv">8</span>    :   <span class="dv">35880007</span><span class="co">; --ori $t0 $t4 0x0007  ($t0 := 0x0000000F)</span></a>
+<a class="sourceLine" id="cb4-39" title="39">    <span class="dv">9</span>    :   2928FFFF<span class="co">; --slti $t0 $t1 0xFFFF ($t0 := 0x00000000)</span></a>
+<a class="sourceLine" id="cb4-40" title="40">    <span class="dv">10</span>   :   010A4020<span class="co">; --add $t0 $t0 $t2     ($t0 := 0x0000000B)</span></a>
+<a class="sourceLine" id="cb4-41" title="41">                          --segunda execução (<span class="dv">$</span>t0 := <span class="bn">0x00000016</span>)</a>
+<a class="sourceLine" id="cb4-42" title="42">    <span class="dv">11</span>   :   150DFFFE<span class="co">; --bne $t0 $t5 0xFFFE  (pc := #10)</span></a>
+<a class="sourceLine" id="cb4-43" title="43">                          --segunda execução (pc := #<span class="dv">12</span>)</a>
+<a class="sourceLine" id="cb4-44" title="44">    <span class="dv">12</span>   :   012A402A<span class="co">; --slt $t0 $t1 $t2     ($t0 := 0x00000001)</span></a>
+<a class="sourceLine" id="cb4-45" title="45">    <span class="dv">13</span>   :   010A4020<span class="co">; --add $t0 $t0 $t2     ($t0 := 0x0000000C)</span></a>
+<a class="sourceLine" id="cb4-46" title="46">                          --segunda execução (<span class="dv">$</span>t0 := <span class="bn">0x00000017</span>)</a>
+<a class="sourceLine" id="cb4-47" title="47">    <span class="dv">14</span>   :   110BFFFE<span class="co">; --beq $t0 $t3 0xFFFE  (pc := #13)</span></a>
+<a class="sourceLine" id="cb4-48" title="48">                          --segunda execução (pc := #<span class="dv">15</span>)</a>
+<a class="sourceLine" id="cb4-49" title="49">    <span class="dv">15</span>   :   0C00001F<span class="co">; --jal 0x00001F        (pc := #31)</span></a>
+<a class="sourceLine" id="cb4-50" title="50">    <span class="dv">17</span>   :   <span class="dv">08000000</span><span class="co">; --j 0x000000          (pc := #0)</span></a>
+<a class="sourceLine" id="cb4-51" title="51">    <span class="dv">31</span>   :   <span class="fl">03E00008</span><span class="co">; --jr $ra              (pc := #17)</span></a>
+<a class="sourceLine" id="cb4-52" title="52"><span class="pp">END</span><span class="co">;</span></a></code></pre></div>
+<p><br></p>
+<table>
+<caption><strong>Resultados da Execução: Ciclo Único com Conjuntos A e B</strong></caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;">PC Dec</th>
+<th style="text-align: center;">PC Hex</th>
+<th style="text-align: center;"></th>
+<th style="text-align: left;">Saída ULA</th>
+<th style="text-align: left;">Instrução</th>
+<th style="text-align: left;">Comentário</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">00</td>
+<td style="text-align: center;">0x00</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0x00000008</td>
+<td style="text-align: left;">sw $t1 8($zero)</td>
+<td style="text-align: left;">M(8) := 0x0000000A</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">04</td>
+<td style="text-align: center;">0x04</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0x00000008</td>
+<td style="text-align: left;">lw $t0 8($zero)</td>
+<td style="text-align: left;">$t0 := 0x0000000A</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">08</td>
+<td style="text-align: center;">0x08</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0xFFFFFFFF</td>
+<td style="text-align: left;">sub $t0 $t1 $t2</td>
+<td style="text-align: left;">$t0 := 0xFFFFFFFF</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">0x0C</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0x0000000A</td>
+<td style="text-align: left;">and $t0 $t1 $t2</td>
+<td style="text-align: left;">$t0 := 0x0000000A</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">0x10</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0x0000000B</td>
+<td style="text-align: left;">or $t0 $t1 $t2</td>
+<td style="text-align: left;">$t0 := 0x0000000B</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">0x14</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;">lui $t0 0xFFFF</td>
+<td style="text-align: left;">$t0 := 0xFFFF0000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">24</td>
+<td style="text-align: center;">0x18</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0x00000014</td>
+<td style="text-align: left;">addi $t0 $t1 0x000A</td>
+<td style="text-align: left;">$t0 := 0x00000014</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">28</td>
+<td style="text-align: center;">0x1C</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0x00000010</td>
+<td style="text-align: left;">andi $t0 $t0 0x0013</td>
+<td style="text-align: left;">$t0 := 0x00000010</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">32</td>
+<td style="text-align: center;">0x20</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0x0000000F</td>
+<td style="text-align: left;">ori $t0 $t4 0x0007</td>
+<td style="text-align: left;">$t0 := 0x0000000F</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">36</td>
+<td style="text-align: center;">0x24</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0x00000000</td>
+<td style="text-align: left;">slti $t0 $t1 0xFFFF</td>
+<td style="text-align: left;">$t0 := 0x00000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">40</td>
+<td style="text-align: center;">0x28</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0x0000000B</td>
+<td style="text-align: left;">add $t0 $t0 $t2</td>
+<td style="text-align: left;">$t0 := 0x0000000B</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">44</td>
+<td style="text-align: center;">0x2C</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0xFFFFFFF5</td>
+<td style="text-align: left;">bne $t0 $t5 0xFFFE</td>
+<td style="text-align: left;">pc := 0x28</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">40</td>
+<td style="text-align: center;">0x28</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0x00000016</td>
+<td style="text-align: left;">add $t0 $t0 $t2</td>
+<td style="text-align: left;">$t0 := 0x00000016</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">44</td>
+<td style="text-align: center;">0x2C</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0x00000000</td>
+<td style="text-align: left;">bne $t0 $t5 0xFFFE</td>
+<td style="text-align: left;">pc := 0x30</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">48</td>
+<td style="text-align: center;">0x30</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0x00000001</td>
+<td style="text-align: left;">slt $t0 $t1 $t2</td>
+<td style="text-align: left;">$t0 := 0x00000001</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">52</td>
+<td style="text-align: center;">0x34</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0x0000000C</td>
+<td style="text-align: left;">add $t0 $t0 $t2</td>
+<td style="text-align: left;">$t0 := 0x0000000C</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">56</td>
+<td style="text-align: center;">0x38</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0x00000000</td>
+<td style="text-align: left;">beq $t0 $t3 0xFFFE</td>
+<td style="text-align: left;">pc := 0x34</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">52</td>
+<td style="text-align: center;">0x34</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0x00000017</td>
+<td style="text-align: left;">add $t0 $t0 $t2</td>
+<td style="text-align: left;">$t0 := 0x00000017</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">56</td>
+<td style="text-align: center;">0x38</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0x0000000B</td>
+<td style="text-align: left;">beq $t0 $t3 0xFFFE</td>
+<td style="text-align: left;">pc := 0x3C</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">60</td>
+<td style="text-align: center;">0x3C</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;">jal 0x00001F</td>
+<td style="text-align: left;">&lt;&lt; 0x1F := 0x7C</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">124</td>
+<td style="text-align: center;">0x7C</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;">jr $ra</td>
+<td style="text-align: left;">pc := 0x40</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">64</td>
+<td style="text-align: center;">0x40</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">68</td>
+<td style="text-align: center;">0x44</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;">j 0x000000</td>
+<td style="text-align: left;">Volta ao Início</td>
+</tr>
+</tbody>
+</table>
+<p>Para monitorar o PC e a saída da ULA, utilizaremos um MUX que alimenta os seis displays de sete segmentos existentes na placa, como mostrado abaixo.</p>
+<figure>
+<img src="../imagensMIPS/fluxoDadosCompleto-1ciclo-Final-Display.svg" alt="Circuito Utilizado para a Verificação do Funcionamento" style="width:800px;max-width:100%;" /><figcaption><strong>Circuito Utilizado para a Verificação do Funcionamento</strong></figcaption>
+</figure>
+<!--
+
+**Teste da instrução LUI:**
+
+Conteúdo do _.mif_ da ROM:
+
+```asm
+-- Copyright (C) 2017  Intel Corporation. All rights reserved.
+-- Your use of Intel Corporation's design tools, logic functions
+-- and other software and tools, and its AMPP partner logic
+-- functions, and any output files from any of the foregoing
+-- (including device programming or simulation files), and any
+-- associated documentation or information are expressly subject
+-- to the terms and conditions of the Intel Program License
+-- Subscription Agreement, the Intel Quartus Prime License Agreement,
+-- the Intel FPGA IP License Agreement, or other applicable license
+-- agreement, including, without limitation, that your use is for
+-- the sole purpose of programming logic devices manufactured by
+-- Intel and sold by Intel or its authorized distributors.  Please
+-- refer to the applicable agreement for further details.
+
+WIDTH=32;
+DEPTH=64;
+ADDRESS_RADIX=DEC;
+DATA_RADIX=HEX;
+
+CONTENT BEGIN
+      -- Valores iniciais no banco de registradores:
+      -- $zero (#0) := 0x00
+      -- $t0   (#8) := 0x00
+      -- $t1   (#9) := 0x0A
+      -- $t2  (#10) := 0x0B
+      -- $t3  (#11) := 0x0C
+      -- $t4  (#12) := 0x0D
+      -- $t5  (#13) := 0x16
+
+--                                                                  PC      Saida ULA
+    0    :   3C080000; --lui $t0 0x0000      ($t0  := 0x00000000)   0x00    0x00000000
+    1    :   35080008; --ori $t0 $t0 0x0008  ($t0  := 0x00000008)   0x04    0x00000008
+    2    :   AD0A0000; --sw $t2 0($t0)       (m(8) := 0x0000000B)   0x08    0x00000008
+    3    :   8D040000; --lw $a0 0($t0)       ($a0  := 0x0000000B)   0x0C    0x00000008
+    4    :   00802020; --add $a0 $a0 $0      ($a0  := 0x0000000B)   0x10    0x0000000B
+    5    :   3C09AA55; --lui  $t1 0xAA55     ($t1  := 0xAA550000)   0x14    0xXXXXXXXX
+    6    :   31CE0001; --andi $t6 $t6 0x1    ($t6  := 0x0000000X)   0x18    0x0000000X
+    7    :   35CE0001; --ori  $t6 $t6 0x1    ($t6  := 0x00000001)   0x1C    0x00000001
+    8    :   012E7822; --sub  $t7 $t1 $t6    ($t7  := 0xAA54FFFF)   0x20    0xAA54FFFF
+    9    :   3C09AA54; --lui  $t1 0xAA54     ($t1  := 0xAA540000)   0x24    0xXXXXXXXX
+    10   :   3529FFFF; --ori  $t1 $t1 0xFFFF ($t1  := 0xAA54FFFF)   0x28    0xAA54FFFF
+    11   :   012F7822; --sub  $t7 $t1 $t7    ($t7  := 0x00000000)   0x2C    0x00000000
+    12   :   11E00003; --beq  $t7 $0  0x0003 ($t7  := 0x00000000)   0x30    0x00000000  se o LUI funcionar, vai para o 0x40
+    13   :   08000000; --j 0x000000          (pc := #0)             0x34    0xXXXXXXXX  caso contrario, vai para 0x00
+    14   :   00000000; --nop                 ($t7  := 0x00000000)   0x38    0xXXXXXXXX
+    15   :   00000000; --nop                 ($t7  := 0x00000000)   0x3C    0xXXXXXXXX
+    16   :   00000000; --nop                 ($t7  := 0x00000000)   0x40    0xXXXXXXXX
+    17   :   00000000; --nop                 ($t7  := 0x00000000)   0x44    0xXXXXXXXX
+    18   :   00000000; --nop                 ($t7  := 0x00000000)   0x48    0xXXXXXXXX
+    19   :   00000000; --nop                 ($t7  := 0x00000000)   0x4C    0xXXXXXXXX
+    20   :   00000000; --nop                 ($t7  := 0x00000000)   0x50    0xXXXXXXXX
+    21   :   08000000; --j 0x000000          (pc := #0)             0x54    0xXXXXXXXX
+   [22..62] :   00000000; --nop
+    63   :   08000000; --j 0x000000          (pc := #0)             0xFC    0xXXXXXXXX
+END;
+```
+-->
+<p><br></p>
+</div>
+<!--- class_panel --->
+<button class="accordion">
+Pipeline e Subconjunto A
+</button>
+<div class="panel">
+<div class="row">
+<div class="column">
+<p>Inicialização do Banco de Registradores em VHDL:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode asm"><code class="sourceCode fasm"><a class="sourceLine" id="cb5-1" title="1">function initMemory</a>
+<a class="sourceLine" id="cb5-2" title="2">        return memoria_t is variable tmp : memoria_t := (others =&gt; (others =&gt; <span class="st">&#39;0&#39;</span>))<span class="co">;</span></a>
+<a class="sourceLine" id="cb5-3" title="3">  begin</a>
+<a class="sourceLine" id="cb5-4" title="4">        -- Inicializa os endereços:</a>
+<a class="sourceLine" id="cb5-5" title="5">        tmp(<span class="dv">8</span>)  := 32x<span class="st">&quot;00&quot;</span><span class="co">;  -- $t0 = 0x00</span></a>
+<a class="sourceLine" id="cb5-6" title="6">        tmp(<span class="dv">9</span>)  := 32x<span class="st">&quot;0A&quot;</span><span class="co">;  -- $t1 = 0x0A</span></a>
+<a class="sourceLine" id="cb5-7" title="7">        tmp(<span class="dv">10</span>) := 32x<span class="st">&quot;0B&quot;</span><span class="co">;  -- $t2 = 0x0B</span></a>
+<a class="sourceLine" id="cb5-8" title="8">        tmp(<span class="dv">11</span>) := 32x<span class="st">&quot;0C&quot;</span><span class="co">;  -- $t3 = 0x0C</span></a>
+<a class="sourceLine" id="cb5-9" title="9">        tmp(<span class="dv">12</span>) := 32x<span class="st">&quot;0D&quot;</span><span class="co">;  -- $t4 = 0x0D</span></a>
+<a class="sourceLine" id="cb5-10" title="10">        tmp(<span class="dv">13</span>) := 32x<span class="st">&quot;16&quot;</span><span class="co">;  -- $t5 = 0x16</span></a>
+<a class="sourceLine" id="cb5-11" title="11">        return tmp<span class="co">;</span></a>
+<a class="sourceLine" id="cb5-12" title="12">    <span class="pp">end</span> initMemory<span class="co">;</span></a></code></pre></div>
+<p>Conteúdo da inicialização da ROM em VHDL:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode asm"><code class="sourceCode fasm"><a class="sourceLine" id="cb6-1" title="1">      -- Valores iniciais no banco de registradores:</a>
+<a class="sourceLine" id="cb6-2" title="2">      -- <span class="dv">$</span>t0   (#<span class="dv">8</span>) :=<span class="bn"> 0x00</span></a>
+<a class="sourceLine" id="cb6-3" title="3">      -- <span class="dv">$</span>t1   (#<span class="dv">9</span>) :=<span class="bn"> 0x0A</span></a>
+<a class="sourceLine" id="cb6-4" title="4">      -- <span class="dv">$</span>t2  (#<span class="dv">10</span>) :=<span class="bn"> 0x0B</span></a>
+<a class="sourceLine" id="cb6-5" title="5">      -- <span class="dv">$</span>t3  (#<span class="dv">11</span>) :=<span class="bn"> 0x0C</span></a>
+<a class="sourceLine" id="cb6-6" title="6">      -- <span class="dv">$</span>t4  (#<span class="dv">12</span>) :=<span class="bn"> 0x0D</span></a>
+<a class="sourceLine" id="cb6-7" title="7">      -- <span class="dv">$</span>t5  (#<span class="dv">13</span>) :=<span class="bn"> 0x16</span></a>
+<a class="sourceLine" id="cb6-8" title="8"></a>
+<a class="sourceLine" id="cb6-9" title="9">--   Programa do Single Cycle com Conjunto A, com NOPs para Rodar no Pipeline Simples:</a>
+<a class="sourceLine" id="cb6-10" title="10">--</a>
+<a class="sourceLine" id="cb6-11" title="11">      tmp(<span class="dv">0</span>) := x<span class="st">&quot;AC09_0008&quot;</span><span class="co">; --sw $t1 8($zero)</span></a>
+<a class="sourceLine" id="cb6-12" title="12">      tmp(<span class="dv">1</span>) := x<span class="st">&quot;8C08_0008&quot;</span><span class="co">; --lw $t0 8($zero)</span></a>
+<a class="sourceLine" id="cb6-13" title="13">      tmp(<span class="dv">2</span>) := x<span class="st">&quot;0000_0000&quot;</span><span class="co">; --nop</span></a>
+<a class="sourceLine" id="cb6-14" title="14">      tmp(<span class="dv">3</span>) := x<span class="st">&quot;012A_4022&quot;</span><span class="co">; --sub $t0 $t1 $t2</span></a>
+<a class="sourceLine" id="cb6-15" title="15">      tmp(<span class="dv">4</span>) := x<span class="st">&quot;012A_4024&quot;</span><span class="co">; --and $t0 $t1 $t2</span></a>
+<a class="sourceLine" id="cb6-16" title="16">      tmp(<span class="dv">5</span>) := x<span class="st">&quot;012A_4025&quot;</span><span class="co">; --or $t0 $t1 $t2</span></a>
+<a class="sourceLine" id="cb6-17" title="17">      tmp(<span class="dv">6</span>) := x<span class="st">&quot;012A_402A&quot;</span><span class="co">; --slt $t0 $t1 $t2</span></a>
+<a class="sourceLine" id="cb6-18" title="18">      tmp(<span class="dv">7</span>) := x<span class="st">&quot;0000_0000&quot;</span><span class="co">; --nop</span></a>
+<a class="sourceLine" id="cb6-19" title="19">      tmp(<span class="dv">8</span>) := x<span class="st">&quot;0000_0000&quot;</span><span class="co">; --nop</span></a>
+<a class="sourceLine" id="cb6-20" title="20">      tmp(<span class="dv">9</span>) := x<span class="st">&quot;0000_0000&quot;</span><span class="co">; --nop</span></a>
+<a class="sourceLine" id="cb6-21" title="21">      tmp(<span class="dv">10</span>) := x<span class="st">&quot;010A_4020&quot;</span><span class="co">; --add $t0 $t0 $t2</span></a>
+<a class="sourceLine" id="cb6-22" title="22">      tmp(<span class="dv">11</span>) := x<span class="st">&quot;0000_0000&quot;</span><span class="co">; --nop</span></a>
+<a class="sourceLine" id="cb6-23" title="23">      tmp(<span class="dv">12</span>) := x<span class="st">&quot;0000_0000&quot;</span><span class="co">; --nop</span></a>
+<a class="sourceLine" id="cb6-24" title="24">      tmp(<span class="dv">13</span>) := x<span class="st">&quot;0000_0000&quot;</span><span class="co">; --nop</span></a>
+<a class="sourceLine" id="cb6-25" title="25">      tmp(<span class="dv">14</span>) := x<span class="st">&quot;110B_FFFA&quot;</span><span class="co">; --beq $t0 $t3 0xFA</span></a>
+<a class="sourceLine" id="cb6-26" title="26">      tmp(<span class="dv">15</span>) := x<span class="st">&quot;0000_0000&quot;</span><span class="co">; --nop</span></a>
+<a class="sourceLine" id="cb6-27" title="27">      tmp(<span class="dv">16</span>) := x<span class="st">&quot;0000_0000&quot;</span><span class="co">; --nop</span></a>
+<a class="sourceLine" id="cb6-28" title="28">      tmp(<span class="dv">17</span>) := x<span class="st">&quot;0000_0000&quot;</span><span class="co">; --nop</span></a>
+<a class="sourceLine" id="cb6-29" title="29">      tmp(<span class="dv">18</span>) := x<span class="st">&quot;0800_0001&quot;</span><span class="co">; --j 0x00000001</span></a>
+<a class="sourceLine" id="cb6-30" title="30">      tmp(<span class="dv">19</span>) := x<span class="st">&quot;0000_0000&quot;</span><span class="co">; --nop</span></a>
+<a class="sourceLine" id="cb6-31" title="31">      tmp(<span class="dv">20</span>) := x<span class="st">&quot;0000_0000&quot;</span><span class="co">; --nop</span></a>
+<a class="sourceLine" id="cb6-32" title="32">      tmp(<span class="dv">21</span>) := x<span class="st">&quot;0800_0000&quot;</span><span class="co">; --j 0x00000000</span></a></code></pre></div>
+</div>
+<div class="column">
+<p>Conteúdo do arquivo <em>.mif</em> para a inicialização da ROM:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode asm"><code class="sourceCode fasm"><a class="sourceLine" id="cb7-1" title="1"></a>
+<a class="sourceLine" id="cb7-2" title="2">-- Copyright (C) <span class="dv">2017</span>  Intel Corporation. All rights reserved.</a>
+<a class="sourceLine" id="cb7-3" title="3">-- Your use of Intel Corporation<span class="st">&#39;s design tools, logic functions</span></a>
+<a class="sourceLine" id="cb7-4" title="4">-- <span class="bu">and</span> other software <span class="bu">and</span> tools, <span class="bu">and</span> its AMPP partner logic</a>
+<a class="sourceLine" id="cb7-5" title="5">-- functions, <span class="bu">and</span> any output files <span class="bu">from</span> any of the foregoing</a>
+<a class="sourceLine" id="cb7-6" title="6">-- (including device programming <span class="bu">or</span> simulation files), <span class="bu">and</span> any</a>
+<a class="sourceLine" id="cb7-7" title="7">-- associated documentation <span class="bu">or</span> information are expressly subject</a>
+<a class="sourceLine" id="cb7-8" title="8">-- to the terms <span class="bu">and</span> conditions of the Intel Program License</a>
+<a class="sourceLine" id="cb7-9" title="9">-- Subscription Agreement, the Intel Quartus Prime License Agreement,</a>
+<a class="sourceLine" id="cb7-10" title="10">-- the Intel FPGA IP License Agreement, <span class="bu">or</span> other applicable license</a>
+<a class="sourceLine" id="cb7-11" title="11">-- agreement, including, without limitation, that your use is for</a>
+<a class="sourceLine" id="cb7-12" title="12">-- the sole purpose of programming logic devices manufactured by</a>
+<a class="sourceLine" id="cb7-13" title="13">-- Intel <span class="bu">and</span> sold by Intel <span class="bu">or</span> its authorized distributors.  Please</a>
+<a class="sourceLine" id="cb7-14" title="14">-- refer to the applicable agreement for further details.</a>
+<a class="sourceLine" id="cb7-15" title="15"></a>
+<a class="sourceLine" id="cb7-16" title="16">WIDTH=<span class="dv">32</span><span class="co">;</span></a>
+<a class="sourceLine" id="cb7-17" title="17">DEPTH=<span class="dv">64</span><span class="co">;</span></a>
+<a class="sourceLine" id="cb7-18" title="18">ADDRESS_RADIX=<span class="bu">DEC</span><span class="co">;</span></a>
+<a class="sourceLine" id="cb7-19" title="19">DATA_RADIX=HEX<span class="co">;</span></a>
+<a class="sourceLine" id="cb7-20" title="20"></a>
+<a class="sourceLine" id="cb7-21" title="21">CONTENT BEGIN</a>
+<a class="sourceLine" id="cb7-22" title="22">      -- Valores iniciais no banco de registradores:</a>
+<a class="sourceLine" id="cb7-23" title="23">      -- <span class="dv">$</span>t0   (#<span class="dv">8</span>) :=<span class="bn"> 0x00</span></a>
+<a class="sourceLine" id="cb7-24" title="24">      -- <span class="dv">$</span>t1   (#<span class="dv">9</span>) :=<span class="bn"> 0x0A</span></a>
+<a class="sourceLine" id="cb7-25" title="25">      -- <span class="dv">$</span>t2  (#<span class="dv">10</span>) :=<span class="bn"> 0x0B</span></a>
+<a class="sourceLine" id="cb7-26" title="26">      -- <span class="dv">$</span>t3  (#<span class="dv">11</span>) :=<span class="bn"> 0x0C</span></a>
+<a class="sourceLine" id="cb7-27" title="27">      -- <span class="dv">$</span>t4  (#<span class="dv">12</span>) :=<span class="bn"> 0x0D</span></a>
+<a class="sourceLine" id="cb7-28" title="28">      -- <span class="dv">$</span>t5  (#<span class="dv">13</span>) :=<span class="bn"> 0x16</span></a>
+<a class="sourceLine" id="cb7-29" title="29"></a>
+<a class="sourceLine" id="cb7-30" title="30">    <span class="dv">0</span>    :   AC090008<span class="co">; --sw $t1 8($zero)</span></a>
+<a class="sourceLine" id="cb7-31" title="31">    <span class="dv">1</span>    :   8C080008<span class="co">; --lw $t0 8($zero)</span></a>
+<a class="sourceLine" id="cb7-32" title="32">  <span class="dv">2</span>  :   <span class="dv">00000000</span><span class="co">; --nop</span></a>
+<a class="sourceLine" id="cb7-33" title="33">    <span class="dv">3</span>    :   012A4022<span class="co">; --sub $t0 $t1 $t2</span></a>
+<a class="sourceLine" id="cb7-34" title="34">    <span class="dv">4</span>    :   012A4024<span class="co">; --and $t0 $t1 $t2</span></a>
+<a class="sourceLine" id="cb7-35" title="35">    <span class="dv">5</span>    :   012A4025<span class="co">; --or $t0 $t1 $t2</span></a>
+<a class="sourceLine" id="cb7-36" title="36">    <span class="dv">6</span>    :   012A402A<span class="co">; --slt $t0 $t1 $t2</span></a>
+<a class="sourceLine" id="cb7-37" title="37">    <span class="dv">7</span>  :   <span class="dv">00000000</span><span class="co">; --nop</span></a>
+<a class="sourceLine" id="cb7-38" title="38">    <span class="dv">8</span>  :   <span class="dv">00000000</span><span class="co">; --nop</span></a>
+<a class="sourceLine" id="cb7-39" title="39">    <span class="dv">9</span>  :   <span class="dv">00000000</span><span class="co">; --nop</span></a>
+<a class="sourceLine" id="cb7-40" title="40">    <span class="dv">10</span>   :   010A4020<span class="co">; --add $t0 $t0 $t2</span></a>
+<a class="sourceLine" id="cb7-41" title="41">    <span class="dv">11</span>   :   <span class="dv">00000000</span><span class="co">; --nop</span></a>
+<a class="sourceLine" id="cb7-42" title="42">    <span class="dv">12</span>   :   <span class="dv">00000000</span><span class="co">; --nop</span></a>
+<a class="sourceLine" id="cb7-43" title="43">    <span class="dv">13</span>   :   <span class="dv">00000000</span><span class="co">; --nop</span></a>
+<a class="sourceLine" id="cb7-44" title="44">    <span class="dv">14</span>   :   110BFFFA<span class="co">; --beq $t0 $t3 0xFFFA</span></a>
+<a class="sourceLine" id="cb7-45" title="45">    <span class="dv">15</span>   :   <span class="dv">00000000</span><span class="co">; --nop</span></a>
+<a class="sourceLine" id="cb7-46" title="46">    <span class="dv">16</span>   :   <span class="dv">00000000</span><span class="co">; --nop</span></a>
+<a class="sourceLine" id="cb7-47" title="47">    <span class="dv">17</span>   :   <span class="dv">00000000</span><span class="co">; --nop</span></a>
+<a class="sourceLine" id="cb7-48" title="48">    <span class="dv">18</span>   :   <span class="dv">08000001</span><span class="co">; --j 0x000001</span></a>
+<a class="sourceLine" id="cb7-49" title="49">    <span class="dv">19</span>   :   <span class="dv">00000000</span><span class="co">; --nop</span></a>
+<a class="sourceLine" id="cb7-50" title="50">    <span class="dv">20</span>   :   <span class="dv">00000000</span><span class="co">; --nop</span></a>
+<a class="sourceLine" id="cb7-51" title="51">    <span class="dv">21</span>   :   <span class="dv">08000000</span><span class="co">; --j 0x000000</span></a>
+<a class="sourceLine" id="cb7-52" title="52">   [<span class="dv">22</span>..<span class="dv">63</span>]: <span class="dv">00000000</span><span class="co">; --nop</span></a>
+<a class="sourceLine" id="cb7-53" title="53"><span class="pp">END</span><span class="co">;</span></a></code></pre></div>
+</div>
+</div>
+<p>
+<font style="color:red;font-weight:bold;">O valor do PC é lido na primeira etapa do pipeline (ID) e o resultado da ULA na terceira etapa (EX).<br> Por isso, os dois primeiros ciclos, enquanto não existe resultado (útil) na ULA, a saída é 0x0.<br> Essa defasagem entre o valor mostrado do PC e o resultado da ULA é mantida durante toda a execução.<br> Para facilitar, verique a execução utilizando o valor da tabela referente ao PC Exibido (7 segmentos).<br> Note que no caso do JMP, como a execução acontece no estágio ID, a mudança do valor exibido acontecerá antes do esperado. </font>
+</p>
+<p><br></p>
+<table>
+<caption><strong>Resultados da Execução: Programa do Ciclo Único e Conjunto A Rodando no Pipeline Simples</strong></caption>
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 14%" />
+<col style="width: 12%" />
+<col style="width: 19%" />
+<col style="width: 36%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">PC Exibido (7 Seg)<br>Etapa IF</th>
+<th style="text-align: center;">PC Programa<br>Etapa da ULA (EX)</th>
+<th style="text-align: left;">Saída ULA<BR>Etapa EX</th>
+<th style="text-align: left;">Instrução<br>Executada (EX)</th>
+<th style="text-align: left;">Comentário</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0x00</td>
+<td style="text-align: center;">0xXX</td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;">—-</td>
+<td style="text-align: left;">Carregando o Pipeline</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0x04</td>
+<td style="text-align: center;">0xXX</td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;">—-</td>
+<td style="text-align: left;">Carregando o Pipeline</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0x08</td>
+<td style="text-align: center;">0x00</td>
+<td style="text-align: left;">0x00000008</td>
+<td style="text-align: left;">sw $t1 8($zero)</td>
+<td style="text-align: left;">M(8) := 0x0000000A</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0x0C</td>
+<td style="text-align: center;">0x04</td>
+<td style="text-align: left;">0x00000008</td>
+<td style="text-align: left;">lw $t0 8($zero)</td>
+<td style="text-align: left;">$t0 := 0x0000000A</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0x10</td>
+<td style="text-align: center;">0x08</td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0x14</td>
+<td style="text-align: center;">0x0C</td>
+<td style="text-align: left;">0xFFFFFFFF</td>
+<td style="text-align: left;">sub $t0 $t1 $t2</td>
+<td style="text-align: left;">$t0 := 0xFFFFFFFF</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0x18</td>
+<td style="text-align: center;">0x10</td>
+<td style="text-align: left;">0x0000000A</td>
+<td style="text-align: left;">and $t0 $t1 $t2</td>
+<td style="text-align: left;">$t0 := 0x0000000A</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0x1C</td>
+<td style="text-align: center;">0x14</td>
+<td style="text-align: left;">0x0000000B</td>
+<td style="text-align: left;">or $t0 $t1 $t2</td>
+<td style="text-align: left;">$t0 := 0x0000000B</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0x20</td>
+<td style="text-align: center;">0x18</td>
+<td style="text-align: left;">0x00000001</td>
+<td style="text-align: left;">slt $t0 $t1 $t2</td>
+<td style="text-align: left;">$t0 := 0x00000001</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0x24</td>
+<td style="text-align: center;">0x1C</td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0x28</td>
+<td style="text-align: center;">0x20</td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0x2C</td>
+<td style="text-align: center;">0x24</td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0x30</td>
+<td style="text-align: center;">0x28</td>
+<td style="text-align: left;">0x0000000C</td>
+<td style="text-align: left;">add $t0 $t0 $t2</td>
+<td style="text-align: left;">$t0 := 0x0000000C</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0x34</td>
+<td style="text-align: center;">0x2C</td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0x38</td>
+<td style="text-align: center;">0x30</td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0x3C</td>
+<td style="text-align: center;">0x34</td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0x40</td>
+<td style="text-align: center;">0x38</td>
+<td style="text-align: left;">0x00000000</td>
+<td style="text-align: left;">beq $t0 $t3 0xFFFA</td>
+<td style="text-align: left;">FA=-6; pc := 0x24</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0x44</td>
+<td style="text-align: center;">0x3C</td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">Em EX no clock do BEQ</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0x24</td>
+<td style="text-align: center;">0x40</td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">Em ID no clock do BEQ</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0x28</td>
+<td style="text-align: center;">0x44</td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">Em IF no clock do BEQ</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0x2C</td>
+<td style="text-align: center;">0x24</td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">Destino do BEQ</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0x30</td>
+<td style="text-align: center;">0x28</td>
+<td style="text-align: left;">0x00000017</td>
+<td style="text-align: left;">add $t0 $t0 $t2</td>
+<td style="text-align: left;">$t0 := 0x00000017</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0x34</td>
+<td style="text-align: center;">0x2C</td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0x38</td>
+<td style="text-align: center;">0x30</td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0x3C</td>
+<td style="text-align: center;">0x34</td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0x40</td>
+<td style="text-align: center;">0x38</td>
+<td style="text-align: left;">0x0000000B</td>
+<td style="text-align: left;">beq $t0 $t3 0xFFFA</td>
+<td style="text-align: left;">FA=-6; pc := 0x3C</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0x44</td>
+<td style="text-align: center;">0x3C</td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0x48</td>
+<td style="text-align: center;">0x40</td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0x4C</td>
+<td style="text-align: center;">0x44</td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">Quando este NOP chega em EX, o endereço do JMP é atualizado em ID</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0x04</td>
+<td style="text-align: center;">0x48</td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;">j 0x000001</td>
+<td style="text-align: left;">pc := 0x04; <font style="color:red">JMP executado</font></td>
+</tr>
+</tbody>
+</table>
+<!--
+
+<br><hr style="width:60%;margin: auto;"><br>
+
+**Programa que será usado no teste final do Pipeline Simples e Conjunto A:**
+
+Conteúdo do _.mif_ da ROM:
+
+```asm
+
+-- Copyright (C) 2017  Intel Corporation. All rights reserved.
+-- Your use of Intel Corporation's design tools, logic functions
+-- and other software and tools, and its AMPP partner logic
+-- functions, and any output files from any of the foregoing
+-- (including device programming or simulation files), and any
+-- associated documentation or information are expressly subject
+-- to the terms and conditions of the Intel Program License
+-- Subscription Agreement, the Intel Quartus Prime License Agreement,
+-- the Intel FPGA IP License Agreement, or other applicable license
+-- agreement, including, without limitation, that your use is for
+-- the sole purpose of programming logic devices manufactured by
+-- Intel and sold by Intel or its authorized distributors.  Please
+-- refer to the applicable agreement for further details.
+
+WIDTH=32;
+DEPTH=64;
+ADDRESS_RADIX=DEC;
+DATA_RADIX=HEX;
+
+CONTENT BEGIN
+      -- Valores iniciais no banco de registradores:
+      -- $t0   (#8) := 0x00
+      -- $t1   (#9) := 0x0A
+      -- $t2  (#10) := 0x0B
+      -- $t3  (#11) := 0x0C
+      -- $t4  (#12) := 0x0D
+      -- $t5  (#13) := 0x16
+
+    0    :   AC090008; --sw $t1 8($zero)     (m(8) := 0x0000000A)
+    1    :   8C080008; --lw $t0 8($zero)     ($t0 := 0x0000000A)
+    2    :   012A4022; --sub $t0 $t1 $t2     ($t0 := 0xFFFFFFFF)
+    3    :   012A4024; --and $t0 $t1 $t2     ($t0 := 0x0000000A)
+    4    :   012A4025; --or $t0 $t1 $t2      ($t0 := 0x0000000B)
+    5    :   012A402A; --slt $t0 $t1 $t2     ($t0 := 0x00000001)
+    6    :   010A4020; --add $t0 $t0 $t2     HAZARD  ($t0 := 0x0000000A)
+    7    :   110BFFFE; --beq $t0 $t3 0xFFFE  HAZARD  (pc := #8)
+    8    :   0800000C; --j 0x00000C          HAZARD  (pc := #12)
+   [9..11] : 00000000; --nop
+    12   :   AC090008; --sw $t1 8($zero)     (m(8) := 0x0000000A)
+    13   :   8C080008; --lw $t0 8($zero)     ($t0 := 0x0000000A)
+    14   :   012A4022; --sub $t0 $t1 $t2     ($t0 := 0xFFFFFFFF)
+    15   :   012A4024; --and $t0 $t1 $t2     ($t0 := 0x0000000A)
+    16   :   012A4025; --or $t0 $t1 $t2      ($t0 := 0x0000000B)
+    17   :   012A402A; --slt $t0 $t1 $t2     ($t0 := 0x00000001)
+   [18..20] : 00000000; --nop
+    21   :   010A4020; --add $t0 $t0 $t2     ($t0 := 0x0000000C)
+                         --segunda execução: ($t0 := 0x00000017)
+   [22..24] : 00000000; --nop
+    25   :   110BFFFB; --beq $t0 $t3 0xFFFB  (pc := #21)
+                         --segunda execução: (pc := #26)
+   [26..27] : 00000000; --nop
+    28   :   08000000; --j 0x000000          (pc := #0)
+   [29..63] : 00000000; --nop
+END;
+
+```
+
+-->
+<p>Para monitorar o PC (na etapa de busca), o PC (na etapa de execução), a saída da ULA e o que será escrito no banco de registradores, utilizaremos um MUX que alimenta os seis displays de sete segmentos existentes na placa, como mostrado abaixo.</p>
+<figure>
+<img src="../imagensMIPS/fluxoDadosCompleto-Pipeline-Final-Display.svg" alt="Circuito Utilizado para a Verificação do Funcionamento do Pipeline" style="width:800px;max-width:100%;" /><figcaption><strong>Circuito Utilizado para a Verificação do Funcionamento do Pipeline</strong></figcaption>
+</figure>
+<p><br> <!--
+<p><font style="color:red;font-size:20px;font-weight:bold;">Falta acertar a tabela para o programa acima!!!!</font></p>
+
+| PC Exibido (7 Seg)<br>Etapa IF | PC Programa<br>Etapa da ULA (EX) | Saída ULA<BR>Etapa EX | Instrução<br>Executada (EX) | Comentário |
+|:-----:|:----:|:----|:-------|:----------|
+| 0x00 | 0xXX | 0xXXXXXXXX | ---- | Carregando o Pipeline |
+| 0x04 | 0xXX | 0xXXXXXXXX | ---- | Carregando o Pipeline |
+| 0x08 | 0x00 | 0x00000008 | sw \$t1 8(\$zero) | M(8) := 0x0000000A |
+| 0x0C | 0x04 | 0x00000008 | lw \$t0  8(\$zero) | \$t0 := 0x0000000A |
+| 0x10 | 0x08 | 0xXXXXXXXX |nop||
+| 0x14 | 0x0C | 0xFFFFFFFF | sub $t0 $t1 $t2 | $t0 := 0xFFFFFFFF |
+| 0x18 | 0x10 | 0x0000000A | and $t0 $t1 $t2 | $t0 := 0x0000000A |
+| 0x1C | 0x14 | 0x0000000B | or $t0 $t1 $t2 | $t0 := 0x0000000B |
+| 0x20 | 0x18 | 0x00000001 | slt $t0 $t1 $t2 | $t0 := 0x00000001 |
+| 0x24 | 0x1C | 0xXXXXXXXX |nop||
+| 0x28 | 0x20 | 0xXXXXXXXX |nop||
+| 0x2C | 0x24 | 0xXXXXXXXX |nop||
+| 0x30 | 0x28 | 0x0000000C | add $t0 $t0 $t2 | $t0 := 0x0000000C |
+| 0x34 | 0x2C | 0xXXXXXXXX |nop||
+| 0x38 | 0x30 | 0xXXXXXXXX |nop||
+| 0x3C | 0x34 | 0xXXXXXXXX |nop||
+| 0x40 | 0x38 | 0x00000000 | beq $t0 $t3 0xFFFA | FA=-6; pc := 0x24 |
+| 0x44 | 0x3C | 0xXXXXXXXX |nop| Em EX no clock do BEQ |
+| 0x24 | 0x40 | 0xXXXXXXXX |nop| Em ID no clock do BEQ |
+| 0x28 | 0x44 | 0xXXXXXXXX |nop| Em IF no clock do BEQ |
+| 0x2C | 0x24 | 0xXXXXXXXX |nop| Destino do BEQ |
+| 0x30 | 0x28 | 0x00000017 | add $t0 $t0 $t2 | $t0 := 0x00000017 |
+| 0x34 | 0x2C | 0xXXXXXXXX |nop||
+| 0x38 | 0x30 | 0xXXXXXXXX |nop||
+| 0x3C | 0x34 | 0xXXXXXXXX |nop||
+| 0x40 | 0x38 | 0x0000000B | beq $t0 $t3 0xFFFA | FA=-6; pc := 0x3C |
+| 0x44 | 0x3C | 0xXXXXXXXX |nop||
+| 0x48 | 0x40 | 0xXXXXXXXX |nop||
+| 0x4C | 0x44 | 0xXXXXXXXX |nop||
+| 0x04 | 0x48 | 0xXXXXXXXX | j 0x000001 | pc := 0x04; JMP executa em ID |
+| 0x08 | 0x4C | 0xXXXXXXXX |nop| Em IF no clock do JMP |
+| 0x0C | 0x04 | 0x00000008 | lw \$t0  8($zero) | $t0 := 0x0000000A |
+| 68 | 0x44 | 0xXXXXXXXX | j 0x000000 | Volta ao Início |
+
+Table: **Resultados da Execução: Pipeline e Conjunto A**
+
+--></p>
+<p><br></p>
+</div>
+<!--- class_panel --->
+<button class="accordion">
+Pipeline e Subconjuntos A e B
+</button>
+<div class="panel">
+
+<div class="row">
+<div class="column">
+<p><strong>Conteúdo da função de inicialização da ROM, em VHDL:</strong></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode asm"><code class="sourceCode fasm"><a class="sourceLine" id="cb8-1" title="1"></a>
+<a class="sourceLine" id="cb8-2" title="2">  FUNCTION initMemory</a>
+<a class="sourceLine" id="cb8-3" title="3">     RETURN blocoMemoria IS VARIABLE tmp : blocoMemoria := (OTHERS =&gt; (OTHERS =&gt; <span class="st">&#39;0&#39;</span>))<span class="co">;</span></a>
+<a class="sourceLine" id="cb8-4" title="4">  BEGIN</a>
+<a class="sourceLine" id="cb8-5" title="5"></a>
+<a class="sourceLine" id="cb8-6" title="6">    tmp(<span class="dv">0</span>)  := x<span class="st">&quot;3c090000&quot;</span><span class="co">;      --lui $t1, 0x0000;</span></a>
+<a class="sourceLine" id="cb8-7" title="7">    tmp(<span class="dv">1</span>)  := x<span class="st">&quot;3c0baaaa&quot;</span><span class="co">;      --lui $t3, 0xAAAA;</span></a>
+<a class="sourceLine" id="cb8-8" title="8">    tmp(<span class="dv">2</span>)  := x<span class="st">&quot;3c0f1000&quot;</span><span class="co">;      --lui $t7, 0x1000;</span></a>
+<a class="sourceLine" id="cb8-9" title="9">    tmp(<span class="dv">3</span>)  := x<span class="st">&quot;3529000a&quot;</span><span class="co">;      --ori $t1, $t1, 0x0A;     # $t1 (#9) := 0x0A</span></a>
+<a class="sourceLine" id="cb8-10" title="10">    tmp(<span class="dv">4</span>)  := x<span class="st">&quot;356baaaa&quot;</span><span class="co">;      --ori $t3, $t3, 0xAAAA;   # $t3 (#11) := 0xAAAAAAAA</span></a>
+<a class="sourceLine" id="cb8-11" title="11">    tmp(<span class="dv">5</span>)  := x<span class="st">&quot;35ef0000&quot;</span><span class="co">;      --ori $t7, $t7, 0x0000;   # $t7 (#15) := 0x10000000 (4096*64k)</span></a>
+<a class="sourceLine" id="cb8-12" title="12">    tmp(<span class="dv">6</span>)  := x<span class="st">&quot;212a0001&quot;</span><span class="co">;      --addi $t2, $t1, 0x01;    # $t2 (#10) := 0x0B</span></a>
+<a class="sourceLine" id="cb8-13" title="13">    tmp(<span class="dv">7</span>)  := x<span class="st">&quot;01606025&quot;</span><span class="co">;      --or $t4, $t3, $0;        # $t4 (#12) := 0xAAAAAAAA</span></a>
+<a class="sourceLine" id="cb8-14" title="14">    tmp(<span class="dv">8</span>)  := x<span class="st">&quot;316dffff&quot;</span><span class="co">;      --andi $t5, $t3, 0xFFFF;  # $t5 (#13) := 0x0000AAAA</span></a>
+<a class="sourceLine" id="cb8-15" title="15">    tmp(<span class="dv">9</span>)  := x<span class="st">&quot;01497022&quot;</span><span class="co">;      --sub $t6, $t2, $t1;      # $t6 (#14) := 0x01</span></a>
+<a class="sourceLine" id="cb8-16" title="16">    tmp(<span class="dv">10</span>) := x<span class="st">&quot;ac090008&quot;</span><span class="co">;      --sw $t1, 8($zero);       # M[8) = 0x0A</span></a>
+<a class="sourceLine" id="cb8-17" title="17">    tmp(<span class="dv">11</span>) := x<span class="st">&quot;8c080008&quot;</span><span class="co">;      --lw $t0, 8($zero);</span></a>
+<a class="sourceLine" id="cb8-18" title="18">    tmp(<span class="dv">12</span>) := x<span class="st">&quot;010a7824&quot;</span><span class="co">;      --and $t7, $t0, $t2;      # Hazard Load Use</span></a>
+<a class="sourceLine" id="cb8-19" title="19">    tmp(<span class="dv">13</span>) := x<span class="st">&quot;290fffff&quot;</span><span class="co">;      --slti $t7, $t0, 0xFFFF;</span></a>
+<a class="sourceLine" id="cb8-20" title="20">    tmp(<span class="dv">14</span>) := x<span class="st">&quot;012a402a&quot;</span><span class="co">;      --slt $t0, $t1, $t2;</span></a>
+<a class="sourceLine" id="cb8-21" title="21">--destinoBEQ:</a>
+<a class="sourceLine" id="cb8-22" title="22">    tmp(<span class="dv">15</span>) := x<span class="st">&quot;012e4820&quot;</span><span class="co">;      --add $t1, $t1, $t6;      # t0 = t2, segunda vez: t0 != t2</span></a>
+<a class="sourceLine" id="cb8-23" title="23">    tmp(<span class="dv">16</span>) := x<span class="st">&quot;00000000&quot;</span><span class="co">;      --nop;</span></a>
+<a class="sourceLine" id="cb8-24" title="24">    tmp(<span class="dv">17</span>) := x<span class="st">&quot;00000000&quot;</span><span class="co">;      --nop;</span></a>
+<a class="sourceLine" id="cb8-25" title="25">    tmp(<span class="dv">18</span>) := x<span class="st">&quot;112afffc&quot;</span><span class="co">;      --beq $t1, $t2, destinoBEQ;  # Desvia na primeira e nao desvia depois</span></a>
+<a class="sourceLine" id="cb8-26" title="26">    tmp(<span class="dv">19</span>) := x<span class="st">&quot;00000000&quot;</span><span class="co">;      --nop;</span></a>
+<a class="sourceLine" id="cb8-27" title="27">    tmp(<span class="dv">20</span>) := x<span class="st">&quot;00000000&quot;</span><span class="co">;      --nop;</span></a>
+<a class="sourceLine" id="cb8-28" title="28">    tmp(<span class="dv">21</span>) := x<span class="st">&quot;00000000&quot;</span><span class="co">;      --nop;</span></a>
+<a class="sourceLine" id="cb8-29" title="29">    tmp(<span class="dv">22</span>) := x<span class="st">&quot;0c000020&quot;</span><span class="co">;      --jal subrotina;</span></a>
+<a class="sourceLine" id="cb8-30" title="30">    tmp(<span class="dv">23</span>) := x<span class="st">&quot;00000000&quot;</span><span class="co">;      --nop;</span></a>
+<a class="sourceLine" id="cb8-31" title="31">    tmp(<span class="dv">24</span>) := x<span class="st">&quot;00000000&quot;</span><span class="co">;      --nop;</span></a>
+<a class="sourceLine" id="cb8-32" title="32">    tmp(<span class="dv">25</span>) := x<span class="st">&quot;00000000&quot;</span><span class="co">;      --nop;</span></a>
+<a class="sourceLine" id="cb8-33" title="33">    tmp(<span class="dv">26</span>) := x<span class="st">&quot;00000000&quot;</span><span class="co">;      --nop;</span></a>
+<a class="sourceLine" id="cb8-34" title="34">    tmp(<span class="dv">27</span>) := x<span class="st">&quot;150d0008&quot;</span><span class="co">;      --bne $t0, $t5, fim</span></a>
+<a class="sourceLine" id="cb8-35" title="35">    tmp(<span class="dv">28</span>) := x<span class="st">&quot;00000000&quot;</span><span class="co">;      --nop;</span></a>
+<a class="sourceLine" id="cb8-36" title="36">    tmp(<span class="dv">29</span>) := x<span class="st">&quot;00000000&quot;</span><span class="co">;      --nop;</span></a>
+<a class="sourceLine" id="cb8-37" title="37">    tmp(<span class="dv">30</span>) := x<span class="st">&quot;00000000&quot;</span><span class="co">;      --nop;</span></a>
+<a class="sourceLine" id="cb8-38" title="38">    tmp(<span class="dv">31</span>) := x<span class="st">&quot;00000000&quot;</span><span class="co">;      --nop;</span></a>
+<a class="sourceLine" id="cb8-39" title="39">--subrotina:</a>
+<a class="sourceLine" id="cb8-40" title="40">    tmp(<span class="dv">32</span>) := x<span class="st">&quot;00000000&quot;</span><span class="co">;      --nop;</span></a>
+<a class="sourceLine" id="cb8-41" title="41">    tmp(<span class="dv">33</span>) := x<span class="st">&quot;03e00008&quot;</span><span class="co">;      --jr $ra;</span></a>
+<a class="sourceLine" id="cb8-42" title="42">    tmp(<span class="dv">34</span>) := x<span class="st">&quot;00000000&quot;</span><span class="co">;      --nop;</span></a>
+<a class="sourceLine" id="cb8-43" title="43">    tmp(<span class="dv">35</span>) := x<span class="st">&quot;00000000&quot;</span><span class="co">;      --nop;</span></a>
+<a class="sourceLine" id="cb8-44" title="44">--fim:</a>
+<a class="sourceLine" id="cb8-45" title="45">    tmp(<span class="dv">36</span>) := x<span class="st">&quot;00000000&quot;</span><span class="co">;      --nop;</span></a>
+<a class="sourceLine" id="cb8-46" title="46">    tmp(<span class="dv">37</span>) := x<span class="st">&quot;08000024&quot;</span><span class="co">;      --j fim;</span></a>
+<a class="sourceLine" id="cb8-47" title="47">    tmp(<span class="dv">38</span>) := x<span class="st">&quot;00000000&quot;</span><span class="co">;      --nop;</span></a>
+<a class="sourceLine" id="cb8-48" title="48">    tmp(<span class="dv">39</span>) := x<span class="st">&quot;00000000&quot;</span><span class="co">;      --nop;</span></a>
+<a class="sourceLine" id="cb8-49" title="49">    RETURN tmp<span class="co">;</span></a>
+<a class="sourceLine" id="cb8-50" title="50">  <span class="pp">END</span> initMemory<span class="co">;</span></a></code></pre></div>
+</div>
+<div class="column">
+<p><strong>Conteúdo equivalente ao programa ao lado para utilização no arquivo <em>.mif</em> :</strong></p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode asm"><code class="sourceCode fasm"><a class="sourceLine" id="cb9-1" title="1"></a>
+<a class="sourceLine" id="cb9-2" title="2">-- Copyright (C) <span class="dv">2017</span>  Intel Corporation. All rights reserved.</a>
+<a class="sourceLine" id="cb9-3" title="3">-- Your use of Intel Corporation<span class="st">&#39;s design tools, logic functions</span></a>
+<a class="sourceLine" id="cb9-4" title="4">-- <span class="bu">and</span> other software <span class="bu">and</span> tools, <span class="bu">and</span> its AMPP partner logic</a>
+<a class="sourceLine" id="cb9-5" title="5">-- functions, <span class="bu">and</span> any output files <span class="bu">from</span> any of the foregoing</a>
+<a class="sourceLine" id="cb9-6" title="6">-- (including device programming <span class="bu">or</span> simulation files), <span class="bu">and</span> any</a>
+<a class="sourceLine" id="cb9-7" title="7">-- associated documentation <span class="bu">or</span> information are expressly subject</a>
+<a class="sourceLine" id="cb9-8" title="8">-- to the terms <span class="bu">and</span> conditions of the Intel Program License</a>
+<a class="sourceLine" id="cb9-9" title="9">-- Subscription Agreement, the Intel Quartus Prime License Agreement,</a>
+<a class="sourceLine" id="cb9-10" title="10">-- the Intel FPGA IP License Agreement, <span class="bu">or</span> other applicable license</a>
+<a class="sourceLine" id="cb9-11" title="11">-- agreement, including, without limitation, that your use is for</a>
+<a class="sourceLine" id="cb9-12" title="12">-- the sole purpose of programming logic devices manufactured by</a>
+<a class="sourceLine" id="cb9-13" title="13">-- Intel <span class="bu">and</span> sold by Intel <span class="bu">or</span> its authorized distributors.  Please</a>
+<a class="sourceLine" id="cb9-14" title="14">-- refer to the applicable agreement for further details.</a>
+<a class="sourceLine" id="cb9-15" title="15"></a>
+<a class="sourceLine" id="cb9-16" title="16">WIDTH=<span class="dv">32</span><span class="co">;</span></a>
+<a class="sourceLine" id="cb9-17" title="17">DEPTH=<span class="dv">64</span><span class="co">;</span></a>
+<a class="sourceLine" id="cb9-18" title="18">ADDRESS_RADIX=<span class="bu">DEC</span><span class="co">;</span></a>
+<a class="sourceLine" id="cb9-19" title="19">DATA_RADIX=HEX<span class="co">;</span></a>
+<a class="sourceLine" id="cb9-20" title="20"></a>
+<a class="sourceLine" id="cb9-21" title="21">CONTENT BEGIN</a>
+<a class="sourceLine" id="cb9-22" title="22"><span class="dv">0</span>   :  3c090000<span class="co">;      --lui $t1, 0x0000;</span></a>
+<a class="sourceLine" id="cb9-23" title="23"><span class="dv">1</span>   :  3c0baaaa<span class="co">;      --lui $t3, 0xAAAA;</span></a>
+<a class="sourceLine" id="cb9-24" title="24"><span class="dv">2</span>   :  3c0f1000<span class="co">;      --lui $t7, 0x1000;</span></a>
+<a class="sourceLine" id="cb9-25" title="25"><span class="dv">3</span>   :  3529000a<span class="co">;      --ori $t1, $t1, 0x0A;        # $t1 (#9) := 0x0A</span></a>
+<a class="sourceLine" id="cb9-26" title="26"><span class="dv">4</span>   :  356baaaa<span class="co">;      --ori $t3, $t3, 0xAAAA;      # $t3 (#11) := 0xAAAAAAAA</span></a>
+<a class="sourceLine" id="cb9-27" title="27"><span class="dv">5</span>   :  35ef0000<span class="co">;      --ori $t7, $t7, 0x0000;</span></a>
+<a class="sourceLine" id="cb9-28" title="28"><span class="dv">6</span>   :  212a0001<span class="co">;      --addi $t2, $t1, 0x01;       # $t2 (#10) := 0x0B</span></a>
+<a class="sourceLine" id="cb9-29" title="29"><span class="dv">7</span>   :  <span class="dv">01606025</span><span class="co">;      --or $t4, $t3, $0;           # $t4 (#12) := 0xAAAAAAAA</span></a>
+<a class="sourceLine" id="cb9-30" title="30"><span class="dv">8</span>   :  316dffff<span class="co">;      --andi $t5, $t3, 0xFFFF;     # $t5 (#13) := 0x0000AAAA</span></a>
+<a class="sourceLine" id="cb9-31" title="31"><span class="dv">9</span>   :  <span class="dv">01497022</span><span class="co">;      --sub $t6, $t2, $t1;         # $t6 (#14) := 0x01</span></a>
+<a class="sourceLine" id="cb9-32" title="32"><span class="dv">10</span>  :  ac090008<span class="co">;      --sw $t1, 8($zero);          # M[8) = 0x0A</span></a>
+<a class="sourceLine" id="cb9-33" title="33"><span class="dv">11</span>  :  8c080008<span class="co">;      --lw $t0, 8($zero);</span></a>
+<a class="sourceLine" id="cb9-34" title="34"><span class="dv">12</span>  :  010a7824<span class="co">;      --and $t7, $t0, $t2;         # Hazard Load Use</span></a>
+<a class="sourceLine" id="cb9-35" title="35"><span class="dv">13</span>  :  290fffff<span class="co">;      --slti $t7, $t0, 0xFFFF;</span></a>
+<a class="sourceLine" id="cb9-36" title="36"><span class="dv">14</span>  :  012a402a<span class="co">;      --slt $t0, $t1, $t2;</span></a>
+<a class="sourceLine" id="cb9-37" title="37">--destinoBEQ:</a>
+<a class="sourceLine" id="cb9-38" title="38"><span class="dv">15</span>  :  <span class="fl">012e4820</span><span class="co">;      --add $t1, $t1, $t6;         # t0 = t2, segunda vez: t0 != t2</span></a>
+<a class="sourceLine" id="cb9-39" title="39"><span class="dv">16</span>  :  <span class="dv">00000000</span><span class="co">;      --nop;</span></a>
+<a class="sourceLine" id="cb9-40" title="40"><span class="dv">17</span>  :  <span class="dv">00000000</span><span class="co">;      --nop;</span></a>
+<a class="sourceLine" id="cb9-41" title="41"><span class="dv">18</span>  :  112afffc<span class="co">;      --beq $t1, $t2, destinoBEQ;  # Desvia na primeira e nao desvia depois</span></a>
+<a class="sourceLine" id="cb9-42" title="42"><span class="dv">19</span>  :  <span class="dv">00000000</span><span class="co">;      --nop;</span></a>
+<a class="sourceLine" id="cb9-43" title="43"><span class="dv">20</span>  :  <span class="dv">00000000</span><span class="co">;      --nop;</span></a>
+<a class="sourceLine" id="cb9-44" title="44"><span class="dv">21</span>  :  <span class="dv">00000000</span><span class="co">;      --nop;</span></a>
+<a class="sourceLine" id="cb9-45" title="45"><span class="dv">22</span>  :  0c000020<span class="co">;      --jal subrotina;</span></a>
+<a class="sourceLine" id="cb9-46" title="46"><span class="dv">23</span>  :  <span class="dv">00000000</span><span class="co">;      --nop;</span></a>
+<a class="sourceLine" id="cb9-47" title="47"><span class="dv">24</span>  :  <span class="dv">00000000</span><span class="co">;      --nop;</span></a>
+<a class="sourceLine" id="cb9-48" title="48"><span class="dv">25</span>  :  <span class="dv">00000000</span><span class="co">;      --nop;</span></a>
+<a class="sourceLine" id="cb9-49" title="49"><span class="dv">26</span>  :  <span class="dv">00000000</span><span class="co">;      --nop;</span></a>
+<a class="sourceLine" id="cb9-50" title="50"><span class="dv">27</span>  :  150d0008<span class="co">;      --bne $t0, $t5, fim</span></a>
+<a class="sourceLine" id="cb9-51" title="51"><span class="dv">28</span>  :  <span class="dv">00000000</span><span class="co">;      --nop;</span></a>
+<a class="sourceLine" id="cb9-52" title="52"><span class="dv">29</span>  :  <span class="dv">00000000</span><span class="co">;      --nop;</span></a>
+<a class="sourceLine" id="cb9-53" title="53"><span class="dv">30</span>  :  <span class="dv">00000000</span><span class="co">;      --nop;</span></a>
+<a class="sourceLine" id="cb9-54" title="54"><span class="dv">31</span>  :  <span class="dv">00000000</span><span class="co">;      --nop;</span></a>
+<a class="sourceLine" id="cb9-55" title="55">--subrotina:</a>
+<a class="sourceLine" id="cb9-56" title="56"><span class="dv">32</span>  :  <span class="dv">00000000</span><span class="co">;      --nop;</span></a>
+<a class="sourceLine" id="cb9-57" title="57"><span class="dv">33</span>  :  <span class="fl">03e00008</span><span class="co">;      --jr $ra;</span></a>
+<a class="sourceLine" id="cb9-58" title="58"><span class="dv">34</span>  :  <span class="dv">00000000</span><span class="co">;      --nop;</span></a>
+<a class="sourceLine" id="cb9-59" title="59"><span class="dv">35</span>  :  <span class="dv">00000000</span><span class="co">;      --nop;</span></a>
+<a class="sourceLine" id="cb9-60" title="60">--fim:</a>
+<a class="sourceLine" id="cb9-61" title="61"><span class="dv">36</span>  :  <span class="dv">00000000</span><span class="co">;      --nop;</span></a>
+<a class="sourceLine" id="cb9-62" title="62"><span class="dv">37</span>  :  <span class="dv">08000024</span><span class="co">;      --j fim;</span></a>
+<a class="sourceLine" id="cb9-63" title="63"><span class="dv">38</span>  :  <span class="dv">00000000</span><span class="co">;      --nop;</span></a>
+<a class="sourceLine" id="cb9-64" title="64"><span class="dv">39</span>  :  <span class="dv">00000000</span><span class="co">;      --nop;</span></a>
+<a class="sourceLine" id="cb9-65" title="65">[<span class="dv">40</span>..<span class="dv">63</span>]  :  <span class="dv">00000000</span><span class="co">; --nop;</span></a>
+<a class="sourceLine" id="cb9-66" title="66"><span class="pp">END</span><span class="co">;</span></a></code></pre></div>
+</div>
+</div>
+<br>
+<hr style="width:60%;margin: auto;">
+<p><br></p>
+<p><strong>Execução do programa:</strong></p>
+<table style="width:100%;">
+<caption><strong>Resultados da Execução: Pipeline e Conjunto A + B</strong></caption>
+<colgroup>
+<col style="width: 5%" />
+<col style="width: 11%" />
+<col style="width: 8%" />
+<col style="width: 6%" />
+<col style="width: 11%" />
+<col style="width: 8%" />
+<col style="width: 12%" />
+<col style="width: 13%" />
+<col style="width: 22%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">PC em IF<br><font style="color:red"><strong>(Etapa 1)</strong></font></th>
+<th style="text-align: left;">Instrução em IF<br><font style="color:red"><strong>(Etapa 1)</strong></font></th>
+<th style="text-align: center;">Instrução em<br>ID <font style="color:red"><strong>(Etapa 2)</strong></font></th>
+<th style="text-align: center;">PC em EX<br><font style="color:red"><strong>(Etapa 3)</strong></font></th>
+<th style="text-align: left;">Instrução em EX<br><font style="color:red"><strong>(Etapa 3)</strong></font></th>
+<th style="text-align: left;">Saída ULA em EX<br><font style="color:red"><strong>(Etapa 3)</strong></font></th>
+<th style="text-align: left;">Escrita em MEM<br><font style="color:red"><strong>(Etapa 4)</strong></font></th>
+<th style="text-align: left;">Escrita em WB<br><font style="color:red"><strong>(Etapa 5)</strong></font></th>
+<th style="text-align: left;">Comentário</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">00</td>
+<td style="text-align: left;">lui $t1, 0x0000</td>
+<td style="text-align: center;"><font style="color:purple">Vazio</font></td>
+<td style="text-align: center;">0xXX</td>
+<td style="text-align: left;"><font style="color:purple">Vazio</font></td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;"><font style="color:purple">Vazio</font></td>
+<td style="text-align: left;"><font style="color:purple">Vazio</font></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">04</td>
+<td style="text-align: left;">lui $t3, 0xAAAA</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0xXX</td>
+<td style="text-align: left;"><font style="color:purple">Vazio</font></td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;"><font style="color:purple">Vazio</font></td>
+<td style="text-align: left;"><font style="color:purple">Vazio</font></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">08</td>
+<td style="text-align: left;">lui $t7, 0x1000</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0x00</td>
+<td style="text-align: left;">lui $t1, 0x0000</td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;"><font style="color:purple">Vazio</font></td>
+<td style="text-align: left;"><font style="color:purple">Vazio</font></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0C</td>
+<td style="text-align: left;">ori $t1, $t1, 0x000A</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0x04</td>
+<td style="text-align: left;">lui $t3, 0xAAAA</td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><font style="color:purple">Vazio</font></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">10</td>
+<td style="text-align: left;">ori $t3, $t3, 0xAAAA</td>
+<td style="text-align: center;">Lê $t1</td>
+<td style="text-align: center;">0x08</td>
+<td style="text-align: left;">lui $t7, 0x1000</td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">$t1 := 0x00000000 (lui)</td>
+<td style="text-align: left;">$t1 = r9</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">14</td>
+<td style="text-align: left;">ori $t7, $t7, 0x0000</td>
+<td style="text-align: center;">Lê $t3</td>
+<td style="text-align: center;">0x0C</td>
+<td style="text-align: left;">ori $t1, $t1, 0x000A</td>
+<td style="text-align: left;">0x0000000A</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">$t3 := 0xAAAA0000 (lui)</td>
+<td style="text-align: left;">$t3 = rB</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">18</td>
+<td style="text-align: left;">addi $t2 $t1 0x0001</td>
+<td style="text-align: center;">Lê $t7</td>
+<td style="text-align: center;">0x10</td>
+<td style="text-align: left;">ori $t3, $t3, 0xAAAA</td>
+<td style="text-align: left;">0xAAAAAAAA</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">$t7 := 0x10000000 (lui)</td>
+<td style="text-align: left;">$t7 = rF</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1C</td>
+<td style="text-align: left;">or $t4, $t3, $zero</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0x14</td>
+<td style="text-align: left;">ori $t7, $t7, 0x0000</td>
+<td style="text-align: left;">0x10000000</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">$t1 := 0x0000000A (ori)</td>
+<td style="text-align: left;">$t1 = r9</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">20</td>
+<td style="text-align: left;">andi $t5, $t3, 0xFFFF</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0x18</td>
+<td style="text-align: left;">addi $t2 $t1 0x0001</td>
+<td style="text-align: left;">0x0000000B</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">$t3 := 0xAAAAAAAA (ori)</td>
+<td style="text-align: left;">$t3 = rB</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">24</td>
+<td style="text-align: left;">sub $t6, $t2, $t1</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0x1C</td>
+<td style="text-align: left;">or $t4, $t3, $zero</td>
+<td style="text-align: left;">0xAAAAAAAA</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">$t7 := 0x10000000 (ori)</td>
+<td style="text-align: left;">$t7 = rF</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">28</td>
+<td style="text-align: left;">sw $t1, 8($zero)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0x20</td>
+<td style="text-align: left;">andi $t5, $t3, 0xFFFF</td>
+<td style="text-align: left;">0x0000AAAA</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">$t2 := 0x0000000B (addi)</td>
+<td style="text-align: left;">$t2 = rA</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2C</td>
+<td style="text-align: left;">lw $t0, 8($zero)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0x24</td>
+<td style="text-align: left;">sub $t6, $t2, $t1</td>
+<td style="text-align: left;">0x00000001</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">$t4 := 0xAAAAAAAA (or)</td>
+<td style="text-align: left;">$t4 = rC</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">30</td>
+<td style="text-align: left;">and $t7, $t0, $t2</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0x28</td>
+<td style="text-align: left;">sw $t1, 8($zero)</td>
+<td style="text-align: left;">0x00000008</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">$t5 := 0x0000AAAA (andi)</td>
+<td style="text-align: left;">$t5 = rD</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">34</td>
+<td style="text-align: left;">slti $t7, $t1, 0xFFFF</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0x2C</td>
+<td style="text-align: left;">lw $t0, 8($zero)</td>
+<td style="text-align: left;">0x00000008</td>
+<td style="text-align: left;">M(8) := 0x0000000A (sw)</td>
+<td style="text-align: left;">$t6 := 0x00000001 (sub)</td>
+<td style="text-align: left;">$t6 = rE</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">38</td>
+<td style="text-align: left;">slt $t0, $t1, $t2</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0x30</td>
+<td style="text-align: left;">and $t7, $t0, $t2</td>
+<td style="text-align: left;"><font style="color:red">0x00000000</font></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">— (sw)</td>
+<td style="text-align: left;"><font style="color:red">HAZARD: Use after Load: $t0=0</font></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><font style="color:red"><strong>3C</strong></font></td>
+<td style="text-align: left;">add $t1, $t1, $t6</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0x34</td>
+<td style="text-align: left;">slti $t7, $t1, 0xFFFF</td>
+<td style="text-align: left;">0x00000000</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">$t0 := 0x0000000A (lw)</td>
+<td style="text-align: left;"><strong>Destino do BEQ</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">40</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0x38</td>
+<td style="text-align: left;">slt $t0, $t1, $t2</td>
+<td style="text-align: left;">0x00000001</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">$t7 := 0x00000000 (and)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">44</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0x3C</td>
+<td style="text-align: left;">add $t1, $t1, $t6</td>
+<td style="text-align: left;">0x0000000B</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">$t7 := 0x00000000 (slti)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">48</td>
+<td style="text-align: left;">beq $t1, $t2, FFFC (<font style="color:red"><strong>3C</strong></font>)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0x40</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">$t0 := 0x00000001 (slt)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4C</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0x44</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">$t1 := 0x0000000B (add)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">50</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0x48</td>
+<td style="text-align: left;">beq $t1, $t2, FFFC (<font style="color:red"><strong>3C</strong></font>)</td>
+<td style="text-align: left;">0x00000000</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">— (nop)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">54</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0x4C</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;"><strong>BEQ (PC=3C)</strong></td>
+<td style="text-align: left;">— (nop)</td>
+<td style="text-align: left;">Executa o desvio do BEQ na Etapa 4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3C</td>
+<td style="text-align: left;">add $t1, $t1, $t6</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0x50</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">— (beq)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">40</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0x54</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">— (nop)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">44</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0x3C</td>
+<td style="text-align: left;">add $t1, $t1, $t6</td>
+<td style="text-align: left;">0x0000000C</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">— (nop)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">48</td>
+<td style="text-align: left;">beq $t1, $t2, FFFC (<font style="color:red"><strong>3C</strong></font>)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0x40</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">— (nop)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">4C</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0x44</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">$t1 := 0x0000000C (add)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">50</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0x48</td>
+<td style="text-align: left;">beq $t1, $t2, FFFC (<font style="color:red"><strong>3C</strong></font>)</td>
+<td style="text-align: left;">0x00000001</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">— (nop)</td>
+<td style="text-align: left;">BEQ não desvia</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">54</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0x4C</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">— (nop)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">58</td>
+<td style="text-align: left;">jal 0x0020</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0x50</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">— (beq)</td>
+<td style="text-align: left;">Destino do JAL: 0x80</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5C</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: center;"><strong>jal (PC=80)</strong></td>
+<td style="text-align: center;">0x54</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">— (nop)</td>
+<td style="text-align: left;">Executa o desvio do JAL na Etapa 2</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">80</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0x58</td>
+<td style="text-align: left;">jal 0x0020</td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">— (nop)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">84</td>
+<td style="text-align: left;">jr $ra</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0x5C</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">— (nop)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">88</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: center;"><strong>jr (PC=R31=5C)</strong></td>
+<td style="text-align: center;">0x80</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">R31 := PC+4 = 0x5C (jal)</td>
+<td style="text-align: left;">Executa o desvio do JR na Etapa 2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5C</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0x84</td>
+<td style="text-align: left;">jr $ra</td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">— (nop)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">60</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0x88</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">— (nop)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">64</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0x5C</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">— (jr)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">68</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0x60</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">— (nop)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">6C</td>
+<td style="text-align: left;">bne $t0, $t5, 0008 (<font style="color:red"><strong>90</strong></font>)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0x64</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">— (nop)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">70</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0x68</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">— (nop)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">74</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0x6C</td>
+<td style="text-align: left;">bne $t0, $t5, 0008 (<font style="color:red"><strong>90</strong></font>)</td>
+<td style="text-align: left;">0xFFFF5557</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">— (nop)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">78</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0x70</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;"><strong>BNE (PC=90)</strong></td>
+<td style="text-align: left;">— (nop)</td>
+<td style="text-align: left;">Executa o desvio do BNE na Etapa 4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">90</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0x74</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">— (bne)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">94</td>
+<td style="text-align: left;">j 0024 (<font style="color:red"><strong>90</strong></font>)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0x78</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">— (nop)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">98</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: center;"><strong>J (PC=90)</strong></td>
+<td style="text-align: center;">0x90</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">— (nop)</td>
+<td style="text-align: left;">Executa o desvio do J na Etapa 2</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">90</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0x94</td>
+<td style="text-align: left;">j 0024</td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">— (nop)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">94</td>
+<td style="text-align: left;">j 0024 (<font style="color:red"><strong>90</strong></font>)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0x98</td>
+<td style="text-align: left;">nop</td>
+<td style="text-align: left;">0xXXXXXXXX</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">— (nop)</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>Para monitorar o PC (na etapa de busca), o PC (na etapa de execução), a saída da ULA e o que será escrito no banco de registradores, utilizaremos um MUX que alimenta os seis displays de sete segmentos existentes na placa, como mostrado abaixo.</p>
+<figure>
+<img src="../imagensMIPS/fluxoDadosCompleto-Pipeline-Final-Display.svg" alt="Circuito Utilizado para a Verificação do Funcionamento do Pipeline" style="width:800px;max-width:100%;" /><figcaption><strong>Circuito Utilizado para a Verificação do Funcionamento do Pipeline</strong></figcaption>
+</figure>
+</div>
+<!--- class_panel --->
+</div>
+<!--- class_panelNested --->
+<hr />
+<p><br></p>
+<hr />
+<hr />
+<!-- FIM -->
+<script type="text/javascript" src="../js/acordeon.js"></script>
+<!---
+######### (inicio dos links) ##########
+--->
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html><!--
+     Fall 2014
+     CSCI 320 - Computer Architecture
+     Help webpage of the MIPS Conversion
+     Bucknell University 2014. GNU General Public Licensing.
+      Developed for CSCI 206 & 320 by Tiago Bozzetti, Ellie Easse & Chau Tieu.
+    --><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/instructioninfo.js"></script>
+    <script src="../js/helper.js"></script>
+    <script src="../js/mipstohex.js"></script>
+    <script src="../js/hextomips.js"></script>
+    <title>MIPS Support</title>
+  <style>@media print {#ghostery-purple-box {display:none !important}}</style><style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style></head>
+
+  <body>
+        <!-- Navigation icons -->
+      <div id="nav">
+            <a href="../MIPSConverter.html"><img src="home.png" width="50px"></a> <br>
+            <a href="MIPSSupport.html"><img src="help.png" width="50px"></a>
+       </div>
+       <div id="wrapper">
+          <br><br><br>
+
+          <header>
+                MIPS Converter
+          </header>
+
+          <div id="body">
+                <article>
+                    <!-- Support section -->
+                    <section class="supportbox">
+                        <p align="center"> </p><h2 id="box_header">Supported:</h2>
+                        <button type="button" id="convert" value="Registers" onclick="displaySupportedReg()">Registers</button>
+                        <button type="button" id="convert" value="Instructions" onclick="displaySupportedInst()">Instructions</button>
+                        <p></p>
+                    </section>
+
+                    <!-- Result section -->
+                    <div id="info">
+                    <p id="instructions"></p>
+                    <p id="registers"></p>
+                    </div>
+
+                    <div id="format">
+                        </div>
+                </article>
+        </div>
+
+       <footer>
+       </footer>
+
+
+</div></body></html>

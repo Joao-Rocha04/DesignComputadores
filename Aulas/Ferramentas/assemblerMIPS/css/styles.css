@@ -1,0 +1,233 @@
+/**
+ * Fall 2014
+ * CSCI 320 - Computer Architecture
+ * Tiago Bozzetti, Ellie Easse and Chau Tieu
+ *
+ * Contains all the styling for the main and help pages
+ */
+
+@charset "utf-8";
+
+header {
+    color:#20AAD2;
+    font-family:helvetica;
+    letter-spacing:2px;
+    font-size:66px;
+    text-align:center;
+    font-weight:bold;
+    padding:5px;	 
+}
+
+#nav {
+    padding-left:0px;
+    top:0;
+    left:0;
+    position:fixed;
+}
+
+section {
+    padding:10px;	 	 
+}
+
+footer {
+    background-color:white;
+    color:black;
+    font-family:helvetica;
+    clear:both;
+    text-align:center;
+    padding:5px;	 
+    font-size:11px;	 
+}
+
+
+/* DIV Styles*/
+#wrapper {
+    width: 800px;     
+    margin: 0 auto;
+}
+
+#body {
+    border:0px solid red;
+    margin: 0 auto;
+    padding:42px;
+    font-family:helvetica;
+    font-size:12px;
+    letter-spacing:1px;
+}
+
+
+/* Sections Formatting*/
+.itoh
+{
+    background-color:#20AAD2;
+    display:inline-block;
+    width:300px;
+    float:left;
+    border:3px solid #20AAD2;
+    text-align:center;
+    border-radius: 20px;
+}
+
+.htoi
+{
+    background-color:#20AAD2;
+    display:inline-block;
+    width:300px;
+    float:right;
+    border:3px solid #20AAD2;
+    text-align:center;
+    border-radius: 20px;
+} 
+
+.result 
+{
+    width:703px;
+    font-color:#000000;
+    border:0px solid black;
+    display:inline-block;
+    margin-top:20px;
+    border-radius: 20px;
+}
+
+.supportbox
+{
+    background-color:#20AAD2;
+    width:300px;
+    border:3px solid #20AAD2;
+    text-align:center;
+    border-radius: 20px;
+    margin: 0 auto;
+} 
+
+
+/* Instruction information Section */
+#info 
+{
+    width:auto;
+    background-color:#ffffff;
+    margin-top: 10px;
+    padding: 10px;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 11px;
+}
+
+#format 
+{
+    width:auto;
+    background-color:#ffffff;
+    margin-top: 10px;
+    padding: 10px;
+    border-bottom: 3px solid #20AAD2;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 11px;
+}
+
+
+/* Headers Styles */
+#box_header {
+    font-size:24px;
+    color:white;
+    background-color: #20AAD2;
+    width:100%;
+}
+
+#box {
+    font-size:24px;
+    color:white;
+    background-color: #20AAD2;
+    width:100%;
+}
+
+#description {
+    font-family:arial;
+    font-size:10px;
+    letter-spacing:1px;
+}
+
+#result_title {
+    text-align:center;
+    font-family:arial;
+    font-size:24px;
+    letter-spacing:1px;
+}
+
+
+/* Inputs Box Styles*/
+input[type="text"] {
+    display: block;
+    margin: 0;
+    width: 100%;
+    font-family: sans-serif;
+    font-size: 18px;
+    appearance: none;
+    box-shadow: none;
+    border-radius: none;
+}
+
+input[type="text"]:focus {
+    outline: none;
+}
+
+
+/* Button Properties*/
+#convert{
+    height: 30px;
+    background-color: white;
+    font-family:helvetica;
+    letter-spacing:2px;
+    margin-top:5px;
+    border:0px;
+    color: black;
+    text-align:center;
+}
+
+#convert:hover
+{
+    -webkit-box-shadow: 0 0 1px rgba(0,0,0, .75);
+    -moz-box-shadow: 0 0 1px rgba(0,0,0, .75);
+    background-color: #000;
+    color: white; /* SET COLOR IN BLACK */
+}
+
+
+/* Table Properties */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    text-align:center;
+    margin: 0 auto; /* center */
+    border:0px solid black; 
+    border-radius: 20px;
+}
+
+td {
+    width:auto;
+}
+
+th {
+    border-bottom:3px solid #20AAD2;
+    width:140px;
+}
+
+.toprow {
+    border-bottom: 1px solid black;
+}
+
+.bottomrow {
+    border-top:1px solid black;
+}
+
+
+/* Link Properties*/
+a:link, a:active, a:visited { 
+    padding:5px;
+}
+
+a:hover {
+    text-decoration: none; 
+}
+
+img:hover {
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+}

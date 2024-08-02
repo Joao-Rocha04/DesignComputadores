@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width; initial-scale=1.0">
+<link rel="shortcut icon" href="favicon.ico" />
+<style>body{padding:0;margin:0;background-color:#EAEBE7;color:#111;text-align:center;margin-top:10px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;font-size:110%;line-height:1.6em;}pre{background-color:#fffff0;overflow:auto;border-radius:5px;-webkit-border-radius:5px;border:1px solid #ddd;padding:10px;}#container{margin:10px auto;max-width:990px;color:#111;text-align:left;background:inherit}#header{width:99%;padding:1px;margin-top:1px;text-align:center;background:inherit}#content{width:97%;padding:15px;background-color:#fff;color:#111;box-shadow:0 1px 2px rgba(0, 0, 0, 0.3);}.addiv{margin:15px 0;text-align:center;}.halfdiv{width:50%;float:left;display:inline-block;}label{display:block;margin:2px;}#loading p{margin:0;color:#777;font-size:14px;}.social{margin:5px 0}.share-on-twitter{background:#41B7D8}.share-on-facebook{background:#3B5997}.share-on-googleplus{background:#D64937}.social a:hover{color:#fff;text-shadow:none}.social .button{color:#fff;padding:4px 6px;border-radius:4px;font-size:75%;margin-right:4px;text-shadow:0 1px 2px #333}.social .scount{border:1px solid #aaa;margin-right:4px;padding:7px 4px;font-size:85%;background-color:#f5f5f5;color:#555}.tablo{border-collapse:collapse;margin:1px;vertical-align:top}.tablo th{background-color:#2c8bbb;padding:3px;color:#fff;text-align:center;border:solid 1px #ccc}.tablo td{padding:3px;text-align:center;border:solid 1px #ccc;}#footer{font-size:.8em;color:#555;padding:1px;margin-top:10px;text-align:center}#baseresult{background-color:#FAFAFA;color:#5F8718;border: 1px solid #DDDDDD;line-height: 27px;border-radius:5px;-webkit-border-radius:5px;margin-bottom: 15px;min-height: 34px;padding: 10px;text-align: center;font-size:1.25em;}h1{color:#111;font-size:1.6em;margin:7px 2px}h3{margin:15px 0 10px 0}p{margin:10px 0;}a{color:#06c;text-decoration:none}a:hover{color:#111;}#content form{background-color:#F0F8DA;padding:10px;border:1px solid #BFCB9C;border-radius:5px;-webkit-border-radius:5px;} ul{margin:2px 0 5px 5px;padding-left:12px;}li{list-style-type:square;margin:2px 5px;}li a{pading:3px 0;}img{border:0}.date{color:#777;display:block;margin-bottom:10px;font-size:90%;}input,button,textarea{font-family:"Courier New", Courier, monospace;font-size:16px;;padding:5px;border:1px solid #8E996D;border-radius: 5px;-webkit-border-radius: 5px;} textarea{font-size:1em;padding:4px;margin:2px 5px;width:95%;} input[type="button"]{background:#7dbd2a;margin:2px 5px;background-image:-webkit-linear-gradient(top,#7dbd2a,#7e961c);background-image:-moz-linear-gradient(top,#7dbd2a,#7e961c);background-image:-ms-linear-gradient(top,#7dbd2a,#7e961c);background-image:-o-linear-gradient(top,#7dbd2a,#7e961c);background-image:linear-gradient(to bottom,#7dbd2a,#7e961c);-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;color:#fff;padding:7px 15px 7px 15px;text-decoration:none;border:1px solid #345109;}input[type="button"]:hover{background:#9bc930;text-decoration:none}.clear{clear:both}@media screen and (max-width:760px){#container{width:95%}}@media screen and (max-width:650px){#content{width:auto;float:none;margin:2px 0;padding:5px}h1{font-size:1.4em}.halfdiv{width:100% !important;}}@media screen and (max-width:480px){html{-webkit-text-size-adjust:none}.halfdiv{width:100% !important;}}</style>
+
+<title>Hexadecimal to Binary Converter</title>
+<meta name="description" content="Hexadecimal to binary converter helps you to calculate binary value from a hex number up to 16 characters length, and hex to bin conversion table." />
+</head>
+  <body>
+<div id="container">
+
+<div id="header">
+<a href="https://www.binaryhexconverter.com/" title="Home of binaryhexconverter.com">
+<img src="logo.png" alt="binary hex converter" width="120" height="40" /></a>
+</div>
+<div id="content">
+
+<h1>Hexadecimal to Binary Converter</h1>
+<p>
+    To use this <strong>hex to binary converter</strong> tool, just type a hex value like 1E into the left field below, and then hit the Convert button. 
+    Therefore, you can convert up to 16 hex characters (max. value of 7fffffffffffffff).
+</p>
+
+<form name="testForm">
+    <div class="halfdiv">
+        <label for="tabin">Hex Value (max. 7fffffffffffffff)</label>
+        <textarea name="tabin" cols="38" rows="2" id="tabin" title="Hex value that will converted to binary"></textarea>
+    </div>
+    <div class="halfdiv">
+        <label for="resulttxt">Binary Value</label>
+        <textarea name="resulttxt" cols="38" rows="2" id="resulttxt" title="Binary value converted from hex"></textarea>
+    </div>
+<!--    <input type="button" value="Convert" onclick="doWork('tabin', 'hex2bin');" title="Convert hex to binary" /> -->
+<!-- funcionou: -->
+    <input type="button" value="Convert" onclick="HexBin(tabin);" title="Convert hex to binary" />  
+    
+    <label for="padding" style="display:inline-block;"><input type="checkbox" name="padding" id="padding" checked />Padding</label>
+   <div id="loading" style="display:none;">
+<p>Calculating please wait...</p>
+</div>
+</form>
+
+<h3>Hex to binary conversion result in base numbers</h3>
+
+<div id="baseresult">
+
+</div>
+
+<!-- Hide -->
+<button onclick="hide()">Esconder/Mostrar</button>
+<div id="myDIV" style.display="none" >
+
+<h2>Hex System</h2>
+<p>
+    <strong>Hex</strong>, or <em>hexadecimal</em>, is a number system of base 16. 
+This number system is especially interesting because in our casually used decimal system 
+we have only 10 digits to represent numbers. As hex system has 16 digits, 
+the extra needed 6 digits are represented by the first 6 letters of English alphabet. 
+Hence, <strong>hex</strong> digits are 0,1,2,3,4,5,6,7,8 and 9 A, B, C, D, E, F. 
+This number system is the most commonly used in mathematics and information technologies. 
+I.e. in html programming colors can be represented by a 6-digit <em>hexadecimal number</em>: FFFFFF represents white, 
+000000 represents black, and so on.
+</p>
+
+<h2>Binary System</h2>
+<p><strong>The binary numeral system</strong> uses the number 2 as its base (radix). As a base-2 numeral system, it consists of only two numbers: 0 and 1.</p>
+<p>While it has been applied in ancient Egypt, China and India for different purposes, the <strong>binary system</strong> has become the language of electronics and computers in the modern world. This is the most efficient system to detect an electric signal’s off (0) and on (1) state. It is also the basis for binary code that is used to compose data in computer-based machines. Even the digital text that you are reading right now consists of binary numbers.</p>
+<p>Reading a binary number is easier than it looks: This is a positional system; therefore, every digit in a binary number is raised to the powers of 2, starting from the rightmost with 2<sup>0</sup>. In the binary system, each binary digit refers to 1 bit.</p>
+<h3>How to Read a Binary Number</h3>
+<p>In order to convert binary to decimal, basic knowledge on how to read a binary number might help. As mentioned above, in the positional system of binary, each bit (binary digit) is a power of 2. This means that every binary number could be represented as powers of 2, with the rightmost one being in the position of 2<sub>0</sub></p>
+<p>Example: The binary number (1010)<sub>2</sub> can also be written as follows:</p>
+<p>(1 * 2<sup>3</sup>) + (0 * 2<sup>2</sup>) + (1 * 2<sup>1</sup>) + (0 * 2<sup>0</sup>)</p>
+
+
+
+
+<div class="halfdiv">
+<h4>Hex to binary conversion examples</h4>
+<ul>
+<li>(1E3)<sub>16</sub> = (0001 1110 0011)<sub>2</sub></li> 
+<li>(0A2B)<sub>16</sub> = (0000 1010 0010 1011)<sub>2</sub></li>
+<li>(7E0C)<sub>16</sub> = (0111 1110 0000 1100)<sub>2</sub></li>
+</ul>
+<br />
+<p>Related converters: <a href="binary-to-hex-converter" title="Binary To Hex Converter">Binary To Hex Converter</a></p>
+
+</div> <!-- halfdiv -->
+
+<div class="halfdiv">
+<h4>Hexadecimal to Binary Conversion Chart</h4>
+
+<table class="tablo">
+<tr>
+<th>Hexadecimal</th><th>Binary</th>
+</tr>
+<tr>
+<td>0</td><td>0000</td></tr>
+<tr>
+<td>1</td><td>0001</td></tr>
+<tr>
+<td>2</td><td>0010</td></tr>
+<tr>
+<td>3</td><td>0011</td></tr>
+<tr>
+<td>4</td><td>0100</td></tr>
+<tr>
+<td>5</td><td>0101</td></tr>
+<tr>
+<td>6</td><td>0110</td></tr>
+<tr>
+<td>7</td><td>0111</td></tr>
+<tr>
+<td>8</td><td>1000</td></tr>
+<tr>
+<td>9</td><td>1001</td></tr>
+<tr>
+<td>A</td><td>1010</td></tr>
+<tr>
+<td>B</td><td>1011</td></tr>
+<tr>
+<td>C</td><td>1100</td></tr>
+<tr>
+<td>D</td><td>1101</td></tr>
+<tr>
+<td>E</td><td>1110</td></tr>
+<tr>
+<td>F</td><td>1111</td></tr>
+</table>
+</div>  <!-- halfdiv -->
+
+</div> <!-- Hide -->
+
+
+<script type="text/javascript">
+function HexBin(number){
+  //alert (number);
+  //alert (number.value);
+  var fromBase = 16;
+  var toBase = 2;
+  var numberInDecimal = parseInt(number.value, fromBase);
+  var saida = (parseInt(numberInDecimal)).toString(toBase);
+  var organizado="";
+  var total = (saida.length)%4 + 1;
+  var resto = (saida.length)%4;
+  if ((saida.length)%4 != 0){
+//    alert("Comprimento: "+ saida.length + "\nnao eh multiplo de 4\nTotal= "+total);
+    for (i=0; i < (4-resto); i++) {
+      organizado += "0";
+    }
+  }
+  for (i=0; i < saida.length; i++) {
+//    alert("Posicao["+ i +"] = " + saida[i]);
+    if ((saida.length-i)%4 == 0){      
+      organizado += " " + saida[i];
+    } else {
+      organizado +=  saida[i];
+    }
+  };
+//  alert (organizado);
+  document.getElementById("resulttxt").value = organizado;
+  document.getElementById("baseresult").innerHTML = "(" + number.value + ")<sub>16</sub>  =  (" + organizado + ")<sub>2</sub>";
+}
+function hide() {
+  var x = document.getElementById("myDIV");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+<div class="clear"></div>
+</div>
+    </div>
+<br />
+  </body>
+</html>
+

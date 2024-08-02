@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Design de Computadores</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <style>
+  /* fundo para o trecho de código */
+  div.sourceCode { overflow-x: auto; background-color: rgb(245,245,245);}  /*rgb(250,250,250)*/
+  body {font-family: "Lato", sans-serif;}
+  
+  /* Para dividir a pagina em duas colunas */
+   .column {
+    float: left;
+    width:49%;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Inicio do menu tipo acordeon */
+  .accordion{
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+    font-weight: bold;
+  }
+  .active, .accordion:hover {
+    background-color: #a4b8b6;
+  }
+  .panel {
+    /*Versao anterior do accordion usa  max-height: 0 para fazer a transition e nao aceita aninhamento de acordeon*/
+    padding: 0 10px;
+    background-color: #f9f9f9;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    margin-left: 0%;
+  }
+  .panel p {
+    margin-left: 1%;
+  }
+  /*Inicio do Acordeon Aninhado*/
+  button.accordionNested{
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  .activeNested, .accordionNested:hover {
+    background-color: #a4b8b6;
+  }
+  .panelNested {
+    /*Aceita aninhamento mas nao faz transition*/
+    padding: 0 10px;
+    background-color: #f9f9f9;
+    display: none;
+    overflow: hidden;
+    margin-left: 0%;
+  }
+  .panelNested p {
+    margin-left: 1%;
+  }
+  /*Inicio do Segundo Acordeon Aninhado*/
+  button.accordionNestedTwo{
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  .activeNestedTwo, .accordionNestedTwo:hover {
+    background-color: #a4b8b6;
+  }
+  .panelNestedTwo {
+    /*Aceita aninhamento mas nao faz transition*/
+    padding: 0 10px;
+    background-color: #f9f9f9;
+    display: none;
+    overflow: hidden;
+    margin-left: 0%;
+  }
+  .panelNestedTwo p {
+    margin-left: 1%;
+  }
+  /* Fim do menu tipo acordeon */
+  
+  .bloco .title {
+      display: block;
+  }
+  
+  /*Bloco de solucao de exercicio*/
+  .bloco .label,
+  .bloco .separator {
+      font-weight: bold;
+  }
+  
+  .bloco .separator {
+      margin-right: .6em;
+  /*    margin-left: .6em;  */
+  }
+  /* Solução */
+  div.solucao {
+    border-left: .3em solid #dd4444;   /*#dc3c01; */
+    margin-left: -.8em;
+    padding-left: .4em;
+    position: relative;
+    font-size: 90%;
+  }
+  
+  div.solucao .conteudo {
+    display: none;
+    padding-top: 1px;
+  }
+  
+  div.solucao button {
+    color: #0000AF;
+    background-color: white;
+    border-radius: 5px;
+  }
+  
+  div.solucao button.viewed {
+    color: #FF2020;
+    background-color: white;
+    border-radius: 5px;
+  }
+  
+  div.exemplo {
+    /*background-color: lightgray;*/
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  
+  div.exemplo .sourceCode  {
+    /*background-color: lightgray;*/
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+  
+  div.adicional {
+    margin-left: 1%;
+  }
+  /* Alinhamento dos títulos e parágrafos */
+  
+  body{margin-left: 5%; margin-right: 5%;
+           color: black; background-color: #f9f9f9;}
+  
+  hr{
+      margin-left: -4%;
+      background-color: rgb(0,150,150);  /*anterior:    240,240,240 */
+  }
+  h1{
+      margin-left: -4%;
+      /*background-color: rgb(210,210,220);*/
+  }
+  
+  h2{
+      margin-left: -4%;
+      /*background-color: rgb(220,220,230);*/
+  }
+  
+  h3{
+      margin-left: 0%;  /*-4%;*/
+      /*background-color: rgb(230,230,240);*/
+  }
+  
+  h4{
+      margin-left: 0%;  /*-4%;*/
+      /*background-color: rgb(240,240,250);*/
+  }
+  h5{
+      margin-left: 0%;  /*-4%;*/
+      /*background-color: rgb(245,245,250);*/
+  }
+  
+  /* Cores */
+  i{color: red}
+  em{color: green}
+  cite{color: brown}
+  /* blockquote > p { */
+  blockquote{color: red}
+  blockquote p {
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 2em;
+  }
+  
+  /* ---- Front Matter ----
+  Pandoc header DIV. Contains .title, .author and .date. Comes before div#TOC.
+  Only appears if one of those three are in the document.   */
+  
+  div#header, header
+      {
+      /* Put border on bottom. Separates it from TOC or body that comes after it. */
+      border-bottom: 1px solid #aaa;
+      margin-bottom: 0.5em;
+      }
+  
+  .title /* Pandoc title header (h1.title) */
+      {
+      text-align: center;
+      }
+  
+  .author, .date /* Pandoc author(s) and date headers (h2.author and h3.date) */
+      {
+      text-align: center;
+      }
+  
+  /* Pandoc table of contents DIV when using the --toc option.
+     NOTE: this doesn't support Pandoc's --id-prefix option for #TOC and #header.
+     Probably would need to use div[id$='TOC'] and div[id$='header'] as selectors.
+  */
+  
+  div#TOC, nav#TOC
+      {
+      /* Put border on bottom to separate it from body. */
+  /*    border-bottom: 1px solid #aaa;   */
+      margin-bottom: 0.5em;
+      }
+  
+  @media print
+      {
+      div#TOC, nav#TOC
+          {
+          /* Don't display TOC in print */
+          display: none;
+          }
+      }
+  /* ---- Images ---- */
+  img {
+      /* Let it be inline left/right where it wants to be, but verticality make
+         it in the middle to look nicer, but opinions differ, and if in a multi-line
+         paragraph, it might not be so great.
+         vertical-align: middle;
+      */
+      vertical-align: middle;
+      max-width: 600px;
+      height:auto;
+      }
+  div.figure /* Pandoc figure-style image */
+      {
+      /* Center the image and caption */
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      font-style: italic;
+      max-width: 600px;
+      height:auto;
+      }
+  p.caption /* Pandoc figure-style caption within div.figure */
+      {
+      /* Inherits div.figure props by default */
+      }
+  /* ---- Tables ---- */
+  table {
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 24px;
+      border-spacing: 0;
+      border-bottom: 2px solid black;
+      border-top: 2px solid black;
+  }
+  table th {
+      padding: 3px 10px;
+      background-color: white;
+      border-top: 1px;
+      border-left: 1px;
+      border-right: 1px;
+      border-bottom: 1px solid black;
+  }
+  table td {
+      padding: 3px 10px;
+      border-top: 1px;
+      border-left: 1px;
+      border-bottom: 1px;
+      border-right: 1px;
+  }
+  /* fundo para as linhas das tabelas */
+  tr.even{
+    background-color: rgb(230,230,240);
+  }
+  tr.odd{
+    background-color: rgb(250,250,250);
+  }
+  </style>
+  
+  
+  <script type="text/javascript">
+      function exibe(e)
+      {
+          var div = e.parentNode.firstElementChild;
+          var nome = e.parentNode.id;
+          var tipo=nome.substring(0, 3).toUpperCase()
+          switch (tipo) {
+            case "SOL":
+                nome = "Solução";
+                break;
+            case "COD":
+                nome = "Código";
+                break;
+            case "DIC":
+                nome = "Dica";
+                break;
+            case "DIA":
+                nome = "Diagrama";
+                break;
+            case "RES":
+                nome = "Resumo";
+                break;
+            case "CON":
+                nome = "Conteúdo";
+                break;
+            default:
+                nome = "";
+            }
+  
+          if (div.style.display == "" || div.style.display == "none") {
+              div.style.display = "block";
+              e.setAttribute("class", "viewed");
+              e.innerHTML = "Esconder ";
+          } else {
+              div.style.display = "none";
+              e.innerHTML = "Exibir "+nome;
+          }
+      }
+      function validaBinario(nome) {
+          var valor, tamanho, i;
+          document.getElementById(nome).style.color = "black";
+          valor = document.getElementById(nome).value;
+          tamanho=valor.length;
+          for (i=0;i<tamanho; i=i+1){
+              if ( valor[i] != 1 && valor[i] != 0 ){
+                  document.getElementById(nome).style.color = "red";
+              }
+          }
+      }
+  </script>
+</head>
+<body>
+<p><strong>Execução do programa Pipeline A + B:</strong></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode asm"><code class="sourceCode fasm"><a class="sourceLine" id="cb1-1" title="1">-- Carga para instruções do grupo A e B pipeline:</a>
+<a class="sourceLine" id="cb1-2" title="2"></a>
+<a class="sourceLine" id="cb1-3" title="3">(ROM)   ADDR | Instrução</a>
+<a class="sourceLine" id="cb1-4" title="4"></a>
+<a class="sourceLine" id="cb1-5" title="5">(<span class="dv">00</span>)<span class="bn">    0x00 </span>| sw <span class="dv">$</span>t1 <span class="dv">8</span>(<span class="dv">$</span>zero)</a>
+<a class="sourceLine" id="cb1-6" title="6">(<span class="dv">01</span>)<span class="bn">    0x04 </span>| lw <span class="dv">$</span>t0 <span class="dv">8</span>(<span class="dv">$</span>zero)</a>
+<a class="sourceLine" id="cb1-7" title="7">(<span class="dv">02</span>)<span class="bn">    0x08 </span>| <span class="bu">sub</span> <span class="dv">$</span>t0 <span class="dv">$</span>t1 <span class="dv">$</span>t2</a>
+<a class="sourceLine" id="cb1-8" title="8">(<span class="dv">03</span>)<span class="bn">    0x0C </span>| <span class="bu">and</span> <span class="dv">$</span>t0 <span class="dv">$</span>t1 <span class="dv">$</span>t2</a>
+<a class="sourceLine" id="cb1-9" title="9">(<span class="dv">04</span>)<span class="bn">    0x10 </span>| <span class="bu">or</span> <span class="dv">$</span>t0 <span class="dv">$</span>t1 <span class="dv">$</span>t2</a>
+<a class="sourceLine" id="cb1-10" title="10">(<span class="dv">05</span>)<span class="bn">    0x14 </span>| lui <span class="dv">$</span>x <span class="dv">$</span>t0 <span class="bn">0xFFFF</span></a>
+<a class="sourceLine" id="cb1-11" title="11">(<span class="dv">06</span>)<span class="bn">    0x18 </span>| addi <span class="dv">$</span>t0 <span class="dv">$</span>t1<span class="bn"> 0x000A</span></a>
+<a class="sourceLine" id="cb1-12" title="12">(<span class="dv">07</span>)<span class="bn">    0x1C </span>| andi <span class="dv">$</span>t0 <span class="dv">$</span>t0<span class="bn"> 0x0013</span></a>
+<a class="sourceLine" id="cb1-13" title="13">(<span class="dv">08</span>)<span class="bn">    0x20 </span>| ori <span class="dv">$</span>t0 <span class="dv">$</span>t4<span class="bn"> 0x0007</span></a>
+<a class="sourceLine" id="cb1-14" title="14">(<span class="dv">09</span>)<span class="bn">    0x24 </span>| slti <span class="dv">$</span>t0 <span class="dv">$</span>t1 <span class="bn">0xFFFF</span></a>
+<a class="sourceLine" id="cb1-15" title="15">(<span class="dv">10</span>)<span class="bn">    0x28 </span>| slt <span class="dv">$</span>t0 <span class="dv">$</span>t1 <span class="dv">$</span>t2</a>
+<a class="sourceLine" id="cb1-16" title="16">(<span class="dv">11</span>)<span class="bn">    0x2C </span>| <span class="bu">add</span> <span class="dv">$</span>t0 <span class="dv">$</span>t0 <span class="dv">$</span>t2</a>
+<a class="sourceLine" id="cb1-17" title="17">(<span class="dv">12</span>)<span class="bn">    0x30 </span>| beq <span class="dv">$</span>t0 <span class="dv">$</span>t3 <span class="bn">0xFFFE</span></a>
+<a class="sourceLine" id="cb1-18" title="18">(<span class="dv">13</span>)<span class="bn">    0x34 </span>| j<span class="bn"> 0x000010          </span>(pc := #<span class="dv">16</span> = addr <span class="bn">0x40</span>)</a>
+<a class="sourceLine" id="cb1-19" title="19">(<span class="dv">14</span>)<span class="bn">    0x38 </span>| <span class="bu">nop</span></a>
+<a class="sourceLine" id="cb1-20" title="20">(<span class="dv">15</span>)<span class="bn">    0x3C </span>| <span class="bu">nop</span></a>
+<a class="sourceLine" id="cb1-21" title="21">(<span class="dv">16</span>)<span class="bn">    0x40 </span>| sw <span class="dv">$</span>t1 <span class="dv">8</span>(<span class="dv">$</span>zero)</a>
+<a class="sourceLine" id="cb1-22" title="22">(<span class="dv">17</span>)<span class="bn">    0x44 </span>| lw <span class="dv">$</span>t0 <span class="dv">8</span>(<span class="dv">$</span>zero)</a>
+<a class="sourceLine" id="cb1-23" title="23">(<span class="dv">18</span>)<span class="bn">    0x48 </span>| <span class="bu">sub</span> <span class="dv">$</span>t0 <span class="dv">$</span>t1 <span class="dv">$</span>t2</a>
+<a class="sourceLine" id="cb1-24" title="24">(<span class="dv">19</span>)<span class="bn">    0x4C </span>| <span class="bu">and</span> <span class="dv">$</span>t0 <span class="dv">$</span>t1 <span class="dv">$</span>t2</a>
+<a class="sourceLine" id="cb1-25" title="25">(<span class="dv">20</span>)<span class="bn">    0x50 </span>| <span class="bu">or</span> <span class="dv">$</span>t0 <span class="dv">$</span>t1 <span class="dv">$</span>t2</a>
+<a class="sourceLine" id="cb1-26" title="26">(<span class="dv">21</span>)<span class="bn">    0x54 </span>| lui <span class="dv">$</span>t0 <span class="bn">0xFFFF</span></a>
+<a class="sourceLine" id="cb1-27" title="27">(<span class="dv">22</span>)<span class="bn">    0x58 </span>| addi <span class="dv">$</span>t0 <span class="dv">$</span>t1<span class="bn"> 0x000A</span></a>
+<a class="sourceLine" id="cb1-28" title="28">(<span class="dv">23</span>)<span class="bn">    0x5C </span>| <span class="bu">nop</span></a>
+<a class="sourceLine" id="cb1-29" title="29">(<span class="dv">24</span>)<span class="bn">    0x60 </span>| <span class="bu">nop</span></a>
+<a class="sourceLine" id="cb1-30" title="30">(<span class="dv">25</span>)<span class="bn">    0x64 </span>| <span class="bu">nop</span></a>
+<a class="sourceLine" id="cb1-31" title="31">(<span class="dv">26</span>)<span class="bn">    0x68 </span>| andi <span class="dv">$</span>t0 <span class="dv">$</span>t0<span class="bn"> 0x0013</span></a>
+<a class="sourceLine" id="cb1-32" title="32">(<span class="dv">27</span>)<span class="bn">    0x6C </span>| ori <span class="dv">$</span>t0 <span class="dv">$</span>t4<span class="bn"> 0x0007</span></a>
+<a class="sourceLine" id="cb1-33" title="33">(<span class="dv">28</span>)<span class="bn">    0x70 </span>| slti <span class="dv">$</span>t0 <span class="dv">$</span>t1 <span class="bn">0xFFFF</span></a>
+<a class="sourceLine" id="cb1-34" title="34">(<span class="dv">29</span>)<span class="bn">    0x74 </span>| <span class="bu">nop</span></a>
+<a class="sourceLine" id="cb1-35" title="35">(<span class="dv">30</span>)<span class="bn">    0x78 </span>| <span class="bu">nop</span></a>
+<a class="sourceLine" id="cb1-36" title="36">(<span class="dv">31</span>)<span class="bn">    0x7C </span>| <span class="bu">nop</span></a>
+<a class="sourceLine" id="cb1-37" title="37">(<span class="dv">32</span>)<span class="bn">    0x80 </span>| <span class="bu">add</span> <span class="dv">$</span>t0 <span class="dv">$</span>t0 <span class="dv">$</span>t2</a>
+<a class="sourceLine" id="cb1-38" title="38">(<span class="dv">33</span>)<span class="bn">    0x84 </span>| <span class="bu">nop</span></a>
+<a class="sourceLine" id="cb1-39" title="39">(<span class="dv">34</span>)<span class="bn">    0x88 </span>| <span class="bu">nop</span></a>
+<a class="sourceLine" id="cb1-40" title="40">(<span class="dv">35</span>)<span class="bn">    0x8C </span>| <span class="bu">nop</span></a>
+<a class="sourceLine" id="cb1-41" title="41">(<span class="dv">36</span>)<span class="bn">    0x90 </span>| bne <span class="dv">$</span>t0 <span class="dv">$</span>t5 <span class="bn">0xFFFB</span>         (pc := #<span class="dv">32</span>)</a>
+<a class="sourceLine" id="cb1-42" title="42">(<span class="dv">37</span>)<span class="bn">    0x94 </span>| <span class="bu">nop</span></a>
+<a class="sourceLine" id="cb1-43" title="43">(<span class="dv">38</span>)<span class="bn">    0x98 </span>| <span class="bu">nop</span></a>
+<a class="sourceLine" id="cb1-44" title="44">(<span class="dv">39</span>)<span class="bn">    0x9C </span>| <span class="bu">nop</span></a>
+<a class="sourceLine" id="cb1-45" title="45">(<span class="dv">40</span>)    <span class="bn">0xA0</span> | slt <span class="dv">$</span>t0 <span class="dv">$</span>t1 <span class="dv">$</span>t2</a>
+<a class="sourceLine" id="cb1-46" title="46">(<span class="dv">41</span>)    <span class="bn">0xA4</span> | <span class="bu">nop</span></a>
+<a class="sourceLine" id="cb1-47" title="47">(<span class="dv">42</span>)    <span class="bn">0xA8</span> | <span class="bu">nop</span></a>
+<a class="sourceLine" id="cb1-48" title="48">(<span class="dv">43</span>)    <span class="bn">0xAC</span> | <span class="bu">nop</span></a>
+<a class="sourceLine" id="cb1-49" title="49">(<span class="dv">44</span>)    <span class="bn">0xB0</span> | <span class="bu">add</span> <span class="dv">$</span>t0 <span class="dv">$</span>t0 <span class="dv">$</span>t2</a>
+<a class="sourceLine" id="cb1-50" title="50">(<span class="dv">45</span>)    <span class="bn">0xB4</span> | <span class="bu">nop</span></a>
+<a class="sourceLine" id="cb1-51" title="51">(<span class="dv">46</span>)    <span class="bn">0xB8</span> | <span class="bu">nop</span></a>
+<a class="sourceLine" id="cb1-52" title="52">(<span class="dv">47</span>)    <span class="bn">0xBC</span> | <span class="bu">nop</span></a>
+<a class="sourceLine" id="cb1-53" title="53">(<span class="dv">48</span>)    <span class="bn">0xC0</span> | beq <span class="dv">$</span>t0 <span class="dv">$</span>t3 <span class="bn">0xFFFB</span>         (pc := #<span class="dv">44</span>)</a>
+<a class="sourceLine" id="cb1-54" title="54">(<span class="dv">49</span>)    <span class="bn">0xC4</span> | <span class="bu">nop</span></a>
+<a class="sourceLine" id="cb1-55" title="55">(<span class="dv">50</span>)    <span class="bn">0xC8</span> | <span class="bu">nop</span></a>
+<a class="sourceLine" id="cb1-56" title="56">(<span class="dv">51</span>)    <span class="bn">0xCC</span> | <span class="bu">ja</span>l<span class="bn"> 0x00003A       </span>(pc := #<span class="dv">58</span>)</a>
+<a class="sourceLine" id="cb1-57" title="57">(<span class="dv">52</span>)    <span class="bn">0xD0</span> | <span class="bu">nop</span></a>
+<a class="sourceLine" id="cb1-58" title="58">(<span class="dv">53</span>)    <span class="bn">0xD4</span> | j<span class="bn"> 0x000000  </span>|      (pc := #<span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb1-59" title="59">(<span class="dv">54</span>)    <span class="bn">0xD8</span> | <span class="bu">nop</span></a>
+<a class="sourceLine" id="cb1-60" title="60">(<span class="dv">55</span>)    <span class="bn">0xDC</span> | <span class="bu">nop</span></a>
+<a class="sourceLine" id="cb1-61" title="61">(<span class="dv">56</span>)    <span class="bn">0xE0</span> | <span class="bu">nop</span></a>
+<a class="sourceLine" id="cb1-62" title="62">(<span class="dv">57</span>)    <span class="bn">0xE4</span> | <span class="bu">nop</span></a>
+<a class="sourceLine" id="cb1-63" title="63">(<span class="dv">58</span>)    <span class="bn">0xE8</span> | <span class="bu">nop</span></a>
+<a class="sourceLine" id="cb1-64" title="64">(<span class="dv">59</span>)    <span class="bn">0xEC</span> | <span class="bu">nop</span></a>
+<a class="sourceLine" id="cb1-65" title="65">(<span class="dv">60</span>)    <span class="bn">0xF0</span> | jr <span class="dv">$</span>ra   |   (pc := #<span class="dv">53</span>)</a></code></pre></div>
+</body>
+</html>

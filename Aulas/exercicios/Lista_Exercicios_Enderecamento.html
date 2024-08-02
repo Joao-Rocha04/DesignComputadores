@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Lista_Exercicios_Enderecamento</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style>
+  /* fundo para o trecho de código */
+  div.sourceCode { overflow-x: auto; background-color: rgb(245,245,245);}  /*rgb(250,250,250)*/
+  body {font-family: "Lato", sans-serif;}
+  
+  /* Para dividir a pagina em duas colunas */
+   .column {
+    float: left;
+    width:49%;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Inicio do menu tipo acordeon */
+  .accordion{
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+    font-weight: bold;
+  }
+  .active, .accordion:hover {
+    background-color: #a4b8b6;
+  }
+  .panel {
+    /*Versao anterior do accordion usa  max-height: 0 para fazer a transition e nao aceita aninhamento de acordeon*/
+    padding: 0 10px;
+    background-color: #f9f9f9;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    margin-left: 0%;
+  }
+  .panel p {
+    margin-left: 1%;
+  }
+  /*Inicio do Acordeon Aninhado*/
+  button.accordionNested{
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  .activeNested, .accordionNested:hover {
+    background-color: #a4b8b6;
+  }
+  .panelNested {
+    /*Aceita aninhamento mas nao faz transition*/
+    padding: 0 10px;
+    background-color: #f9f9f9;
+    display: none;
+    overflow: hidden;
+    margin-left: 0%;
+  }
+  .panelNested p {
+    margin-left: 1%;
+  }
+  /*Inicio do Segundo Acordeon Aninhado*/
+  button.accordionNestedTwo{
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  .activeNestedTwo, .accordionNestedTwo:hover {
+    background-color: #a4b8b6;
+  }
+  .panelNestedTwo {
+    /*Aceita aninhamento mas nao faz transition*/
+    padding: 0 10px;
+    background-color: #f9f9f9;
+    display: none;
+    overflow: hidden;
+    margin-left: 0%;
+  }
+  .panelNestedTwo p {
+    margin-left: 1%;
+  }
+  /* Fim do menu tipo acordeon */
+  
+  .bloco .title {
+      display: block;
+  }
+  
+  /*Bloco de solucao de exercicio*/
+  .bloco .label,
+  .bloco .separator {
+      font-weight: bold;
+  }
+  
+  .bloco .separator {
+      margin-right: .6em;
+  /*    margin-left: .6em;  */
+  }
+  
+  /* Quiz Participacao */
+  div.quiz {
+    padding: 1rem;
+    width: 600px;
+    box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11),
+      0 5px 15px 0 rgba(0,0,0,0.08);
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    border-left: 0 solid #00ff99;
+    font-weight:bold;
+    color:#bf360c;
+  }
+  
+  /* Solução */
+  div.solucao {
+    border-left: .3em solid #dd4444;   /*#dc3c01; */
+    margin-left: -.8em;
+    padding-left: .4em;
+    position: relative;
+    font-size: 90%;
+  }
+  
+  div.solucao .conteudo {
+    display: none;
+    padding-top: 1px;
+  }
+  
+  div.solucao button {
+    color: #0000AF;
+    background-color: white;
+    border-radius: 5px;
+  }
+  
+  div.solucao button.viewed {
+    color: #FF2020;
+    background-color: white;
+    border-radius: 5px;
+  }
+  
+  div.exemplo {
+    /*background-color: lightgray;*/
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  
+  div.exemplo .sourceCode  {
+    /*background-color: lightgray;*/
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+  
+  div.adicional {
+    margin-left: 1%;
+  }
+  /* Alinhamento dos títulos e parágrafos */
+  
+  body{margin-left: 5%; margin-right: 5%;
+           color: black; background-color: #f9f9f9;}
+  
+  hr{
+      margin-left: -4%;
+      background-color: rgb(0,150,150);  /*anterior:    240,240,240 */
+  }
+  h1{
+      margin-left: -4%;
+      /*background-color: rgb(210,210,220);*/
+  }
+  
+  h2{
+      margin-left: -4%;
+      /*background-color: rgb(220,220,230);*/
+  }
+  
+  h3{
+      margin-left: 0%;  /*-4%;*/
+      /*background-color: rgb(230,230,240);*/
+  }
+  
+  h4{
+      margin-left: 0%;  /*-4%;*/
+      /*background-color: rgb(240,240,250);*/
+  }
+  h5{
+      margin-left: 0%;  /*-4%;*/
+      /*background-color: rgb(245,245,250);*/
+  }
+  
+  /* Cores */
+  i{color: red}
+  em{color: green}
+  cite{color: brown}
+  /* blockquote > p { */
+  blockquote{color: red}
+  blockquote p {
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 2em;
+  }
+  
+  /* ---- Front Matter ----
+  Pandoc header DIV. Contains .title, .author and .date. Comes before div#TOC.
+  Only appears if one of those three are in the document.   */
+  
+  div#header, header
+      {
+      /* Put border on bottom. Separates it from TOC or body that comes after it. */
+      border-bottom: 1px solid #aaa;
+      margin-bottom: 0.5em;
+      }
+  
+  .title /* Pandoc title header (h1.title) */
+      {
+      text-align: center;
+      }
+  
+  .author, .date /* Pandoc author(s) and date headers (h2.author and h3.date) */
+      {
+      text-align: center;
+      }
+  
+  /* Pandoc table of contents DIV when using the --toc option.
+     NOTE: this doesn't support Pandoc's --id-prefix option for #TOC and #header.
+     Probably would need to use div[id$='TOC'] and div[id$='header'] as selectors.
+  */
+  
+  div#TOC, nav#TOC
+      {
+      /* Put border on bottom to separate it from body. */
+  /*    border-bottom: 1px solid #aaa;   */
+      margin-bottom: 0.5em;
+      }
+  
+  @media print
+      {
+      div#TOC, nav#TOC
+          {
+          /* Don't display TOC in print */
+          display: none;
+          }
+      }
+  /* ---- Images ---- */
+  img {
+      /* Let it be inline left/right where it wants to be, but verticality make
+         it in the middle to look nicer, but opinions differ, and if in a multi-line
+         paragraph, it might not be so great.
+         vertical-align: middle;
+      */
+      vertical-align: middle;
+      max-width: 600px;
+      height:auto;
+      }
+  div.figure /* Pandoc figure-style image */
+      {
+      /* Center the image and caption */
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      font-style: italic;
+      max-width: 600px;
+      height:auto;
+      }
+  p.caption /* Pandoc figure-style caption within div.figure */
+      {
+      /* Inherits div.figure props by default */
+      }
+  /* ---- Tables ---- */
+  table {
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 24px;
+      border-spacing: 0;
+      border-bottom: 2px solid black;
+      border-top: 2px solid black;
+  }
+  table th {
+      padding: 3px 10px;
+      background-color: white;
+      border-top: 1px;
+      border-left: 1px;
+      border-right: 1px;
+      border-bottom: 1px solid black;
+  }
+  table td {
+      padding: 3px 10px;
+      border-top: 1px;
+      border-left: 1px;
+      border-bottom: 1px;
+      border-right: 1px;
+  }
+  /* fundo para as linhas das tabelas */
+  tr.even{
+    background-color: rgb(230,230,240);
+  }
+  tr.odd{
+    background-color: rgb(250,250,250);
+  }
+  </style>
+  
+  
+  <script type="text/javascript">
+      function exibe(e)
+      {
+          var div = e.parentNode.firstElementChild;
+          var nome = e.parentNode.id;
+          var tipo=nome.substring(0, 3).toUpperCase()
+          switch (tipo) {
+            case "SOL":
+                nome = "Solução";
+                break;
+            case "COD":
+                nome = "Código";
+                break;
+            case "DIC":
+                nome = "Dica";
+                break;
+            case "DIA":
+                nome = "Diagrama";
+                break;
+            case "RES":
+                nome = "Resumo";
+                break;
+            case "CON":
+                nome = "Conteúdo";
+                break;
+            default:
+                nome = "";
+            }
+  
+          if (div.style.display == "" || div.style.display == "none") {
+              div.style.display = "block";
+              e.setAttribute("class", "viewed");
+              e.innerHTML = "Esconder ";
+          } else {
+              div.style.display = "none";
+              e.innerHTML = "Exibir "+nome;
+          }
+      }
+      function validaBinario(nome) {
+          var valor, tamanho, i;
+          document.getElementById(nome).style.color = "black";
+          valor = document.getElementById(nome).value;
+          tamanho=valor.length;
+          for (i=0;i<tamanho; i=i+1){
+              if ( valor[i] != 1 && valor[i] != 0 ){
+                  document.getElementById(nome).style.color = "red";
+              }
+          }
+      }
+  </script>
+</head>
+<body>
+<p><a name="inicio"></a></p>
+<h1 id="lista-de-exercícios-sobre-endereçamento">Lista de Exercícios sobre Endereçamento</h1>
+<button class="accordion">
+Exercício 1
+</button>
+<div class="panel">
+<p>Dado um processador de 32 bits, mostrado a seguir, pede-se:</p>
+<ol type="a">
+<li>Fazer o decodificador de endereços que permita:</li>
+</ol>
+<ul>
+<li><p>Que a memória esteja somente na faixa de endereços de 0 a 64KB-1.</p></li>
+<li><p>Que a escrita na posição de memória 128K ative 8 Leds dependendo do conteúdo escrito. Não se esqueça de colocar um registrador.</p></li>
+<li><p>Que a leitura da posição de memória 128K+1 obtenha o estado de 8 chaves. Utilize uma porta <em>tristate</em> com 8 entradas. Caso não conheça essa porta, faça uma pesquisa.</p></li>
+</ul>
+<p>Mostre as alterações necessárias no Hardware (desenho).</p>
+<!-- Faça uma rotina em Assembly para a leitura e a escrita nesses endereços. -->
+<figure>
+<img src="./imagens/enderecamento32bits-MemoriaSeparada-1.svg" alt="Processador de 32 bits" style="width:800px;max-width:100%;" /><figcaption><strong>Processador de 32 bits</strong></figcaption>
+</figure>
+</div>
+</div>
+<!--- class_panel --->
+<button class="accordion">
+Solução
+</button>
+<div class="panel">
+<p>A ligação da memória ao circuito do processador é uma conexão entre sinais de mesmo nome/significado.</p>
+<p>Assim, teremos:</p>
+<ul>
+<li><p>Barramentos de endereços do processador (A0 a A15) =&gt; Barramento de endereços da memória, A0 a A15.</p></li>
+<li><p>Barramento de Escrita de Dados e Leitura de Dados (D0 a D31) =&gt; Memória nos respectivos barramentos (D0 a D31).</p></li>
+<li><p>Sinal de leitura (RD), com 1 bit, conecta na entrada de habilitação de leitura da Memória.</p></li>
+<li><p>Sinal de leitura (WR), com 1 bit, conecta na entrada de habilitação de escrita da Memória.</p></li>
+<li><p>Barramentos de endereços do processador (A0 a A31) =&gt; Decodificador (A0 a A31).</p></li>
+</ul>
+<p>A ligação da memória está mostrada a seguir.</p>
+<figure>
+<img src="./imagens/solucaoEnderecamento32bits-MemoriaSeparada-1.svg" alt="Processador de 32 bits com Endereçamento de Memória" style="width:400px;max-width:100%;" /><figcaption><strong>Processador de 32 bits com Endereçamento de Memória</strong></figcaption>
+</figure>
+<p>Vamos adicionar o circuito para a escrita nos LEDs e a leitura das chaves.</p>
+<figure>
+<img src="./imagens/solucaoEnderecamento32bits-MemoriaSeparada-2.svg" alt="Processador de 32 bits com Endereçamento de Memória, LEDs e Chaves" style="width:600px;max-width:100%;" /><figcaption><strong>Processador de 32 bits com Endereçamento de Memória, LEDs e Chaves</strong></figcaption>
+</figure>
+<p>Montado o circuito, projetaremos o decodificador.</p>
+<p><strong>Acessando a memória RAM.</strong></p>
+<p>Para que a memória esteja somente na faixa de endereços de 0 a 64KB-1, precisamos decodificar toda a faixa de endereços, ou seja:</p>
+<ul>
+<li><p>Os 16 bits mais significativos (A16 ~ A31) são decodificados:</p>
+<ul>
+<li>Pelo Decodificador de Endereços, gerando a saída HabMEM.</li>
+</ul></li>
+<li><p>Os 16 bits menos significativos (A0 ~ A15) são decodificados:</p>
+<ul>
+<li>Dentro da memória, que está habilitada a funcionar se a sua entrada “habilita” estiver em nível alto.</li>
+</ul></li>
+</ul>
+<p>O decodificador responsável pela ativação da memória será uma porta NOR com 16 bits de entrada. Os bits mais significativos do endereçamento (A16 ~ A31) são a entrada dessa porta NOR e o sinal habMEM é a sua saída.</p>
+<p>Assim, quando todos bits de A16 ~ A31 forem nível baixo, a saída da NOR habilita a memória. Caso qualquer bit dessa faixa (A16 ~ A31) passar para nível alto, a memória será desabilitada. Isso significa que a sua saída passará para <em>tristate</em> (alta impedância de saída) e ela não fará nenhuma operação de escrita ou leitura.</p>
+<figure>
+<img src="./imagens/NOR-16bits.svg" alt="Endereçamento da Memória" style="width:300px;max-width:100%;" /><figcaption><strong>Endereçamento da Memória</strong></figcaption>
+</figure>
+<p><strong>A escrita na posição de memória 128K.</strong></p>
+<p>Para ligar ou desligar os LEDs, precisamos escrever no registrador adequado.</p>
+<p>Para definir o endereço desse registrador, precisaremos decodificar os 32 bits do endereço. Para tanto, precisamos converter o endereço de decimal para binário e fazer decodificador para esse endereço.</p>
+<p>O endereço é 131072 em decimal, que equivale a uma palavra de 32 bits com somente o bit 17 em nível alto.</p>
+<p>Como o registrador só deve ser habilitado na escrita, adicionaremos o sinal WR. Podemos implementar esse decodificador com uma porta NOR de 33 bits.</p>
+<figure>
+<img src="./imagens/NOR-32bits-B.svg" alt="Endereçamento dos LEDs" style="width:300px;max-width:100%;" /><figcaption><strong>Endereçamento dos LEDs</strong></figcaption>
+</figure>
+<p><strong>A leitura da posição de memória 128K+1.</strong></p>
+<p>Para obter o endereço em binário da posição 128K+1 ativamos o bit 0 do endereço obtido no item anterior.</p>
+<p>Da mesma forma, usamos uma porta NOR de 33 bits.</p>
+<figure>
+<img src="./imagens/NOR-32bits-C.svg" alt="Endereçamento das Chaves" style="width:300px;max-width:100%;" /><figcaption><strong>Endereçamento das Chaves</strong></figcaption>
+</figure>
+</div>
+</div>
+<!--- class_panel --->
+<hr />
+<button class="accordion">
+Exercício 2
+</button>
+<div class="panel">
+<p>Com a mesma arquitetura do processador, mostrada na questão 1, projete um decodificador de endereços que permita:</p>
+<ul>
+<li>Acessar a memória de Dados a cada múltiplo de 256KB.</li>
+</ul>
+<p>Ou seja, a mesma memória de 64KB estará espelhada nas posições:</p>
+<ul>
+<li><p>0 até 64KB-1;</p></li>
+<li><p>256KB até 320KB-1;</p></li>
+<li><p>512KB até 576KB-1;</p></li>
+<li><p>E assim por diante.</p></li>
+</ul>
+<p>Entre as posições 64K e 256K-1 não deve ocorrer acesso à memória. Isso, para todos os blocos de repetição.</p>
+<figure>
+<img src="./imagens/enderecamento32bits-MemoriaSeparada-1.svg" alt="Processador de 32 bits" style="width:800px;max-width:100%;" /><figcaption><strong>Processador de 32 bits</strong></figcaption>
+</figure>
+</div>
+</div>
+<!--- class_panel --->
+<button class="accordion">
+Solução
+</button>
+<div class="panel">
+<p>O circuito é o usado no primeiro passo da solução anterior, o que mudará é o decodificador. Agora, o decodificador só tem a memória para habilitar.</p>
+<p>O endereçamento dentro da memória usa os 16 bits LSB (A0 ~ A15).</p>
+<p>A repetição do bloco deverá ser a cada 256K posições. O endereço binário possui somente o bit A18 em nível alto e todos outros em nível baixo.</p>
+<figure>
+<img src="./imagens/solucaoEnderecamento32bits-MemoriaSeparada-1.svg" alt="Processador de 32 bits com Endereçamento de Memória" style="width:400px;max-width:100%;" /><figcaption><strong>Processador de 32 bits com Endereçamento de Memória</strong></figcaption>
+</figure>
+<p>Para o bloco aparecer na posição ZERO, os valores de A16 ~ A31 devem ter nível baixo.</p>
+<table>
+<caption><strong>Endereçamento para a Memória na Posição Zero</strong></caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;">A31</th>
+<th style="text-align: center;">A30</th>
+<th style="text-align: center;">A29</th>
+<th style="text-align: center;">A28</th>
+<th style="text-align: center;">A27</th>
+<th style="text-align: center;">A26</th>
+<th style="text-align: center;">A25</th>
+<th style="text-align: center;">A24</th>
+<th style="text-align: center;">A23</th>
+<th style="text-align: center;">A22</th>
+<th style="text-align: center;">A21</th>
+<th style="text-align: center;">A20</th>
+<th style="text-align: center;">A19</th>
+<th style="text-align: center;">A18</th>
+<th style="text-align: center;">A17</th>
+<th style="text-align: center;">A16</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+</tbody>
+</table>
+<p>Para aparecer na posição 256K, o bit A18 deve estar em nível alto e os bits restantes (A16 ~ A17 e A19 ~ A31) devem estar em nível baixo.</p>
+<table>
+<caption><strong>Endereçamento para a Memória na Posição 256K</strong></caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;">A31</th>
+<th style="text-align: center;">A30</th>
+<th style="text-align: center;">A29</th>
+<th style="text-align: center;">A28</th>
+<th style="text-align: center;">A27</th>
+<th style="text-align: center;">A26</th>
+<th style="text-align: center;">A25</th>
+<th style="text-align: center;">A24</th>
+<th style="text-align: center;">A23</th>
+<th style="text-align: center;">A22</th>
+<th style="text-align: center;">A21</th>
+<th style="text-align: center;">A20</th>
+<th style="text-align: center;">A19</th>
+<th style="text-align: center;">A18</th>
+<th style="text-align: center;">A17</th>
+<th style="text-align: center;">A16</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+</tr>
+</tbody>
+</table>
+<p>Para aparecer na posição 512K, o bit A19 deve estar em nível alto e os bits restantes (A16 ~ A17 e A19 ~ A31) devem estar em nível baixo.</p>
+<table>
+<caption><strong>Endereçamento para a Memória na Posição 512K</strong></caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;">A31</th>
+<th style="text-align: center;">A30</th>
+<th style="text-align: center;">A29</th>
+<th style="text-align: center;">A28</th>
+<th style="text-align: center;">A27</th>
+<th style="text-align: center;">A26</th>
+<th style="text-align: center;">A25</th>
+<th style="text-align: center;">A24</th>
+<th style="text-align: center;">A23</th>
+<th style="text-align: center;">A22</th>
+<th style="text-align: center;">A21</th>
+<th style="text-align: center;">A20</th>
+<th style="text-align: center;">A19</th>
+<th style="text-align: center;">A18</th>
+<th style="text-align: center;">A17</th>
+<th style="text-align: center;">A16</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+</tr>
+</tbody>
+</table>
+<p>Para aparecer na posição 768K, os bits A19 e A18 devem ter nível alto e os bits restantes (A16 ~ A17 e A20 ~ A31) devem estar em nível baixo.</p>
+<table>
+<caption><strong>Endereçamento para a Memória na Posição 768K</strong></caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;">A31</th>
+<th style="text-align: center;">A30</th>
+<th style="text-align: center;">A29</th>
+<th style="text-align: center;">A28</th>
+<th style="text-align: center;">A27</th>
+<th style="text-align: center;">A26</th>
+<th style="text-align: center;">A25</th>
+<th style="text-align: center;">A24</th>
+<th style="text-align: center;">A23</th>
+<th style="text-align: center;">A22</th>
+<th style="text-align: center;">A21</th>
+<th style="text-align: center;">A20</th>
+<th style="text-align: center;">A19</th>
+<th style="text-align: center;">A18</th>
+<th style="text-align: center;">A17</th>
+<th style="text-align: center;">A16</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+</tbody>
+</table>
+<p>O processo continua até ocorrer todas a variações nos bits entre A18 e A31.</p>
+<p>Percebe-se que os únicos bits de endereço que definem esse padrão são os bits A16 e A17, quando em nível baixo.</p>
+<p>O decodificador pode ser implementado com uma porta NOR de 2 entradas.</p>
+<figure>
+<img src="./imagens/NOR-2bits-A.svg" alt="Endereçamento da Memória" style="width:300px;max-width:100%;" /><figcaption><strong>Endereçamento da Memória</strong></figcaption>
+</figure>
+</div>
+</div>
+<!--- class_panel --->
+<hr />
+<button class="accordion">
+Exercício 3
+</button>
+<div class="panel">
+<p>Para melhorar o funcionamento da interface do usuário, de um projeto com um processador de 32 bits (MIPS), o seu grupo decidiu utilizar um LCD.</p>
+<p>Ficou acordado que o LCD usará o endereço 0x8000_4001 e que você fará o decodificador.</p>
+<p>Além disso, explique a necessidade das duas portas <em>AND</em> utilizadas no RD e WR.</p>
+<figure>
+<img src="./imagens/fluxoDadosMIPSparaEnderecamento-4-A.svg" alt="Projeto com Processador de 32 bits" style="width:600px;max-width:100%;" /><figcaption><strong>Projeto com Processador de 32 bits</strong></figcaption>
+</figure>
+</div>
+<!--- class_panel --->
+<button class="accordion">
+Solução
+</button>
+<div class="panel">
+<p>O endereço do LCD é 0x8000_4001 que em binário é 0b1000.0000.0000.0000_0100.0000.0000.0001.</p>
+<p>Para decodificar esse endereço temos um <em>AND</em> lógico entre dois conjuntos de bits:</p>
+<ul>
+<li><p>Todas as ocorrências dos bits sendo ZERO:</p>
+<ul>
+<li>Bits: 30 até 15 e 13 até 1.</li>
+</ul></li>
+<li><p>E todas dos bits sendo UM:</p>
+<ul>
+<li>Bits 31, 14 e 0.</li>
+</ul></li>
+</ul>
+<p>Para a ocorrência dos bits ZERO, utilizamos uma porta NOR. Para a ocorrência dos bits UM, utilizamos uma porta <em>AND</em>.</p>
+<p style="text-align: center;">
+<strong>habLCD = (NOR (b30 ~ b15, b13 ~ b1)) AND ( AND (b31, b14, b0))</strong>
+</p>
+<figure>
+<img src="./imagens/NOR-29bits+AND-3bits.svg" alt="Endereçamento do LCD" style="width:300px;max-width:100%;" /><figcaption><strong>Endereçamento do LCD</strong></figcaption>
+</figure>
+<p>Em relação às portas AND:</p>
+<ul>
+<li><p>Se conectarmos o sinal de habLeituraMEM diretamente à ativação do buffer de leitura, ignorando se o endereço acessado é o do LCD:</p>
+<ul>
+<li>Toda leitura da memória também ativaria a leitura do LCD, criando um conflito no barramento de leitura de dados.</li>
+</ul></li>
+<li><p>Se conectarmos o sinal de habEscritaMEM diretamente à ativação do buffer de escrita, ignorando se o endereço acessado é o do LCD:</p>
+<ul>
+<li>Toda escrita da memória também escreveria no LCD, gerando um conteúdo “aleatório” no LCD.</li>
+</ul></li>
+</ul>
+<p>As portas AND fazem com que os sinais de habilitação só seja ativados se o endereço acessado é o do LCD.</p>
+<figure>
+<img src="./imagens/fluxoDadosMIPSparaEnderecamento-4-A.svg" alt="Projeto com Processador de 32 bits" style="width:600px;max-width:100%;" /><figcaption><strong>Projeto com Processador de 32 bits</strong></figcaption>
+</figure>
+</div>
+<!--- class_panel --->
+<hr />
+<button class="accordion">
+Exercício 4
+</button>
+<div class="panel">
+<p>O mapa de memória, mostrado abaixo, é de um processador com barramento de endereços de 16 bits e de dados com 8 bits.</p>
+<p>Faça o decodificador de endereços para as três faixas de memória mostradas. O resultado poderá ser dado na forma da expressão booleana.</p>
+<figure>
+<img src="./imagens/mapaMemoria-Quiz-A.svg" alt="Mapa de Memória" style="width:300px;max-width:100%;" /><figcaption><strong>Mapa de Memória</strong></figcaption>
+</figure>
+<p><strong>Exemplos de resposta:</strong></p>
+<ol type="1">
+<li>Uma forma pode ser a equação completa, atribuída ao sinal de habilitação:</li>
+</ol>
+<p>External SRAM Motherboard = ( ( AND(A23 : A19) ) OR ( AND( NOT A14, NOT A12, NOT A0) ) ) NOR (A17, A5 )</p>
+<ol start="2" type="1">
+<li>Outra forma pode ser a utilização de parcelas intermediárias indicando a composição do sinal.</li>
+</ol>
+<p>E a atribuição final ao sinal de habilitação:</p>
+<p>Sinal_A = AND(A23 : A19)</p>
+<p>Sinal_B = AND( NOT A14, NOT A12, NOT A0)</p>
+<p>External SRAM Motherboard = (Sinal_A OR Sinal_B) NOR (A17, A5 )</p>
+<p><strong>Observações:</strong></p>
+<p>Os parênteses auxiliam a leitura da equação.</p>
+<p>A utilização de parcelas intermediárias facilita o projeto e a correção.</p>
+<p>Além disso, esse fracionamento da equação simplifica a definição de blocos de memória que não são do tamanho 2^N.</p>
+<p>Nesse caso, podemos trabalhar com blocos de tamanho 2^(N-1) e 2^(N-2) fazendo uma operação OR entre eles (soma de produtos).</p>
+</div>
+<!--- class_panel --->
+<button class="accordion">
+Solução
+</button>
+<div class="panel">
+<p>ROM:</p>
+<p>Início : 0x0000 - 0000 0000 0000 0000</p>
+<p>Fim: 0x1FFF - 0001 1111 1111 1111</p>
+<p>ROM = (not A15) and (not A14) and (not A13)</p>
+<p>====</p>
+<p>RAM:</p>
+<p>Início : 0x2000 - 0010 0000 0000 0000</p>
+<p>Fim: 0xDFFF - 1101 1111 1111 1111</p>
+<p>RAM = 0x2XXX or 0x3XXX or 0x4XXX or …. or 0xCXXX or 0xDXXX</p>
+<p>0x2XXX = (not A15) and (not A14) and (A13) and (not A12)</p>
+<p>0x3XXX = (not A15) and (not A14) and (A13) and (A12)</p>
+<p>0x4XXX = (not A15) and (A14) and (not A13) and (not A12)</p>
+<p>0x5XXX = (not A15) and (A14) and (not A13) and (A12)</p>
+<p>0x6XXX = (not A15) and (A14) and (A13) and (not A12)</p>
+<p>0x7XXX = (not A15) and (A14) and (A13) and (A12)</p>
+<p>0x8XXX = (A15) and (not A14) and (not A13) and (not A12)</p>
+<p>0x9XXX = (A15) and (not A14) and (not A13) and (A12)</p>
+<p>0xAXXX = (A15) and (not A14) and (A13) and (not A12)</p>
+<p>0xBXXX = (A15) and (not A14) and (A13) and (A12)</p>
+<p>0xCXXX = (A15) and (A14) and (not A13) and (not A12)</p>
+<p>0xDXXX = (A15) and (A14) and (not A13) and (A12)</p>
+<p>Minimizado:</p>
+<p>RAM = (A15 and (not A13)) or ((not A14) and A13) or ((not A15) and A14)</p>
+<p>===</p>
+<p>I/O:</p>
+<p>Início : 0xFC00 - 1111 1100 0000 0000</p>
+<p>Fim: 0xFFFF - 1111 1111 1111 1111</p>
+<p>I/O = (A15) and (A14) and (A13) and (A12) and (A11) and (A10)</p>
+<p>===</p>
+</div>
+<!--- class_panel --->
+<hr />
+<h2 id="ferramenta-auxiliar-conversor-binário-para-decimal-com-ou-sem-sinal">Ferramenta Auxiliar: Conversor Binário para Decimal (com ou sem sinal)</h2>
+<div style="width:600px;margin:10px auto;font-family:Courier New,Courier,monospace;">
+<form>
+<div style="width:50%;float:left;display:inline-block;">
+<label for="entrada">Valor em Binário:</label>
+<textarea id="entrada" cols="32" rows="1" title="Valor em binário a ser convertido" onkeyup="validaBinario(id)" style="resize:none;">
+</textarea>
+</div>
+<div style="width:50%;float:left;display:inline-block;">
+<label for="saida">Resultado da Conversão:</label>
+<textarea id="saida" cols="32" rows="1" title="Valor convertido" style="resize:none;">
+</textarea>
+</div>
+<input type="button" value="Converter" onclick="converteBinario(entrada);"/>    <input type="checkbox" id="tiposigned" style="vertical-align:middle;">Binário com Sinal</input>
+</form>
+</div>
+<script type="text/javascript">
+function converteBinario(nome) {
+tipo = document.getElementById("tiposigned").checked;
+binStr = nome.value;
+if (binStr === "") {
+document.getElementById("saida").value = "Faltou o valor de entrada.";
+}else{
+if (tipo){
+document.getElementById("saida").value = converteSignedDecimal(binStr);
+}else{
+document.getElementById("saida").value = converteUnsignedDecimal(binStr);
+}
+}
+}
+</script>
+<p><a href="../Ferramentas.html" target="_blank">Outras Ferramentas</a></p>
+<hr />
+<p><br></p>
+<hr />
+<hr />
+<script type="text/javascript" src="../js/acordeon.js"></script>
+<script src="../js/binario.js"></script>
+<!-- FIM -->
+</body>
+</html>
