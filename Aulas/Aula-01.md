@@ -10,7 +10,7 @@
 
 Ter o Quartus Prime Lite 20.1 instalado e funcional. Ele está disponível no site da Intel:
 
-[Download Center for FPGAs](http://fpgasoftware.intel.com/?edition=lite   "Baixar Quartus Lite"){target="_blank"}
+[Download Center for FPGAs](http://fpgasoftware.intel.com/?edition=lite   "Baixar Quartus Lite")
 
 <!--
 <br><div class="quiz" style="width:600px;"><div class="row"><div class="column" style="width:60px;">
