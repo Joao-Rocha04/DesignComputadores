@@ -4,13 +4,13 @@ PAGINA INICIAL REPOSITORIO
 
 
 
-[Aula - 1](LINK DO arquivo .md AQUI)
+[Aula - 1](Aulas/Aula_1.md)
 
 
 
 
 
-[Aula - 2](LINK DO arquivo .md AQUI)
+[Aula - 2](Aulas/Aula_2.md)
 
 
 
