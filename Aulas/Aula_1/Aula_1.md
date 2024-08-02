@@ -12,7 +12,7 @@ hahahaha
 
 ![ALU_symbol](imgs/ALU_symbol.svg)
 
-### CLONCLUSAO
+### CONCLUSAO
 
 
 
