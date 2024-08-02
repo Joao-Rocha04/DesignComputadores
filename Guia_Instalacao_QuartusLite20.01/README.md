@@ -4,7 +4,7 @@ A disciplina faz uso do software Quartus Light da Intel para desenvolvimento de 
 para começar faça a instalação do software de acordo com o seu sistema operacional:
 
 - [Guia Linux](https://github.com/Insper/DesignComputadores/blob/master/Guia_Instalacao_QuartusLite20.01/(Ubuntu%2020.04.1%20LTS%20(Focal%20Fossa))Guia_Instalacao_QuartusLite20.01_CycloneV_ModelSim.md)
-- [Guia Windows](https://github.com/Insper/DesignComputadores/blob/master/Guia_Instalacao_QuartusLite20.01/(Windows%2010)Guia_Instalacao_QuartusLite20.01_CycloneV_ModelSim.md)
+- [Guia Windows](https://github.com/Insper/DesignComputadores/blob/master/Guia_Instalacao_QuartusLite20.01/Windows_Guia_Instalacao_QuartusLite20.01_CycloneV_ModelSim_02_24.md)
 
 > Dúvidas? Entre em contato com o Marco pelo Teams
 
