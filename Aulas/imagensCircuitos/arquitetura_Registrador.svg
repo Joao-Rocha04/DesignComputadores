@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" stroke-linejoin="round" stroke-width="28.222" preserveAspectRatio="xMidYMid" version="1.2" viewBox="0 0 12628.283 13778.843">
+  <defs class="ClipPathGroup">
+    <marker id="c" orient="auto" overflow="visible">
+      <path stroke="#000" stroke-width=".4pt" d="M1.96 0a2 2 0 1 1-4.001-.001A2 2 0 0 1 1.96 0z"/>
+    </marker>
+    <marker id="b" orient="auto" overflow="visible">
+      <path stroke="#000" stroke-width=".4pt" d="M1.96 0a2 2 0 1 1-4.001-.001A2 2 0 0 1 1.96 0z"/>
+    </marker>
+    <marker id="a" orient="auto" overflow="visible">
+      <path stroke="#000" stroke-width=".375" d="M5.231 2.42L-1.324.01 5.23-2.401C4.184-.978 4.19.969 5.231 2.42z"/>
+    </marker>
+  </defs>
+  <text x="6271.159" y="1015.243" class="TextShape" font-family="Arial,sans-serif" font-size="999.208" font-weight="700" style="line-height:125%;-inkscape-font-specification:'Arial, sans-serif, Bold';text-align:center" text-anchor="middle" transform="scale(.99997 1.00003)">
+    <tspan x="6271.159" y="1015.243">Arquitetura:</tspan><tspan x="6271.159" y="2264.253">Registrador-Registrador</tspan>
+  </text>
+  <text x="8515.361" y="3893.622" class="TextShape" font-family="Arial,sans-serif" font-size="705.556" font-weight="700" style="line-height:125%;-inkscape-font-specification:'Arial, sans-serif, Bold';text-align:start" transform="scale(.99997 1.00003)">
+    <tspan x="8515.361" y="3893.622">Memória</tspan>
+  </text>
+  <text x="-19741.953" y="-10950.095" class="TextShape" font-size="8.497" transform="scale(.99997 1.00003)">
+    <tspan class="TextParagraph" font-family="Arial,sans-serif" font-size="449.645" font-weight="400"><tspan x="-10989.807" y="6689.446" class="TextPosition"/>
+</tspan>
+  </text>
+  <path fill="none" stroke="#000" stroke-linejoin="miter" stroke-width="84.667" marker-end="url(#b)" marker-start="url(#a)" d="M2232.009 9933.89V5700.198"/>
+  <path fill="none" stroke="#000" stroke-linejoin="miter" stroke-width="84.667" marker-start="url(#a)" d="M1460.807 7602.639l-1096.845-2.252L342.49 13436.5l3631.295-.839v-1145.018"/>
+  <g fill="none" stroke="#000" stroke-width="84.667">
+    <path d="M9966.571 12926.45h-2359.38V4274.576h4718.758v8651.872H9966.571z"/>
+    <path stroke-linejoin="miter" d="M7636.919 5190.852h4701.877M7636.919 6150.408h4701.877M7636.919 7109.962h4701.877M7636.919 8069.518h4701.877M7636.919 9085.518h4701.877M7636.919 10045.074h4701.877M7636.919 11004.623h4701.877M7636.919 11964.176h4701.877"/>
+  </g>
+  <g stroke-linejoin="miter">
+    <text x="17420.348" y="19785.572" stroke-width="1" font-family="Standard Symbols L" font-size="705.556" font-weight="400" letter-spacing="0" style="line-height:125%;-inkscape-font-specification:'Standard Symbols L, Normal';text-align:start" transform="translate(-14200.364 -8085.671)" word-spacing="0">
+      <tspan x="17420.348" y="19785.572" font-family="Arial" font-weight="700" style="-inkscape-font-specification:'Arial Bold'">ULA</tspan>
+    </text>
+    <path fill="none" stroke="#000" stroke-width="84.667" d="M6438.166 10102.503l-1097.592 2195.049H2598.011l-1097.592-2195.05h1644.972l275.46 550.18h1097.592l274.751-550.18h1644.972z"/>
+  </g>
+  <text x="1538.255" y="3896.421" stroke-linejoin="miter" stroke-width="1" font-family="Arial" font-size="705.556" font-weight="400" letter-spacing="0" style="line-height:125%;-inkscape-font-specification:Arial;text-align:start" word-spacing="0">
+    <tspan x="1538.255" y="3896.421" font-weight="700" style="-inkscape-font-specification:'Arial Bold'">Registradores</tspan>
+  </text>
+  <path fill="none" stroke="#000" stroke-width="84.667" d="M6281.926 7152.792v952.053H1559.151v-952.053zM6281.926 6193.236v952.053H1559.151v-952.053zM6281.926 5233.682v952.053H1559.151v-952.053zM6281.926 4274.126v952.053H1559.151v-952.053z" class="BoundingBox"/>
+  <path fill="none" stroke="#000" stroke-linejoin="miter" stroke-width="84.667" marker-end="url(#c)" marker-start="url(#a)" d="M5618.34 9953.014V4782.435"/>
+</svg>

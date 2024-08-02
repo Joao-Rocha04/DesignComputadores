@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="183.428" height="402.385">
+  <font horiz-adv-x="1000" vert-adv-y="90" vert-origin-x="45" vert-origin-y="90">
+    <font-face font-family="LetterGothicStd-Bold" underline-position="-100" underline-thickness="50"/>
+    <glyph d="M301 780L47 0h81l64 212h219L475 0h81M301 566l92-291H210z" horiz-adv-x="600" unicode="A"/>
+    <glyph d="M505 564c-6 100-81 170-181 170-203 0-236-220-236-378 0-153 29-370 227-370 120 0 191 73 199 190h-75c-1-71-46-127-121-127-144 0-155 200-155 305 0 111 10 317 162 317 61 0 104-47 105-107z" horiz-adv-x="600" unicode="C"/>
+    <glyph d="M112 0h172c157 0 243 83 243 360 0 281-93 360-232 360H112m75-63h90c96 0 175-21 175-297 0-268-69-297-173-297h-92z" horiz-adv-x="600" unicode="D"/>
+    <glyph d="M513 720H139V0h381v63H214v275h215v63H214v256h299z" horiz-adv-x="600" unicode="E"/>
+    <glyph d="M435 720H165v-63h97V63h-97V0h270v63h-98v594h98z" horiz-adv-x="600" unicode="I"/>
+    <glyph d="M300 361L149 720H76V0h75v546l2 2 147-353 148 353h2V0h75v720h-74z" horiz-adv-x="600" unicode="M"/>
+    <glyph d="M115 0h75v572l2 2L428-7h71v727h-75V182h-3L202 720h-87z" horiz-adv-x="600" unicode="N"/>
+    <glyph d="M79 360c0-102-1-374 221-374 228 0 221 278 221 374 0 134-11 374-221 374-121 0-221-73-221-374M300 49c-150 0-146 229-146 311 0 42-14 311 146 311 156 0 146-245 146-311 0-261-71-311-146-311z" horiz-adv-x="600" unicode="O"/>
+    <glyph d="M300-14c33 0 67 8 96 24l50-70h92L450 54c62 70 72 173 72 306 0 72 14 374-222 374-121 0-222-72-222-374 0-92-6-374 222-374M153 360c0 30-17 311 147 311 76 0 147-55 147-311 0-236-59-311-147-311-75 0-147 55-147 311z" horiz-adv-x="600" unicode="Q"/>
+    <glyph d="M131 0h75v298c36 1 72 1 108 2L489 0h91L386 317c100 57 128 125 128 199 0 42-16 204-196 204H131m75-358v295h74c119 0 159-41 159-137 0-106-60-158-162-158z" horiz-adv-x="600" unicode="R"/>
+    <glyph d="M502 644c-54 50-123 90-198 90-108 0-194-65-194-178 0-90 62-139 133-181l65-39c127-76 131-96 131-154 0-77-62-133-137-133-69 0-125 44-160 100l-58-46C140 31 209-14 302-14c126 0 212 77 212 206 0 84-36 122-168 203l-57 35c-97 59-104 93-104 131 0 66 52 110 116 110 62 0 112-42 156-81z" horiz-adv-x="600" unicode="S"/>
+    <glyph d="M541 720H60v-63h201V0h75v657h205z" horiz-adv-x="600" unicode="T"/>
+    <glyph d="M424 720V198c0-81-32-149-124-149-58 0-125 36-125 140v531h-75V229C100 30 222-14 300-14c97 0 199 67 199 203v531z" horiz-adv-x="600" unicode="U"/>
+    <glyph d="M297 109h-2L165 720H83L243-7h103l163 727h-83z" horiz-adv-x="600" unicode="V"/>
+    <glyph d="M297 519L183 158h-2l-38 562H62L122-7h83l92 312L388-7h86l55 727h-81l-36-562h-2z" horiz-adv-x="600" unicode="W"/>
+    <glyph d="M282 394L143 720H60l184-416V0h75v304l184 416h-83z" horiz-adv-x="600" unicode="Y"/>
+    <glyph d="M145 196c0 93 65 147 155 147s155-54 155-147c0-94-64-147-155-147s-155 53-155 147m285 343c0-81-49-133-130-133-75 0-131 48-131 125 0 84 45 140 131 140 82 0 130-52 130-132m-8-162c55 47 83 86 83 161 0 123-86 196-205 196-113 0-206-71-206-189 0-79 26-118 84-168-73-28-108-107-108-181C70 86 140-14 300-14c152 0 230 93 230 210 0 74-35 153-108 181z" horiz-adv-x="600" unicode="8"/>
+    <glyph d="M460 720H138l-30-399 76-15c28 46 66 82 123 82 55 0 123-52 123-173 0-76-45-166-131-166-63 0-114 46-141 100l-58-43C145 38 208-14 294-14c132 0 211 111 211 235 0 144-89 230-200 230-46 0-86-15-120-46l20 252h255z" horiz-adv-x="600" unicode="5"/>
+    <glyph d="M423 734h-97L61 235v-49h287V0h75v186h103v63H423m-75 0H147l199 383h2z" horiz-adv-x="600" unicode="4"/>
+    <glyph d="M163 486c0 86 37 185 138 185 87 0 124-93 124-167 0-89-58-180-139-180-90 0-123 84-123 162M97 30c40-25 87-44 135-44 143 0 273 145 273 428 0 139-34 320-209 320-137 0-208-126-208-249 0-112 65-224 189-224 67 0 109 25 153 74-6-104-69-286-195-286-36 0-74 23-102 43z" horiz-adv-x="600" unicode="9"/>
+    <glyph d="M341 742l-216-68v-57l141 43V63H131V0h339v63H341z" horiz-adv-x="600" unicode="1"/>
+    <glyph d="M411-29C293 56 250 192 250 332s43 276 161 360l-36 50c-137-89-200-252-200-410S238 9 375-78z" horiz-adv-x="600" unicode="("/>
+    <glyph d="M189 692c118-84 161-221 161-360 0-140-43-277-161-361l36-49c137 88 200 252 200 410s-63 321-200 410z" horiz-adv-x="600" unicode=")"/>
+    <glyph d="M220 64c0-44 37-78 81-78 43 0 80 34 80 78s-37 77-80 77-81-33-81-77z" horiz-adv-x="600" unicode="."/>
+    <glyph d="M93 720v-63h306L135 0h81l281 720z" horiz-adv-x="600" unicode="7"/>
+    <glyph d="M436 234c0-86-36-185-137-185-88 0-124 93-124 168 0 87 57 179 138 179 91 0 123-84 123-162m67 456c-40 25-88 44-135 44-134 0-273-130-273-428 0-139 34-320 209-320 137 0 207 126 207 249 0 112-64 224-188 224-67 0-110-25-153-73 5 103 69 285 195 285 40 0 71-22 102-43z" horiz-adv-x="600" unicode="6"/>
+    <glyph d="M187-27l301 774h-75L112-27z" horiz-adv-x="600" unicode="/"/>
+    <glyph d="M248 354c106 10 190-47 190-162 0-89-63-143-150-143-78 0-122 45-152 113l-66-39C120 40 184-14 285-14c130 0 228 83 228 216 0 89-48 154-128 189 56 35 95 87 95 155 0 106-86 188-192 188-92 0-166-50-208-131l63-36c24 53 75 104 137 104 67 0 125-48 125-119 0-86-76-139-157-135z" horiz-adv-x="600" unicode="3"/>
+    <glyph d="M175 63c4 92 48 150 113 209l52 47c73 66 161 133 161 241 0 109-75 174-181 174-129 0-199-91-206-213h75c4 78 42 150 130 150 68 0 107-45 107-112 0-81-91-154-148-202-113-97-178-167-178-325V0h403v63z" horiz-adv-x="600" unicode="2"/>
+    <glyph d="M509 360c0 104-1 374-209 374C74 734 91 402 91 360c0-84-1-374 209-374 212 0 209 274 209 374m-343 0c0 68-8 311 134 311 72 0 134-56 134-311 0-264-68-311-134-311-136 0-134 219-134 311z" horiz-adv-x="600" unicode="0"/>
+  </font>
+  <font horiz-adv-x="1000" vert-adv-y="90" vert-origin-x="45" vert-origin-y="90">
+    <font-face font-family="LetterGothicStd" underline-position="-100" underline-thickness="50"/>
+    <glyph d="M449 720H148l-29-388 56-11c29 47 72 82 131 82 53 0 141-44 141-188 0-100-59-186-148-186-63 0-119 42-149 95l-35-27C157 36 215-11 293-11c129 0 201 111 201 230 0 147-89 224-189 224-58 0-106-29-140-75l24 312h260z" horiz-adv-x="600" unicode="5"/>
+    <glyph d="M453 230c0-97-42-201-155-201-98 0-140 98-140 182 0 132 91 199 156 199 101 0 139-92 139-180m35 467c-34 22-79 37-119 37-131 0-264-136-264-430 0-244 96-315 192-315 138 0 203 117 203 241 0 107-57 220-177 220-80 0-133-46-171-111-7 124 61 355 215 355 37 0 69-16 98-37z" horiz-adv-x="600" unicode="6"/>
+    <glyph d="M157 40c2 102 25 154 175 288 72 64 158 133 158 238 0 104-66 168-170 168-118 0-184-82-193-194h47c6 84 54 154 145 154 76 0 124-50 124-125 0-93-93-166-157-222C136 216 110 157 110 0h383v40z" horiz-adv-x="600" unicode="2"/>
+    <glyph d="M498 360c0 76-2 167-27 239-27 77-84 135-171 135-91 0-148-62-174-143-22-67-24-160-24-231 0-76 2-168 27-239 27-77 85-135 171-135 90 0 148 62 174 143 22 66 24 161 24 231m-47 0c0-59-2-139-15-195-17-68-57-140-136-140-74 0-115 65-132 128-18 62-19 143-19 207 0 59 2 138 15 195 17 68 57 140 136 140 74 0 115-65 132-129 18-61 19-142 19-206z" horiz-adv-x="600" unicode="0"/>
+  </font>
+  <path fill="none" stroke="#000" stroke-width="2" d="M28.836 11v9.408H12.088v18.613h16.748v5.65H12.088v18.616h16.748v6.043H11.545v18.672h17.29v5.666h-17.29v18.67h17.29v6.959h-17.29v18.615h17.29v5.649h-17.29v18.615h17.29v6.107h-17.29v18.613h17.29v6.315h-17.29v18.617h17.29v5.649h-17.29v18.613h17.29v6.11h-17.29v18.614h17.29v7.276h-17.29v18.613h17.29v5.649h-17.29v18.615h17.29v6.107H11v18.613h17.836v5.65H11v18.616h17.836v10.37h125.76v-10.37h17.222v-18.615h-17.222v-5.65h17.222v-18.614h-17.222v-6.107h17.289v-18.615h-17.29v-5.649h17.29V268.09h-17.29v-7.276h17.29V242.2h-17.29v-6.11h17.29v-18.612h-17.29v-5.649h17.29v-18.617h-17.29v-6.315h17.288v-18.613h-17.287v-6.107h17.289V143.56h-17.29v-5.649h17.772v-18.615h-17.771v-6.96h17.771V93.669h-17.771v-5.666h17.771V69.33h-17.771v-6.043h17.832V44.672h-17.832v-5.65h17.832V20.407h-17.832V11h-54.07c-.094 4.63-3.942 8.357-8.688 8.357-4.744 0-8.594-3.727-8.688-8.357zM28.836 20.408v344.084M154.558 20.408V369.38"/>
+  <g transform="translate(-168.397 -498.276)">
+    <text x="201.548" y="607.666" font-family="Arial" font-size="16" font-weight="400" style="line-height:0%;-inkscape-font-specification:Arial">
+      D7
+    </text>
+    <text x="201.548" y="632.285" font-family="Arial" font-size="16" font-weight="400" style="line-height:0%;-inkscape-font-specification:Arial">
+      D6
+    </text>
+    <text x="201.548" y="656.285" font-family="Arial" font-size="16" font-weight="400" style="line-height:0%;-inkscape-font-specification:Arial">
+      D5
+    </text>
+    <text x="201.548" y="680.904" font-family="Arial" font-size="16" font-weight="400" style="line-height:0%;-inkscape-font-specification:Arial">
+      D4
+    </text>
+    <text x="201.548" y="707.047" font-family="Arial" font-size="16" font-weight="400" style="line-height:0%;-inkscape-font-specification:Arial">
+      D3
+    </text>
+    <text x="201.548" y="731.666" font-family="Arial" font-size="16" font-weight="400" style="line-height:0%;-inkscape-font-specification:Arial">
+      D2
+    </text>
+    <text x="201.548" y="755.666" font-family="Arial" font-size="16" font-weight="400" style="line-height:0%;-inkscape-font-specification:Arial">
+      D1
+    </text>
+    <text x="201.548" y="780.285" font-family="Arial" font-size="16" font-weight="400" style="line-height:0%;-inkscape-font-specification:Arial">
+      D0
+    </text>
+  </g>
+  <text x="125.286" y="35.035" font-family="Arial" font-size="16" font-weight="400" style="line-height:0%;-inkscape-font-specification:Arial">
+    Vcc
+  </text>
+  <text x="34.667" y="356.416" font-family="Arial" font-size="16" font-weight="400" style="line-height:0%;-inkscape-font-specification:Arial">
+    Gnd
+  </text>
+  <text x="33.143" y="34.416" font-family="Arial" font-size="16" font-weight="400" style="line-height:0%;-inkscape-font-specification:Arial">
+    Clock
+  </text>
+  <text x="33.143" y="59.351" font-family="Arial" font-size="16" font-weight="400" style="line-height:0%;-inkscape-font-specification:Arial">
+    Reset
+  </text>
+  <g transform="translate(0 -35.919)">
+    <text x="131.143" y="343.935" font-family="Arial" font-size="16" font-weight="400" style="line-height:0%;-inkscape-font-specification:Arial">
+      Rd
+    </text>
+    <text x="131.143" y="367.459" font-family="Arial" font-size="16" font-weight="400" style="line-height:0%;-inkscape-font-specification:Arial">
+      Wr
+    </text>
+  </g>
+  <g transform="translate(-69.575 -622.436)">
+    <text x="201.548" y="682.904" font-family="Arial" font-size="16" font-weight="400" style="line-height:0%;-inkscape-font-specification:Arial">
+      A7
+    </text>
+    <text x="201.548" y="707.522" font-family="Arial" font-size="16" font-weight="400" style="line-height:0%;-inkscape-font-specification:Arial">
+      A6
+    </text>
+    <text x="201.548" y="731.522" font-family="Arial" font-size="16" font-weight="400" style="line-height:0%;-inkscape-font-specification:Arial">
+      A5
+    </text>
+    <text x="201.548" y="756.141" font-family="Arial" font-size="16" font-weight="400" style="line-height:0%;-inkscape-font-specification:Arial">
+      A4
+    </text>
+    <text x="201.548" y="781.047" font-family="Arial" font-size="16" font-weight="400" style="line-height:0%;-inkscape-font-specification:Arial">
+      A3
+    </text>
+    <text x="201.548" y="805.666" font-family="Arial" font-size="16" font-weight="400" style="line-height:0%;-inkscape-font-specification:Arial">
+      A2
+    </text>
+    <text x="201.548" y="829.666" font-family="Arial" font-size="16" font-weight="400" style="line-height:0%;-inkscape-font-specification:Arial">
+      A1
+    </text>
+    <text x="201.548" y="854.285" font-family="Arial" font-size="16" font-weight="400" style="line-height:0%;-inkscape-font-specification:Arial">
+      A0
+    </text>
+  </g>
+  <text x="69.521" y="392.124" font-family="Arial" font-size="16" font-weight="400" style="line-height:0%;-inkscape-font-specification:Arial">
+    <tspan font-size="21.333" font-weight="700" style="-inkscape-font-specification:'Arial Bold'">CPU</tspan>
+  </text>
+</svg>

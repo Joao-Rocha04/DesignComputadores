@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" stroke-linejoin="round" stroke-width="28.222" preserveAspectRatio="xMidYMid" version="1.2" viewBox="0 0 13982.933 12593.507">
+  <defs class="ClipPathGroup">
+    <marker id="b" orient="auto" overflow="visible">
+      <path stroke="#000" stroke-width=".4pt" d="M1.96 0a2 2 0 1 1-4.001-.001A2 2 0 0 1 1.96 0z"/>
+    </marker>
+    <marker id="c" orient="auto" overflow="visible">
+      <path stroke="#000" stroke-width=".375" d="M-5.231-2.42L1.324-.01-5.23 2.401c1.047-1.423 1.041-3.37 0-4.821z"/>
+    </marker>
+    <marker id="a" orient="auto" overflow="visible">
+      <path stroke="#000" stroke-width=".375" d="M5.231 2.42L-1.324.01 5.23-2.401C4.184-.978 4.19.969 5.231 2.42z"/>
+    </marker>
+  </defs>
+  <text x="6985.096" y="1015.244" class="TextShape" font-family="Arial,sans-serif" font-size="999.208" font-weight="700" style="line-height:125%;-inkscape-font-specification:'Arial, sans-serif, Bold';text-align:center" text-anchor="middle" transform="scale(.99997 1.00003)">
+    <tspan x="6985.096" y="1015.244">Arquitetura: Acumulador</tspan>
+  </text>
+  <text x="9870.055" y="2482.556" class="TextShape" font-family="Arial,sans-serif" font-size="705.556" font-weight="700" style="line-height:125%;-inkscape-font-specification:'Arial, sans-serif, Bold';text-align:start" transform="scale(.99997 1.00003)">
+    <tspan x="9870.055" y="2482.556">Memória</tspan>
+  </text>
+  <text x="-18387.26" y="-12304.719" class="TextShape" font-size="8.497" transform="scale(.99997 1.00003)">
+    <tspan class="TextParagraph" font-family="Arial,sans-serif" font-size="449.645" font-weight="400"><tspan x="-9635.113" y="5334.823" class="TextPosition"/>
+</tspan>
+  </text>
+  <path fill="none" stroke="#000" stroke-linejoin="miter" stroke-width="84.667" marker-start="url(#a)" d="M3587.224 8595.906v-2947.74M1492.529 5192.816l-1120.484-2.252-29.535 7060.603 4994.71-.839v-1314.351"/>
+  <path fill="none" stroke="#000" stroke-linejoin="miter" stroke-width="84.667" marker-end="url(#c)" marker-start="url(#b)" d="M11296.39 7141.541l-4301.29 2.16-30.92 1455.863"/>
+  <path fill="none" stroke="#000" stroke-width="84.667" d="M5549.266 4605.053v1052.916H1578.377V4605.053z" class="BoundingBox"/>
+  <text x="17831.742" y="6155.261" stroke-linejoin="miter" stroke-width="1" font-family="Arial" font-size="564.444" font-weight="400" letter-spacing="0" style="line-height:125%;-inkscape-font-specification:Arial;text-align:start" transform="translate(-15918.673 -825.037)" word-spacing="0">
+    <tspan x="17831.742" y="6155.261" font-weight="700" style="-inkscape-font-specification:'Arial Bold'">Acumulador</tspan>
+  </text>
+  <g fill="none" stroke="#000" stroke-width="84.667">
+    <path d="M11321.223 11498.053h-2359.38V2846.181h4718.758v8651.872h-2359.378z"/>
+    <path stroke-linejoin="miter" d="M8991.571 3762.456h4701.877M8991.571 4722.012h4701.877M8991.571 5681.566h4701.877M8991.571 6641.122h4701.877M8991.571 7657.122h4701.877M8991.571 8616.678h4701.877M8991.571 9576.227h4701.877M8991.571 10535.78h4701.877"/>
+  </g>
+  <g stroke-linejoin="miter">
+    <text x="17420.348" y="19785.572" stroke-width="1" font-family="Standard Symbols L" font-size="705.556" font-weight="400" letter-spacing="0" style="line-height:125%;-inkscape-font-specification:'Standard Symbols L, Normal';text-align:start" transform="translate(-12845.712 -9440.336)" word-spacing="0">
+      <tspan x="17420.348" y="19785.572" font-family="Arial" font-weight="700" style="-inkscape-font-specification:'Arial Bold'">ULA</tspan>
+    </text>
+    <path fill="none" stroke="#000" stroke-width="84.667" d="M7792.818 8747.838l-1097.592 2195.049H3952.663l-1097.592-2195.05h1644.972l275.46 550.18h1097.592l274.751-550.18h1644.972z"/>
+  </g>
+</svg>
