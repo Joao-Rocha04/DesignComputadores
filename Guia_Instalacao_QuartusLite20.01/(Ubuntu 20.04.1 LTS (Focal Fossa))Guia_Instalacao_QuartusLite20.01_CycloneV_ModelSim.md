@@ -8,8 +8,6 @@ Dúvidas:
 
 > **Email: marcoasma@insper.edu.br**
 
-> **Teams: marco.alves@al.insper.edu.br**
-
 Quartus Prime e ModelSim
 ========================
 
