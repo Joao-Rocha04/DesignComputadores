@@ -1,3 +1,3 @@
 # PAGINA INICIAL REPOSITORIO
 
-[Referências](Aulas/Referencias.md)
+[Novo Endereço](https://insper-education.github.io/Descomp2024s2/desComp.html)
