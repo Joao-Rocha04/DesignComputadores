@@ -1,4 +1,4 @@
-Ubuntu 20.04.1 LTS (Focal Fossa)
+Ubuntu 20.04 LTS (Focal Fossa)
 ================================
 
 Por: Marco Antonio Soares de Mello Alves (Laboratório de Arquitetura de
