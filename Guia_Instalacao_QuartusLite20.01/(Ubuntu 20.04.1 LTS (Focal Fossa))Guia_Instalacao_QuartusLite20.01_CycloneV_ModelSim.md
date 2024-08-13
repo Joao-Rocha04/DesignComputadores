@@ -17,6 +17,7 @@ dependências da arquitetura i384:
 ``` {.sourceCode .bash}
 $ sudo dpkg --add-architecture i386
 $ sudo apt-get update
+$ sudo pip install PyGObject
 $ sudo apt-get install gcc make libxft2:i386 libxext6:i386 \
   libncurses5:i386 libstdc++6:i386 libpng-dev \
   libpng16-16:i386 libpng16-16 python-gobject libnotify-bin
@@ -51,20 +52,20 @@ Faça o download dos arquivos a seguir (salve na mesma todos os
 arquivos):
 
 -   Quartus Lite 20.1 :
-    https://download.altera.com/akdlm/software/acdsinst/20.1std/711/ib_installers/QuartusLiteSetup-20.1.0.711-linux.run
+    https://downloads.intel.com/akdlm/software/acdsinst/20.1std.1/720/ib_installers/QuartusLiteSetup-20.1.1.720-linux.run
 
 -   ModelSim :
-    https://download.altera.com/akdlm/software/acdsinst/20.1std/711/ib_installers/ModelSimSetup-20.1.0.711-linux.run
+    https://downloads.intel.com/akdlm/software/acdsinst/20.1std.1/720/ib_installers/ModelSimSetup-20.1.1.720-linux.run
 
 -   Cyclone V (Chip usado no curso) :
-    https://download.altera.com/akdlm/software/acdsinst/20.1std/711/ib_installers/cyclonev-20.1.0.711.qdz
+    https://downloads.intel.com/akdlm/software/acdsinst/20.1std.1/720/ib_installers/cyclonev-20.1.1.720.qdz
 
 Abra o terminal na pasta que os arquivos foram salvos e execute os dois
 comandos a seguir:
 
 ``` {.sourceCode .bash}
-$ chmod +x QuartusLiteSetup-20.1.0.771-linux.run
-$ ./QuartusLiteSetup-20.1.0.771-linux.run
+$ chmod +x QuartusLiteSetup-20.1.1.720-linux.run
+$ ./QuartusLiteSetup-20.1.1.720-linux.run
 ```
 
 > Grave o caminho na qual o **Quartus** foi instalado, ele será
