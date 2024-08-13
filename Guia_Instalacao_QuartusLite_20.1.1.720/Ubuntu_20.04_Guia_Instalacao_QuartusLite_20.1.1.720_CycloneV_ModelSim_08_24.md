@@ -169,6 +169,4 @@ Validando
     janela do Quartus
 2.  **Programador:** Com a FPGA plugada no pc, digite `jtagconfig` ele
     deve aparecer o device.
-3.  **Modelsim:** Escreva `vsim` no terminal, o mesmo deve abrir a
-    janela do ModelSim
 
