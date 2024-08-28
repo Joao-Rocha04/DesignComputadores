@@ -21,6 +21,9 @@ $ sudo pip install PyGObject
 $ sudo apt-get install gcc make libxft2:i386 libxext6:i386 \
   libncurses5:i386 libstdc++6:i386 libpng-dev \
   libpng16-16:i386 libpng16-16 python-gobject libnotify-bin
+$ sudo apt install libxft2 libxft2:i386 lib32ncurses6
+$ sudo apt install libxext6
+$ sudo apt install libxext6:i386
 ```
 
 Instale o canberra-gtk-module:
