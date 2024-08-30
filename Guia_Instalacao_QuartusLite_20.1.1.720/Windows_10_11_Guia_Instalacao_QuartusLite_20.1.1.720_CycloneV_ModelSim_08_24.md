@@ -14,11 +14,9 @@ Quartus 20.1.1.720 e ModelSim 20.1.1.720
 Instalando
 ----------
 <br>
-<br>
-<br>
 1.  Faça o download dos arquivos a seguir (salve na mesma pasta, todos
     os arquivos):
-    
+<br>    
 **IMPORTANTE!!!**: Faça o download dos 3 arquivos, todos em uma única pasta antes de instalar. 
 
 -   Quartus Lite 20.01:
