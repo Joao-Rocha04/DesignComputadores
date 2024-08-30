@@ -19,7 +19,7 @@ Instalando
 1.  Faça o download dos arquivos a seguir (salve na mesma pasta, todos
     os arquivos):
     
-$${\color{red}IMPORTANTE!!!$$</span> : Faça o download dos 3 arquivos, todos em uma única pasta antes de instalar. 
+$${\color{red}IMPORTANTE!!!$$: Faça o download dos 3 arquivos, todos em uma única pasta antes de instalar. 
 
 -   Quartus Lite 20.01:
     https://downloads.intel.com/akdlm/software/acdsinst/20.1std.1/720/ib_installers/QuartusLiteSetup-20.1.1.720-windows.exe
@@ -35,7 +35,7 @@ $${\color{red}IMPORTANTE!!!$$</span> : Faça o download dos 3 arquivos, todos em
 2.  Execute o arquivo **QuartusLiteSetup-20.1.1.720-windows.exe** e
     clique **Next** até a janela da imagem abaixo:
 
-$${\color{red}ATENÇÃO!!!}$$</span> **Não** selecionar a última opção (**ModelSim - Intel FPGA Edition**), conforme a imagem abaixo:
+$${\color{red}ATENÇÃO!!!}$$: **Não** selecionar a última opção (**ModelSim - Intel FPGA Edition**), conforme a imagem abaixo:
 
 <p align="center">
   <img src="imgs/nao_selecionar.png">
