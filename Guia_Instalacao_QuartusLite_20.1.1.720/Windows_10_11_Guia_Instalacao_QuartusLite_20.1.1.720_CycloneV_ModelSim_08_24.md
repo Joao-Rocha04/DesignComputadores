@@ -34,6 +34,7 @@ Instalando
 
 <p style="color:red;">ATENÇÃO!!!</p> **Não** selecionar a última opção (**ModelSim - Intel FPGA Edition**), conforme a imagem abaixo:
 
+
 <p align="center">
   <img src="imgs/nao_selecionar.png">
 </p>
