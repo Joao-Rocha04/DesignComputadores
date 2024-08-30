@@ -29,6 +29,7 @@ Instalando
     https://downloads.intel.com/akdlm/software/acdsinst/20.1std.1/720/ib_installers/cyclonev-20.1.1.720.qdz
 
 
+
 2.  Execute o arquivo **QuartusLiteSetup-20.1.1.720-windows.exe** e
     clique **Next** até a janela da imagem abaixo:
 
@@ -46,11 +47,13 @@ $${\color{red}ATENÇÃO!!!}$$</span> **Não** selecionar a última opção (**Mo
 </p>
 
 
+
 4.  Após a instalação, finalize-a com as seguintes opções:
 
 <p align="center">
   <img src="imgs/finish.png">
 </p>
+
 
 
 5.  O instalador tentará instalar o **USB Blaster** automaticamente, mesmo se der ***ERRO***, continue o tutorial:
@@ -61,6 +64,7 @@ $${\color{red}ATENÇÃO!!!}$$</span> **Não** selecionar a última opção (**Mo
 > [!WARNING]
 >
 > **OBS:** Mesmo se der um ***erro*** na instalação, siga para o próximo passo (**Atualizando o USB Blaster**).
+
 
 
 
