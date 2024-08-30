@@ -29,16 +29,17 @@ Instalando
     https://downloads.intel.com/akdlm/software/acdsinst/20.1std.1/720/ib_installers/cyclonev-20.1.1.720.qdz
 
 
-1.  Execute o arquivo **QuartusLiteSetup-20.1.1.720-windows.exe** e
+2.  Execute o arquivo **QuartusLiteSetup-20.1.1.720-windows.exe** e
     clique **Next** até a janela da imagem abaixo:
 
-<p style="color:red;">ATENÇÃO!!!</p> **Não* selecionar a última opção (**ModelSim - Intel FPGA Edition**), conforme a imagem abaixo:
-
-
+<p style="color:red;">ATENÇÃO!!!</p> **Não** selecionar a última opção (**ModelSim - Intel FPGA Edition**), conforme a imagem abaixo:
 
 <p align="center">
   <img src="imgs/nao_selecionar.png">
 </p>
+
+
+3. Após isso a inicialização deverá iniciar, conforme imagem abaixo:
 
 <p align="center">
   <img src="imgs/installQuartus.png">
