@@ -29,22 +29,28 @@ Instalando
     https://downloads.intel.com/akdlm/software/acdsinst/20.1std.1/720/ib_installers/cyclonev-20.1.1.720.qdz
 
 
-2.  Execute o arquivo **QuartusLiteSetup-20.1.1.720-windows.exe** e
+3.  Execute o arquivo **QuartusLiteSetup-20.1.1.720-windows.exe** e
     clique **Next** até a instalação iniciar:
+
+ATENÇÃO!!! Não selecionar a última opção (**ModelSim - Intel FPGA Edition**), conforme a imagem abaixo:
+
+<p align="center">
+  <img src="imgs/nao_selecionar.png">
+</p>
 
 <p align="center">
   <img src="imgs/installQuartus.png">
 </p>
 
 
-3.  Após a instalação, finalize-a com as seguintes opções:
+4.  Após a instalação, finalize-a com as seguintes opções:
 
 <p align="center">
   <img src="imgs/finish.png">
 </p>
 
 
-4.  O instalador tentará instalar o **USB Blaster** automaticamente, mesmo se der ***ERRO***, continue o tutorial:
+5.  O instalador tentará instalar o **USB Blaster** automaticamente, mesmo se der ***ERRO***, continue o tutorial:
 
 <p align="center">
   <img src="imgs/UBSblaster.png">
