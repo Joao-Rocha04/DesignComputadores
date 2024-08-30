@@ -30,7 +30,7 @@ Instalando
 <br/>
 <br/>
 <br/>
-2.  Execute o arquivo **QuartusLiteSetup-20.1.1.720-windows.exe** e clique **Next** até a janela da imagem abaixo:
+2.  Execute o arquivo **QuartusLiteSetup-20.1.1.720-windows.exe** e clique **Next** até a janela da imagem abaixo:<br/>
 
 $${\color{red}ATENÇÃO!!!}$$: **Não** selecionar a última opção (**ModelSim - Intel FPGA Edition**), conforme a imagem abaixo:
 
