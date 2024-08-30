@@ -33,7 +33,7 @@ Instalando
     clique **Next** até a janela da imagem abaixo:
 
 <span style="color:red">ATENÇÃO!!!</span> **Não** selecionar a última opção (**ModelSim - Intel FPGA Edition**), conforme a imagem abaixo:
-
+$${\color{red}Red}$$
 <p align="center">
   <img src="imgs/nao_selecionar.png">
 </p>
