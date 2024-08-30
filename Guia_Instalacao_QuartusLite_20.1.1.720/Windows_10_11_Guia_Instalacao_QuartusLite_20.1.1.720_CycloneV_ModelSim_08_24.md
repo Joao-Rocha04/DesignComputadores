@@ -19,7 +19,7 @@ Instalando
 1.  Faça o download dos arquivos a seguir (salve na mesma pasta, todos
     os arquivos):
     
-    **IMPORTANTE !!** : Faça o download dos 3 arquivos, todos em uma única pasta antes de instalar. 
+**IMPORTANTE !!** : Faça o download dos 3 arquivos, todos em uma única pasta antes de instalar. 
 
 -   Quartus Lite 20.01:
     https://downloads.intel.com/akdlm/software/acdsinst/20.1std.1/720/ib_installers/QuartusLiteSetup-20.1.1.720-windows.exe
