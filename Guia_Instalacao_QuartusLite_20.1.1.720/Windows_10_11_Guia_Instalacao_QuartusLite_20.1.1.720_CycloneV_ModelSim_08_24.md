@@ -13,10 +13,10 @@ Quartus 20.1.1.720 e ModelSim 20.1.1.720
 
 Instalando
 ----------
-<br>
+<br/>
 1.  Faça o download dos arquivos a seguir (salve na mesma pasta, todos os arquivos):
-<br>
-<br>
+<br/>
+<br/>
 **IMPORTANTE!!!**: Faça o download dos 3 arquivos, todos em uma única pasta antes de instalar. 
 
 -   Quartus Lite 20.01:
@@ -27,9 +27,9 @@ Instalando
 
 -   Cyclone V (Chip usado no curso) :
     https://downloads.intel.com/akdlm/software/acdsinst/20.1std.1/720/ib_installers/cyclonev-20.1.1.720.qdz
-<br>
-<br>
-<br>
+<br/>
+<br/>
+<br/>
 2.  Execute o arquivo **QuartusLiteSetup-20.1.1.720-windows.exe** e clique **Next** até a janela da imagem abaixo:
 <br>
 $${\color{red}ATENÇÃO!!!}$$: **Não** selecionar a última opção (**ModelSim - Intel FPGA Edition**), conforme a imagem abaixo:
@@ -37,25 +37,25 @@ $${\color{red}ATENÇÃO!!!}$$: **Não** selecionar a última opção (**ModelSim
 <p align="center">
   <img src="imgs/nao_selecionar.png">
 </p>
-<br>
-<br>
-<br>
+<br/>
+<br/>
+<br/>
 3. Após isso a inicialização deverá iniciar, conforme imagem abaixo:
 
 <p align="center">
   <img src="imgs/installQuartus.png">
 </p>
-<br>
-<br>
-<br>
+<br/>
+<br/>
+<br/>
 4.  Após a instalação, finalize-a com as seguintes opções:
 
 <p align="center">
   <img src="imgs/finish.png">
 </p>
-<br>
-<br>
-<br>
+<br/>
+<br/>
+<br/>
 5.  O instalador tentará instalar o **USB Blaster** automaticamente, mesmo se der ***ERRO***, continue o tutorial:
 
 <p align="center">
@@ -64,9 +64,9 @@ $${\color{red}ATENÇÃO!!!}$$: **Não** selecionar a última opção (**ModelSim
 > [!WARNING]
 >
 > **OBS:** Mesmo se der um ***erro*** na instalação, siga para o próximo passo (**Atualizando o USB Blaster**).
-<br>
-<br>
-<br>
+<br/>
+<br/>
+<br/>
 Atualizando o USB Blaster
 -------------------------
 
