@@ -13,7 +13,9 @@ Quartus 20.1.1.720 e ModelSim 20.1.1.720
 
 Instalando
 ----------
-
+<br>
+<br>
+<br>
 1.  Faça o download dos arquivos a seguir (salve na mesma pasta, todos
     os arquivos):
     
@@ -65,10 +67,9 @@ $${\color{red}ATENÇÃO!!!}$$</span> **Não** selecionar a última opção (**Mo
 > [!WARNING]
 >
 > **OBS:** Mesmo se der um ***erro*** na instalação, siga para o próximo passo (**Atualizando o USB Blaster**).
-
-
-
-
+<br>
+<br>
+<br>
 Atualizando o USB Blaster
 -------------------------
 
