@@ -98,12 +98,12 @@ $ mkdir $HOME/intelFPGA_lite/20.1/modelsim_ase/lib32
 $ tar zxf Libfreetype-6.10.1-lib32.tar.gz -C $HOME/intelFPGA_lite/20.1/modelsim_ase/lib32
 ```
 
-Adicione ao final do `bashrc` a seguinte linha:
+<-- Adicione ao final do `bashrc` a seguinte linha:
 
 ``` {.sourceCode .diff}
 export LD_LIBRARY_PATH=$HOME/intelFPGA_lite/20.1/modelsim_ase/lib32
 ```
-
+--> 
 Configurando o USB Blaster
 --------------------------
 
