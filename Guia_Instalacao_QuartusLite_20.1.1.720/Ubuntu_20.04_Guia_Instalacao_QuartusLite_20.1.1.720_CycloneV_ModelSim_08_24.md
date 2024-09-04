@@ -91,12 +91,6 @@ $ sudo sed -i '209 a\        4.[0-9]*)             vco="linux" ;;' $HOME/intelFP
 
 2.  Libfreetype 6.10.1 (versão 2.6)
 
-Será necessário carregarmos uma versão anterior dessa lib. Seguir os
-passos [nesse
-roteiro](https://gist.github.com/PrieureDeSion/e2c0945cc78006b00d4206846bdb7657#stage-2)
-ou fazer o download de uma versão [pré compilada por
-mim](https://github.com/Insper/Z01-tools/raw/master/Extra/Libfreetype-6.10.1-lib32.tar.gz)
-
 ``` {.sourceCode .bash}
 $ cd ~/Downloads
 $ wget https://github.com/Insper/Z01-tools/raw/master/Extra/Libfreetype-6.10.1-lib32.tar.gz
