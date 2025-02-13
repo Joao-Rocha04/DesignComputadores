@@ -8,6 +8,45 @@ Dúvidas:
 
 > **Email: marcoasma@insper.edu.br**
 
+
+
+
+Instalando
+----------
+
+Faça o download dos arquivos a seguir (salve na mesma todos os
+arquivos):
+
+-   Quartus Lite 20.1 :
+    https://downloads.intel.com/akdlm/software/acdsinst/20.1std.1/720/ib_installers/QuartusLiteSetup-20.1.1.720-linux.run
+
+-   ModelSim :
+    https://downloads.intel.com/akdlm/software/acdsinst/20.1std.1/720/ib_installers/ModelSimSetup-20.1.1.720-linux.run
+
+-   Cyclone V (Chip usado no curso) :
+    https://downloads.intel.com/akdlm/software/acdsinst/20.1std.1/720/ib_installers/cyclonev-20.1.1.720.qdz
+
+Abra o terminal na pasta que os arquivos foram salvos e execute os dois
+comandos a seguir:
+
+``` {.sourceCode .bash}
+$ chmod +x QuartusLiteSetup-20.1.1.720-linux.run
+$ ./QuartusLiteSetup-20.1.1.720-linux.run
+```
+
+> Grave o caminho na qual o **Quartus** foi instalado, ele será
+> utilizado na próxima etapa.
+
+> Se o Quartus falhar na instalação, mova o modelsim dessa pasta e
+> instale novamente. Depois será necessário instalar o modelsim a parte.
+
+
+
+
+
+
+
+
 Quartus Prime e ModelSim
 ========================
 
@@ -48,34 +87,7 @@ $ sudo make install
 $ sudo ldconfig
 ```
 
-Instalando
-----------
 
-Faça o download dos arquivos a seguir (salve na mesma todos os
-arquivos):
-
--   Quartus Lite 20.1 :
-    https://downloads.intel.com/akdlm/software/acdsinst/20.1std.1/720/ib_installers/QuartusLiteSetup-20.1.1.720-linux.run
-
--   ModelSim :
-    https://downloads.intel.com/akdlm/software/acdsinst/20.1std.1/720/ib_installers/ModelSimSetup-20.1.1.720-linux.run
-
--   Cyclone V (Chip usado no curso) :
-    https://downloads.intel.com/akdlm/software/acdsinst/20.1std.1/720/ib_installers/cyclonev-20.1.1.720.qdz
-
-Abra o terminal na pasta que os arquivos foram salvos e execute os dois
-comandos a seguir:
-
-``` {.sourceCode .bash}
-$ chmod +x QuartusLiteSetup-20.1.1.720-linux.run
-$ ./QuartusLiteSetup-20.1.1.720-linux.run
-```
-
-> Grave o caminho na qual o **Quartus** foi instalado, ele será
-> utilizado na próxima etapa.
-
-> Se o Quartus falhar na instalação, mova o modelsim dessa pasta e
-> instale novamente. Depois será necessário instalar o modelsim a parte.
 
 Modelsim
 --------
