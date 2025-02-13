@@ -42,6 +42,20 @@ $ ./QuartusLiteSetup-20.1.1.720-linux.run
 
 
 
+Configurando variáveis de ambiente
+----------------------------------
+
+Adicione ao final do `bashrc` as seguintes linhas:
+
+``` {.sourceCode .diff}
+export ALTERAPATH=$HOME/intelFPGA_lite/23.1std
+export PATH=$PATH:${ALTERAPATH}/quartus/bin
+export LM_LICENSE_FILE=/home/soc/intelFPGA_lite/23.1std/license_questa/license.dat
+```
+
+Se você alterou o caminho de instalação na etapa do `Quartus`, deve
+modificar a primeira linha inserindo o caminho da instalação.
+
 
 
 
@@ -150,24 +164,7 @@ Recarrege o as permissões via o comando a seguir:
 $ sudo service udev restart
 ```
 
-Configurando variáveis de ambiente
-----------------------------------
 
-Adicione ao final do `bashrc` as seguintes linhas:
-
-``` {.sourceCode .diff}
-export ALTERAPATH=$HOME/intelFPGA_lite/20.1
-export PATH=$PATH:${ALTERAPATH}/quartus/bin
-export PATH=$PATH:${ALTERAPATH}/modelsim_ase/linuxaloem/
-export PATH=$PATH:${ALTERAPATH}/modelsim_ase/lib32
-export VUNIT_MODELSIM_PATH=${ALTERAPATH}/modelsim_ase/linuxaloem/
-export VUNIT_SIMULATOR=modelsim
-export QSYS_ROOTDIR="$ALTERAPATH/quartus/sopc_builder/bin"
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${ALTERAPATH}/modelsim_ase/lib32
-```
-
-Se você alterou o caminho de instalação na etapa do `Quartus`, deve
-modificar a primeira linha inserindo o caminho da instalação.
 
 Validando
 =========
