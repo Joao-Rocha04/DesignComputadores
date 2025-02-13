@@ -1,13 +1,10 @@
-Ubuntu 20.04 LTS (Focal Fossa)
+Ubuntu 24.04.1 LTS (Noble Numbat)
 ================================
 
-Por: Marco Antonio Soares de Mello Alves (Laboratório de Arquitetura de
+Por: **Marco Antonio Soares de Mello Alves** (Laboratório de Arquitetura de
 Computadores)
 
-Dúvidas:
-
-> **Email: marcoasma@insper.edu.br**
-
+Dúvidas: **Email: marcoasma@insper.edu.br**
 
 
 
@@ -17,14 +14,14 @@ Instalando
 Faça o download dos arquivos a seguir (salve na mesma todos os
 arquivos):
 
--   Quartus Lite 20.1 :
-    https://downloads.intel.com/akdlm/software/acdsinst/20.1std.1/720/ib_installers/QuartusLiteSetup-20.1.1.720-linux.run
+-   Quartus® Prime Lite:
+    https://downloads.intel.com/akdlm/software/acdsinst/23.1std.1/993/ib_installers/QuartusLiteSetup-23.1std.1.993-linux.run
 
--   ModelSim :
-    https://downloads.intel.com/akdlm/software/acdsinst/20.1std.1/720/ib_installers/ModelSimSetup-20.1.1.720-linux.run
+-   Questa*-Intel® FPGA:
+    https://downloads.intel.com/akdlm/software/acdsinst/23.1std.1/993/ib_installers/QuestaSetup-23.1std.1.993-linux.run
 
 -   Cyclone V (Chip usado no curso) :
-    https://downloads.intel.com/akdlm/software/acdsinst/20.1std.1/720/ib_installers/cyclonev-20.1.1.720.qdz
+    https://downloads.intel.com/akdlm/software/acdsinst/23.1std.1/993/ib_installers/cyclonev-23.1std.1.993.qdz
 
 Abra o terminal na pasta que os arquivos foram salvos e execute os dois
 comandos a seguir:
