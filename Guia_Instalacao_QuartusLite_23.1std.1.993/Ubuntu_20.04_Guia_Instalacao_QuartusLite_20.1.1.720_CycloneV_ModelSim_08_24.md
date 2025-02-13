@@ -4,14 +4,13 @@ Ubuntu 24.04.1 LTS (Noble Numbat)
 Por: **Marco Antonio Soares de Mello Alves** (Laboratório de Arquitetura de
 Computadores)
 
-Dúvidas: **Email: marcoasma@insper.edu.br**
-
+Dúvidas: **marcoasma@insper.edu.br**
 
 
 Instalando
 ----------
 
-Faça o download dos arquivos a seguir (salve na mesma todos os
+Faça o download dos arquivos a seguir (salve na **mesma pasta** ***todos*** os
 arquivos):
 
 -   Quartus® Prime Lite:
@@ -31,13 +30,6 @@ $ chmod +x QuartusLiteSetup-23.1std.1.993-linux.run
 $ ./QuartusLiteSetup-23.1std.1.993-linux.run
 ```
 
-> Grave o caminho na qual o **Quartus** foi instalado, ele será
-> utilizado na próxima etapa.
-
-> Se o Quartus falhar na instalação, mova o modelsim dessa pasta e
-> instale novamente. Depois será necessário instalar o modelsim a parte.
-
-
 
 Configurando variáveis de ambiente
 ----------------------------------
@@ -53,80 +45,12 @@ export LM_LICENSE_FILE=/home/soc/intelFPGA_lite/23.1std/license_questa/license.d
 Se você alterou o caminho de instalação na etapa do `Quartus`, deve
 modificar a primeira linha inserindo o caminho da instalação.
 
+Configurando variáveis de ambiente
+----------------------------------
+
+gio set 'Quartus (Quartus Prime 23.1std) Lite Edition.desktop' metadata::trusted true
 
 
-
-
-
-Quartus Prime e ModelSim
-========================
-
-Execute no terminal os comandos a seguir, o Quartus necessita de
-dependências da arquitetura i384:
-
-``` {.sourceCode .bash}
-$ sudo dpkg --add-architecture i386
-$ sudo apt-get update
-$ sudo pip install PyGObject
-$ sudo apt-get install gcc make libxft2:i386 libxext6:i386 \
-  libncurses5:i386 libstdc++6:i386 libpng-dev \
-  libpng16-16:i386 libpng16-16 python-gobject libnotify-bin
-$ sudo apt install libxft2 libxft2:i386 lib32ncurses6
-$ sudo apt install libxext6
-$ sudo apt install libxext6:i386
-```
-
-Instale o canberra-gtk-module:
-``` {.sourceCode .bash}
-$ sudo apt-get install libcanberra-gtk-module
-```
-
-### [Libpng12](http://www.bitsnbites.eu/installing-intelaltera-quartus-in-ubuntu-17-10/)
-
-> The simplest way is to build and install libpng12 from source
-> (requires build-essential). Install build-essential (to get gcc etc):
-> sudo apt install build-essential [Download the source code from
-> sourceforge](https://sourceforge.net/projects/libpng/files/libpng12/1.2.59/libpng-1.2.59.tar.xz/download)
-> (select a suitable version and tar archive). Unpack the tar archive to
-> /tmp Build and install:
-
-``` {.sourceCode .bash}
-$ cd $HOME/Downloads/libpng-1.2.59
-$ ./configure --prefix=/usr/local
-$ make
-$ sudo make install
-$ sudo ldconfig
-```
-
-
-
-Modelsim
---------
-
-1.  Editar vco
-
-Vamos editar o arquivo `vco` que está na pasta do modelsim (exe:
-`$HOME/intelFPGA_lite/20.1/modelsim_ase/vco`):
-
-``` {.sourceCode .bash}
-$ sudo sed -i '209 a\        4.[0-9]*)             vco="linux" ;;' $HOME/intelFPGA_lite/20.1/modelsim_ase/vco
-```
-
-2.  Libfreetype 6.10.1 (versão 2.6)
-
-``` {.sourceCode .bash}
-$ cd ~/Downloads
-$ wget https://github.com/Insper/Z01-tools/raw/master/Extra/Libfreetype-6.10.1-lib32.tar.gz
-$ mkdir $HOME/intelFPGA_lite/20.1/modelsim_ase/lib32
-$ tar zxf Libfreetype-6.10.1-lib32.tar.gz -C $HOME/intelFPGA_lite/20.1/modelsim_ase/lib32
-```
-
-<!-- Adicione ao final do `bashrc` a seguinte linha:
-
-``` {.sourceCode .diff}
-export LD_LIBRARY_PATH=$HOME/intelFPGA_lite/20.1/modelsim_ase/lib32
-```
---> 
 Configurando o USB Blaster
 --------------------------
 
