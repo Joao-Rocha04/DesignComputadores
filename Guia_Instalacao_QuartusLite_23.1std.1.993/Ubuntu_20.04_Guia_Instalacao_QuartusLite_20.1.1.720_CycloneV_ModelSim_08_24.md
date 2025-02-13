@@ -27,8 +27,8 @@ Abra o terminal na pasta que os arquivos foram salvos e execute os dois
 comandos a seguir:
 
 ``` {.sourceCode .bash}
-$ chmod +x QuartusLiteSetup-20.1.1.720-linux.run
-$ ./QuartusLiteSetup-20.1.1.720-linux.run
+$ chmod +x QuartusLiteSetup-23.1std.1.993-linux.run
+$ ./QuartusLiteSetup-23.1std.1.993-linux.run
 ```
 
 > Grave o caminho na qual o **Quartus** foi instalado, ele será
