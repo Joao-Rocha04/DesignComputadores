@@ -54,15 +54,6 @@ gio set 'Quartus (Quartus Prime 23.1std) Lite Edition.desktop' metadata::trusted
 Configurando o USB Blaster
 --------------------------
 
-#### [libudev1:i386](https://forums.intel.com/s/question/0D50P00003yySE5SAM/newbie-usb-blaster-on-ubuntu-linux-xenial-1604-wont-probe-chain?language=en_US)
-
-Para o gravador Jtag blaster funcionar no Ubuntu 18 LTS
-
-``` {.sourceCode .bash}
-$ sudo apt-get install libudev1:i386
-$ sudo ln -sf /lib/x86_64-linux-gnu/libudev.so.1 /lib/x86_64-linux-gnu/libudev.so.0
-```
-
 Execute o comando a seguir para criar o arquivo de regra:
 
 ``` {.sourceCode .bash}
