@@ -45,13 +45,6 @@ export LM_LICENSE_FILE=/home/soc/intelFPGA_lite/23.1std/license_questa/license.d
 Se você alterou o caminho de instalação na etapa do `Quartus`, deve
 modificar a primeira linha inserindo o caminho da instalação.
 
-Configurando variáveis de ambiente
-----------------------------------
-
-``` {.sourceCode .bash}
-$ gio set ~/Desktop/'Quartus (Quartus Prime 23.1std) Lite Edition.desktop' metadata::trusted true
-```
-
 Configurando o USB Blaster
 --------------------------
 
