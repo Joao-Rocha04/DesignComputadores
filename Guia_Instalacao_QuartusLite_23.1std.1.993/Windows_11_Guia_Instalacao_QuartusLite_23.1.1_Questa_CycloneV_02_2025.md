@@ -66,7 +66,6 @@ $${\color{red}ATENÇÃO!!!}$$: **Não** selecionar a última opção (**Questa -
   <img src="imgs/UBSblaster_23.png">
 </p>
 
-> [!WARNING]
 >
 > 
 Validando
