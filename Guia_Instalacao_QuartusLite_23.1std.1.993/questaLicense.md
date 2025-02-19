@@ -7,7 +7,7 @@ Ativando a Licença para o simulador Questa-Intel® FPGA
 
 #### 2. Clique em Enroll para criar uma conta
 
-![self_service_license_center](\imgs_questaLicense\self_service_license_center.png)
+![self_service_license_center](imgs_questaLicense\self_service_license_center.png)
 
 #### 3. Siga os passos para criação de uma conta
 
