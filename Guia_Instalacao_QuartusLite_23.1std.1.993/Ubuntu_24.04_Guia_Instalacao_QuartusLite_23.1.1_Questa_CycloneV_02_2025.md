@@ -79,6 +79,6 @@ Validando
 
 1.  **Quartus:** Escreva `quartus` no terminal, o mesmo deve abrir a
     janela do Quartus
-2.  **Programador:** Com a FPGA plugadae ligada no pc, digite `jtagconfig` ele
+2.  **Programador:** Com a FPGA plugada **e** ligada no pc, digite `jtagconfig` ele
     deve aparecer o device.
 
