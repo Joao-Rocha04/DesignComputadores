@@ -31,7 +31,7 @@ OBS algumas etapas de verificação e autenticação deverão ser solicitadas.
 
 #### 7. Clique em New
 
-![active_license_new](imgs_questaLicenseactive_license_new.png)
+![active_license_new](imgs_questaLicense/active_license_new.png)
 
 #### 8. Preencha conforme a imagem abaixo
 
