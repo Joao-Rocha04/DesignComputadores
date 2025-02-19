@@ -34,7 +34,7 @@ $ ./QuartusLiteSetup-23.1std.1.993-linux.run
 Configurando variáveis de ambiente
 ----------------------------------
 
-Adicione ao final do `bashrc` as seguintes linhas:
+Adicione ao final do arquivo `bashrc` (~/.bashrc) as seguintes linhas:
 
 ``` {.sourceCode .diff}
 export ALTERAPATH=$HOME/intelFPGA_lite/23.1std
