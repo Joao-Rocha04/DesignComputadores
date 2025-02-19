@@ -61,11 +61,11 @@ Ativando a Licença para o simulador Questa-Intel® FPGA
 
 **OBS:** Renomei o arquivo .dat para license.dat.
 
-#### 14. Crie uma pastadiretório de nome 'license_questa' em
+#### 14. Crie uma pasta/diretório de nome 'license_questa' em
 
-WINDOWS - 'CintelFPGA_lite23.1std'
+WINDOWS - 'C:\intelFPGA_lite\23.1std/'
 
-LINUX - '~intelFPGA_lite23.1std'
+LINUX - '~/intelFPGA_lite/23.1std/'
 
 mova o arquivo license.dat (o arquivo q foi renomeado) para a pasta criada 'license_questa'.
 
@@ -78,14 +78,14 @@ Após isso, basta fazer com que a licença seja reconhecida pelas variáveis de 
 Abra o Windows PowerShell como administrador e execute o seguinte comando para configurar o LM_LICENSE_FILE nas variáveis de ambiente
 
 ```
-setx LM_LICENSE_FILE CintelFPGA_litelicense_questalicense.dat;
+setx LM_LICENSE_FILE C:\intelFPGA_lite\license_questa\license.dat;
 ```
 
 ###### LINUX
 
 Execute o comando abaixo no terminal
 
-    export LM_LICENSE_FILE=~intelFPGA_litelicense_questalicense.dat
+    export LM_LICENSE_FILE=~/intelFPGA_lite/license_questa/license.dat
     
 
 #### Renovação da Licença
