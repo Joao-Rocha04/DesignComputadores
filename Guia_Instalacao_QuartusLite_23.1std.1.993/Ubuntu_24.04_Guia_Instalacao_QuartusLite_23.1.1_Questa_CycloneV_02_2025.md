@@ -49,7 +49,7 @@ Configurando variáveis de ambiente
 ----------------------------------
 
 ``` {.sourceCode .bash}
-$ sudo gio set ~/Desktop/'Quartus (Quartus Prime 23.1std) Lite Edition.desktop' metadata::trusted true
+$ gio set ~/Desktop/'Quartus (Quartus Prime 23.1std) Lite Edition.desktop' metadata::trusted true
 ```
 
 Configurando o USB Blaster
