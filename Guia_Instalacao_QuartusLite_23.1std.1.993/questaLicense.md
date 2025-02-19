@@ -15,13 +15,13 @@ Ativando a Licença para o simulador Questa-Intel® FPGA
 
 #### 4. Após a criação, você poderá solicitar a licença
 
-OBS Pode acontecer que você só consiga fazer o acesso para solicitar a licença após 2 horas.
+**OBS:** Pode acontecer que você só consiga fazer o acesso para solicitar a licença após 2 horas.
 
 ![create_account_OK](imgs_questaLicense/create_account_OK.png)
 
 #### 5. Acesse sua conta
 
-OBS algumas etapas de verificação e autenticação deverão ser solicitadas.
+**OBS:** algumas etapas de verificação e autenticação deverão ser solicitadas.
 
 ![self_service_sing_in](imgs_questaLicense/self_service_sing_in.png)
 
@@ -35,7 +35,7 @@ OBS algumas etapas de verificação e autenticação deverão ser solicitadas.
 
 #### 8. Preencha conforme a imagem abaixo
 
-OBS O campo Primary Computer ID deverá ser preenchido com o MAC Address da placa de rede da sua máquina, sem os caraceteres que os Números e Letrtas (- ou ).
+**OBS:** O campo Primary Computer ID deverá ser preenchido com o MAC Address da placa de rede da sua máquina, sem os caraceteres que os Números e Letrtas (- ou ).
 
 ![active_license_mac_address](imgs_questaLicense/active_license_mac_address.png)
 
@@ -59,7 +59,7 @@ OBS O campo Primary Computer ID deverá ser preenchido com o MAC Address da plac
 
 ![selecionar_licenca_baixar](imgs_questaLicense/selecionar_licenca_baixar.png)
 
-OBS¹ Renomei o arquivo .dat para license.dat.
+**OBS:** Renomei o arquivo .dat para license.dat.
 
 #### 14. Crie uma pastadiretório de nome 'license_questa' em
 
