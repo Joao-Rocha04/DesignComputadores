@@ -11,53 +11,53 @@ Ativando a Licença para o simulador Questa-Intel® FPGA
 
 #### 3. Siga os passos para criação de uma conta
 
-![create_account](.imgs_questaLicense/create_account.png)
+![create_account](imgs_questaLicense/create_account.png)
 
 #### 4. Após a criação, você poderá solicitar a licença
 
 OBS Pode acontecer que você só consiga fazer o acesso para solicitar a licença após 2 horas.
 
-![create_account_OK](.imgs_questaLicense/create_account_OK.png)
+![create_account_OK](imgs_questaLicense/create_account_OK.png)
 
 #### 5. Acesse sua conta
 
 OBS algumas etapas de verificação e autenticação deverão ser solicitadas.
 
-![self_service_sing_in](.imgs_questaLicense/self_service_sing_in.png)
+![self_service_sing_in](imgs_questaLicense/self_service_sing_in.png)
 
 #### 6. Clique em Computers and License Files  Active Computers
 
-![active_license_1](.imgs_questaLicense/active_license_1.png)
+![active_license_1](imgs_questaLicense/active_license_1.png)
 
 #### 7. Clique em New
 
-![active_license_new](.imgs_questaLicenseactive_license_new.png)
+![active_license_new](imgs_questaLicenseactive_license_new.png)
 
 #### 8. Preencha conforme a imagem abaixo
 
 OBS O campo Primary Computer ID deverá ser preenchido com o MAC Address da placa de rede da sua máquina, sem os caraceteres que os Números e Letrtas (- ou ).
 
-![active_license_mac_address](.imgs_questaLicense/active_license_mac_address.png)
+![active_license_mac_address](imgs_questaLicense/active_license_mac_address.png)
 
 #### 9. Acesse a opção Sign up for Evaluation or No-Cost Licenses
 
-![selecionar_licenca](.imgs_questaLicense/selecionar_licenca.png)
+![selecionar_licenca](imgs_questaLicense/selecionar_licenca.png)
 
 #### 10. Selecione a opção do Questa, conforme a imagem abaixo e clique em next
 
-![selecionar_licenca_questa](.imgs_questaLicense/selecionar_licenca_questa.png)
+![selecionar_licenca_questa](imgs_questaLicense/selecionar_licenca_questa.png)
 
 #### 11. Selecione o ComputadorMAC para o qual a licença será gerada, aceite os termos e clique em Generate
 
-![selecionar_licenca_computer](.imgs_questaLicense/selecionar_licenca_computer.png)
+![selecionar_licenca_computer](imgs_questaLicense/selecionar_licenca_computer.png)
 
 #### 12. Após isso, você receberá uma confirmação de que a licença foi enviada para seu e-mail
 
-![seleciona_licenca_email](.imgs_questaLicense/seleciona_licenca_email.png)
+![seleciona_licenca_email](imgs_questaLicense/seleciona_licenca_email.png)
 
 #### 13. Faça o download da licença
 
-![selecionar_licenca_baixar](.imgs_questaLicense/selecionar_licenca_baixar.png)
+![selecionar_licenca_baixar](imgs_questaLicense/selecionar_licenca_baixar.png)
 
 OBS¹ Renomei o arquivo .dat para license.dat.
 
