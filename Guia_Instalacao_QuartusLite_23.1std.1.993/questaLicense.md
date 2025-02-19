@@ -63,9 +63,9 @@ Ativando a Licença para o simulador Questa-Intel® FPGA
 
 #### 14. Crie uma pasta/diretório de nome 'license_questa' em
 
-WINDOWS - 'C:\intelFPGA_lite\23.1std/'
+**WINDOWS** - 'C:\intelFPGA_lite\23.1std/'
 
-LINUX - '~/intelFPGA_lite/23.1std/'
+**LINUX** - '~/intelFPGA_lite/23.1std/'
 
 mova o arquivo license.dat (o arquivo q foi renomeado) para a pasta criada 'license_questa'.
 
@@ -85,8 +85,9 @@ setx LM_LICENSE_FILE C:\intelFPGA_lite\license_questa\license.dat;
 
 Execute o comando abaixo no terminal
 
-    export LM_LICENSE_FILE=~/intelFPGA_lite/license_questa/license.dat
-    
+```
+export LM_LICENSE_FILE=~/intelFPGA_lite/license_questa/license.dat
+ ```   
 
 #### Renovação da Licença
 
