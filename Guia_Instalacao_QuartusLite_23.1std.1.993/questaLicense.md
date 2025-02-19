@@ -91,7 +91,7 @@ export LM_LICENSE_FILE=~/intelFPGA_lite/license_questa/license.dat
 
 #### Renovação da Licença
 
-A licença do software expira 12 meses após a data da compra. Para renovar um arquivo de licença expirado, revisite o [SSLC](httpsfpgasupport.intel.comLicensinglicenseindex.html) . Você pode renovar uma licença somente para a versão que você comprou.
+A licença do software expira em 12 meses após a ativação. Para renovar um arquivo de licença expirado, revisite o [SSLC](httpsfpgasupport.intel.comLicensinglicenseindex.html) . Você pode renovar uma licença somente para a versão que você ativou.
 
 #### FONTE
 
