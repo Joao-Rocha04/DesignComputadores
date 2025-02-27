@@ -39,7 +39,7 @@ Adicione ao final do arquivo `bashrc` (~/.bashrc) as seguintes linhas:
 ``` {.sourceCode .diff}
 export ALTERAPATH=$HOME/intelFPGA_lite/23.1std
 export PATH=$PATH:${ALTERAPATH}/quartus/bin
-export LM_LICENSE_FILE=/home/soc/intelFPGA_lite/23.1std/license_questa/license.dat
+export LM_LICENSE_FILE=$ALTERAPATH/license_questa/license.dat
 ```
 
 Se você alterou o caminho de instalação na etapa do `Quartus`, deve
