@@ -78,7 +78,7 @@ Após isso, basta fazer com que a licença seja reconhecida pelas variáveis de 
 Abra o Windows PowerShell como administrador e execute o seguinte comando para configurar o LM_LICENSE_FILE nas variáveis de ambiente
 
 ```
-setx LM_LICENSE_FILE C:\intelFPGA_lite\license_questa\license.dat;
+setx LM_LICENSE_FILE C:\intelFPGA_lite\23.1std\license_questa\license.dat;
 ```
 
 ###### LINUX
@@ -86,7 +86,7 @@ setx LM_LICENSE_FILE C:\intelFPGA_lite\license_questa\license.dat;
 Execute o comando abaixo no terminal
 
 ```
-export LM_LICENSE_FILE=~/intelFPGA_lite/license_questa/license.dat
+export LM_LICENSE_FILE=~/intelFPGA_lite/23.1std/license_questa/license.dat
  ```   
 
 #### Renovação da Licença
