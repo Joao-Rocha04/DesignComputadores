@@ -11,6 +11,13 @@ NOP
 LDI $4	#Carrega acumulador com valor 4
 CEQ @0	#Compara com valor 5, deve fazer o flagIgual ser 0
 JEQ @3	#Não deve ocorrer o desvio
-JMP @13	#Fim. Deve ficar neste laço
+JMP .label1	#Fim. Deve ficar neste laço
 NOP
+NOP
+NOP
+NOP
+NOP
+NOP
+label1:
+JMP @17
 RET		#Retorna para a posição 1
