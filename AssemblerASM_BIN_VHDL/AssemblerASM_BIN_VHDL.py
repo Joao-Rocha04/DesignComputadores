@@ -10,6 +10,7 @@ import re
 # Arquivos de entrada e saída
 inputASM = 'ASM.txt'
 outputBIN = 'BIN.txt'
+outputMIF = 'initROM.mif'
 
 # Dicionário de mnemônicos para OPCODE (hexadecimal de 1 dígito)
 mne = {
@@ -24,6 +25,7 @@ mne = {
     "CEQ": "8",
     "JSR": "9",
     "RET": "A",
+    "ANDI": "B",
 }
 
 # Regex para detectar labels (linhas como "label:" ou ".label:")
@@ -105,3 +107,29 @@ with open(inputASM, 'r') as f, open(outputBIN, 'w') as outf:
         outf.write(line_out)
         print(line_out, end='')
         pc += 1
+
+# 3ª etapa: conversão para arquivo .mif
+# Lê cabeçalho existente e insere dados convertidos
+with open(outputMIF, 'r') as f:
+    headerMIF = f.readlines()
+with open(outputBIN, 'r') as f:
+    bin_lines = f.readlines()
+with open(outputMIF, 'w') as f:
+    # escreve cabeçalho (linhas 0 a 20)
+    for i, line_hdr in enumerate(headerMIF):
+        if i < 21:
+            f.write(line_hdr)
+    # processa cada linha de BIN
+    for line in bin_lines:
+        # remove caracteres indesejados
+        replacements = [('t', ''), ('m', ''), ('p', ''), ('(', ''), (')', ''), ('=', ''), ('x', ''), ('"', '')]
+        for ch, rep in replacements:
+            line = line.replace(ch, rep)
+        # mantém apenas parte antes de '#'
+        parts = line.split('#', 1)
+        out = parts[0]
+        if not out.endswith('\n'):
+            out = out + '\n'
+        f.write(out)
+    # finaliza
+    f.write('END;')
